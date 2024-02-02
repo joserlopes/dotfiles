@@ -1,0 +1,24 @@
+[include]
+    path = ~/.gitconfig.local
+[credential]
+	helper = cache --timeout=34560000
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[commit]
+	gpgsign = true
+[credential]
+	helper = store
+[gpg]
+	program = gpg2
+[core]
+	editor = nvim
+[pull]
+	rebase = false
