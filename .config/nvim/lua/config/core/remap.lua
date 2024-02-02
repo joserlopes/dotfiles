@@ -43,3 +43,15 @@ vim.cmd('cabbrev W w')
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- This next keymaps are a courtesy of Jon Gjengset
+
+-- Make missing : less annoying
+vim.keymap.set('n', ';', ':')
+
+-- Jump to start and end of line using the home row keys
+vim.keymap.set('', 'H', '^')
+vim.keymap.set('', 'L', '$')
+
+-- handy keymap for replacing up to next _ (like in variable names)
+vim.keymap.set('n', '<leader>m', 'ct_')
