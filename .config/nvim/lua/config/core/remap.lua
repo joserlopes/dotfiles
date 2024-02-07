@@ -46,9 +46,6 @@ end)
 
 -- This next keymaps are a courtesy of Jon Gjengset
 
--- Make missing : less annoying
-vim.keymap.set('n', ';', ':')
-
 -- Jump to start and end of line using the home row keys
 vim.keymap.set('', 'H', '^')
 vim.keymap.set('', 'L', '$')
