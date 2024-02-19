@@ -1,6 +1,3 @@
--- This one in case I am using oil.nvim
--- vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
--- This one is in case I am not using oil.nvim
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
