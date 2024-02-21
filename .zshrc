@@ -123,3 +123,15 @@ path=('/home/joselopes/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
+export POSTGRES_DB=hedb
+export POSTGRES_USER=postgres
+export POSTGRES_PASSWORD=postgres
+export POSTGRES_HOST_AUTH_METHOD=trust
+export PSQL_INT_TEST_DB_USERNAME=postgres
+export PSQL_INT_TEST_DB_PASSWORD=postgres
+export cypress_psql_db_name=hedb
+export cypress_psql_db_username=postgres
+export cypress_psql_db_password=postgres
+export cypress_psql_db_host=localhost
+export cypress_psql_db_port=5432

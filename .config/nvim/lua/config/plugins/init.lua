@@ -30,13 +30,13 @@ return {
     --     end
     -- },
 
-    {
-        "sainnhe/gruvbox-material",
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme("gruvbox-material")
-        end,
-    },
+    -- {
+    --     "sainnhe/gruvbox-material",
+    --     priority = 1000,
+    --     config = function()
+    --         vim.cmd.colorscheme("gruvbox-material")
+    --     end,
+    -- },
 
     -- {
     --     "rebelot/kanagawa.nvim",
@@ -97,6 +97,19 @@ return {
         -- See `:help ibl`
         main = "ibl",
         opts = {},
+    },
+
+    {
+        "RRethy/base16-nvim",
+        config = function()
+            vim.cmd.colorscheme('base16-gruvbox-material-dark-hard')
+            -- Different colorschemes
+            --vim.cmd.colorscheme('base16-kanagawa')
+            --vim.cmd.colorscheme('base16-everforest')
+            --vim.cmd.colorscheme('base16-nord')
+            --vim.cmd.colorscheme('base16-zenburn')
+            --vim.cmd.colorscheme('base16-rose-pine')
+        end
     },
 
     -- "gc" to comment visual regions/lines
