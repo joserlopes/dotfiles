@@ -30,15 +30,18 @@ exec --no-startup-id dex --autostart --environment i3
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id xset +dpms dpms 0 300 300 
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/scripts/lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
 # exec --no-startup-id picom -b
+
+# Adjust screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -51,10 +54,6 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-
-# # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -202,21 +201,15 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-## Manual management of external displays
-# Set the shortcuts and what they do
-set $mode_display Ext Screen (h) HDMI-2 ON, (y) HDMI-2 OFF, (j) HDMI-1 ON, (u) HDMI-1 OFF
-mode "$mode_display" {
-    bindsym h exec --no-startup-id xrandr --output HDMI-1-2 --mode 1920x1080 --rate 74.97 --pos 1920x1080, mode "default"
-    bindsym j exec --no-startup-id xrandr --output HDMI-1-1 --mode 1920x1080 --rate 74.97 --pos 1920x1080, mode "default"
-    bindsym y exec --no-startup-id xrandr --output HDMI-1-2 --auto --off, mode "default"
-    bindsym u exec --no-startup-id xrandr --output HDMI-1-1 --auto --off, mode "default"
+bindsym $mod+x mode "lock"
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
+mode "lock" {
+    bindsym l exec i3lock --ignore-empty-password --tiling -i ~/.config/i3/scripts/wallpapers/lock.png 2>/dev/null, mode "default"
+    # just force suspend. i3lock will be called automatically via lock.sh 
+    bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
+
     bindsym Escape mode "default"
 }
-# Declare here the shortcut to bring the display selection menu
-bindsym $mod+x mode "$mode_display"
 
 #  TEST: Polybar start script. Maybe try this later
 # exec_always --no-startup-id ~/.config/polybar/polybar_scripts/launch.sh &
