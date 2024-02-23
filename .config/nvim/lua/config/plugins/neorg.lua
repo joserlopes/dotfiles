@@ -1,6 +1,7 @@
 return {
     {
         "nvim-neorg/neorg",
+        event = "VeryLazy",
         build = ":Neorg sync-parsers",
         -- tag = "*",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -23,8 +24,7 @@ return {
                     ["core.dirman"] = { -- Manages Neorg workspaces
                         config = {
                             workspaces = {
-                                University = "~/Notes/University",
-                                Personal = "~/Notes/Personal",
+                                notes = "~/Dropbox/Notes"
                             },
                         },
                     },
