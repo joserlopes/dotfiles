@@ -13,23 +13,10 @@ return {
     config = function()
         require("obsidian").setup({
             workspaces = {
-                -- Should I create an obsidian vault for each of the PARA folders?
                 {
                     name = "Notes",
                     path = "~/Dropbox/Notes",
                 },
-                -- {
-                --     name = "Area",
-                --     path = "~/Dropbox/Notes/Area",
-                -- },
-                -- {
-                --     name = "Resource",
-                --     path = "~/Dropbox/Notes/Resource",
-                -- },
-                -- {
-                --     name = "Archive",
-                --     path = "~/Dropbox/Notes/Archive",
-                -- },
             },
             completion = {
                 -- Set to false to disable completion.
@@ -38,11 +25,6 @@ return {
                 -- Trigger completion at 2 chars.
                 min_chars = 2,
             },
-            -- templates = {
-            --     subdir = "Templates",
-            --     date_format = "%d-%m-%Y",
-            --     time_format = "%H:%M",
-            -- },
             follow_url_func = function(url)
                 -- Open the URL in the default web browser.
                 -- vim.fn.jobstart({ "open", url }) -- Mac OS

@@ -10,4 +10,6 @@ return {
         "MarkdownPreview",
         "MarkdownPreviewStop",
     },
+
+    keys = { { "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "MarkdownPreviewToggle" } }
 }
