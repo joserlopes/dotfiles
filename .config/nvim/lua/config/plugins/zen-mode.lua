@@ -3,8 +3,10 @@ return {
     cmd = "ZenMode",
     opts = {
         plugins = {
-            gitsigns = true,
             tmux = true,
+            options = {
+                colurcolumn = "0"
+            },
         },
         window = {
             width = .90,
