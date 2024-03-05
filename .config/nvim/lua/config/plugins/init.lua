@@ -19,7 +19,7 @@ return {
     --     },
     -- }
 
-    -- "xiyaowong/transparent.nvim",
+    "xiyaowong/transparent.nvim",
 
     -- {
     --     "AlexvZyl/nordic.nvim",
@@ -104,7 +104,7 @@ return {
         config = function()
             vim.cmd.colorscheme('base16-gruvbox-material-dark-hard')
             -- Different colorschemes
-            --vim.cmd.colorscheme('base16-kanagawa')
+            -- vim.cmd.colorscheme('base16-kanagawa')
             --vim.cmd.colorscheme('base16-everforest')
             --vim.cmd.colorscheme('base16-nord')
             --vim.cmd.colorscheme('base16-zenburn')

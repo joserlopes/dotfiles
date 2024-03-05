@@ -144,5 +144,4 @@ key = "F11"
 
 [window]
 # startup_mode = "FullScreen"
-opacity = 1.0
-
+opacity = 0.85
