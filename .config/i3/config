@@ -27,17 +27,15 @@ for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-exec_always --no-startup-id xset +dpms dpms 0 300 300 
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/scripts/lock
+# Always lock the screen manually
+# exec_always --no-startup-id xset +dpms dpms 0 300 300 
+# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/scripts/lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# exec --no-startup-id picom -b
+exec_always --no-startup-id picom
 
 # Adjust screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
@@ -201,17 +199,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+x mode "lock"
-
-mode "lock" {
-    bindsym l exec i3lock --ignore-empty-password --tiling -i ~/.config/i3/scripts/wallpapers/lock.png 2>/dev/null, mode "default"
-    # just force suspend. i3lock will be called automatically via lock.sh 
-    bindsym s exec --no-startup-id sleep 1 && xset dpms force suspend , mode "default"
-
-    bindsym Escape mode "default"
-}
-
-#  TEST: Polybar start script. Maybe try this later
+#  INFO: Polybar start script. Maybe try this later
 # exec_always --no-startup-id ~/.config/polybar/polybar_scripts/launch.sh &
 
 # startup applications
@@ -228,7 +216,6 @@ exec --no-startup-id ~/.config/i3/scripts/tap-to-click
 # dunst notification daemon
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
-
 # Print screen
 bindsym Print exec --no-startup-id flameshot gui
 
@@ -239,7 +226,7 @@ set $Locker i3lock && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym l exec i3lock --ignore-empty-password --tiling -i ~/.config/i3/scripts/wallpapers/lock.png 2>/dev/null, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
