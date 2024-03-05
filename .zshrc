@@ -123,3 +123,5 @@ path=('/home/joselopes/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+
+eval "$(atuin init zsh)"
