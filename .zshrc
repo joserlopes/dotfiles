@@ -90,6 +90,8 @@ alias cn="cargo new"
 alias cb="cargo build"
 alias :q="exit"
 
+alias gitlog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 # Changing "ls" to "eza"
 alias ls='eza -l -L=1 --git --icons --color=always --group-directories-first' # my preferred listing
 alias la='eza -la --git --icons --color=always --group-directories-first'  # all files and dirs
