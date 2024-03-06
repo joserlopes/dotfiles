@@ -8,20 +8,6 @@ return {
     "folke/twilight.nvim",
 
     -- {
-    --     {
-    --         "zbirenbaum/copilot-cmp",
-    --         event = { "BufEnter" },
-    --         dependencies = { "zbirenbaum/copilot.lua" },
-    --         config = function()
-    --             require("copilot").setup({})
-    --             require("copilot_cmp").setup()
-    --         end,
-    --     },
-    -- }
-
-    "xiyaowong/transparent.nvim",
-
-    -- {
     --     "AlexvZyl/nordic.nvim",
     --     priority = 1000,
     --     config = function ()
@@ -129,6 +115,21 @@ return {
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
         },
+    },
+
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+        opts = {},
+        config = function(_, opts)
+            -- Get signatures (and _only_ signatures) when in argument lists.
+            require "lsp_signature".setup({
+                doc_lines = 0,
+                handler_opts = {
+                    border = "none"
+                },
+            })
+        end
     },
 
     {

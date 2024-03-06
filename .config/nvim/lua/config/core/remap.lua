@@ -42,6 +42,8 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim<CR>")
 
 -- avoid typing W instead of w to save the file
 vim.cmd('cabbrev W w')
+-- avoid typing Q instead of q to quit the file
+vim.cmd('cabbrev Q q')
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
@@ -55,3 +57,7 @@ vim.keymap.set('', 'L', '$')
 
 -- handy keymap for replacing up to next _ (like in variable names)
 vim.keymap.set('n', '<leader>m', 'ct_')
+
+-- always center search results
+vim.keymap.set('n', 'n', 'nzz', { silent = true })
+vim.keymap.set('n', 'N', 'Nzz', { silent = true })
