@@ -92,6 +92,8 @@ alias :q="exit"
 
 alias gitlog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
+alias ts="tmux-sessionizer"
+
 # Changing "ls" to "eza"
 alias ls='eza -l -L=1 --git --icons --color=always --group-directories-first' # my preferred listing
 alias la='eza -la --git --icons --color=always --group-directories-first'  # all files and dirs
@@ -102,6 +104,9 @@ alias lt='eza -aT -L=1 --git --icons --color=always --group-directories-first' #
 alias cat="bat"
 
 alias c="clear"
+
+# Use ripgrep instead of grep
+alias grep="rg"
 
 export PATH=$PATH:~/.local/bin
 

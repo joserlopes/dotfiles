@@ -129,17 +129,10 @@ am_or_rebase = " AM/REBASE"
 disabled = false
 style = "bold cyan"
 conflicted = "= "
-# ahead = "⇡ ${count} "
-# behind = "⇣ ${count} "
 diverged = "󰧈 "
-# up_to_date = "  "
-# untracked = "? "
-# stashed = "$ "
-# modified = "! "
-# staged = '[++\($count\)](green)'
+untracked = "? "
 renamed = "凜 "
-# deleted = " "
-untracked = '[ $count](bold yellow) '
+#untracked = '[ $count](bold yellow) '
 up_to_date = " 󰥔 "
 staged = '[ $count](bold green) '
 stashed = "[ ](cyan) "
@@ -403,7 +396,7 @@ detect_folders = []
 
 [java]
 disabled = false
-symbol = " "
+symbol = "☕ "
 style = "bold #6a262f"
 format = "via [${symbol}(${version} )]($style)"
 version_format = "v${raw}"  # Available >> raw, major, minor & patch
@@ -485,7 +478,7 @@ detect_folders = ["node_modules"]
 
 [ocaml]
 disabled = false
-symbol = "OCaml"
+symbol = "🐪 "
 style = "bold #a63e01"
 # format = "via [$symbol($version )(\($switch_indicator$switch_name\) )]($style)"
 version_format = "v${raw}"  # Available >> raw, major, minor & patch
@@ -603,7 +596,7 @@ detect_variables = ["RUBY_VERSION", "RBENV_VERSION"]
 
 [rust]
 disabled = false
-symbol = " "
+symbol = "🦀 "
 style = "bold #835f00"
 format = "via [$symbol($version )]($style)"
 version_format = "v${raw}"  # Available >> raw, major, minor & patch
@@ -636,7 +629,7 @@ truncation_length = 2
 
 [swift]
 disabled = false
-symbol = "ﯣ "
+symbol = "🍎"
 style = "bold #f05138"
 format = "via [$symbol($version )]($style)"
 version_format = "v${raw}" # Available >> raw, major, minor & patch
