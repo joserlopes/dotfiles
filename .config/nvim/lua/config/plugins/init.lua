@@ -87,10 +87,12 @@ return {
 
     {
         "RRethy/base16-nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
             vim.cmd.colorscheme('base16-gruvbox-material-dark-hard')
             -- Different colorschemes
-            -- vim.cmd.colorscheme('base16-kanagawa')
+            --vim.cmd.colorscheme('base16-kanagawa')
             --vim.cmd.colorscheme('base16-everforest')
             --vim.cmd.colorscheme('base16-nord')
             --vim.cmd.colorscheme('base16-zenburn')
@@ -125,6 +127,7 @@ return {
             -- Get signatures (and _only_ signatures) when in argument lists.
             require "lsp_signature".setup({
                 doc_lines = 0,
+                hint_prefix = "",
                 handler_opts = {
                     border = "none"
                 },
