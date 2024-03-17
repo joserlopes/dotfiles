@@ -88,6 +88,7 @@ alias v="nvim"
 alias cr="cargo run"
 alias cn="cargo new"
 alias cb="cargo build"
+alias ct="cargo test"
 alias :q="exit"
 
 alias gitlog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
