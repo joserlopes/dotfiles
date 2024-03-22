@@ -7,6 +7,8 @@ return {
 
     "folke/twilight.nvim",
 
+    "xiyaowong/transparent.nvim",
+
     -- {
     --     "AlexvZyl/nordic.nvim",
     --     priority = 1000,
@@ -76,6 +78,22 @@ return {
     --     end,
     -- },
 
+    -- {
+    --     "sainnhe/sonokai",
+    --     name = "sonokai",
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --         vim.g.sonokai_style =
+    --         "andromeda" --  Available values: 'default', 'atlantis', 'andromeda', 'shusia', 'maia','espresso'
+    --         vim.g.sonokai_enable_italic = 1
+    --         vim.g.sonokai_transparent_background = 0
+    --         vim.g.sonokai_diagnostic_text_highlight = 1
+    --         vim.g.sonokai_diagnostic_line_highlight = 1
+    --         vim.g.sonokai_diagnostic_virtual_text = "highlighted"
+    --     end,
+    -- },
+
     {
         -- Add indentation guides even on blank lines
         "lukas-reineke/indent-blankline.nvim",
@@ -102,12 +120,6 @@ return {
 
     -- "gc" to comment visual regions/lines
     { "numToStr/Comment.nvim", opts = {} },
-
-    {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        opts = {}, -- this is equalent to setup({}) function
-    },
 
     {
         "ray-x/lsp_signature.nvim",

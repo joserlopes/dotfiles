@@ -35,7 +35,7 @@ exec --no-startup-id dex --autostart --environment i3
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# exec_always --no-startup-id picom
+exec_always --no-startup-id picom
 
 # Adjust screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
@@ -51,7 +51,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 0 toggle
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-staritup-id playerctl previous
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -208,11 +208,11 @@ exec --no-startup-id dropbox
 
 ## Startup scripts
 # Background script
-exec --no-startup-id ~/.config/i3/scripts/setbg
+exec_always --no-startup-id ~/.config/i3/scripts/setbg
 # Inverse touchpad scrolling script
-exec --no-startup-id ~/.config/i3/scripts/inverse-scroll
+exec_always --no-startup-id ~/.config/i3/scripts/inverse-scroll
 # Tap to click touchpad script
-exec --no-startup-id ~/.config/i3/scripts/tap-to-click 
+exec_always --no-startup-id ~/.config/i3/scripts/tap-to-click 
 # dunst notification daemon
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
