@@ -94,6 +94,7 @@ alias :q="exit"
 alias gitlog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 alias ts="tmux-sessionizer"
+alias nvim-update="neovim-update-nightly"
 
 # Changing "ls" to "eza"
 alias ls='eza -l -L=1 --git --icons --color=always --group-directories-first' # my preferred listing
@@ -121,7 +122,6 @@ export PATH=$PATH:/home/joselopes/.spicetify
 [ -f "/home/joselopes/.ghcup/env" ] && source "/home/joselopes/.ghcup/env" # ghcup-env
 
 QT_STYLE_OVERIDE=GTK+
-eval "$(zoxide init zsh)"
 
 # >>> juliaup initialize >>>
 
@@ -132,4 +132,5 @@ export PATH
 
 # <<< juliaup initialize <<<
 
+eval "$(zoxide init --cmd cd zsh)"
 eval "$(atuin init zsh)"
