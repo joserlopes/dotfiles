@@ -5,7 +5,7 @@ return {
         plugins = {
             tmux = true,
             options = {
-                colurcolumn = "0"
+                signcolumn = "no"
             },
         },
         window = {
