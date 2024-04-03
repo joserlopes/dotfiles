@@ -5,7 +5,7 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd.colorscheme('base16-gruvbox-material-dark-hard')
+            vim.cmd.colorscheme('base16-gruvbox-material-dark-soft')
             -- Different colorschemes
             --vim.cmd.colorscheme('base16-kanagawa')
             --vim.cmd.colorscheme('base16-everforest')
