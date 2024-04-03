@@ -1,7 +1,8 @@
 -- Fuzzy Finder (files, lsp, etc)
 return {
     "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
+    --branch = "0.1.x",
+    tag = "0.1.6",
     dependencies = {
         "nvim-lua/plenary.nvim",
         -- Fuzzy Finder Algorithm which requires local dependencies to be built.
@@ -23,5 +24,6 @@ return {
             builtin.grep_string({ search = vim.fn.input("Grep > ") })
         end, { desc = "Telescope grep search" })
         vim.keymap.set("n", "<leader>pg", builtin.git_status, { desc = "Telescope git status" })
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Live Grep" })
     end,
 }
