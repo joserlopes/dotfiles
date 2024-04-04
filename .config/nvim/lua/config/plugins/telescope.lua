@@ -17,6 +17,18 @@ return {
         },
     },
     config = function()
+        require('telescope').setup {
+            defaults = {
+                mappings = {
+                    i = {
+                        ['<C-u>'] = false,
+                        ['<C-d>'] = false,
+                        ["<C-j>"] = require('telescope.actions').move_selection_next,
+                        ["<C-k>"] = require('telescope.actions').move_selection_previous,
+                    },
+                },
+            },
+        }
         local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>pf", builtin.find_files, { desc = "Telescope Find files" })
         vim.keymap.set("n", "<C-p>", builtin.git_files, { desc = "Telescope find git files" })
@@ -25,5 +37,12 @@ return {
         end, { desc = "Telescope grep search" })
         vim.keymap.set("n", "<leader>pg", builtin.git_status, { desc = "Telescope git status" })
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Live Grep" })
+        vim.keymap.set('n', '<leader>/', function()
+            -- You can pass additional configuration to telescope to change theme, layout, etc.
+            require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+                winblend = 10,
+                previewer = true,
+            })
+        end, { desc = '[/] Fuzzily search in current buffer]' })
     end,
 }
