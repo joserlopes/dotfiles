@@ -1,7 +1,7 @@
 -- This one is in case I am not using oil.nvim
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "NetRW" })
+--vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "NetRW" })
 -- This one is in case I am using oil.nvim
--- vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
+vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
