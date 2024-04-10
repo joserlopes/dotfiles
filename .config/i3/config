@@ -203,7 +203,7 @@ bindsym $mod+r mode "resize"
 # exec_always --no-startup-id ~/.config/polybar/polybar_scripts/launch.sh &
 
 # startup applications
-exec --no-startup-id i3-msg 'workspace $ws1; exec firefox; workspace $ws2; exec alacritty; workspace $ws9; exec keepassxc;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec firefox;  workspace $ws9; exec keepassxc; workspace $ws2; exec alacritty; workspace $ws1;'
 exec --no-startup-id dropbox
 
 ## Startup scripts
