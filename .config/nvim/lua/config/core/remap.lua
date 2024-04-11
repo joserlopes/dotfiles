@@ -61,3 +61,12 @@ vim.keymap.set('n', '<leader>m', 'ct_')
 -- always center search results
 vim.keymap.set('n', 'n', 'nzz', { silent = true })
 vim.keymap.set('n', 'N', 'Nzz', { silent = true })
+
+-- This keymap only applies for html and javascript files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "html", "javascript" },
+    callback = function(event)
+        vim.keymap.set('n', '<Leader>of', function() vim.ui.open(vim.fn.expand('%')) end,
+            { desc = "[O]pen [F]ile in browser", buffer = event.buf })
+    end,
+})
