@@ -70,7 +70,7 @@ bindsym $mod+o exec obsidian
 bindsym $mod+b exec firefox
 
 # launch file explorer
-bindsym $mod+n exec nautilus
+bindsym $mod+n exec nemo
 
 # kill focused window
 bindsym $mod+q kill
@@ -135,7 +135,7 @@ set $ws2 "2: Editor"
 set $ws3 "3: Notes"
 set $ws4 "4: Docs"
 set $ws5 "5: Slack"
-set $ws6 "6: Nautilus"
+set $ws6 "6: Nemo"
 set $ws7 "7: Books"
 set $ws8 "8: Rhythmbox"
 set $ws9 "9: KeePass"
@@ -203,7 +203,7 @@ bindsym $mod+r mode "resize"
 # exec_always --no-startup-id ~/.config/polybar/polybar_scripts/launch.sh &
 
 # startup applications
-exec --no-startup-id i3-msg 'workspace $ws1; exec firefox;  workspace $ws9; exec keepassxc; workspace $ws2; exec alacritty; workspace $ws1;'
+exec --no-startup-id i3-msg 'workspace $ws1; exec firefox; workspace $ws2; exec alacritty;'
 exec --no-startup-id dropbox
 
 ## Startup scripts
