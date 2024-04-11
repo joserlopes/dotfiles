@@ -1,7 +1,5 @@
 require("config.core.set")
 require("config.core.remap")
-require("config.core.format_on_save")
-
 
 local augroup = vim.api.nvim_create_augroup
 
