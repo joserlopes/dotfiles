@@ -1,6 +1,6 @@
--- This one is in case I am not using oil.nvim
+-- Use this one if NetRw is the file explorer being used
 --vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "NetRW" })
--- This one is in case I am using oil.nvim
+-- Use this one if Oil is the file explorer being used
 vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
