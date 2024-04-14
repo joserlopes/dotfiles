@@ -18,6 +18,7 @@
     "cpu",
     "pulseaudio",
     "battery",
+    "backlight",
     "network",
     "custom/separator",
     "custom/powermenu"
@@ -31,13 +32,8 @@
     "spacing": 8
   },
   "clock": {
-    // 24 hour
-    // "format": " {:%H:%M} ",
-    // 12 hour
-    "format": " 󰸗 {:%I:%M %p} ",
-    "interval": 60,
-    "tooltip": true,
-    "tooltip-format": "{:%d %B %H:%M}"
+    "format": " 󰸗 {:%d-%m-%Y %H:%M:%S} ",
+    "interval": 1,
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -77,7 +73,8 @@
     "format": " 󰖩 ",
     // "tooltip": "{ifname}",
     "tooltip-format": "{essid}",
-    "interval": 2
+    "interval": 2,
+    "on-click" : "nm-connection-editor"
   },
   "temperature": {
     "format": "{icon} {temperatureC}°C ",
@@ -98,19 +95,30 @@
     "tooltip": "false"
   },
   "pulseaudio": {
-    "format": " {volume}% ",
+    "format": " {volume}% {format_source}",
     "scroll-step": 5,
+    "format-source": "",
+    "format-source-muted": " ",
     "on-click": "pavucontrol"
   },
   "battery": {
-    "format": "{capacity}% {icon} ",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+      "states": {
+          // "good": 95,
+          "warning": 30,
+          "critical": 15
+      },
+      "format": "{capacity}% {icon} ",
+      "format-charging": "{capacity}% 🗲 ",
+      "format-plugged": "{capacity}%  ",
+      "format-alt": "{time} {icon} ",
+      // "format-good": "", // An empty format will hide the module
+      // "format-full": "",
+      "format-icons": ["", "", "", "", ""],
+      "interval" : 60,
+  },
+  "backlight": {
+      "device": "intel_backlight",
+      "format": "☀️{percent}%" ,
   },
   "custom/powermenu": {
     "format": "  ",
