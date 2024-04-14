@@ -88,11 +88,13 @@
   },
   "memory": {
     "format": "󰫗 {}% ",
-    "tooltip": "false"
+    "tooltip": "false",
+    "on-click" : "btop"
   },
   "cpu": {
     "format": " {usage}% ",
-    "tooltip": "false"
+    "tooltip": "false",
+    "on-click" : "btop"
   },
   "pulseaudio": {
     "format": " {volume}% {format_source}",
