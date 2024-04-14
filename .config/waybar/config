@@ -68,36 +68,13 @@
       "18": "8",
       "19": "9",
       "110": "10"
-      
-      // // 1-10
-      // "1": "一",
-      // "2": "二",
-      // "3": "三",
-      // "4": "四",
-      // "5": "五",
-      // "6": "六",
-      // "7": "七",
-      // "8": "八",
-      // "9": "九",
-      // "10": "十",
-      // // 11-10
-      // "11": "一",
-      // "12": "二",
-      // "13": "三",
-      // "14": "四",
-      // "15": "五",
-      // "16": "六",
-      // "17": "七",
-      // "18": "八",
-      // "19": "九",
-      // "110": "十"
 	  }
   },
   "hyprland/window": {
     "format": "{}"
   },
   "network": {
-    "format": " 󰖩",
+    "format": " 󰖩 ",
     // "tooltip": "{ifname}",
     "tooltip-format": "{essid}",
     "interval": 2
@@ -121,12 +98,12 @@
     "tooltip": "false"
   },
   "pulseaudio": {
-    "format": " {volume}%",
-    "scroll-step": 1,
+    "format": " {volume}% ",
+    "scroll-step": 5,
     "on-click": "pavucontrol"
   },
   "battery": {
-    "format": "{capacity}% {icon}",
+    "format": "{capacity}% {icon} ",
     "format-icons": [
       "",
       "",
@@ -141,4 +118,3 @@
     "on-click": "exec wlogout -p layer-shell"
   }
 }
-

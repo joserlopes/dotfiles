@@ -16,4 +16,4 @@ wallpaper_path="midnight-wallpaper.png"
 [[ "$seconds" -gt "50400" ]] && wallpaper_path="noon-wallpaper.jpg" # 14:00 AM
 [[ "$seconds" -gt "70200" ]] && wallpaper_path="night-wallpaper.jpg" # 19:30 AM
 
-feh --bg-fill ./wallpapers/$wallpaper_path
+feh --bg-fill ~/.config/wallpapers/$wallpaper_path
