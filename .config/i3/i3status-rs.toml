@@ -1,0 +1,63 @@
+[theme]
+theme = "gruvbox-dark"
+
+[icons]
+icons = "material-nf"
+
+[[block]]
+block = "cpu"
+info_cpu = 20
+warning_cpu = 50
+critical_cpu = 90
+
+[[block]]
+block = "disk_space"
+path = "~/"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = " $icon joselopes: $available.eng(w:2) "
+# On click open nemo file manager
+[[block.click]]
+button = "left"
+cmd = "nemo"
+
+[[block]]
+block = "memory"
+format = " $icon $mem_total_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+
+[[block]]
+block = "music"
+format = " $icon $combo $prev $play $next "
+format_alt = " $icon "
+seek_step_secs = 10
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 5
+format = " $icon $timestamp.datetime(f:'%a %d/%m %H:%M:%S') "
+
+[[block]]
+block = "bluetooth"
+mac = "28:06:DE:00:05:8A"
+disconnected_format = ""
+format = " $icon $percentage "
+[block.battery_state]
+"0..20" = "critical"
+"21..70" = "warning"
+"71..100" = "good"
+
+[[block]]
+block = "battery"
+
+[[block]]
+block = "backlight"
