@@ -31,7 +31,7 @@ cmd = "nemo"
 
 [[block]]
 block = "music"
-format = " $icon $combo $prev $play $next "
+format = " $icon {$combo $prev $play $next |} "
 format_alt = " $icon "
 seek_step_secs = 10
 
