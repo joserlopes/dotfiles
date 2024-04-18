@@ -11,6 +11,12 @@ icons = "material-nf"
 # critical_cpu = 90
 
 [[block]]
+block = "focused_window"
+[block.format]
+full = " $title.str(max_w:15) |"
+short = " $title.str(max_w:10) |"
+
+[[block]]
 block = "disk_space"
 path = "~/"
 info_type = "available"
@@ -31,8 +37,7 @@ cmd = "nemo"
 
 [[block]]
 block = "music"
-format = " $icon {$combo $prev $play $next |} "
-format_alt = " $icon "
+format = " $icon {$combo.str(max_w:20, rot_interval:0.5) $prev $play $next |} "
 seek_step_secs = 10
 
 [[block]]
@@ -68,3 +73,6 @@ missing_format = ""
 [[block]]
 block = "net"
 format = " $icon {$signal_strength $ssid $frequency|Wired connection} "
+[[block.click]]
+button = "left"
+cmd = "nm-connection-editor"
