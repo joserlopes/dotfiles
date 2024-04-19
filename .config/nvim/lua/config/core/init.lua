@@ -1,14 +1,16 @@
 require("config.core.set")
 require("config.core.remap")
 
-local augroup = vim.api.nvim_create_augroup
-
-local autocmd = vim.api.nvim_create_autocmd
-local yank_group = augroup("HighlightYank", {})
 
 function R(name)
     require("plenary.reload").reload_module(name)
 end
+
+-- This functions are responsible for briefly highlighting yanked text.
+local augroup = vim.api.nvim_create_augroup
+
+local autocmd = vim.api.nvim_create_autocmd
+local yank_group = augroup("HighlightYank", {})
 
 autocmd("TextYankPost", {
     group = yank_group,
