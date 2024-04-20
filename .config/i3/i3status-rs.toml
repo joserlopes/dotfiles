@@ -54,9 +54,9 @@ format = " $icon $timestamp.datetime(f:'%a %d/%m %H:%M:%S') "
 
 [[block]]
 block = "bluetooth"
-mac = "28:06:DE:00:05:8A"
+mac = "74:45:CE:10:A7:1A"
 disconnected_format = ""
-format = " $icon $percentage "
+format = " $icon $name $percentage "
 [block.battery_state]
 "0..20" = "critical"
 "21..70" = "warning"
@@ -73,7 +73,7 @@ missing_format = ""
 
 [[block]]
 block = "net"
-format = " $icon {$signal_strength $ssid $frequency|Wired connection} "
+format = " $icon {$signal_strength $ssid |Wired connection}"
 [[block.click]]
 button = "left"
 cmd = "nm-connection-editor"
