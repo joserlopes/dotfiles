@@ -41,8 +41,17 @@ format = " $icon {$combo.str(max_w:20, rot_interval:0.5) $prev $play $next |} "
 format_alt = " $icon "
 seek_step_secs = 10
 
+# Sound
 [[block]]
 block = "sound"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+# Microphone
+[[block]]
+block = "sound"
+device_kind = "source"
 [[block.click]]
 button = "left"
 cmd = "pavucontrol"
@@ -52,9 +61,21 @@ block = "time"
 interval = 5
 format = " $icon $timestamp.datetime(f:'%a %d/%m %H:%M:%S') "
 
+# headphones
 [[block]]
 block = "bluetooth"
 mac = "74:45:CE:10:A7:1A"
+disconnected_format = ""
+format = " $icon $name $percentage "
+[block.battery_state]
+"0..20" = "critical"
+"21..70" = "warning"
+"71..100" = "good"
+
+# earphones
+[[block]]
+block = "bluetooth"
+mac = "28:06:DE:00:05:8A"
 disconnected_format = ""
 format = " $icon $name $percentage "
 [block.battery_state]
