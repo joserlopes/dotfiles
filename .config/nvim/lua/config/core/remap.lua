@@ -70,3 +70,7 @@ vim.api.nvim_create_autocmd("FileType", {
             { desc = "[O]pen [F]ile in browser", buffer = event.buf })
     end,
 })
+
+-- better indenting
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
