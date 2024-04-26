@@ -11,8 +11,8 @@ return {
         gpreview.setup(opts)
 
         local fns = gpreview.fns
-        vim.keymap.set("n", "<leader>mpt", fns.toggle, { desc = "[M]arkdown [P]review [T]oggle" })
-        vim.keymap.set("n", "<leader>mps", fns.single_file_toggle, { desc = "[M]arkdown [P]review [S]ingle" })
-        vim.keymap.set("n", "<leader>mpd", fns.details_tags_toggle, { desc = "[M]arkdown [P]review [D]details" })
+        vim.keymap.set("n", "<leader>gpt", fns.toggle, { desc = "[G]ithub [P]review [T]oggle" })
+        vim.keymap.set("n", "<leader>gps", fns.single_file_toggle, { desc = "[G]ithub [P]review [S]ingle" })
+        vim.keymap.set("n", "<leader>gpd", fns.details_tags_toggle, { desc = "[G]ithub [P]review [D]details" })
     end,
 }
