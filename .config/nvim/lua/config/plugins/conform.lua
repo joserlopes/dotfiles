@@ -28,12 +28,19 @@ return {
                 css = { { "prettierd", "prettier" } },
                 scss = { { "prettierd", "prettier" } },
             },
+        })
 
-            -- format_on_save = {
-            --     -- These options will be passed to conform.format()
-            --     timeout_ms = 500,
-            --     lsp_fallback = true,
-            -- },
+        -- INFO: For now auto-format on save only for rust and lua files
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
+            pattern = { "*.rs", "*.lua" },
+            desc = "Run conform formatting on a file on save",
+            callback = function(args)
+                require("conform").format({
+                    bufnr = args.buf,
+                    lsp_fallback = true,
+                })
+            end,
         })
 
         vim.keymap.set({ "n", "v" }, "<leader>l", function()
