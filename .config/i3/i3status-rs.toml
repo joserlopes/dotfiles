@@ -13,7 +13,7 @@ icons = "material-nf"
 [[block]]
 block = "focused_window"
 [block.format]
-full = " $title.str(max_w:15) |"
+full = " $title.str(max_w:20) |"
 short = " $title.str(max_w:10) |"
 
 [[block]]
