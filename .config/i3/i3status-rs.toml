@@ -71,6 +71,9 @@ format = " $icon $name $percentage "
 "0..20" = "critical"
 "21..70" = "warning"
 "71..100" = "good"
+[[block.click]]
+button = "left"
+cmd = "blueman-manager"
 
 # earphones
 [[block]]
@@ -82,6 +85,9 @@ format = " $icon $name $percentage "
 "0..20" = "critical"
 "21..70" = "warning"
 "71..100" = "good"
+[[block.click]]
+button = "left"
+cmd = "blueman-manager"
 
 [[block]]
 block = "battery"
