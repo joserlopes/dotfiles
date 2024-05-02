@@ -44,5 +44,7 @@ return {
                 previewer = true,
             })
         end, { desc = '[/] Fuzzily search in current buffer]' })
+        vim.keymap.set('n', '<leader>pc', builtin.git_commits, { desc = "Git Commits" })
+        vim.keymap.set('n', '<leader>pb', builtin.git_branches, { desc = "Git Brances" })
     end,
 }
