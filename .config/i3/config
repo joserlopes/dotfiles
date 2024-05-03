@@ -17,7 +17,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 
 # Picom compositor
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --no-fading-openclose
 
 # Adjust screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
@@ -92,6 +92,10 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+
+# NOTE: the following command changes the default workspace layout. Without changing anything
+# the default is default, which is the one in which it opens to the sides.
+# workspace_layout default|stacking|tabbed
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -237,7 +241,3 @@ bar {
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
-
-# NOTE: the following command changes the default workspace layout. Without changing anything
-# the default is default, which is the one in which it opens to the sides.
-# workspace_layout default|stacking|tabbed
