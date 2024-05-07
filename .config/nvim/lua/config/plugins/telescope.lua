@@ -46,5 +46,6 @@ return {
         end, { desc = '[/] Fuzzily search in current buffer]' })
         vim.keymap.set('n', '<leader>pc', builtin.git_commits, { desc = "Git Commits" })
         vim.keymap.set('n', '<leader>pb', builtin.git_branches, { desc = "Git Brances" })
+        vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "Telescope help tags" })
     end,
 }
