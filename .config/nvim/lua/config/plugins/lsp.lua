@@ -6,10 +6,6 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
 
-        -- Useful status updates for LSP
-        -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-        -- { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
-
         "arkav/lualine-lsp-progress",
 
         -- Additional lua configuration, makes nvim stuff amazing!
@@ -70,9 +66,7 @@ return {
 
             -- NOTE: This is probably something for the future...
             -- enable inlay hints for the current buffer and server
-            -- if client.server_capabilities.inlayHintProvider then
-            --     vim.lsp.inlay_hint.enable(bufnr, true)
-            -- end
+            -- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
         end
 
         -- mason-lspconfig requires that these setup functions are called in this order
@@ -92,7 +86,13 @@ return {
             clangd = {},
             gopls = {},
             pyright = {},
-            rust_analyzer = {},
+            rust_analyzer = {
+                ["rust-analyzer"] = {
+                    checkOnSave = {
+                        command = "clippy",
+                    },
+                },
+            },
             tsserver = {},
             html = { filetypes = { "html", "twig", "hbs" } },
             ocamllsp = {},
@@ -140,6 +140,8 @@ return {
         require("luasnip.loaders.from_vscode").lazy_load()
         luasnip.config.setup({})
 
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -147,8 +149,8 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert({
-                ["<C-f>"] = cmp.mapping.select_next_item(),
-                ["<C-g>"] = cmp.mapping.select_prev_item(),
+                ["<C-f>"] = cmp.mapping.select_next_item(cmp_select),
+                ["<C-g>"] = cmp.mapping.select_prev_item(cmp_select),
                 ["<C-d>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-n>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete({}),
@@ -156,15 +158,6 @@ return {
                     behavior = cmp.ConfirmBehavior.Replace,
                     select = true,
                 }),
-                -- ["<Tab>"] = cmp.mapping(function(fallback)
-                -- 	if cmp.visible() then
-                -- 		cmp.select_next_item()
-                -- 	elseif luasnip.expand_or_locally_jumpable() then
-                -- 		luasnip.expand_or_jump()
-                -- 	else
-                -- 		fallback()
-                -- 	end
-                -- end, { "i", "s" }),
                 ["<S-Tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item()
@@ -190,6 +183,18 @@ return {
                         Copilot = "",
                     },
                 }),
+            },
+        })
+
+        vim.diagnostic.config({
+            -- update_in_insert = true,
+            float = {
+                focusable = false,
+                -- style = "minimal",
+                border = "rounded",
+                source = "always",
+                -- header = "",
+                -- prefix = "",
             },
         })
     end,
