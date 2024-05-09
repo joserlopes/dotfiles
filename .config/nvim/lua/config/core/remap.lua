@@ -58,6 +58,8 @@ vim.keymap.set('', 'L', '$')
 
 -- handy keymap for replacing up to next _ (like in variable names)
 vim.keymap.set('n', '<leader>m', 'ct_')
+-- handy keymap for deleting up to next _ (like in variable names)
+vim.keymap.set('n', '<leader>M', 'dt_')
 
 -- always center search results
 vim.keymap.set('n', 'n', 'nzz', { silent = true })
