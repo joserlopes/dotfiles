@@ -30,9 +30,9 @@ return {
             require "lsp_signature".setup({
                 doc_lines = 0,
                 hint_prefix = "",
-                handler_opts = {
-                    border = "none"
-                },
+                -- handler_opts = {
+                --     border = "none"
+                -- },
             })
         end
     },

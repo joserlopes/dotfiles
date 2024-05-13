@@ -5,7 +5,9 @@ return {
         -- your configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
-        vim.keymap.set("n", "<leader>tdf", "<cmd>TodoTelescope<cr>", { desc = "TodoTelescope", silent = true })
+        -- NOTE: This keybind has to be in trouble config, because it's what
+        -- triggers the plugin initialization
+        -- vim.keymap.set("n", "<leader>tdf", "<cmd>TodoTrouble<cr>", { desc = "TodoTrouble", silent = true })
     },
     config = true,
 }
