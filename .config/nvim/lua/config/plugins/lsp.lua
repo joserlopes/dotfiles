@@ -135,6 +135,12 @@ return {
             end,
         })
 
+        -- Gleam LSP
+        require'lspconfig'.gleam.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+
         local cmp = require("cmp")
         local luasnip = require("luasnip")
         require("luasnip.loaders.from_vscode").lazy_load()

@@ -136,6 +136,7 @@ style = "Italic"
 [font.normal]
 # family = "JetBrains Mono"
 # family = "Hack Nerd Font"
+# family = "CommitMono Nerd Font"
 family = "0xProto"
 style = "regular"
 
