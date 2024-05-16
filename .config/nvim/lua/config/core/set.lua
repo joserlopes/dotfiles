@@ -37,14 +37,14 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- show a column at 80 characters as a guide for long lines
-vim.opt.colorcolumn = '80'
+vim.opt.colorcolumn = "80"
 --- except in Rust where the rule is 100 characters
-vim.api.nvim_create_autocmd('Filetype', { pattern = 'rust', command = 'set colorcolumn=100' })
+vim.api.nvim_create_autocmd("Filetype", { pattern = "rust", command = "set colorcolumn=100" })
 
-vim.opt.selection = 'exclusive'
+vim.opt.selection = "exclusive"
 
 vim.opt.spell = true
-vim.opt.spelllang = { 'en', 'pt' }
+vim.opt.spelllang = { "en", "pt" }
 
 vim.wo.number = true
 vim.wo.signcolumn = "yes"
@@ -59,7 +59,7 @@ vim.opt.virtualedit = "block"
 vim.opt.conceallevel = 2
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = "menuone,noselect"
 
 -- Enable cursor line highlight
 vim.opt.cursorline = true

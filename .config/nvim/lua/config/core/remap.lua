@@ -42,28 +42,28 @@ vim.keymap.set("n", "<leader>e", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim<CR>")
 
 -- avoid typing W instead of w to save the file
-vim.cmd('cabbrev W w')
+vim.cmd("cabbrev W w")
 -- avoid typing Q instead of q to quit the file
-vim.cmd('cabbrev Q q')
+vim.cmd("cabbrev Q q")
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
 
 -- This next keymaps are a courtesy of Jon Gjengset
 
 -- Jump to start and end of line using the home row keys
-vim.keymap.set('', 'H', '^')
-vim.keymap.set('', 'L', '$')
+vim.keymap.set("", "H", "^")
+vim.keymap.set("", "L", "$")
 
 -- handy keymap for replacing up to next _ (like in variable names)
-vim.keymap.set('n', '<leader>m', 'ct_')
+vim.keymap.set("n", "<leader>m", "ct_")
 -- handy keymap for deleting up to next _ (like in variable names)
-vim.keymap.set('n', '<leader>M', 'dt_')
+vim.keymap.set("n", "<leader>M", "dt_")
 
 -- always center search results
-vim.keymap.set('n', 'n', 'nzz', { silent = true })
-vim.keymap.set('n', 'N', 'Nzz', { silent = true })
+vim.keymap.set("n", "n", "nzz", { silent = true })
+vim.keymap.set("n", "N", "Nzz", { silent = true })
 
 -- better indenting
 vim.keymap.set("v", "<", "<gv")

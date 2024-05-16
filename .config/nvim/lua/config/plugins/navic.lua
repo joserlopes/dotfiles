@@ -1,5 +1,5 @@
 return {
-    --[[ "SmiteshP/nvim-navic",
+	--[[ "SmiteshP/nvim-navic",
     dependencies = {
         "LunarVim/breadcrumbs.nvim",
     },
