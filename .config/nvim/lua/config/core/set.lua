@@ -11,6 +11,10 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
+-- Better search
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
+
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
@@ -20,6 +24,9 @@ vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+
+-- Shows incremental commands on a split
+vim.opt.inccommand = "split"
 
 vim.opt.termguicolors = true
 
