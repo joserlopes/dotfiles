@@ -23,17 +23,33 @@ exec_always --no-startup-id picom --no-fading-openclose
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
+# Same keymaps as above but fore keyboards without special keys
+bindsym Mod1+Shift+plus exec --no-startup-id brightnessctl set 5%+
+bindsym Mod1+Shift+minus exec --no-startup-id brightnessctl set 5%-
+
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 0 toggle
 
+# Same keymaps as above but fore keyboards without special keys
+bindsym Mod1+plus exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym Mod1+minus exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym Mod1+m exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym Mod1+Shift+m exec --no-startup-id pactl set-source-mute 0 toggle
+
 # Use playerctl to handle media keys
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# Same keymaps as above but fore keyboards without special keys
+bindsym Mod1+p exec --no-startup-id playerctl play-pause
+bindsym Mod1+Shift+p exec --no-startup-id playerctl play-pause
+bindsym Mod1+n exec --no-startup-id playerctl next
+bindsym Mod1+Shift+n exec --no-startup-id playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
