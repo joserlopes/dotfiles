@@ -149,4 +149,5 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+
+@theme "~/.config/rofi/themes/catppuccin-macchiato.rasi"
