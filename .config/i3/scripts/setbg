@@ -10,7 +10,7 @@ cd "$(dirname "$0")"
 
 seconds="$(date -d "1970-01-01 UTC $(date +%T)" +%s)"
 
-wallpaper_path="midnight-wallpaper.png"
+wallpaper_path="midnight-wallpaper.jpg"
 
 [[ "$seconds" -gt "23400" ]] && wallpaper_path="morning-wallpaper.jpg" # 06:30 AM
 [[ "$seconds" -gt "50400" ]] && wallpaper_path="noon-wallpaper.jpg" # 14:00 AM
