@@ -43,7 +43,6 @@ return {
 			nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
 			-- See `:help K` for why this keymap
-			nmap("K", vim.lsp.buf.hover, "Hover Documentation")
 			vim.keymap.set("i", "<C-h>", function()
 				vim.lsp.buf.signature_help()
 			end, { desc = "LSP: Signature Help" })
@@ -64,9 +63,9 @@ return {
 				vim.lsp.buf.format()
 			end, { desc = "Format current buffer with LSP" })
 
-			-- NOTE: This is probably something for the future...
-			-- enable inlay hints for the current buffer and server
-			-- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+			nmap("<leader>hl", function()
+				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+			end, "Toggle [I]nlay [H]ints")
 		end
 
 		-- mason-lspconfig requires that these setup functions are called in this order
