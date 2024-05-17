@@ -6,6 +6,7 @@ return {
 		"nvim-treesitter/nvim-treesitter-context",
 	},
 	build = ":TSUpdate",
+	-- branch = "main",
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			autotag = {

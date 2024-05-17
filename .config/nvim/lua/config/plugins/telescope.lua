@@ -36,7 +36,7 @@ return {
 			builtin.grep_string({ search = vim.fn.input("Grep > ") })
 		end, { desc = "Telescope grep search" })
 		vim.keymap.set("n", "<leader>pg", builtin.git_status, { desc = "Telescope git status" })
-		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Live Grep" })
+		vim.keymap.set("n", "<leader>lg", builtin.live_grep, { desc = "Live Grep" })
 		vim.keymap.set("n", "<leader>/", function()
 			-- You can pass additional configuration to telescope to change theme, layout, etc.
 			require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({

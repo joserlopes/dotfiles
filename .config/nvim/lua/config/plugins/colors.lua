@@ -5,15 +5,25 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("base16-gruvbox-material-dark-soft")
+			vim.cmd.colorscheme("base16-everforest")
 			-- Different colorschemes
-			--vim.cmd.colorscheme('base16-kanagawa')
-			--vim.cmd.colorscheme('base16-everforest')
+			--vim.cmd.colorscheme("base16-gruvbox-material-dark-soft")
+			--vim.cmd.colorscheme("base16-kanagawa")
 			--vim.cmd.colorscheme('base16-nord')
 			--vim.cmd.colorscheme('base16-zenburn')
 			--vim.cmd.colorscheme('base16-rose-pine')
+			--vim.cmd.colorscheme("base16-ayu-mirage")
 		end,
 	},
+
+	-- {
+	-- 	"Shatur/neovim-ayu",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("ayu")
+	-- 	end,
+	-- },
 
 	-- {
 	--     "AlexvZyl/nordic.nvim",
@@ -99,13 +109,4 @@ return {
 	--         vim.g.sonokai_diagnostic_virtual_text = "highlighted"
 	--     end,
 	-- },
-
-	-- {
-	--     "Shatur/neovim-ayu",
-	--     lazy = false,
-	--     priority = 1000,
-	--     config = function()
-	--         vim.cmd.colorscheme('ayu')
-	--     end
-	-- }
 }
