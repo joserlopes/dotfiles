@@ -19,22 +19,6 @@ return {
 	},
 
 	{
-		"ray-x/lsp_signature.nvim",
-		event = "VeryLazy",
-		opts = {},
-		config = function(_, opts)
-			-- Get signatures (and _only_ signatures) when in argument lists.
-			require("lsp_signature").setup({
-				doc_lines = 0,
-				hint_prefix = "",
-				-- handler_opts = {
-				--     border = "none"
-				-- },
-			})
-		end,
-	},
-
-	{
 		"kaarmu/typst.vim",
 		ft = "typst",
 		lazy = false,
