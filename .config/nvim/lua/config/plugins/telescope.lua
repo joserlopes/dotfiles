@@ -1,9 +1,8 @@
 -- Fuzzy Finder (files, lsp, etc)
 return {
 	"nvim-telescope/telescope.nvim",
-	-- TODO: Change to stable branch once deprecation warnings are integrated.
-	branch = "master",
-	--branch = "0.1.x",
+	branch = "0.1.x",
+	--branch = "master",
 	--tag = "0.1.6",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
