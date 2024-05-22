@@ -174,6 +174,7 @@ return {
 				end, { "i", "s" }),
 			}),
 			sources = {
+				{ name = "path" },
 				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
@@ -196,11 +197,7 @@ return {
 			-- update_in_insert = true,
 			float = {
 				focusable = false,
-				-- style = "minimal",
 				border = "rounded",
-				source = "always",
-				-- header = "",
-				-- prefix = "",
 			},
 		})
 	end,

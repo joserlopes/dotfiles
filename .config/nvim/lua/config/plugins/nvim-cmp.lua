@@ -17,6 +17,9 @@ return {
 		-- Adds LSP signature help while typing
 		"hrsh7th/cmp-nvim-lsp-signature-help",
 
+		-- Adds Path help while typing
+		"hrsh7th/cmp-path",
+
 		-- Adds a number of user-friendly snippets
 		"rafamadriz/friendly-snippets",
 	},
