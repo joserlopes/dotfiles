@@ -14,8 +14,6 @@ set scroll-step 100
 #zoom settings
 set zoom-min 10
 
-# zathurarc-dark
-
 set font "inconsolata 12"
 
 set scroll-step 50
@@ -23,4 +21,4 @@ unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 
-include catppuccin-macchiato
+# include catppuccin-macchiato
