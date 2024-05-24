@@ -74,10 +74,7 @@ bindsym $mod+n exec nemo
 bindsym $mod+q kill
 
 # start rofi in drun mode
-bindsym $mod+d exec --no-startup-id rofi -font "hack 15" -show drun -icon-theme "Papirus" -show-icons
-
-# start rofi in run mode
-bindsym $mod+Shift+d exec rofi -font "hack 15" -show run -icon-theme "Papirus" -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show combi -icon-theme "Papirus" -show-icons
 
 # change focus
 bindsym $mod+j focus down
