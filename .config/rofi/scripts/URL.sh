@@ -12,7 +12,12 @@ elif [ x"$@" = x"PIC" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/PLic23-2/2023-2024/2-semestre
     exit 0
+elif [ x"$@" = x"GitHub" ]
+then
+    xdg-open https://github.com/joserlopes
+    exit 0
 fi
 echo "CG"
 echo "Comp"
 echo "PIC"
+echo "GitHub"

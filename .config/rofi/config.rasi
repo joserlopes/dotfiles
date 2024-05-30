@@ -7,7 +7,7 @@ configuration {
       directories-first: true;
       sorting-method:    "name";
   }
-  combi-modi: "drun,IST:~/.config/rofi/scripts/IST.sh";
+  combi-modi: "URL:~/.config/rofi/scripts/URL.sh,drun";
   modi: "combi";
   terminal: "alacritty";
 }
