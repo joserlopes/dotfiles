@@ -83,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 export VISUAL='nvim'
+export PATH=$PATH:/usr/local/go/bin
 
 alias v="nvim"
 alias cr="cargo run"

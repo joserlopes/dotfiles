@@ -1,6 +1,6 @@
 import = [
-  # "~/.config/alacritty/catppuccin-frappe.toml"
-# "~/.config/alacritty/gruvbox-material-medium-dark.toml"
+ # "~/.config/alacritty/catppuccin-frappe.toml"
+ # "~/.config/alacritty/gruvbox-material-medium-dark.toml"
   "~/.config/alacritty/everforest-dark.toml"
 ]
 
@@ -30,8 +30,10 @@ style = "Italic"
 # family = "Hack Nerd Font"
 # family = "Iosevka Nerd Font"
 # family = "3270 Nerd Font Mono"
-family = "0xProto"
 # family = "CommitMono Nerd Font"
+# family = "Monaspace Neon"
+# family = "Monaspace Argon"
+family = "0xProto"
 style = "regular"
 
 [[keyboard.bindings]]
