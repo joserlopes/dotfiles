@@ -84,6 +84,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/.local/share/gem/ruby/3.0.0/bin
 
 alias v="nvim"
 alias cr="cargo run"
