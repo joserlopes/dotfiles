@@ -35,7 +35,7 @@ return {
 		-- INFO: For now auto-format on save only for rust and lua files
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
-			pattern = { "*.rs", "*.lua", "*.elm" },
+			pattern = { "*" },
 			desc = "Run conform formatting on a file on save",
 			callback = function(args)
 				conform.format({
