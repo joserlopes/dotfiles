@@ -9,7 +9,6 @@ return {
 		"arkav/lualine-lsp-progress",
 
 		-- Additional lua configuration, makes nvim stuff amazing!
-		"folke/neodev.nvim",
 		"onsails/lspkind.nvim",
 	},
 
@@ -119,9 +118,6 @@ return {
 		mason_lspconfig.setup({
 			ensure_installed = vim.tbl_keys(servers),
 		})
-
-		-- Enhanced lua lsp for neovim config
-		require("neodev").setup()
 
 		mason_lspconfig.setup_handlers({
 			function(server_name)
