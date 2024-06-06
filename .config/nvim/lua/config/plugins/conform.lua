@@ -24,6 +24,7 @@ return {
 				html = { "prettierd", "prettier" },
 				bash = { "beautysh" },
 				proto = { "buf" },
+				python = { "black" },
 				rust = { "rustfmt" },
 				yaml = { "yamlfix" },
 				toml = { "taplo" },
@@ -32,7 +33,6 @@ return {
 			},
 		})
 
-		-- INFO: For now auto-format on save only for rust and lua files
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
 			pattern = { "*" },
