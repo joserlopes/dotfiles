@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -110,6 +105,7 @@
     curl
     git
     alejandra
+    gcc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
