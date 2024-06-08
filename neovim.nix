@@ -144,6 +144,17 @@ in {
           })
         '';
       }
+
+      diffview-nvim
+      plenary-nvim
+
+      {
+        plugin = neogit;
+        type = "lua";
+        config = ''
+          vim.keymap.set("n", "<leader>gg", "<cmd>NeoGit<cr>", { desc = "NeoGit", silent = true })
+        '';
+      }
     ];
     extraLuaConfig = ''
       vim.g.mapleader = " "

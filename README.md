@@ -1,3 +1,2 @@
-## Repository where I'll manage the dotfiles for my system.
+# Dotfiles for my NixOS system using flakes and home-manager
 
-### Remember to use `gh` for git authentication on the CLI.
