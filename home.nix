@@ -78,6 +78,9 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+    rustup
+    tmux
   ];
 
   # starship - an customizable prompt for any shell
