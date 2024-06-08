@@ -51,9 +51,9 @@
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "pt";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Configure console keymap
