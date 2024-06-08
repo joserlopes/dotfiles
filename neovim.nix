@@ -148,11 +148,123 @@ in {
       diffview-nvim
       plenary-nvim
 
+      transparent-nvim
+
+      {
+        plugin = which-key-nvim;
+        type = "lua";
+        config = ''
+          vim.o.timeout = true
+          vim.o.timeoutlen = 300
+          require("which-key").setup {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+          }
+        '';
+      }
+
       {
         plugin = neogit;
         type = "lua";
         config = ''
-          vim.keymap.set("n", "<leader>gg", "<cmd>NeoGit<cr>", { desc = "NeoGit", silent = true })
+          require('neogit').setup {}
+          vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "NeoGit", silent = true })
+        '';
+      }
+      {
+        plugin = conform-nvim;
+        type = "lua";
+        config = ''
+                		local conform = require("conform")
+
+          conform.setup({
+          	timeout_ms = 1000,
+          	lsp_fallback = true,
+          	formatters_by_ft = {
+          		lua = { "stylua" },
+          		svelte = { { "prettierd", "prettier" } },
+          		javascript = { { "prettierd", "prettier" } },
+          		typescript = { { "prettierd", "prettier" } },
+          		javascriptreact = { { "prettierd", "prettier" } },
+          		typescriptreact = { { "prettierd", "prettier" } },
+          		json = { { "prettierd", "prettier" } },
+          		graphql = { { "prettierd", "prettier" } },
+          		java = { "google-java-format" },
+          		kotlin = { "ktlint" },
+          		ruby = { "standardrb" },
+          		markdown = { { "prettierd", "prettier" } },
+          		erb = { "prettierd", "prettier" },
+          		html = { "prettierd", "prettier" },
+          		bash = { "beautysh" },
+          		proto = { "buf" },
+          		python = { "black" },
+          		rust = { "rustfmt" },
+          		yaml = { "yamlfix" },
+          		toml = { "taplo" },
+          		css = { { "prettierd", "prettier" } },
+          		scss = { { "prettierd", "prettier" } },
+          	},
+          })
+
+          vim.api.nvim_create_autocmd("BufWritePre", {
+          	group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
+          	pattern = { "*" },
+          	desc = "Run conform formatting on a file on save",
+          	callback = function(args)
+          		conform.format({
+          			bufnr = args.buf,
+          			lsp_fallback = true,
+          			quiet = true,
+          		})
+          	end,
+          })
+
+          vim.keymap.set({ "n", "v" }, "<leader>l", function()
+          	conform.format({
+          		lsp_fallback = true,
+          		quiet = true,
+          	})
+          end, { desc = "Format file or range (in visual mode)" })
+
+        '';
+      }
+      {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = ''
+                		require("gitsigns").setup({
+          	signs = {
+          		add = { text = "+" },
+          		change = { text = "~" },
+          		delete = { text = "_" },
+          		topdelete = { text = "‾" },
+          		changedelete = { text = "~" },
+          	},
+          	numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
+          	vim.keymap.set("n", "<leader>hp", require("gitsigns").preview_hunk, { desc = "Preview git hunk" }),
+          })
+        '';
+      }
+      {
+        plugin = nvim-autopairs;
+        type = "lua";
+        config = ''
+                		require("nvim-autopairs").setup({})
+
+          local npairs = require("nvim-autopairs")
+          local rule = require("nvim-autopairs.rule")
+          local cond = require("nvim-autopairs.conds")
+          npairs.add_rules({ rule("|", "|", { "rust", "go", "lua" }):with_move(cond.after_regex("|")) })
+          npairs.add_rules({ rule("<", ">", { "rust" }):with_move(cond.after_regex("<")) })
+          npairs.add_rules({ rule("$", "$", { "typst" }):with_move(cond.after_regex("$")) })
+        '';
+      }
+      {
+        plugin = indent-blankline-nvim;
+        type = "lua";
+        config = ''
+		  require("ibl").setup()
         '';
       }
     ];
