@@ -88,6 +88,7 @@
   };
 
   users.defaultUserShell = pkgs.zsh;
+
   programs.zsh.enable = true;
 
   # Install firefox.
@@ -108,6 +109,18 @@
     gcc
     xclip
     wl-clipboard
+    keepassxc
+    maestral
+    maestral-gui
+
+    nodePackages.typescript-language-server
+    nodePackages.vscode-html-languageserver-bin
+    nil
+    ccls
+    gopls
+    lua-language-server
+    rust-analyzer-unwrapped
+    typst-lsp
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
