@@ -5,6 +5,7 @@
   imports = [
     ./neovim.nix
     ./git.nix
+    ./tmux.nix
   ];
 
   # Packages that should be installed to the user profile.
@@ -75,7 +76,6 @@
     usbutils # lsusb
 
     rustup
-    tmux
   ];
 
   # starship - an customizable prompt for any shell
@@ -129,6 +129,8 @@
       v = "nvim";
     };
   };
+
+  programs.atuin.enable = true;
 
   home.stateVersion = "24.05";
 

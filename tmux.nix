@@ -10,28 +10,42 @@
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
     historyLimit = 100000;
+    clock24 = true;
+    customPaneNavigationAndResize = true;
+    keyMode = "vi";
     terminal = "tmux-256color";
+    prefix = "C-Space";
+    mouse = true;
+    plugins = with pkgs.tmuxPlugins; [
+      sensible
+      vim-tmux-navigator
+      battery
+      yank
+      tmux-fzf
+      {
+        plugin = resurrect;
+        extraConfig = ''
+          set -g @resurrect-strategy-vim 'session'
+          set -g @resurrect-strategy-nvim 'session'
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-boot 'on'
+          set -g @continuum-save-interval '10'
+        '';
+      }
+    ];
     extraConfig = ''
-      set -g mouse on
-
-      # Set prefix
-      unbind C-b
-      set -g prefix C-Space
-      bind C-Space send-prefix
-
-      # Shift Alt vim keys to switch windows
-      bind -n M-H previous-window
-      bind -n M-L next-window
-
       # Start windows and panes at 1 not 0
       set -g base-index 1
       set -g pane-base-index 1
       set -g status-position bottom
       set-window-option -g pane-base-index 1
       set-option -g renumber-windows on
-
-      # set vi-mode
-      set-window-option -g mode-keys vi
 
       # keybindings
       bind-key -T copy-mode-vi v send-keys -X begin-selection
@@ -45,6 +59,8 @@
 
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
+
+      run-shell "${pkgs-unstable.tmuxPlugins.nord}/share/tmux-plugins/nord/nord.tmux"
     '';
   };
 }
