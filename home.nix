@@ -6,6 +6,7 @@
     ./neovim.nix
     ./git.nix
     ./tmux.nix
+    ./scripts.nix
   ];
 
   # Packages that should be installed to the user profile.
@@ -27,6 +28,7 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
+    skim # fzf written in Rust
 
     # networking tools
     mtr # A network diagnostic tool
@@ -109,19 +111,10 @@
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-
-    plugins = [
-      {
-        # will source zsh-autosuggestions.plugin.zsh
-        name = "zsh-autosuggestions";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-autosuggestions";
-          rev = "v0.7.0";
-          sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
-        };
-      }
-    ];
+    autosuggestion = {
+      enable = true;
+      highlight = "fg=value";
+    };
 
     # set some aliases, feel free to add more or remove some
     shellAliases = {
