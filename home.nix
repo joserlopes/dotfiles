@@ -77,6 +77,7 @@
     usbutils # lsusb
 
     rustup
+    go
   ];
 
   home.stateVersion = "24.05";

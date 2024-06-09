@@ -199,7 +199,7 @@
         symbol = " ";
         style = "bold #735302";
         format = "on [$sYmbol($profile )(\($region\) )(\[$duration\] )]($style)";
-        expiration_symboL = " ";
+        expiration_symbol = " ";
       };
       azure = {
         disabled = false;
