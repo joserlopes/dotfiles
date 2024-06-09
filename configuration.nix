@@ -124,6 +124,15 @@
     ports = [22];
   };
 
+  fonts.packages = with pkgs; [
+    fira-code
+    nerdfonts
+    noto-fonts
+    noto-fonts-extra
+    noto-fonts-emoji
+    noto-fonts-cjk-sans
+  ];
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
