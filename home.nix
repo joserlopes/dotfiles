@@ -3,9 +3,7 @@
   home.homeDirectory = "/home/nixos";
 
   imports = [
-    ./neovim.nix
-    ./git.nix
-    ./tmux.nix
+    ./modules
     ./scripts.nix
   ];
 
@@ -29,6 +27,7 @@
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
     skim # fzf written in Rust
+    bat # better cat
 
     # networking tools
     mtr # A network diagnostic tool
@@ -80,18 +79,6 @@
     rustup
   ];
 
-  # starship - an customizable prompt for any shell
-  programs.starship = {
-    enable = true;
-    # custom settings
-    settings = {
-      add_newline = false;
-      aws.disabled = true;
-      gcloud.disabled = true;
-      line_break.disabled = true;
-    };
-  };
-
   # alacritty - a cross-platform, GPU-accelerated terminal emulator
   programs.alacritty = {
     enable = true;
@@ -106,24 +93,6 @@
       selection.save_to_clipboard = true;
     };
   };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    autosuggestion = {
-      enable = true;
-      highlight = "fg=value";
-    };
-
-    # set some aliases, feel free to add more or remove some
-    shellAliases = {
-      c = "clear";
-      v = "nvim";
-    };
-  };
-
-  programs.atuin.enable = true;
 
   home.stateVersion = "24.05";
 
