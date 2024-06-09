@@ -377,10 +377,6 @@ in {
             config['on_attach'] = on_attach
             return config
           end
-          lsp_config.rust_analyzer.setup({
-              capabilites = capabilities,
-              on_attach = on_attach,
-          })
           lsp_config.gopls.setup({
               capabilites = capabilities,
               on_attach = on_attach,
@@ -393,6 +389,15 @@ in {
               capabilites = capabilities,
               on_attach = on_attach,
           })
+          lsp_config.rust_analyzer.setup(with_config({
+            settings = {
+              ["rust-analyzer"] = {
+                checkOnSave = {
+                  command =  "clippy",
+                },
+              },
+            },
+          }))
           lsp_config.nil_ls.setup(with_config({
             settings = {
               ['nil'] = {
