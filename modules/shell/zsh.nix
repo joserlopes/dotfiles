@@ -15,5 +15,12 @@
     };
   };
 
+  # eza (modern ls replacement)
+  programs.eza.enable = true;
+  programs.eza.enableZshIntegration = true;
+
   programs.atuin.enable = true;
+
+  programs.zoxide.enable = true;
+  home.sessionVariables._ZO_ECHO = "1";
 }
