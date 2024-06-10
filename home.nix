@@ -4,7 +4,7 @@
 
   imports = [
     ./modules
-    ./scripts.nix
+    ./scripts
   ];
 
   # Packages that should be installed to the user profile.
