@@ -23,6 +23,7 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    neovim-nightly-overlay,
     ...
   }: {
     nixosConfigurations = {
@@ -51,6 +52,9 @@
               pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
                 config.allowUnfree = true;
+              };
+              neovim-nightly-overlay = import nixpkgs-unstable {
+                inherit system;
               };
             };
           }
