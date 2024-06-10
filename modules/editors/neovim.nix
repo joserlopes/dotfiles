@@ -300,6 +300,23 @@ in {
         '';
       }
 
+      {
+        plugin = todo-comments-nvim;
+        type = "lua";
+        config = ''
+          require("todo-comments").setup()
+          vim.keymap.set("n", "<leader>tdf", "<cmd>TodoTelescope<cr>")
+
+          vim.keymap.set("n", "]t", function()
+          	require("todo-comments").jump_next()
+          end, { desc = "Next todo comment" })
+
+          vim.keymap.set("n", "[t", function()
+          	require("todo-comments").jump_prev()
+          end, { desc = "Previous todo comment" })
+        '';
+      }
+
       nvim-cmp
       cmp_luasnip
       cmp-nvim-lsp
@@ -645,4 +662,7 @@ in {
             vim.keymap.set("v", ">", ">gv")
     '';
   };
+  home.file."./.config/nvim/after/ftplugin/nix.lua".text = ''
+    vim.opt.shiftwidth = 2
+  '';
 }
