@@ -16,8 +16,13 @@ elif [ x"$@" = x"GitHub" ]
 then
     xdg-open https://github.com/joserlopes
     exit 0
+elif [ x"$@" = x"dotfiles" ]
+then
+    xdg-open https://github.com/joserlopes/.dotfiles/tree/NixOS
+    exit 0
 fi
 echo "CG"
 echo "Comp"
 echo "PIC"
 echo "GitHub"
+echo "dotfiles"
