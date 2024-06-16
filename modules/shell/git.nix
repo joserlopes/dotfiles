@@ -22,12 +22,12 @@ in {
       userEmail = "josersl2003@gmail.com";
       extraConfig = {
         diff.tool = "vimdiff";
-        init.defaultBranch = "master";
-        pull.rebase = true;
-        url."git@github.com:".pushinsteadOf = "https://github.com/";
+        init.defaultBranch = "main";
         commit.template = "${configDir}/gitmessage.txt";
         commit.verbose = true;
       };
     };
+
+    programs.gh.enable = true;
   };
 }
