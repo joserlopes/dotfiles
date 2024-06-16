@@ -10,7 +10,7 @@
   lib,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkEnableOption mkIf lists;
   cfg = config.modules.editors.neovim;
   personal = config.modules.personal.enable;
   git = config.modules.shell.git.enable;
@@ -35,12 +35,12 @@
         rust
         toml
         typescript
-        # pkgs.unstable.tree-sitter-grammars.tree-sitter-typst
+        pkgs.unstable.tree-sitter-grammars.tree-sitter-typst
         vim
         yaml
       ]
     else [];
-  commonPlugins = with pkgs.vimPlugins; [
+  commonPlugins = with pkgs.unstable.vimPlugins; [
     nvim-web-devicons
     {
       plugin =
@@ -159,6 +159,10 @@
 
     vim-tmux-navigator
 
+    vim-illuminate
+
+    dressing-nvim
+
     {
       plugin = which-key-nvim;
       type = "lua";
@@ -173,14 +177,6 @@
       '';
     }
 
-    {
-      plugin = neogit;
-      type = "lua";
-      config = ''
-        require('neogit').setup {}
-        vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "NeoGit", silent = true })
-      '';
-    }
     {
       plugin = conform-nvim;
       type = "lua";
@@ -237,23 +233,6 @@
         	})
         end, { desc = "Format file or range (in visual mode)" })
 
-      '';
-    }
-    {
-      plugin = gitsigns-nvim;
-      type = "lua";
-      config = ''
-              		require("gitsigns").setup({
-        	signs = {
-        		add = { text = "+" },
-        		change = { text = "~" },
-        		delete = { text = "_" },
-        		topdelete = { text = "‾" },
-        		changedelete = { text = "~" },
-        	},
-        	numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
-        	vim.keymap.set("n", "<leader>hp", require("gitsigns").preview_hunk, { desc = "Preview git hunk" }),
-        })
       '';
     }
     {
@@ -515,6 +494,15 @@
     {
       plugin = trouble-nvim;
       type = "lua";
+      config = ''
+        require("trouble").setup()
+        vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", {desc = "Diagnostics (Trouble)"})
+        vim.keymap.set("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", {desc = "Buffer Diagnostics (Trouble)"})
+        vim.keymap.set("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", {desc = "Symbols (Trouble)"})
+        vim.keymap.set("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", {desc = "LSP Definitions / references / ... (Trouble)"})
+        vim.keymap.set("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", {desc = "Location List (Trouble)"})
+        vim.keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", {desc = "Quickfix List (Trouble)"})
+      '';
     }
   ];
   personalPlugins =
@@ -523,6 +511,34 @@
       with pkgs.unstable.vimPlugins; [
       ]
     else [];
+  gitPlugins = with pkgs.unstable.vimPlugins;
+    lists.optionals git [
+      {
+        plugin = neogit;
+        type = "lua";
+        config = ''
+          require('neogit').setup {}
+          vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "NeoGit", silent = true })
+        '';
+      }
+      {
+        plugin = gitsigns-nvim;
+        type = "lua";
+        config = ''
+                		require("gitsigns").setup({
+          	signs = {
+          		add = { text = "+" },
+          		change = { text = "~" },
+          		delete = { text = "_" },
+          		topdelete = { text = "‾" },
+          		changedelete = { text = "~" },
+          	},
+          	numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
+          	vim.keymap.set("n", "<leader>hp", require("gitsigns").preview_hunk, { desc = "Preview git hunk" }),
+          })
+        '';
+      }
+    ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
 
@@ -700,18 +716,11 @@ in {
       plugins =
         commonPlugins
         ++ personalPlugins
-        ++ (
-          if git
-          then
-            with pkgs.unstable.vimPlugins; [
-              vim-fugitive
-              {
-                plugin = gitsigns-nvim;
-                config = "lua require('gitsigns').setup()";
-              }
-            ]
-          else []
-        );
+        ++ gitPlugins;
     };
+    # 2 tab size file types
+    home.file."./.config/nvim/after/ftplugin/nix.lua".text = ''
+      vim.opt.shiftwidth = 2
+    '';
   };
 }
