@@ -26,6 +26,13 @@ in {
         commit.template = "${configDir}/gitmessage.txt";
         commit.verbose = true;
       };
+      delta = {
+        enable = config.modules.personal.enable;
+        options = {
+          features = "decorations";
+          line-numbers = true;
+        };
+      };
     };
 
     programs.gh.enable = true;
