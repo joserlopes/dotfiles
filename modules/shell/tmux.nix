@@ -24,7 +24,10 @@ in {
       clock24 = true;
       customPaneNavigationAndResize = true;
       keyMode = "vi";
-      terminal = "tmux-256color";
+      terminal =
+        if config.modules.graphical.programs.enable
+        then "alacritty"
+        else "tmux-256color";
       prefix = "C-Space";
       mouse = true;
       plugins = with pkgs.tmuxPlugins; [
