@@ -19,11 +19,14 @@
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = inputs @ {self, ...}: let
-    inherit (builtins) listToAttrs concatLists attrValues attrNames readDir;
+    inherit (builtins) listToAttrs concatLists attrValues attrNames readDir filter;
     inherit (inputs.nixpkgs) lib;
+    inherit (inputs.nixpkgs.lib.filesystem) listFilesRecursive;
     inherit (lib) mapAttrs mapAttrsToList hasSuffix;
     # TODO change
     colors = {
@@ -103,13 +106,7 @@
     allModules = mkModules ./modules;
 
     # Imports every nix module from a directory, recursively.
-    mkModules = dir:
-      concatLists (attrValues (mapAttrs (name: value:
-        if value == "directory"
-        then mkModules "${dir}/${name}"
-        else if value == "regular" && hasSuffix ".nix" name
-        then [(import "${dir}/${name}")]
-        else []) (readDir dir)));
+    mkModules = path: filter (hasSuffix ".nix") (listFilesRecursive path);
 
     # Imports every host defined in a directory.
     mkHosts = dir:
@@ -132,8 +129,6 @@
           modules =
             [
               {networking.hostName = name;}
-              (dir + "/${name}/hardware.nix")
-              (dir + "/${name}/configuration.nix")
               inputs.home.nixosModules.home-manager
               {
                 home-manager = {
@@ -144,7 +139,8 @@
               }
               inputs.impermanence.nixosModules.impermanence
             ]
-            ++ allModules;
+            ++ allModules
+            ++ (mkModules "${dir}/${name}");
         };
       }) (attrNames (readDir dir)));
   in {nixosConfigurations = mkHosts ./hosts;};

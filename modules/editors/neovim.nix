@@ -5,6 +5,7 @@
 #
 # neovim home configuration. (Based on RageKnify's)
 {
+  inputs,
   pkgs,
   config,
   lib,
@@ -545,7 +546,7 @@ in {
   # Home manager module
   config.hm = mkIf cfg.enable {
     programs.neovim = {
-      package = pkgs.unstable.neovim-unwrapped;
+      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
       enable = true;
       viAlias = true;
       vimAlias = true;
