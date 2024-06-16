@@ -506,12 +506,6 @@
       '';
     }
   ];
-  personalPlugins =
-    if personal
-    then
-      with pkgs.unstable.vimPlugins; [
-      ]
-    else [];
   gitPlugins = with pkgs.unstable.vimPlugins;
     lists.optionals git [
       {
@@ -539,6 +533,15 @@
           })
         '';
       }
+    ];
+  personalPackages = with pkgs;
+    lists.optionals personal [
+      python311Packages.jedi-language-server # Python LSP
+      ccls # C/C++ LSP
+      nodePackages.typescript-language-server # JS/TS LSP
+      nodePackages.vscode-html-languageserver-bin # HTML LSP
+      nil # Nix LSP
+      unstable.typst-lsp # Typst LSP
     ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
@@ -716,12 +719,13 @@ in {
       '';
       plugins =
         commonPlugins
-        ++ personalPlugins
         ++ gitPlugins;
     };
     # 2 tab size file types
     home.file."./.config/nvim/after/ftplugin/nix.lua".text = ''
       vim.opt.shiftwidth = 2
     '';
+
+    home.packages = personalPackages;
   };
 }

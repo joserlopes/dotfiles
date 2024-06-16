@@ -29,8 +29,9 @@ in {
       timewarrior
       # Rust
       rustup
-      # Nix LSP
-      nil
+      # typst (markup-based typesetting system)
+      unstable.typst
+      unstable.typstfmt
     ];
 
     programs.zsh.shellAliases."dig" = "dog";
