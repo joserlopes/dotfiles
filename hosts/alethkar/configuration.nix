@@ -4,10 +4,7 @@
 # URL:    https://github.com/diogotcorreia/dotfiles
 #
 # Configuration for bacchus (PC).
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
@@ -82,6 +79,7 @@
       # gtk.enable = true;
       # qt.enable = true;
       alacritty.enable = true;
+      i3.enable = true;
     };
     services.syncthing.enable = true;
     shell = {
