@@ -23,7 +23,7 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = inputs @ { ...}: let
+  outputs = inputs @ {...}: let
     inherit (builtins) listToAttrs attrNames readDir filter;
     inherit (inputs.nixpkgs) lib;
     inherit (inputs.nixpkgs.lib.filesystem) listFilesRecursive;
@@ -143,5 +143,11 @@
             ++ (mkModules "${dir}/${name}");
         };
       }) (attrNames (readDir dir)));
-  in {nixosConfigurations = mkHosts ./hosts;};
+  in {
+    nixosConfigurations = mkHosts ./hosts;
+
+    formatter = {
+      x86_64-linux = inputs.nixpkgs.legacyPackages.x86_64-linux.alejandra;
+    };
+  };
 }
