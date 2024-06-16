@@ -35,5 +35,17 @@
     # Find and search files
     fzf
     ripgrep
+
+    # Password Manager
+    keepassxc
+
+    # Dropbox open source client
+    maestral
+    maestral-gui
+
+    wget
+    curl
+    gcc
+    wl-clipboard
   ];
 }
