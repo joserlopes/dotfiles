@@ -10,13 +10,15 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-latest.url = "github:nixos/nixpkgs/master";
     impermanence.url = "github:nix-community/impermanence/master";
     home = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
+    spicetify-nix = {
+      url = "github:the-argus/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {self, ...}: let
@@ -81,7 +83,6 @@
       };
     in {
       unstable = import inputs.nixpkgs-unstable args;
-      latest = import inputs.nixpkgs-latest args;
     };
 
     overlaysDir = ./overlays;
