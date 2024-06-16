@@ -10,7 +10,7 @@
   inherit (lib) mkEnableOption mkIf escapeShellArg;
   cfg = config.modules.graphical;
 in {
-  options.modules.graphical.enable =
+  options.modules.graphical.i3.enable =
     mkEnableOption "i3 window manager";
 
   config = mkIf cfg.enable {
@@ -36,7 +36,7 @@ in {
       autorun = true;
     };
 
-    xsession.windowManager.i3 = {
+    hm.xsession.windowManager.i3 = {
       enable = true;
       config = {
         modifier = "Mod4";
@@ -77,7 +77,7 @@ in {
       };
     };
 
-    programs.i3status-rust = {
+    hm.programs.i3status-rust = {
       enable = true;
       bars = {
         top = {
