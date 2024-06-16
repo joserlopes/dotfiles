@@ -71,7 +71,9 @@ in {
         bind '"' split-window -v -c "#{pane_current_path}"
         bind % split-window -h -c "#{pane_current_path}"
 
-        run-shell "${pkgs.unstable.tmuxPlugins.nord}/share/tmux-plugins/nord/nord.tmux"
+        source-file ~/dotfiles/modules/shell/tmux.nix/tmux-everforest-dark-medium.conf
+
+        # run-shell "${pkgs.unstable.tmuxPlugins.nord}/share/tmux-plugins/nord/nord.tmux"
       '';
     };
   };
