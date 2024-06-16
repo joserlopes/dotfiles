@@ -23,11 +23,11 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs = inputs @ {self, ...}: let
-    inherit (builtins) listToAttrs concatLists attrValues attrNames readDir filter;
+  outputs = inputs @ { ...}: let
+    inherit (builtins) listToAttrs attrNames readDir filter;
     inherit (inputs.nixpkgs) lib;
     inherit (inputs.nixpkgs.lib.filesystem) listFilesRecursive;
-    inherit (lib) mapAttrs mapAttrsToList hasSuffix;
+    inherit (lib) mapAttrsToList hasSuffix;
     # TODO change
     colors = {
       dark = {
@@ -79,7 +79,7 @@
     user = "nixos";
     userFullName = "NixOS";
 
-    pkg-sets = final: prev: let
+    pkg-sets = final: _prev: let
       args = {
         system = final.system;
         config.allowUnfree = true;

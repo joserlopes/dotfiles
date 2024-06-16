@@ -6,10 +6,6 @@
 # Configuration for bacchus (PC).
 {
   pkgs,
-  lib,
-  sshKeys,
-  config,
-  user,
   ...
 }: {
   # Bootloader.

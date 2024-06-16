@@ -5,14 +5,12 @@
 #
 # syncthing configuration
 {
-  pkgs,
   config,
   lib,
-  utils,
   user,
   ...
 }: let
-  inherit (lib) mkEnableOption mkOption types mkIf;
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.modules.services.syncthing;
 in {
   options.modules.services.syncthing.enable = mkEnableOption "syncthing";

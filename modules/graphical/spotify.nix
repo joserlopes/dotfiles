@@ -5,13 +5,12 @@
 #
 # Spotify configuration and themeing with Spicetify
 {
-  pkgs,
   config,
   lib,
   spicetifyPkgs,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkIf;
   cfg = config.modules.graphical.programs;
 in {
   # Follow graphical.programs.enabled

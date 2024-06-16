@@ -5,7 +5,6 @@
 #
 # XDG home configuration
 {
-  pkgs,
   config,
   lib,
   ...

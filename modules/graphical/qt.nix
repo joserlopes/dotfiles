@@ -5,7 +5,6 @@
 #
 # Qt theme configuration
 {
-  pkgs,
   config,
   lib,
   ...

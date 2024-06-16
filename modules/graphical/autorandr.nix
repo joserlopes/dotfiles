@@ -5,7 +5,6 @@
 #
 # Autorandr configuration for laptops
 {
-  pkgs,
   config,
   lib,
   ...

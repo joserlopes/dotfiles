@@ -8,13 +8,8 @@
   inputs,
   pkgs,
   lib,
-  config,
-  configDir,
   ...
-}: let
-  inherit (builtins) toString;
-  inherit (lib.my) mapModules;
-in {
+}: {
   nix = {
     settings = {
       auto-optimise-store = true;

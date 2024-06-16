@@ -5,12 +5,11 @@
 #
 # PDF viewer
 {
-  pkgs,
   config,
   lib,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkIf;
   cfg = config.modules.graphical.programs;
 in {
   # Follow graphical.programs.enable

@@ -6,8 +6,6 @@
 # global programs and packages
 {
   pkgs,
-  config,
-  lib,
   ...
 }: {
   # Essential packages
