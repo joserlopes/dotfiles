@@ -1,2 +1,1 @@
-# Dotfiles for my NixOS system using flakes and home-manager
-
+# Dotfiles for my NixOS sytems using flakes and home-manager
