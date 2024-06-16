@@ -69,6 +69,8 @@
 
   # Specific packages for this host
   hm.home.packages = with pkgs; [
+    # Arrange external displays
+    arandr
     # Karaoke Game
     ultrastardx
   ];
@@ -79,6 +81,7 @@
     graphical = {
       enable = true;
       development.enable = true;
+      autorandr.laptop.enable = true;
       programs.enable = true;
       # gtk.enable = true;
       # qt.enable = true;
