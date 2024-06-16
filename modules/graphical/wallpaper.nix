@@ -17,11 +17,11 @@
   wallpapers = [
     {
       startTime = "00:00";
-      path = "${configDir}/wallpapers/midnight-wallpaper.png";
+      path = "${configDir}/wallpapers/midnight-wallpaper.jpg";
     }
     {
       startTime = "06:30";
-      path = "${configDir}/wallpapers/morning-wallpaper.png";
+      path = "${configDir}/wallpapers/morning-wallpaper.jpg";
     }
     {
       startTime = "14:00";
@@ -29,7 +29,7 @@
     }
     {
       startTime = "19:30";
-      path = "${configDir}/wallpapers/night-wallpaper.png";
+      path = "${configDir}/wallpapers/night-wallpaper.jpg";
     }
   ];
   wallpaperScript = pkgs.writers.writeBash "setbg" ''
