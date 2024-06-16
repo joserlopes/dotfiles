@@ -15,30 +15,38 @@ in {
   options.modules.shell.zsh.enable = mkEnableOption "zsh";
 
   # Home manager module
-  config.hm = mkIf cfg.enable {
-    programs.zsh = {
-      enable = true;
-      enableCompletion = true;
-      syntaxHighlighting.enable = true;
-      autosuggestion = {
+  config = mkIf cfg.enable {
+    hm = {
+      programs.zsh = {
         enable = true;
-        highlight = "fg=value";
-      };
+        enableCompletion = true;
+        syntaxHighlighting.enable = true;
+        autosuggestion = {
+          enable = true;
+          highlight = "fg=value";
+        };
 
-      # set some aliases, feel free to add more or remove some
-      shellAliases = {
-        c = "clear";
-        v = "nvim";
+        oh-my-zsh = {
+          enable = true;
+          plugins = ["git" "docker-compose" "zoxide"];
+        };
+
+        # set some aliases, feel free to add more or remove some
+        shellAliases = {
+          c = "clear";
+          v = "nvim";
+        };
       };
+      # eza (modern ls replacement)
+      programs.eza = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+      # zoxide (jump to directories)
+      programs.zoxide.enable = true;
+      home.sessionVariables._ZO_ECHO = "1";
     };
 
-    # eza (modern ls replacement)
-    programs.eza = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
-    # zoxide (jump to directories)
-    programs.zoxide.enable = true;
+    programs.zsh.enable = true;
   };
 }

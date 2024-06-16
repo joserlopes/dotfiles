@@ -39,7 +39,6 @@ in {
       createHome = true;
       password = "1234ze!!";
       description = userFullName;
-      ignoreShellProgramCheck = true;
       shell = pkgs.zsh;
       extraGroups = ["wheel"];
     };
