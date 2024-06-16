@@ -35,15 +35,19 @@ in {
     # Configure console keymap
     console.keyMap = "pt-latin1";
 
-    fonts.packages = with pkgs; [
-      fira-code
-      material-design-icons
-      nerdfonts
-      noto-fonts
-      noto-fonts-extra
-      noto-fonts-emoji
-      noto-fonts-cjk-sans
-    ];
+    fonts = {
+      enableDefaultPackages = true;
+
+      packages = with pkgs; [
+        fira-code
+        material-design-icons
+        nerdfonts
+        noto-fonts
+        noto-fonts-extra
+        noto-fonts-emoji
+        noto-fonts-cjk-sans
+      ];
+    };
 
     # hm.services.flameshot = {
     #   enable = true;
