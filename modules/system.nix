@@ -37,9 +37,9 @@
     Defaults lecture=never
   '';
 
-  # Every host shares the same time zone.
-  # TODO perhaps set this per host
-  time.timeZone = "Europe/Lisbon";
+  # Time zone
+  time.timeZone = null;
+  services.automatic-timezoned.enable = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
