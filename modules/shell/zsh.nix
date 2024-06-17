@@ -45,6 +45,8 @@ in {
       # zoxide (jump to directories)
       programs.zoxide.enable = true;
       home.sessionVariables._ZO_ECHO = "1";
+
+      programs.atuin.enable = true;
     };
 
     programs.zsh.enable = true;
