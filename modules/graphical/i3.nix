@@ -9,13 +9,24 @@
 }: let
   inherit (lib) mkEnableOption mkIf escapeShellArg;
   cfg = config.modules.graphical;
+  ws1 = "1: Browser";
+  ws2 = "2: Editor";
+  ws3 = "3: Notes";
+  ws4 = "4: Docs";
+  ws5 = "5: Statement";
+  ws6 = "6: Nemo";
+  ws7 = "7: Books";
+  ws8 = "8: Rhythmbox";
+  ws9 = "9: KeePass";
+  ws10 = "10";
+  mode_system = "System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown";
 in {
   options.modules.graphical.i3.enable =
     mkEnableOption "i3 window manager";
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      rofi
+      dmenu
     ];
 
     fonts.packages = with pkgs; [
@@ -29,17 +40,163 @@ in {
 
     services.xserver = {
       enable = true;
+      windowManager.i3.enable = true;
       xkb = {
         layout = "pt";
         variant = "";
       };
-      autorun = true;
     };
 
     hm.xsession.windowManager.i3 = {
       enable = true;
-      config = {
+      config = rec {
         modifier = "Mod4";
+        terminal = "alacritty";
+        menu = "rofi -show combi -icon-theme Papirus -show-icons";
+        window.titlebar = false;
+        floating.modifier = "${modifier}";
+        modes = {
+          resize = {
+            Down = "resize grow height 10 px or 10 ppt";
+            Escape = "mode default";
+            Left = "resize shrink width 10 px or 10 ppt";
+            Return = "mode default";
+            Right = "resize grow width 10 px or 10 ppt";
+            Up = "resize shrink height 10 px or 10 ppt";
+          };
+          "${mode_system}" = {
+            "l" = "exec i3lock --ignore-empty-password --tiling -i ~/.config/wallpapers/lock.png 2>/dev/null, mode default";
+            "e" = "exec --no-startup-id i3-msg exit, mode default";
+            "s" = "exec --no-startup-id $Locker && systemctl suspend, mode default";
+            "h" = "exec --no-startup-id $Locker && systemctl hibernate, mode default";
+            "r" = "exec --no-startup-id systemctl reboot, mode default";
+            "Shift+s" = "exec --no-startup-id systemctl poweroff -i, mode default";
+
+            # back to normal: Enter or Escape
+            "Return" = "mode default";
+            "Escape" = "mode default";
+          };
+        };
+
+        # Use lib.mkOptionDefault if you want to keep the original keymaps
+        keybindings = lib.mkOptionDefault {
+          # Adjust screen brightness
+          "${modifier}+XF86MonBrightnessUp" = "brightnessctl set 5%+";
+          "${modifier}+XF86MonBrightnessDown" = "brightnessctl set 5%-";
+
+          # Same keymaps as above but fore keyboards without special keys
+          "${modifier}+ Mod1+Shift+plus  " = " brightnessctl set 5%+";
+          "${modifier}+ Mod1+Shift+minus  " = " brightnessctl set 5%-";
+
+          # Use pactl to adjust volume in PulseAudio.
+          "${modifier}+ XF86AudioRaiseVolume  " = " pactl set-sink-volume 0 +5%"; #increase sound volume"
+          "${modifier}+ XF86AudioLowerVolume  " = " pactl set-sink-volume 0 -5%"; #decrease sound volume
+          "${modifier}+ XF86AudioMute  " = " pactl set-sink-mute 0 toggle";
+          "${modifier}+ XF86AudioMicMute  " = " pactl set-source-mute 0 toggle";
+
+          # Same keymaps as above but fore keyboards without special keys
+          "${modifier}+ Mod1+plus  " = " pactl set-sink-volume 0 +5%"; #increase sound volume
+          "${modifier}+ Mod1+minus  " = " pactl set-sink-volume 0 -5%"; #decrease sound volume
+          "${modifier}+ Mod1+m  " = " pactl set-sink-mute 0 toggle";
+          "${modifier}+ Mod1+Shift+m  " = " pactl set-source-mute 0 toggle";
+
+          # Use playerctl to handle media keys
+          "${modifier}+ XF86AudioPlay  " = " playerctl play-pause";
+          "${modifier}+ XF86AudioPause  " = " playerctl play-pause";
+          "${modifier}+ XF86AudioNext  " = " playerctl next";
+          "${modifier}+ XF86AudioPrev  " = " playerctl previous";
+
+          # Same keymaps as above but fore keyboards without special keys
+          "${modifier}+ Mod1+p  " = " playerctl play-pause";
+          "${modifier}+ Mod1+Shift+p  " = " playerctl play-pause";
+          "${modifier}+ Mod1+n  " = " playerctl next";
+          "${modifier}+ Mod1+Shift+n  " = " playerctl previous";
+
+          # launch obsidian
+          "${modifier}+o " = "exec obsidian";
+
+          # launch firefox
+          "${modifier}+b " = "exec firefox";
+
+          # launch file explorer
+          "${modifier}+n " = "exec nemo";
+
+          # kill focused window
+          "${modifier}+q " = "kill";
+
+          # change focus
+          "${modifier}+j " = "focus down";
+          "${modifier}+k " = "focus up";
+          "${modifier}+l " = "focus right";
+          "${modifier}+ccedilla" = "focus left";
+
+          # alternatively, you can use the cursor keys:
+          "${modifier}+Left" = "focus left";
+          "${modifier}+Down" = "focus down";
+          "${modifier}+Up" = "focus up";
+          "${modifier}+Right" = "focus right";
+
+          # move focused window
+          "${modifier}+Shift+j" = "move down";
+          "${modifier}+Shift+k" = "move up";
+          "${modifier}+Shift+l" = "move right";
+          "${modifier}+Shift+ccedilla" = "move left";
+
+          # alternatively, you can use the cursor keys:
+          "${modifier}+Shift+Left" = "move left";
+          "${modifier}+Shift+Down" = "move down";
+          "${modifier}+Shift+Up" = "move up";
+          "${modifier}+Shift+Right" = "move right";
+
+          # split in horizontal orientation
+          "${modifier}+h" = "split h";
+
+          # split in vertical orientation
+          "${modifier}+v" = "split v";
+
+          # enter fullscreen mode for the focused container
+          "${modifier}+f" = "fullscreen toggle";
+
+          # change container layout (stacked, tabbed, toggle split)
+          "${modifier}+s" = "layout stacking";
+          "${modifier}+w" = "layout tabbed";
+          "${modifier}+e" = "layout toggle split";
+
+          # toggle tiling / floating
+          "${modifier}+Shift+space" = "floating toggle";
+
+          # change focus between tiling / floating windows
+          "${modifier}+space" = "focus mode_toggle";
+
+          # focus the parent container
+          "${modifier}+a" = "focus parent";
+
+          # switch to workspace
+          "${modifier}+1" = "workspace number ${ws1}";
+          "${modifier}+2" = "workspace number ${ws2}";
+          "${modifier}+3" = "workspace number ${ws3}";
+          "${modifier}+4" = "workspace number ${ws4}";
+          "${modifier}+5" = "workspace number ${ws5}";
+          "${modifier}+6" = "workspace number ${ws6}";
+          "${modifier}+7" = "workspace number ${ws7}";
+          "${modifier}+8" = "workspace number ${ws8}";
+          "${modifier}+9" = "workspace number ${ws9}";
+          "${modifier}+0" = "workspace number ${ws10}";
+
+          # move focused container to workspace
+          "${modifier}+Shift+1" = "move container to workspace number ${ws1}";
+          "${modifier}+Shift+2" = "move container to workspace number ${ws2}";
+          "${modifier}+Shift+3" = "move container to workspace number ${ws3}";
+          "${modifier}+Shift+4" = "move container to workspace number ${ws4}";
+          "${modifier}+Shift+5" = "move container to workspace number ${ws5}";
+          "${modifier}+Shift+6" = "move container to workspace number ${ws6}";
+          "${modifier}+Shift+7" = "move container to workspace number ${ws7}";
+          "${modifier}+Shift+8" = "move container to workspace number ${ws8}";
+          "${modifier}+Shift+9" = "move container to workspace number ${ws9}";
+          "${modifier}+Shift+0" = "move container to workspace number ${ws10}";
+
+          "${modifier}+Shift+q" = "mode \"${mode_system}\"";
+        };
         bars = [
           {
             statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
@@ -75,6 +232,10 @@ in {
           }
         ];
       };
+      extraConfig = ''
+        for_window [class="^.*"] border pixel 2
+        for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
+      '';
     };
 
     hm.programs.i3status-rust = {
@@ -212,12 +373,19 @@ in {
       };
     };
 
-    hm.services.picom = {
+    hm.programs.rofi = {
       enable = true;
-      backend = "glx";
-      vSync = true;
-      settings = {unredir-if-possible = false;};
+      package = pkgs.rofi-wayland;
+      terminal = "${pkgs.alacritty}/bin/alacritty";
+      theme = ./theme.rasi;
     };
+
+    # hm.services.picom = {
+    #   enable = true;
+    #   backend = "glx";
+    #   vSync = true;
+    #   settings = {unredir-if-possible = false;};
+    # };
 
     hm.services.flameshot = {
       enable = true;
