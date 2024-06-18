@@ -76,8 +76,8 @@
       colors.light."${base}";
 
     system = "x86_64-linux";
-    user = "nixos";
-    userFullName = "NixOS";
+    user = "jrl";
+    userFullName = "José Lopes";
 
     pkg-sets = final: _prev: let
       args = {
