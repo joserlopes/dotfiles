@@ -20,13 +20,13 @@ in {
       enable = true;
       userDirs = {
         enable = true;
-        desktop = "${config.my.homeDirectory}/.desktop";
-        documents = "${config.my.homeDirectory}/documents";
-        download = "${config.my.homeDirectory}/downloads";
-        music = "${config.my.homeDirectory}/.music";
-        pictures = "${config.my.homeDirectory}/pictures";
-        publicShare = "${config.my.homeDirectory}/.public";
-        templates = "${config.my.homeDirectory}/.templates";
+        desktop = "${config.my.homeDirectory}/Desktop";
+        documents = "${config.my.homeDirectory}/Documents";
+        download = "${config.my.homeDirectory}/Downloads";
+        music = "${config.my.homeDirectory}/Music";
+        pictures = "${config.my.homeDirectory}/Pictures";
+        publicShare = "${config.my.homeDirectory}/Public";
+        templates = "${config.my.homeDirectory}/Templates";
         videos = "${config.my.homeDirectory}/videos";
       };
       configFile."mimeapps.list".force = true;
