@@ -21,6 +21,8 @@ in {
       discord-openasar
       # Telegram
       tdesktop
+      # Obsidian
+      obsidian
     ];
 
     # Video player
