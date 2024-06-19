@@ -25,6 +25,7 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
+      brightnessctl
       dmenu
     ];
 
@@ -53,6 +54,9 @@ in {
         terminal = "alacritty";
         menu = "rofi -show combi -icon-theme Papirus -show-icons";
         window.titlebar = false;
+        startup = [
+          #{command = "maestral start";}
+        ];
         floating.modifier = "${modifier}";
         modes = {
           resize = {
@@ -80,53 +84,53 @@ in {
         # Use lib.mkOptionDefault if you want to keep the original keymaps
         keybindings = lib.mkOptionDefault {
           # Adjust screen brightness
-          "${modifier}+XF86MonBrightnessUp" = "brightnessctl set 5%+";
-          "${modifier}+XF86MonBrightnessDown" = "brightnessctl set 5%-";
+          "XF86MonBrightnessUp" = "exec brightnessctl set 5%+";
+          "XF86MonBrightnessDown" = "exec brightnessctl set 5%-";
 
           # Same keymaps as above but fore keyboards without special keys
-          "${modifier}+ Mod1+Shift+plus  " = " brightnessctl set 5%+";
-          "${modifier}+ Mod1+Shift+minus  " = " brightnessctl set 5%-";
+          "Mod1+Shift+plus" = "exec brightnessctl set 5%+";
+          "Mod1+Shift+minus" = "exec brightnessctl set 5%-";
 
           # Use pactl to adjust volume in PulseAudio.
-          "${modifier}+ XF86AudioRaiseVolume  " = " pactl set-sink-volume 0 +5%"; #increase sound volume"
-          "${modifier}+ XF86AudioLowerVolume  " = " pactl set-sink-volume 0 -5%"; #decrease sound volume
-          "${modifier}+ XF86AudioMute  " = " pactl set-sink-mute 0 toggle";
-          "${modifier}+ XF86AudioMicMute  " = " pactl set-source-mute 0 toggle";
+          "XF86AudioRaiseVolume" = "exec pactl set-sink-volume 0 +5%"; #increase sound volume"
+          "XF86AudioLowerVolume" = "exec pactl set-sink-volume 0 -5%"; #decrease sound volume
+          "XF86AudioMute" = "exec pactl set-sink-mute 0 toggle";
+          "XF86AudioMicMute" = "exec pactl set-source-mute 0 toggle";
 
           # Same keymaps as above but fore keyboards without special keys
-          "${modifier}+ Mod1+plus  " = " pactl set-sink-volume 0 +5%"; #increase sound volume
-          "${modifier}+ Mod1+minus  " = " pactl set-sink-volume 0 -5%"; #decrease sound volume
-          "${modifier}+ Mod1+m  " = " pactl set-sink-mute 0 toggle";
-          "${modifier}+ Mod1+Shift+m  " = " pactl set-source-mute 0 toggle";
+          "Mod1+plus" = "exec pactl set-sink-volume 0 +5%"; #increase sound volume
+          "Mod1+minus" = "exec pactl set-sink-volume 0 -5%"; #decrease sound volume
+          "Mod1+m" = "exec pactl set-sink-mute 0 toggle";
+          "Mod1+Shift+m" = "exec pactl set-source-mute 0 toggle";
 
           # Use playerctl to handle media keys
-          "${modifier}+ XF86AudioPlay  " = " playerctl play-pause";
-          "${modifier}+ XF86AudioPause  " = " playerctl play-pause";
-          "${modifier}+ XF86AudioNext  " = " playerctl next";
-          "${modifier}+ XF86AudioPrev  " = " playerctl previous";
+          "XF86AudioPlay" = "exec playerctl play-pause";
+          "XF86AudioPause" = "exec playerctl play-pause";
+          "XF86AudioNext" = "exec playerctl next";
+          "XF86AudioPrev" = "exec playerctl previous";
 
           # Same keymaps as above but fore keyboards without special keys
-          "${modifier}+ Mod1+p  " = " playerctl play-pause";
-          "${modifier}+ Mod1+Shift+p  " = " playerctl play-pause";
-          "${modifier}+ Mod1+n  " = " playerctl next";
-          "${modifier}+ Mod1+Shift+n  " = " playerctl previous";
+          "Mod1+p" = "exec playerctl play-pause";
+          "Mod1+Shift+p" = "exec playerctl play-pause";
+          "Mod1+n" = "exec playerctl next";
+          "Mod1+Shift+n" = "exec playerctl previous";
 
           # launch obsidian
-          "${modifier}+o " = "exec obsidian";
+          "${modifier}+o" = "exec obsidian";
 
           # launch firefox
-          "${modifier}+b " = "exec firefox";
+          "${modifier}+b" = "exec firefox";
 
           # launch file explorer
-          "${modifier}+n " = "exec nemo";
+          "${modifier}+n" = "exec nemo";
 
           # kill focused window
-          "${modifier}+q " = "kill";
+          "${modifier}+q" = "kill";
 
           # change focus
-          "${modifier}+j " = "focus down";
-          "${modifier}+k " = "focus up";
-          "${modifier}+l " = "focus right";
+          "${modifier}+j" = "focus down";
+          "${modifier}+k" = "focus up";
+          "${modifier}+l" = "focus right";
           "${modifier}+ccedilla" = "focus left";
 
           # alternatively, you can use the cursor keys:
@@ -195,6 +199,11 @@ in {
           "${modifier}+Shift+0" = "move container to workspace number ${ws10}";
 
           "${modifier}+Shift+q" = "mode \"${mode_system}\"";
+
+          "Print" = "exec --no-startup-id flameshot gui";
+          "${modifier}+Shift+p" = "exec --no-startup-id flameshot gui";
+
+          "${modifier}+m" = "move workspace to output next";
         };
         bars = [
           {
