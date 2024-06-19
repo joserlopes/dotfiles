@@ -20,11 +20,11 @@ in {
   config.hm = mkIf cfg.enable {
     home.packages = with pkgs; [
       # Jetbrains Gateway (remote development)
-      unstable.jetbrains.gateway
+      # unstable.jetbrains.gateway
       # IntelliJ IDEA (Ultimate)
-      unstable.jetbrains.idea-ultimate
+      # unstable.jetbrains.idea-ultimate
       # Visual Studio Code
-      unstable.vscode
+      # unstable.vscode
       # Insomnia REST Client
       insomnia
     ];
