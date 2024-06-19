@@ -602,7 +602,7 @@ in {
               vim.opt.selection = "exclusive"
 
               vim.opt.spell = true
-              vim.opt.spelllang = { "en", "pt" }
+              -- vim.opt.spelllang = { "en", "pt" }
 
               vim.wo.number = true
               vim.wo.signcolumn = "yes"
