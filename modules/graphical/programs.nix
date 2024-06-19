@@ -23,6 +23,10 @@ in {
       tdesktop
       # Obsidian
       obsidian
+      # Torrent client
+      qbittorrent
+      # VLC media player
+      vlc
     ];
 
     # Video player
