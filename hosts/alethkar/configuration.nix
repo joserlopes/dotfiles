@@ -93,6 +93,7 @@
     };
     personal.enable = true;
     xdg.enable = true;
+    ist.enable = true;
   };
 
   # Statem state version
