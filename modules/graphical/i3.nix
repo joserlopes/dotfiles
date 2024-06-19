@@ -60,7 +60,9 @@ in {
         menu = "rofi -show combi -icon-theme Papirus -show-icons";
         window.titlebar = false;
         startup = [
-          #{command = "maestral start";}
+          {command = "dropbox";}
+          {command = "brave";}
+          {command = "alacritty";}
         ];
         floating.modifier = "${modifier}";
         modes = {
