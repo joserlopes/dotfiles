@@ -26,11 +26,12 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       brightnessctl
-      dmenu
+      cinnamon.nemo-with-extensions
     ];
 
     hm.home.packages = with pkgs; [
-      (writeShellScriptBin "tmux-sessionizer" (builtins.readFile ./tmux-sessionizer))
+      (writeShellScriptBin "tmux-sessionizer" (builtins.readFile ../../config/scripts/tmux-sessionizer))
+      (writeShellScriptBin "URL" (builtins.readFile ../../config/scripts/URL))
     ];
 
     fonts.packages = with pkgs; [
@@ -387,9 +388,13 @@ in {
 
     hm.programs.rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
+      # package = pkgs.rofi-wayland;
       terminal = "${pkgs.alacritty}/bin/alacritty";
-      theme = ./theme.rasi;
+      theme = ../../config/theme.rasi;
+      extraConfig = {
+        combi-modi = "URL:URL,drun";
+        modi = "combi";
+      };
     };
 
     hm.services.picom = {
