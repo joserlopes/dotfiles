@@ -47,6 +47,8 @@ in {
       home.sessionVariables._ZO_ECHO = "1";
 
       programs.atuin.enable = true;
+      programs.skim.enable = true;
+      programs.bat.enable = true;
     };
 
     programs.zsh.enable = true;
