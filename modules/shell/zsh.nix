@@ -51,6 +51,7 @@ in {
       programs.atuin.enable = true;
       programs.skim.enable = true;
       programs.bat.enable = true;
+      programs.btop.enable = true;
     };
 
     programs.zsh.enable = true;
