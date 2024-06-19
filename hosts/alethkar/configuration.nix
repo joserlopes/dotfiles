@@ -76,12 +76,14 @@
       development.enable = true;
       autorandr.laptop.enable = true;
       programs.enable = true;
-      # gtk.enable = true;
-      # qt.enable = true;
+      gtk.enable = true;
+      qt.enable = true;
       alacritty.enable = true;
       i3.enable = true;
     };
-    services.syncthing.enable = true;
+    services = {
+      syncthing.enable = true;
+    };
     shell = {
       git.enable = true;
       lf.enable = true;

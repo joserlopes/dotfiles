@@ -20,17 +20,17 @@ in {
     programs.dconf.enable = true;
 
     hm.gtk = {
-      enable = true;
+      # enable = true;
 
-      theme = {
-        package = pkgs.nordic;
-        name = "Nordic-darker";
-      };
-
-      iconTheme = {
-        package = pkgs.gnome.adwaita-icon-theme;
-        name = "Adwaita";
-      };
+      # theme = {
+      #   package = pkgs.nordic;
+      #   name = "Nordic-darker";
+      # };
+      #
+      # iconTheme = {
+      #   package = pkgs.gnome.adwaita-icon-theme;
+      #   name = "Adwaita";
+      # };
     };
   };
 }
