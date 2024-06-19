@@ -29,6 +29,10 @@ in {
       dmenu
     ];
 
+    hm.home.packages = with pkgs; [
+      (writeShellScriptBin "tmux-sessionizer" (builtins.readFile ./tmux-sessionizer))
+    ];
+
     fonts.packages = with pkgs; [
       fira-code
       nerdfonts
