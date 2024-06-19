@@ -18,17 +18,6 @@ in {
   config.hm = mkIf cfg.enable {
     xdg = {
       enable = true;
-      userDirs = {
-        enable = true;
-        desktop = "${config.my.homeDirectory}/Desktop";
-        documents = "${config.my.homeDirectory}/Documents";
-        download = "${config.my.homeDirectory}/Downloads";
-        music = "${config.my.homeDirectory}/Music";
-        pictures = "${config.my.homeDirectory}/Pictures";
-        publicShare = "${config.my.homeDirectory}/Public";
-        templates = "${config.my.homeDirectory}/Templates";
-        videos = "${config.my.homeDirectory}/videos";
-      };
       configFile."mimeapps.list".force = true;
       configHome = "${config.my.homeDirectory}/.config";
     };
