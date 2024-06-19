@@ -77,7 +77,7 @@
 
     system = "x86_64-linux";
     user = "jrl";
-    userFullName = "José Lopes";
+    userFullName = "Jose Lopes";
 
     pkg-sets = final: _prev: let
       args = {
