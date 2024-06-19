@@ -54,6 +54,7 @@ in {
         }
       ];
       extraConfig = ''
+        set -ag terminal-overrides ",xterm-256color:RGB"
         # Start windows and panes at 1 not 0
         set -g base-index 1
         set -g pane-base-index 1
@@ -75,8 +76,6 @@ in {
         bind % split-window -h -c "#{pane_current_path}"
 
         source-file ~/dotfiles/modules/shell/tmux-everforest-dark-medium.conf
-
-        # run-shell "${pkgs.unstable.tmuxPlugins.nord}/share/tmux-plugins/nord/nord.tmux"
       '';
     };
   };
