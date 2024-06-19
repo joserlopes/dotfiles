@@ -52,6 +52,7 @@ in {
       programs.skim.enable = true;
       programs.bat.enable = true;
       programs.btop.enable = true;
+      programs.fd.enable = true;
     };
 
     programs.zsh.enable = true;
