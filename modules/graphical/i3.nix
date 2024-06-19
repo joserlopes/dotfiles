@@ -4,10 +4,9 @@
   config,
   lib,
   configDir,
-  user,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf escapeShellArg;
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.modules.graphical;
   ws1 = "1: Browser";
   ws2 = "2: Editor";

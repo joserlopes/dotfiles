@@ -7,7 +7,6 @@
 {
   inputs,
   pkgs,
-  lib,
   ...
 }: {
   nix = {

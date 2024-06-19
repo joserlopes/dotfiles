@@ -5,7 +5,6 @@
 #
 # GTK theme configuration
 {
-  pkgs,
   config,
   lib,
   ...
