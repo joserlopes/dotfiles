@@ -42,5 +42,7 @@
     curl
     gcc
     wl-clipboard
+    xclip
+    feh
   ];
 }

@@ -37,7 +37,7 @@ in {
     usr = {
       isNormalUser = true;
       createHome = true;
-      password = "1234ze!!";
+      hashedPassword = "$y$j9T$xnIAzxybO7cppKvGAkP8D/$1qV6Lhy9c2i6qhpa9OfmMYcJbuXgbyQ/0FbffE2SVf5";
       description = userFullName;
       shell = pkgs.zsh;
       extraGroups = ["wheel"];
