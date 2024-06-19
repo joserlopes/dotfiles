@@ -380,12 +380,12 @@ in {
       theme = ./theme.rasi;
     };
 
-    # hm.services.picom = {
-    #   enable = true;
-    #   backend = "glx";
-    #   vSync = true;
-    #   settings = {unredir-if-possible = false;};
-    # };
+    hm.services.picom = {
+      enable = true;
+      # backend = "glx";
+      # vSync = true;
+      # settings = {unredir-if-possible = false;};
+    };
 
     hm.services.flameshot = {
       enable = true;
