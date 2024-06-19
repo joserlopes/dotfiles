@@ -35,6 +35,8 @@ in {
         shellAliases = {
           c = "clear";
           v = "nvim";
+          cd = "z";
+          cdi = "zi";
         };
       };
       # eza (modern ls replacement)
@@ -44,7 +46,7 @@ in {
       };
       # zoxide (jump to directories)
       programs.zoxide.enable = true;
-      home.sessionVariables._ZO_ECHO = "1";
+      # home.sessionVariables._ZO_ECHO = "1";
 
       programs.atuin.enable = true;
       programs.skim.enable = true;
