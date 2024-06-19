@@ -59,6 +59,7 @@ in {
         terminal = "alacritty";
         menu = "rofi -show combi -icon-theme Papirus -show-icons";
         window.titlebar = false;
+        defaultWorkspace = "workspace number ${ws1}";
         startup = [
           {command = "dropbox";}
           {command = "brave";}
@@ -75,7 +76,7 @@ in {
             Up = "resize shrink height 10 px or 10 ppt";
           };
           "${mode_system}" = {
-            "l" = "exec i3lock --ignore-empty-password --tiling -i ~/.config/wallpapers/lock.png 2>/dev/null, mode default";
+            "l" = "exec i3lock --ignore-empty-password --tiling -i ~/dotfiles/config/wallpapers/lock.png 2>/dev/null, mode default";
             "e" = "exec --no-startup-id i3-msg exit, mode default";
             "s" = "exec --no-startup-id $Locker && systemctl suspend, mode default";
             "h" = "exec --no-startup-id $Locker && systemctl hibernate, mode default";
