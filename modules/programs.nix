@@ -34,9 +34,8 @@
     # Password Manager
     keepassxc
 
-    # Dropbox open source client
-    maestral
-    maestral-gui
+    # Dropbox
+    dropbox
 
     wget
     curl
