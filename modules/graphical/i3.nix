@@ -27,6 +27,7 @@ in {
     environment.systemPackages = with pkgs; [
       brightnessctl
       cinnamon.nemo-with-extensions
+      networkmanagerapplet
     ];
 
     hm.home.packages = with pkgs; [
@@ -61,6 +62,7 @@ in {
         window.titlebar = false;
         defaultWorkspace = "workspace number ${ws1}";
         startup = [
+          {command = "nm-applet";}
           {command = "dropbox";}
           {command = "brave";}
           {command = "alacritty";}
@@ -440,5 +442,7 @@ in {
       latitude = 38.7436214;
       longitude = -9.1952226;
     };
+
+    programs.nm-applet.enable = true;
   };
 }
