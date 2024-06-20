@@ -576,6 +576,7 @@
       nodePackages.vscode-html-languageserver-bin # HTML LSP
       nil # Nix LSP
       unstable.typst-lsp # Typst LSP
+      gopls # Go LSP
     ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";

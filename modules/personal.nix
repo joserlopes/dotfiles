@@ -34,6 +34,9 @@ in {
       unstable.typstfmt
     ];
 
+    # Golang
+    programs.go.enable = true;
+
     programs.zsh.shellAliases."dig" = "dog";
 
     programs.direnv = {
