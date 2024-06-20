@@ -16,7 +16,7 @@ then
     exit 0
 elif [ x"$@" = x"dotfiles" ]
 then
-    xdg-open https://github.com/joserlopes/.dotfiles/tree/NixOS
+    xdg-open https://github.com/joserlopes/dotfiles
     exit 0
 fi
 echo "CG"
