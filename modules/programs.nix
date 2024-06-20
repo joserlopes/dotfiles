@@ -21,8 +21,8 @@
     gdu
     duf
 
-    # Neofetch
-    neofetch
+    # Fastfetch
+    fastfetch
 
     # Man pages
     man-pages
