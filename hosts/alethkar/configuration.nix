@@ -6,9 +6,12 @@
 # Configuration for bacchus (PC).
 {pkgs, ...}: {
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/disk/by-uuid/8751-786B";
+  # boot.loader.grub.useOSProber = true;
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # /tmp configuration
   # boot.tmp = {
