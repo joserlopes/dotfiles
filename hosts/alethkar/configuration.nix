@@ -76,8 +76,8 @@
       development.enable = true;
       autorandr.laptop.enable = true;
       programs.enable = true;
-      gtk.enable = true;
       qt.enable = true;
+      gtk.enable = true;
       alacritty.enable = true;
       i3.enable = true;
     };
