@@ -128,8 +128,8 @@ in {
           # launch obsidian
           "${modifier}+o" = "exec obsidian";
 
-          # launch firefox
-          "${modifier}+b" = "exec firefox";
+          # launch brave
+          "${modifier}+b" = "exec brave";
 
           # launch file explorer
           "${modifier}+n" = "exec nemo";
@@ -219,8 +219,8 @@ in {
           {
             statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
             fonts = {
-              names = ["pango:DejaVu Sans Mono Font Awesome 6 Free"];
-              size = 15.0;
+              names = ["pango:DejaVuSansM Nerd Font Mono"];
+              size = 13.0;
             };
             colors = {
               separator = "#666666";
