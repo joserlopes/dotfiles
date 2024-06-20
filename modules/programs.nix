@@ -32,7 +32,7 @@
     ripgrep
 
     # Password Manager
-    keepass
+    keepassxc
 
     # Dropbox
     dropbox
