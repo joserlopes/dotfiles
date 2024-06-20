@@ -27,6 +27,8 @@ in {
       qbittorrent
       # VLC media player
       vlc
+      # Calibre reader
+      calibre
     ];
 
     # Video player
