@@ -29,6 +29,8 @@ in {
       vlc
       # Calibre reader
       calibre
+      # Better paint
+      mypaint
     ];
 
     # Video player
