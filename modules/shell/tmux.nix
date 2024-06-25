@@ -55,6 +55,11 @@ in {
       ];
       extraConfig = ''
         set -ag terminal-overrides ",xterm-256color:RGB"
+
+        # Shift Alt vim keys to switch windows
+        bind -n M-H previous-window
+        bind -n M-L next-window
+
         # Start windows and panes at 1 not 0
         set -g base-index 1
         set -g pane-base-index 1
