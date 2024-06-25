@@ -218,8 +218,9 @@ in {
         bars = [
           {
             statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
+            trayOutput = "primary";
             fonts = {
-              names = ["pango:DejaVuSansM Nerd Font Mono"];
+              names = ["MesloLGS Nerd Font Mono"];
               size = 13.0;
             };
             colors = {
