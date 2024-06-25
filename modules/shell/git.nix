@@ -19,7 +19,8 @@ in {
     programs.git = {
       enable = true;
       userName = "José Lopes";
-      userEmail = "josersl2003@gmail.com";
+      userEmail = "jose.r.lopes@tecnico.ulisboa.pt";
+      # userEmail = "josersl2003@gmail.com";
       extraConfig = {
         diff.tool = "vimdiff";
         init.defaultBranch = "main";
