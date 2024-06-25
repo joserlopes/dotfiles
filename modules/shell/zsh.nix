@@ -37,6 +37,7 @@ in {
           v = "nvim";
           cd = "z";
           cdi = "zi";
+          ts = "tmux-sessionizer";
         };
       };
       # eza (modern ls replacement)
