@@ -31,7 +31,7 @@ in {
       rustup
       # typst (markup-based typesetting system)
       unstable.typst
-      unstable.typstfmt
+      unstable.typstyle
     ];
 
     # Golang
