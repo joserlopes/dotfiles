@@ -26,6 +26,12 @@ in {
     services.displayManager.sddm.enable = true;
     services.desktopManager.plasma6.enable = true;
 
+    environment.plasma6.excludePackages = with pkgs; [
+      kdePackages.kwallet
+      kdePackages.kwalletmanager
+      kwalletmanager
+    ];
+
     # Configure keymap in X11
     services.xserver.xkb = {
       layout = "pt";
@@ -48,30 +54,5 @@ in {
         noto-fonts-cjk-sans
       ];
     };
-
-    # hm.services.flameshot = {
-    #   enable = true;
-    #   settings = {
-    #     General = {
-    #       disabledTrayIcon = true;
-    #       savePath = "/tmp";
-    #       savePathFixed = false;
-    #       saveAsFileExtension = ".png";
-    #       #uiColor = "${darkblue}";
-    #       startupLaunch = false;
-    #       antialiasingPinZoom = true;
-    #       uploadWithoutConfirmation = false;
-    #       predefinedColorPaletteLarge = true;
-    #     };
-    #   };
-    # };
-
-    # Enable redshift when X starts
-    # hm.services.redshift = {
-    #   enable = true;
-    #   provider = "manual";
-    #   latitude = 38.7436214;
-    #   longitude = -9.1952226;
-    # };
   };
 }
