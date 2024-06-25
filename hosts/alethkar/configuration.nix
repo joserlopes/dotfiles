@@ -4,11 +4,7 @@
 # URL:    https://github.com/diogotcorreia/dotfiles
 #
 # Configuration for bacchus (PC).
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
