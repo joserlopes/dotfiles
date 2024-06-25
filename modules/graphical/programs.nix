@@ -31,6 +31,8 @@ in {
       calibre
       # Better paint
       mypaint
+      # Audio control
+      pavucontrol
     ];
 
     # Video player
