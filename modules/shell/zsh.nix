@@ -35,9 +35,25 @@ in {
         shellAliases = {
           c = "clear";
           v = "nvim";
-          cd = "z";
-          cdi = "zi";
           ts = "tmux-sessionizer";
+          cr = "cargo run";
+          cn = "cargo new";
+          ct = "cargo test";
+          ccl = "cargo clippy";
+          ":q" = "exit";
+          mc = "make clean";
+
+          # Changing "ls" to "eza"
+          ls = "eza -l -L=1 --git --icons --color=always --group-directories-first"; # my preferred listing
+          la = "eza -la --git --icons --color=always --group-directories-first"; # all files and dirs
+          ll = "eza -la -T -L=1 --git --icons -color=always --group-directories-first"; # long format
+          lt = "eza -aT -L=1 --git --icons --color=always --group-directories-first"; # tree listing
+
+          # Bat is just superior...
+          cat = "bat";
+
+          # Use ripgrep instead of grep
+          grep = "rg";
         };
       };
       # eza (modern ls replacement)
@@ -46,8 +62,12 @@ in {
         enableZshIntegration = true;
       };
       # zoxide (jump to directories)
-      programs.zoxide.enable = true;
-      # home.sessionVariables._ZO_ECHO = "1";
+      programs.zoxide = {
+        enable = true;
+        options = [
+          "--cmd cd"
+        ];
+      };
 
       programs.atuin.enable = true;
       programs.skim.enable = true;
