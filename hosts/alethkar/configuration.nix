@@ -9,11 +9,6 @@
   config,
   ...
 }: {
-  # Bootloader.
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.device = "/dev/disk/by-uuid/8751-786B";
-  # boot.loader.grub.useOSProber = true;
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -126,6 +121,8 @@
     ultrastardx
     # GPG's interface to password input
     pinentry
+    # CL utility for controlling media players
+    playerctl
   ];
 
   # Modules
