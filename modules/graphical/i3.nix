@@ -61,6 +61,10 @@ in {
         menu = "rofi -show combi -icon-theme Papirus -show-icons";
         window.titlebar = false;
         defaultWorkspace = "workspace number ${ws1}";
+        fonts = {
+          names = ["MesloLGS Nerd Font Mono"];
+          size = 12.0;
+        };
         startup = [
           {command = "nm-applet";}
           {command = "dropbox";}
