@@ -365,6 +365,7 @@ in {
               block = "hueshift";
               hue_shifter = "redshift";
               format = " $temperature ";
+              interval = 60;
               step = 50;
               click_temp = 3500;
             }
