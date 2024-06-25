@@ -26,7 +26,23 @@
 
   # Network Manager
   # TODO move to module
-  networking.networkmanager.enable = true;
+  networking = {
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        IPv6 = {
+          Enabled = true;
+        };
+        Settings = {
+          AutoConnect = true;
+        };
+      };
+    };
+    networkmanager = {
+      enable = true;
+      # wifi.backend = "iwd";
+    };
+  };
   usr.extraGroups = ["networkmanager"];
 
   # SSH server
@@ -96,12 +112,11 @@
   # };
 
   # GnuPG (GPG)
-  hm.programs.gpg.enable = true;
-  hm.services.gpg-agent.enable = true;
-  # hm.programs.git.signing = {
-  #   key = "ED93476ECCA9DE46";
-  #   signByDefault = true;
-  # };
+  programs.gnupg.agent.enable = true;
+  hm.programs.git.signing = {
+    key = "00447403FD1045B2";
+    signByDefault = true;
+  };
 
   # Specific packages for this host
   hm.home.packages = with pkgs; [
@@ -109,6 +124,8 @@
     arandr
     # Karaoke Game
     ultrastardx
+    # GPG's interface to password input
+    pinentry
   ];
 
   # Modules
