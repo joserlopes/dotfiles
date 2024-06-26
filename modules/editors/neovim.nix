@@ -13,6 +13,7 @@
   commonGrammars = with pkgs.unstable.vimPlugins.nvim-treesitter.builtGrammars; [
     bash
     comment
+    go
     html
     markdown
     nix
@@ -448,7 +449,7 @@
                ["<C-d>"] = cmp.mapping.scroll_docs(-4),
                ["<C-n>"] = cmp.mapping.scroll_docs(4),
                ["<C-Space>"] = cmp.mapping.complete({}),
-               ["<C-i>"] = cmp.mapping.confirm({
+               ["<C-l>"] = cmp.mapping.confirm({
                    behavior = cmp.ConfirmBehavior.Replace,
                    select = true,
                }),
