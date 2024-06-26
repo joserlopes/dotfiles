@@ -449,6 +449,10 @@ in {
       longitude = -9.1952226;
     };
 
+    hm.xresources.extraConfig = ''
+      Xcursor.size: 16
+    '';
+
     programs.nm-applet.enable = true;
   };
 }
