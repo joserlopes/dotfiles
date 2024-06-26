@@ -19,6 +19,10 @@ in {
   # Home manager module
   config.hm = mkIf cfg.enable {
     home.packages = with pkgs; [
+      # zed editor
+      zed-editor
+      # Tiled maps editor
+      tiled
       # Jetbrains Gateway (remote development)
       # unstable.jetbrains.gateway
       # IntelliJ IDEA (Ultimate)
