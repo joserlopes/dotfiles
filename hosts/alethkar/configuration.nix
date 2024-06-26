@@ -114,6 +114,8 @@
     pinentry
     # CL utility for controlling media players
     playerctl
+    # USB File Flasher
+    popsicle
   ];
 
   # Modules
