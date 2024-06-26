@@ -1,9 +1,4 @@
-# modules/graphical/dwm.nix
-#
-# Author: Diogo Correia <me@diogotc.com>
-# URL:    https://github.com/diogotcorreia/dotfiles
-#
-# DWM window manager and graphical environment configuration
+# KDE Plasma Desktop environment
 {
   pkgs,
   config,

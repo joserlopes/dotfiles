@@ -1,10 +1,6 @@
-# modules/zsh.nix
-#
-# Author: Diogo Correia <me@diogotc.com>
-# URL:    https://github.com/diogotcorreia/dotfiles
-#
 # zsh (with oh-my-zsh) configuration.
 {
+  pkgs,
   config,
   lib,
   ...
@@ -64,6 +60,7 @@ in {
       # zoxide (jump to directories)
       programs.zoxide = {
         enable = true;
+        # Automatic cd replacement alias
         options = [
           "--cmd cd"
         ];
@@ -71,7 +68,13 @@ in {
 
       programs.atuin.enable = true;
       programs.skim.enable = true;
-      programs.bat.enable = true;
+      programs.bat = {
+        enable = true;
+      };
+      home.sessionVariables = {
+        BAT_THEME = "gruvbox-dark";
+      };
+
       programs.btop.enable = true;
       programs.fd.enable = true;
     };

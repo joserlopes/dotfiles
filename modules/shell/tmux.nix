@@ -1,9 +1,4 @@
-# modules/home/shell/tmux.nix
-#
-# Author: Diogo Correia <me@diogotc.com>
-# URL:    https://github.com/diogotcorreia/dotfiles
-#
-# tmux configuration (Based on RageKnify's)
+# tmux configuration
 {
   pkgs,
   config,

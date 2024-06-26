@@ -1,9 +1,4 @@
-# modules/editors/neovim.nix
-#
-# Author: Diogo Correia <me@diogotc.com>
-# URL:    https://github.com/diogotcorreia/dotfiles
-#
-# neovim home configuration. (Based on RageKnify's)
+# neovim home configuration
 {
   inputs,
   pkgs,

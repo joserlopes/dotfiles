@@ -1,9 +1,4 @@
-# modules/home/shell/starship.nix
-#
-# Author: Diogo Correia <me@diogotc.com>
-# URL:    https://github.com/diogotcorreia/dotfiles
-#
-# starship configuration (Based on RageKnify's)
+# starship configuration
 {
   pkgs,
   config,
