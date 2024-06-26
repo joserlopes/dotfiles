@@ -28,6 +28,8 @@ in {
       mypaint
       # Audio control
       pavucontrol
+      # Gnome calculator
+      gnome.gnome-calculator
     ];
 
     # Video player
