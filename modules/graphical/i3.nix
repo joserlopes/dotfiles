@@ -74,12 +74,23 @@ in {
         floating.modifier = "${modifier}";
         modes = {
           resize = {
+            # Pressing left will shrink the window’s width.
+            # Pressing right will grow the window’s width.
+            # Pressing up will shrink the window’s height.
+            # Pressing down will grow the window’s height.
+            j = "resize shrink width 10 px or 10 ppt";
+            k = "resize grow height 10 px or 10 ppt";
+            l = "resize shrink height 10 px or 10 ppt";
+            ccedilla = "resize grow width 10 px or 10 ppt";
+
             Down = "resize grow height 10 px or 10 ppt";
-            Escape = "mode default";
             Left = "resize shrink width 10 px or 10 ppt";
-            Return = "mode default";
             Right = "resize grow width 10 px or 10 ppt";
             Up = "resize shrink height 10 px or 10 ppt";
+
+            Return = "mode default";
+            Escape = "mode default";
+            "${modifier}+r" = "mode default";
           };
           "${mode_system}" = {
             "l" = "exec i3lock --ignore-empty-password --tiling -i ~/dotfiles/config/wallpapers/lock.png 2>/dev/null, mode default";
