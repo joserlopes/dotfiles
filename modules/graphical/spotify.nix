@@ -2,26 +2,32 @@
 {
   config,
   lib,
-  spicetifyPkgs,
+  pkgs,
   ...
 }: let
   inherit (lib) mkIf;
   cfg = config.modules.graphical.programs;
 in {
   # Follow graphical.programs.enabled
-  config.hm = mkIf cfg.enable {
-    programs.spicetify = {
-      enable = true;
-      theme = spicetifyPkgs.themes.Comfy;
+  config = mkIf cfg.enable {
+    # Allow mDNS discovery of Google Cast devices
+    networking.firewall.allowedUDPPorts = [5353];
 
-      enabledExtensions = with spicetifyPkgs.extensions; [
+    hm.programs.spicetify = {
+      enable = true;
+      spotifyPackage = pkgs.unstable.spotify;
+      spicetifyPackage = pkgs.unstable.spicetify-cli;
+
+      theme = pkgs.spicetify.themes.Comfy;
+
+      enabledExtensions = with pkgs.spicetify.extensions; [
         fullAppDisplay
         autoSkipVideo
         shuffle # shuffle+
         hidePodcasts
       ];
 
-      enabledCustomApps = with spicetifyPkgs.apps; [lyrics-plus];
+      enabledCustomApps = with pkgs.spicetify.apps; [lyrics-plus];
     };
   };
 }

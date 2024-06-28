@@ -19,127 +19,76 @@
   };
 
   outputs = inputs @ {...}: let
-    inherit (builtins) listToAttrs attrNames readDir filter;
-    inherit (inputs.nixpkgs) lib;
-    inherit (inputs.nixpkgs.lib.filesystem) listFilesRecursive;
-    inherit (lib) mapAttrsToList hasSuffix;
-    # TODO change
-    colors = {
-      dark = {
-        "base00" = "#002b36"; # background
-        "base01" = "#073642"; # lighter background
-        "base02" = "#586e75"; # selection background
-        "base03" = "#657b83"; # comments, invisibles, line highlighting
-        "base04" = "#839496"; # dark foreground
-        "base05" = "#93a1a1"; # default foreground
-        "base06" = "#eee8d5"; # light foreground
-        "base07" = "#fdf6e3"; # light background
-        "base08" = "#dc322f"; # red       variables
-        "base09" = "#cb4b16"; # orange    integers, booleans, constants
-        "base0A" = "#b58900"; # yellow    classes
-        "base0B" = "#859900"; # green     strings
-        "base0C" = "#2aa198"; # aqua      support, regular expressions
-        "base0D" = "#268bd2"; # blue      functions, methods
-        "base0E" = "#6c71c4"; # purple    keywords, storage, selector
-        "base0F" = "#d33682"; # deprecated, opening/closing embedded language tags
-      };
-      light = {
-        "base00" = "#fdf6e3";
-        "base01" = "#eee8d5";
-        "base02" = "#93a1a1";
-        "base03" = "#839496";
-        "base04" = "#657b83";
-        "base05" = "#586e75";
-        "base06" = "#073642";
-        "base07" = "#002b36";
-        "base08" = "#dc322f";
-        "base09" = "#cb4b16";
-        "base0A" = "#b58900";
-        "base0B" = "#859900";
-        "base0C" = "#2aa198";
-        "base0D" = "#268bd2";
-        "base0E" = "#6c71c4";
-        "base0F" = "#d33682";
-      };
-    };
-    hostNameToColor = hostName: let
-      mapping = {
-        alethkar = "base09";
-      };
-      base = mapping."${hostName}";
-    in
-      colors.light."${base}";
+    inherit (lib.my) mkHosts mkOverlays mkPkgs mkProfiles;
 
-    system = "x86_64-linux";
+    systemFlakePath = "github:joserlopes/dotfiles/NixOS";
+
     user = "jrl";
     userFullName = "Jose Lopes";
 
-    pkg-sets = final: _prev: let
-      args = {
-        system = final.system;
-        config.allowUnfree = true;
-      };
-    in {
-      unstable = import inputs.nixpkgs-unstable args;
+    extraArgs = {
+      inherit
+        systemFlakePath # TODO move to profile
+        user
+        userFullName
+        ;
+      configDir = ./config;
     };
 
-    overlaysDir = ./overlays;
+    lib = inputs.nixpkgs.lib.extend (self: super:
+      import ./lib ({
+          inherit inputs profiles pkgs nixosConfigurations;
+          lib = self;
+        }
+        // extraArgs));
+
+    extraPackages = {system, ...}: {
+      agenix = inputs.agenix.packages.${system}.default;
+      lidl-to-grocy = inputs.lidl-to-grocy.packages.${system}.default;
+      spicetify = inputs.spicetify-nix.packages.${system}.default;
+    };
 
     overlays =
-      [pkg-sets]
-      ++ mapAttrsToList
-      (name: _: import "${overlaysDir}/${name}" {inherit inputs;})
-      (readDir overlaysDir);
-
-    pkgs = import inputs.nixpkgs {
-      inherit system overlays;
-      config.allowUnfree = true;
-    };
-
-    spicetifyPkgs = inputs.spicetify-nix.packages.${system}.default;
-
-    allModules = mkModules ./modules;
-
-    # Imports every nix module from a directory, recursively.
-    mkModules = path: filter (hasSuffix ".nix") (listFilesRecursive path);
-
-    # Imports every host defined in a directory.
-    mkHosts = dir:
-      listToAttrs (map (name: {
-        inherit name;
-        value = inputs.nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-          specialArgs = {
-            inherit
-              inputs
-              user
-              userFullName
-              colors
-              spicetifyPkgs
-              ;
-            configDir = ./config;
-            hostColor = hostNameToColor name;
-            hostName = name;
+      (mkOverlays ./overlays)
+      // {
+        extraPkgs = self: super: (extraPackages {system = "x86_64-linux";});
+      };
+    pkgs = mkPkgs overlays;
+    nixosConfigurations = mkHosts ./hosts {
+      inherit extraArgs;
+      # TODO move to profiles
+      extraModules = [
+        {
+          hardware.enableRedistributableFirmware = true;
+        }
+        inputs.home.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            sharedModules = [inputs.spicetify-nix.homeManagerModule];
           };
-          modules =
-            [
-              {networking.hostName = name;}
-              inputs.home.nixosModules.home-manager
-              {
-                home-manager = {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  sharedModules = [inputs.spicetify-nix.homeManagerModule];
-                };
-              }
-              inputs.impermanence.nixosModules.impermanence
-            ]
-            ++ allModules
-            ++ (mkModules "${dir}/${name}");
-        };
-      }) (attrNames (readDir dir)));
+        }
+      ];
+    };
+    profiles = mkProfiles ./profiles;
   in {
-    nixosConfigurations = mkHosts ./hosts;
+    inherit nixosConfigurations;
+
+    # Packages are here so they are built by CI and cached
+    packages = {
+      # x86_64-linux = {
+      #   attic = inputs.attic.packages.x86_64-linux.attic-nixpkgs.override {clientOnly = true;};
+      #   # TODO remove in 24.05, since override for unstable will not be needed
+      #   pgvecto-rs = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.postgresqlPackages.pgvecto-rs.override {
+      #     # This is what hera is using at the moment
+      #     postgresql = inputs.nixpkgs.legacyPackages.x86_64-linux.postgresql_14;
+      #   };
+      #
+      #   # TODO this should be auto generated
+      #   inherit (pkgs.my) flask-unsign pycdc troupe;
+      # };
+    };
 
     formatter = {
       x86_64-linux = inputs.nixpkgs.legacyPackages.x86_64-linux.alejandra;
