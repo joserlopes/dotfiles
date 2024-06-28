@@ -30,6 +30,8 @@ in {
       pavucontrol
       # Gnome calculator
       gnome.gnome-calculator
+      # Slack client
+      slack
     ];
 
     # Video player
