@@ -32,6 +32,8 @@ in {
       gnome.gnome-calculator
       # Slack client
       slack
+      # Gimp
+      gimp
     ];
 
     # Video player
