@@ -27,6 +27,10 @@ in {
       # typst (markup-based typesetting system)
       unstable.typst
       unstable.typstyle
+      # Gleam
+      unstable.gleam
+      erlang
+      rebar3
     ];
 
     # Golang
