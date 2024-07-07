@@ -234,7 +234,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #d0d1ca";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = [];
           detect_files = ["bun.lockb" "bunfig.toml"];
@@ -244,7 +244,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #c2fff8";
-          format = "via [$symbol($version(-$name) )]($style)";
+          format = "via [$symbol($version(-$name) )]($style) ";
           version_format = "v($raw)";
           detect_extensions = ["c" "h"];
         };
@@ -252,7 +252,7 @@ in {
           disabled = false;
           symbol = "喝";
           style = "bold #000064";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = [];
           detect_files = ["CMakeLists.txt" "CMakeCache.txt"];
@@ -276,7 +276,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #4e4f4c";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = [];
           detect_files = ["shard.yml"];
@@ -286,7 +286,7 @@ in {
           disabled = false;
           symbol = "Λ ";
           style = "bodl #1e3e44";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = [];
           detect_files = ["daml.yaml"];
@@ -296,7 +296,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #166587";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = [];
           detect_files = ["pubspec.yaml" "pubspec.yml" "pubspec.lock"];
@@ -306,7 +306,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #535353";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = [];
           detect_files = ["deno.json" "deno.jsonc" "mod.ts" "mod.js" "deps.ts" "deps.js"];
@@ -336,7 +336,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #481943";
-          format = "via [$symbol($version \(OTP $otp_version\) )]($style)";
+          format = "via [$symbol($version \(OTP $otp_version\) )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = [];
           detect_files = ["mix.exs"];
@@ -347,7 +347,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #1954ac";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = ["elm"];
           detect_files = ["elm.json" "elm-package.json" ".elm-version"];
@@ -358,7 +358,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #c13455";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = [];
           detect_files = ["rebar.config" "elang.mk"];
@@ -376,7 +376,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #22b7bf";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = ["go"];
           detect_files = ["go.mod" "go.sum" "go.work" "glide.yaml" "Gopkg.yml" "Gopkg.lock" ".go-version"];
@@ -386,7 +386,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #7c3076";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           detect_extensions = ["hs" "cabal" "hs-boot"];
           detect_files = ["stack.yaml" "cabal.project"];
           detect_folders = [];
@@ -396,7 +396,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #060d70";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = [];
           detect_files = ["helmfile.yaml" "Chart.yaml"];
@@ -407,7 +407,7 @@ in {
           disabled = false;
           symbol = "☕ ";
           style = "bold #6a262f";
-          format = "via [$(symbol)($version)]($style)";
+          format = "via [($symbol)($version)]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["java" "class" "gradle" "jar" "cljs" "cljc"];
           detect_files = ["pom.xml" "build.gradle.kts" "build.sbt" ".java-version" ".deps.edn" "project.clj" "build.boot"];
@@ -418,7 +418,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #1d1d46";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["jl"];
           detect_files = ["Project.toml" "Manifest.toml"];
@@ -429,7 +429,7 @@ in {
           disabled = false;
           symbol = "🅺 ";
           style = "bold #75227d";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["kt" "kts"];
           detect_files = [];
@@ -450,7 +450,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #000261";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["lua"];
           detect_files = [".lua-version"];
@@ -462,7 +462,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #615d25";
-          format = "via [$symbol($version)$($style)]";
+          format = "via [$symbol($version)$($style)] ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = ["nvim" "nims" "nimble"];
           detect_files = ["nim.cfg"];
@@ -483,7 +483,7 @@ in {
           symbol = " ";
           style = "bold #356a00";
           not_capable_style = "bold FF0000";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["js" "mjs" "cjs" "ts" "mts" "cts"];
           detect_files = ["package.json" ".node-version"];
@@ -523,7 +523,7 @@ in {
           disabled = false;
           symbol = "Perl";
           style = "bold #2a5071";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["pl" "pm" "pod"];
           detect_files = ["Makefile.PL" "Build.PL" "cpanfile" "cpanfile.snapshot" "META.json" "META.yml" ".perl-version"];
@@ -535,7 +535,7 @@ in {
           symbol = " ";
           style = "bold #39457c";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           detect_extensions = ["php"];
           detect_files = ["composer.json" ".php-version"];
           detect_folders = [];
@@ -554,7 +554,7 @@ in {
           disabled = false;
           symbol = "<=>";
           style = "bold #171b24";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["purs"];
           detect_files = ["spago.dhall"];
@@ -565,7 +565,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #0FFF50"; # Available >> raw, major, minor & patch
-          format = "via [$(symbol)$(pyenv_prefix)($version)(\($virtualenv\) )]($style)";
+          format = "via [$(symbol)$(pyenv_prefix)($version)(\($virtualenv\) )]($style) ";
           version_format = "v($raw)";
           pyenv_version_name = false; # Use pyenv to get Python version
           pyenv_prefix = "pyenv";
@@ -579,7 +579,7 @@ in {
           disabled = false;
           symbol = "Rlang";
           style = "bold #2569be";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["R" "Rd" "Rmd" "Rproj" "Rsx"];
           detect_files = [".Rprofile"];
@@ -590,7 +590,7 @@ in {
           disabled = false;
           symbol = "Raku  ";
           style = "bold #fe3265";
-          format = "via [$symbol($version-$vm_version )]($style)";
+          format = "via [$symbol($version-$vm_version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["p6" "pm6" "pod6" "raku" "rakumod"];
           detect_files = ["META6.json"];
@@ -601,7 +601,7 @@ in {
           disabled = false;
           symbol = "Red lang";
           style = "bold #a60000";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["red"];
           detect_files = [];
@@ -612,7 +612,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #920c00";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = ["rb"];
           detect_files = ["Gemfile" ".ruby-version"];
@@ -624,7 +624,7 @@ in {
           disabled = false;
           symbol = "🦀 ";
           style = "bold #835f00";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["rs"];
           detect_files = ["Cargo.toml"];
@@ -635,7 +635,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #db3330";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = ["sbt" "scala"];
           detect_files = [".scalaenv" ".sbtenv" "build.sbt"];
@@ -660,7 +660,7 @@ in {
           disabled = false;
           symbol = "🍎";
           style = "bold #f05138";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch;
           detect_extensions = ["swift"];
           detect_files = ["Package.swift"];
@@ -682,7 +682,7 @@ in {
           disabled = false;
           symbol = "⍱ ";
           style = "bold #104eb2";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = [];
           detect_files = ["Vagrantfile"];
@@ -693,7 +693,7 @@ in {
           disabled = false;
           symbol = "Vlang";
           style = "bold #526a89";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["v"];
           detect_files = ["v.mod" "vpkg.json" ".vpkg-lock.json"];
@@ -711,7 +711,7 @@ in {
           disabled = false;
           symbol = "⚡";
           style = "bold #f7a41d";
-          format = "via [$symbol($version )]($style)";
+          format = "via [$symbol($version )]($style) ";
           version_format = "v($raw)"; # Available >> raw, major, minor & patch
           detect_extensions = ["zig"];
           detect_files = [];
