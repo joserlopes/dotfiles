@@ -61,8 +61,10 @@
   };
 
   # Don't shutdown when power button is short-pressed
+  # Don't suspend on idle
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
+    IdleAction=ignore
   '';
 
   # Docker (containers)
