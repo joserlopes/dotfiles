@@ -24,9 +24,9 @@ in {
       # Tiled maps editor
       tiled
       # Jetbrains Gateway (remote development)
-      # unstable.jetbrains.gateway
+      unstable.jetbrains.gateway
       # IntelliJ IDEA (Ultimate)
-      # unstable.jetbrains.idea-ultimate
+      unstable.jetbrains.idea-ultimate
       # Visual Studio Code
       # unstable.vscode
       # Insomnia REST Client
@@ -34,5 +34,8 @@ in {
     ];
     # Firefox browser
     programs.firefox.enable = true;
+
+    # Gradle build system (for Java development)
+    programs.gradle.enable = true;
   };
 }

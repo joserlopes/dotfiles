@@ -27,6 +27,8 @@ in {
       # typst (markup-based typesetting system)
       unstable.typst
       unstable.typstyle
+      # Java VM
+      jdk
       # Gleam
       unstable.gleam
       erlang

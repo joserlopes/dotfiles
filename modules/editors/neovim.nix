@@ -407,6 +407,10 @@
              capabilites = capabilities,
              on_attach = on_attach,
          })
+         lsp_config.jdtls.setup({
+             capabilites = capabilities,
+             on_attach = on_attach,
+         })
          lsp_config.rust_analyzer.setup(with_config({
            settings = {
              ["rust-analyzer"] = {
@@ -624,6 +628,7 @@
       unstable.typst-lsp # Typst LSP
       unstable.tinymist # Better Typst LSP ?
       gopls # Go LSP
+      jdt-language-server # Java LSP
     ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
