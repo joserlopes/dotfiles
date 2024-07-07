@@ -30,7 +30,7 @@
     import inputs.nixpkgs ({
         overlays =
           [
-            (self: super: {
+            (_self: _super: {
               unstable = import inputs.nixpkgs-unstable argsPkgs;
             })
           ]

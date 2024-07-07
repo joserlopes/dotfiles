@@ -35,7 +35,7 @@
       configDir = ./config;
     };
 
-    lib = inputs.nixpkgs.lib.extend (self: super:
+    lib = inputs.nixpkgs.lib.extend (self: _super:
       import ./lib ({
           inherit inputs profiles pkgs nixosConfigurations;
           lib = self;
@@ -51,7 +51,7 @@
     overlays =
       (mkOverlays ./overlays)
       // {
-        extraPkgs = self: super: (extraPackages {system = "x86_64-linux";});
+        extraPkgs = _self: _super: (extraPackages {system = "x86_64-linux";});
       };
     pkgs = mkPkgs overlays;
     nixosConfigurations = mkHosts ./hosts {
@@ -79,8 +79,6 @@
     packages = {
       # x86_64-linux = {
       #   attic = inputs.attic.packages.x86_64-linux.attic-nixpkgs.override {clientOnly = true;};
-      #   # TODO remove in 24.05, since override for unstable will not be needed
-      #   pgvecto-rs = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.postgresqlPackages.pgvecto-rs.override {
       #     # This is what hera is using at the moment
       #     postgresql = inputs.nixpkgs.legacyPackages.x86_64-linux.postgresql_14;
       #   };
