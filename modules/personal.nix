@@ -38,7 +38,11 @@ in {
     # Golang
     programs.go.enable = true;
 
-    programs.zsh.shellAliases."dig" = "dog";
+    # Bun
+    programs.bun = {
+      enable = true;
+      package = pkgs.unstable.bun;
+    };
 
     programs.direnv = {
       enable = true;
