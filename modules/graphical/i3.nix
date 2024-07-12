@@ -15,7 +15,7 @@
   ws5 = "5: Statement";
   ws6 = "6: Nemo";
   ws7 = "7: Books";
-  ws8 = "8: Rhythmbox";
+  ws8 = "8: Spotify";
   ws9 = "9: KeePass";
   ws10 = "10";
   mode_system = "System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown";
