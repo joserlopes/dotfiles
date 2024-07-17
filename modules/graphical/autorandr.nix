@@ -16,9 +16,9 @@ in {
       defaultTarget = "laptop";
       profiles = {
         laptop = {
-          fingerprint = {"eDP1" = "*";};
+          fingerprint = {"eDP-1-1" = "*";};
           config = {
-            eDP1 = {
+            eDP-1-1 = {
               enable = true;
               primary = true;
               mode = "1920x1080";
@@ -30,22 +30,22 @@ in {
         # Dual monitor profile: HDMI on top of eDP
         laptop-dual = {
           fingerprint = {
-            "eDP1" = "*";
-            "HDMI1" = "*";
+            "eDP-1-1" = "*";
+            "HDMI-0" = "*";
           };
           config = {
-            HDMI1 = {
+            HDMI-0 = {
               enable = true;
               primary = false;
               mode = "1920x1080";
-              position = "0x0";
+              position = "1920x1080";
               rotate = "normal";
             };
-            eDP1 = {
+            eDP-1-1 = {
               enable = true;
               primary = true;
               mode = "1920x1080";
-              position = "0x1080";
+              position = "0x0";
               rotate = "normal";
             };
           };
