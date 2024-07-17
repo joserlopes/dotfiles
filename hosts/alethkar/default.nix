@@ -6,7 +6,7 @@
   ...
 }: {
   imports = with profiles; [
-    virtualisation.virtual-machines.nix
+    virtualisation.virtual-machines
     virtualisation.docker
     graphical.firefox
     services.bluetooth
