@@ -35,19 +35,5 @@ in {
 
     # Configure console keymap
     console.keyMap = "pt-latin1";
-
-    fonts = {
-      enableDefaultPackages = true;
-
-      packages = with pkgs; [
-        fira-code
-        material-design-icons
-        nerdfonts
-        noto-fonts
-        noto-fonts-extra
-        noto-fonts-emoji
-        noto-fonts-cjk-sans
-      ];
-    };
   };
 }
