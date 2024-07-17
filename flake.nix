@@ -10,11 +10,6 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    spicetify-nix = {
-      url = "github:the-argus/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
@@ -45,7 +40,6 @@
     extraPackages = {system, ...}: {
       agenix = inputs.agenix.packages.${system}.default;
       lidl-to-grocy = inputs.lidl-to-grocy.packages.${system}.default;
-      spicetify = inputs.spicetify-nix.packages.${system}.default;
     };
 
     overlays =
@@ -66,7 +60,6 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            sharedModules = [inputs.spicetify-nix.homeManagerModule];
           };
         }
       ];
