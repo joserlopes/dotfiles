@@ -63,7 +63,7 @@ in {
         defaultWorkspace = "workspace number ${ws1}";
         fonts = {
           names = ["MesloLGS Nerd Font Mono"];
-          size = 12.0;
+          size = 15.0;
         };
         startup = [
           {command = "nm-applet";}
@@ -236,7 +236,7 @@ in {
             trayOutput = "primary";
             fonts = {
               names = ["MesloLGS Nerd Font Mono"];
-              size = 13.0;
+              size = 15.0;
             };
             colors = {
               separator = "#666666";
