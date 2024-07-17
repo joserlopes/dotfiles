@@ -1,12 +1,15 @@
 # Configuration for alethkar (laptop).
 {
   pkgs,
+  lib,
   profiles,
   ...
 }: {
   imports = with profiles; [
+    virtualisation.virtual-machines.nix
+    virtualisation.docker
     graphical.firefox
-    bluetooth
+    services.bluetooth
   ];
   boot.loader = {
     systemd-boot = {
@@ -18,11 +21,11 @@
   };
 
   # /tmp configuration
-  # boot.tmp = {
-  #   useTmpfs = true;
-  #   tmpfsSize = "80%";
-  #   cleanOnBoot = true;
-  # };
+  boot.tmp = {
+    useTmpfs = true;
+    tmpfsSize = "80%";
+    cleanOnBoot = true;
+  };
 
   # Network Manager
   # TODO move to module
@@ -56,9 +59,6 @@
     HandlePowerKey=ignore
     IdleAction=ignore
   '';
-
-  # Docker (containers)
-  virtualisation.docker.enable = true;
 
   # GnuPG (GPG)
   programs.gnupg.agent.enable = true;
@@ -107,6 +107,20 @@
     personal.enable = true;
     xdg.enable = true;
     ist.enable = true;
+  };
+
+  # Wayland specialisation
+  # TODO: make default
+  specialisation.wayland.configuration = {
+    imports = with profiles; [
+      graphical.niri
+    ];
+
+    # Disable i3 configuration
+    modules.graphical = {
+      enable = lib.mkForce false;
+      autorandr.laptop.enable = lib.mkForce false;
+    };
   };
 
   # Statem state version
