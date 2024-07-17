@@ -27,7 +27,7 @@ in {
             };
           };
         };
-        # Dual monitor profile: HDMI on top of eDP
+        # Dual monitor profile: HDMI on the bottom right of eDP
         laptop-dual = {
           fingerprint = {
             "eDP-1-1" = "*";
