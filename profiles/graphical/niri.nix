@@ -23,8 +23,8 @@
     input {
       keyboard {
         xkb {
-          layout "us"
-          variant "altgr-intl"
+          layout "pt"
+          variant ""
         }
       }
       touchpad {
