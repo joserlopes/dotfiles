@@ -32,8 +32,6 @@ in {
       # Insomnia REST Client
       insomnia
     ];
-    # Firefox browser
-    programs.firefox.enable = true;
 
     # Gradle build system (for Java development)
     programs.gradle.enable = true;

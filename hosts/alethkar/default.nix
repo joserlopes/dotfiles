@@ -5,6 +5,7 @@
   ...
 }: {
   imports = with profiles; [
+    graphical.firefox
     bluetooth
   ];
   boot.loader = {

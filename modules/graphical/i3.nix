@@ -68,7 +68,7 @@ in {
         startup = [
           {command = "nm-applet";}
           {command = "dropbox";}
-          {command = "brave";}
+          {command = "firefox";}
           {command = "alacritty";}
         ];
         floating.modifier = "${modifier}";
@@ -143,8 +143,8 @@ in {
           # launch obsidian
           "${modifier}+o" = "exec obsidian";
 
-          # launch brave
-          "${modifier}+b" = "exec brave";
+          # launch firefox
+          "${modifier}+b" = "exec firefox";
 
           # launch file explorer
           "${modifier}+n" = "exec nemo";
