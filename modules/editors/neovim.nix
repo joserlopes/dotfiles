@@ -10,40 +10,10 @@
   cfg = config.modules.editors.neovim;
   personal = config.modules.personal.enable;
   git = config.modules.shell.git.enable;
-  commonGrammars = with pkgs.unstable.vimPlugins.nvim-treesitter.builtGrammars; [
-    bash
-    comment
-    go
-    html
-    markdown
-    nix
-    python
-  ];
-  personalGrammars =
-    if personal
-    then
-      with pkgs.unstable.vimPlugins.nvim-treesitter.builtGrammars; [
-        c
-        cpp
-        java
-        javascript
-        latex
-        lua
-        rust
-        toml
-        typescript
-        pkgs.unstable.tree-sitter-grammars.tree-sitter-typst
-        vim
-        yaml
-        gleam
-      ]
-    else [];
   commonPlugins = with pkgs.unstable.vimPlugins; [
     nvim-web-devicons
     {
-      plugin =
-        nvim-treesitter.withPlugins
-        (_plugins: commonGrammars ++ personalGrammars);
+      plugin = nvim-treesitter.withAllGrammars;
       type = "lua";
       config = ''
         -- enable highlighting
