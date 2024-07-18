@@ -88,7 +88,10 @@
       enable = true;
       development.enable = true;
       autorandr.laptop.enable = true;
-      programs.enable = true;
+      programs = {
+        enable = true;
+        laptop = true;
+      };
       qt.enable = true;
       gtk.enable = true;
       alacritty.enable = true;
