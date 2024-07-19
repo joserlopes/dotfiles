@@ -565,7 +565,7 @@ in {
           disabled = false;
           symbol = " ";
           style = "bold #0FFF50"; # Available >> raw, major, minor & patch
-          format = "via [$(symbol)$(pyenv_prefix)($version)(\($virtualenv\) )]($style) ";
+          format = "via [($symbol)($pyenv_prefix)($version)(\($virtualenv\) )]($style) ";
           version_format = "v($raw)";
           pyenv_version_name = false; # Use pyenv to get Python version
           pyenv_prefix = "pyenv";

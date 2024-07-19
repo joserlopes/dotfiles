@@ -9,7 +9,7 @@
     profiles.default = {
       id = 0;
       isDefault = true;
-      # STATE: Requires enabling the extensions manually after first install
+      # NOTE: Requires enabling the extensions manually after first install
       extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
         darkreader
 

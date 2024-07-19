@@ -12,7 +12,7 @@
   ws2 = "2: Editor";
   ws3 = "3: Notes";
   ws4 = "4: Docs";
-  ws5 = "5: Statement";
+  ws5 = "5: Xournalpp";
   ws6 = "6: Nemo";
   ws7 = "7: Books";
   ws8 = "8: Spotify";
