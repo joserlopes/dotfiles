@@ -96,6 +96,7 @@
       gtk.enable = true;
       alacritty.enable = true;
       i3.enable = true;
+      xournalpp.enable = true;
     };
     services = {
       syncthing.enable = true;

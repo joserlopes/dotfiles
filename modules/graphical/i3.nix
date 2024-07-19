@@ -149,6 +149,9 @@ in {
           # launch file explorer
           "${modifier}+n" = "exec nemo";
 
+          # launch xournalpp
+          "${modifier}+x" = "exec xournalpp";
+
           # kill focused window
           "${modifier}+q" = "kill";
 
