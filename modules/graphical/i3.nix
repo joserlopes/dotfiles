@@ -465,5 +465,13 @@ in {
     '';
 
     programs.nm-applet.enable = true;
+
+    hm.xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+        # Use nemo as default file manager
+        "inode/directory" = ["nemo.desktop"];
+      };
+    };
   };
 }

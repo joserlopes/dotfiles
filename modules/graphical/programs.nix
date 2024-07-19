@@ -87,5 +87,12 @@ in {
       MINIMIZE_TO_TRAY = false;
       OPEN_ON_STARTUP = false;
     };
+
+    hm.xdg.mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "video/mp4" = ["vlc.desktop"];
+      };
+    };
   };
 }
