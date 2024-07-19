@@ -13,7 +13,6 @@ in {
       enable = true;
       options = {
         selection-clipboard = "clipboard";
-        recolor = "true"; # open documents with inverted colors by default
         sandbox = "none"; # fix links not opening on browser
       };
     };
