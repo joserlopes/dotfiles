@@ -10,7 +10,7 @@
 
   discordThemeFile = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/orblazer/discord-nordic/v4.10.14/uniform/nordic.theme.css";
-    hash = "sha256-SDLprtPs4F3NirCHn/SL7WAWl8iK0+4JglVr6oP0ejs=";
+    hash = "sha256-Qju3KUeC18k9m/VJ3feQNvy88YnC7zMNBRI0vRKYpxY=";
   };
 in {
   options.modules.graphical.programs.enable = mkEnableOption "programs";
