@@ -1,4 +1,4 @@
-# Enable NVIDIA drivers synced with Intel ones
+# Enable Nvidia drivers synced with Intel ones
 {config, ...}: {
   hardware.opengl = {
     enable = true;
@@ -16,7 +16,7 @@
       # Enable sync mode
       sync.enable = true;
 
-      # Bus ID for both GPUs
+      # Bus ID for both Intel and Nvidia GPUs
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
