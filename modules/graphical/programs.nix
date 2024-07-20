@@ -49,6 +49,8 @@ in {
       scrcpy
       # Drawing program
       unstable.krita
+      # Recording and audio editing
+      unstable.audacity
     ];
 
     # Video player
@@ -94,6 +96,8 @@ in {
       enable = true;
       defaultApplications = {
         "video/mp4" = ["vlc.desktop"];
+        # mkv files
+        "video/x-matroska" = ["vlc.desktop"];
       };
     };
   };
