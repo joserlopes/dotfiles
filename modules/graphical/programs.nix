@@ -47,6 +47,8 @@ in {
       gimp
       # Android screen mirroring (scrcpy)
       scrcpy
+      # Drawing program
+      unstable.krita
     ];
 
     # Video player

@@ -13,6 +13,8 @@ in {
     programs.vscode = {
       enable = true;
       package = pkgs.unstable.vscode;
+      # NOTE: When first launching vscode after installing the extensions
+      # they need to be reloaded
       extensions = with pkgs.unstable.vscode-extensions; [
         golang.go
         eamodio.gitlens
