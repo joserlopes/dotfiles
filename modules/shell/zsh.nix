@@ -74,7 +74,12 @@ in {
         BAT_THEME = "gruvbox-dark";
       };
 
-      programs.btop.enable = true;
+      programs.btop = {
+        enable = true;
+        settings = {
+          color_theme = "everforest-dark-medium";
+        };
+      };
       programs.fd.enable = true;
     };
 
