@@ -1,4 +1,4 @@
-# alacritty terminal emulator configuration
+# vscode configuration
 {
   pkgs,
   config,
@@ -15,6 +15,7 @@ in {
       package = pkgs.unstable.vscode;
       extensions = with pkgs.unstable.vscode-extensions; [
         golang.go
+        eamodio.gitlens
       ];
     };
   };
