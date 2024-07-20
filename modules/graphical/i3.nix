@@ -128,6 +128,10 @@ in {
           "Mod1+m" = "exec pactl set-sink-mute 0 toggle";
           "Mod1+Shift+m" = "exec pactl set-source-mute 0 toggle";
 
+          # Keymaps to change microphone volume
+          "${modifier}+Shift+plus" = "exec pactl set-source-volume 0 +5%";
+          "${modifier}+Shift+minus" = "exec pactl set-source-volume 0 -5%";
+
           # Use playerctl to handle media keys
           "XF86AudioPlay" = "exec playerctl play-pause";
           "XF86AudioPause" = "exec playerctl play-pause";
