@@ -61,7 +61,14 @@
   '';
 
   # GnuPG (GPG)
-  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    # The first time you use a key, you no longer need to enter it's password for the
+    # rest of the day
+    settings = {
+      default-cache-ttl = 86400;
+    };
+  };
   hm.programs.git.signing = {
     key = "00447403FD1045B2";
     signByDefault = true;
