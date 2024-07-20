@@ -27,8 +27,6 @@ in {
       unstable.jetbrains.gateway
       # IntelliJ IDEA (Ultimate)
       unstable.jetbrains.idea-ultimate
-      # Visual Studio Code
-      # unstable.vscode
       # Insomnia REST Client
       insomnia
     ];

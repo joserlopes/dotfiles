@@ -87,6 +87,7 @@
     graphical = {
       enable = true;
       development.enable = true;
+      vscode.enable = true;
       autorandr.laptop.enable = true;
       programs = {
         enable = true;
