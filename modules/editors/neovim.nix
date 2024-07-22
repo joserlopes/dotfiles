@@ -606,7 +606,8 @@ in {
   # Home manager module
   config.hm = mkIf cfg.enable {
     programs.neovim = {
-      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+      # package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+      package = pkgs.unstable.neovim-unwrapped;
       enable = true;
       viAlias = true;
       vimAlias = true;
