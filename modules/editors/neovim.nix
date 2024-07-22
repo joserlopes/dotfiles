@@ -599,6 +599,8 @@
       unstable.tinymist # Better Typst LSP ?
       gopls # Go LSP
       jdt-language-server # Java LSP
+      unstable.nodePackages.prettier
+      prettierd
     ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
