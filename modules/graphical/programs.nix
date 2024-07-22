@@ -98,6 +98,9 @@ in {
         "video/mp4" = ["vlc.desktop"];
         # mkv files
         "video/x-matroska" = ["vlc.desktop"];
+        # Image files
+        "image/jpeg" = ["feh.desktop"];
+        "image/png" = ["feh.desktop"];
       };
     };
   };
