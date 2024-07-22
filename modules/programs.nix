@@ -38,5 +38,8 @@
     wl-clipboard
     xclip
     feh
+
+    # Static site generator
+    zola
   ];
 }
