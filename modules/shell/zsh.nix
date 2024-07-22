@@ -49,6 +49,8 @@ in {
 
           # Use ripgrep instead of grep
           grep = "rg";
+
+          rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#alethkar";
         };
       };
       # eza (modern ls replacement)
