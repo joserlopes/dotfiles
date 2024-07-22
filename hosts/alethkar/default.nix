@@ -86,6 +86,8 @@
     playerctl
     # USB File Flasher
     popsicle
+    # Office Suite
+    libreoffice
   ];
 
   # Modules
