@@ -111,6 +111,7 @@
     };
     services = {
       syncthing.enable = true;
+      kanata.enable = true;
     };
     shell = {
       git.enable = true;
