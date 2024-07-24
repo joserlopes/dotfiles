@@ -39,6 +39,9 @@
     xclip
     feh
 
+    # Image viewer
+    loupe
+
     # Static site generator
     zola
   ];

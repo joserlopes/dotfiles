@@ -99,8 +99,8 @@ in {
         # mkv files
         "video/x-matroska" = ["vlc.desktop"];
         # Image files
-        "image/jpeg" = ["feh.desktop"];
-        "image/png" = ["feh.desktop"];
+        "image/jpeg" = ["org.gnome.Loupe.desktop"];
+        "image/png" = ["org.gnome.Loupe.desktop"];
       };
     };
   };
