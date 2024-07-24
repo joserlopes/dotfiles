@@ -127,9 +127,21 @@
 
   # Wayland specialisation
   # TODO: make default
-  specialisation.wayland.configuration = {
+  specialisation.niri.configuration = {
     imports = with profiles; [
       graphical.niri
+    ];
+
+    # Disable i3 configuration
+    modules.graphical = {
+      enable = lib.mkForce false;
+      autorandr.laptop.enable = lib.mkForce false;
+    };
+  };
+
+  specialisation.hyprland.configuration = {
+    imports = with profiles; [
+      graphical.hyprland
     ];
 
     # Disable i3 configuration
