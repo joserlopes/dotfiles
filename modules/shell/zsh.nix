@@ -71,9 +71,9 @@ in {
       programs.skim.enable = true;
       programs.bat = {
         enable = true;
-      };
-      home.sessionVariables = {
-        BAT_THEME = "gruvbox-dark";
+        config = {
+          theme = "gruvbox-dark";
+        };
       };
 
       programs.btop = {
