@@ -12,6 +12,7 @@ in {
   config = mkIf cfg.enable {
     services.kanata = {
       enable = true;
+      # Replace CapsLock with esc on tap and left ctrl on hold.
       keyboards = {
         internalKeyboard = {
           devices = [
@@ -63,6 +64,8 @@ in {
         };
       };
     };
+    # User needs to be added to this group, so that the service can run without
+    # sudo privileges
     usr.extraGroups = ["uinput"];
   };
 }
