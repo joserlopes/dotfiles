@@ -9,8 +9,10 @@
     virtualisation.virtual-machines
     virtualisation.docker
     graphical.firefox
+    graphical.fonts
     services.bluetooth
   ];
+
   boot.loader = {
     systemd-boot = {
       enable = true;
@@ -121,6 +123,7 @@
       zsh.enable = true;
     };
     personal.enable = true;
+    scripts.enable = true;
     xdg.enable = true;
     ist.enable = true;
   };

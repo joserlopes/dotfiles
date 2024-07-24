@@ -30,20 +30,6 @@ in {
       networkmanagerapplet
     ];
 
-    hm.home.packages = with pkgs; [
-      (writeShellScriptBin "tmux-sessionizer" (builtins.readFile ../../config/scripts/tmux-sessionizer))
-      (writeShellScriptBin "URL" (builtins.readFile ../../config/scripts/URL))
-    ];
-
-    fonts.packages = with pkgs; [
-      fira-code
-      nerdfonts
-      noto-fonts
-      noto-fonts-extra
-      noto-fonts-emoji
-      noto-fonts-cjk-sans
-    ];
-
     services.xserver = {
       enable = true;
       windowManager.i3.enable = true;
