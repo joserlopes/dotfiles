@@ -89,10 +89,10 @@ in {
   options.modules.graphical.xournalpp.enable =
     mkEnableOption "xournal++ with custom toolbar";
 
-  config = mkIf cfg.enable {
-    hm.home.packages = [pkgs.unstable.xournalpp];
+  config.hm = mkIf cfg.enable {
+    home.packages = [pkgs.unstable.xournalpp];
 
-    hm.xdg.configFile."xournalpp/colornames.ini" = {
+    xdg.configFile."xournalpp/colornames.ini" = {
       text = ''
         [info]
         about=Xournalpp custom color names
@@ -103,7 +103,7 @@ in {
       force = true;
     };
 
-    hm.xdg.configFile."xournalpp/palette.gpl" = {
+    xdg.configFile."xournalpp/palette.gpl" = {
       text = ''
         GIMP Palette
         Name: Xournal Default Palette
@@ -134,7 +134,7 @@ in {
       force = true;
     };
 
-    hm.xdg.configFile."xournalpp/toolbar.ini" = {
+    xdg.configFile."xournalpp/toolbar.ini" = {
       text = ''
         [${toolbar.name}]
         toolbarTop1=${concatStringsSep "," toolbar.top}
