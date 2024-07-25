@@ -43,6 +43,8 @@ in {
             jupyter
           ]
       ))
+      # Lua
+      lua
     ];
 
     # Golang
