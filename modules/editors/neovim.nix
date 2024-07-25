@@ -172,7 +172,10 @@
         		html = { "prettierd", "prettier" },
         		bash = { "beautysh" },
         		proto = { "buf" },
-        		python = { "ruff" },
+        		python = {
+                  -- To fix lint errors "ruff_fix",
+                  "ruff_format"
+                },
         		rust = { "rustfmt" },
         		yaml = { "yamlfix" },
         		toml = { "taplo" },
