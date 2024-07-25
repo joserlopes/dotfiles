@@ -45,6 +45,8 @@ in {
       ))
       # Lua
       lua
+      # Zig
+      unstable.zig
     ];
 
     # Golang

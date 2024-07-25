@@ -392,6 +392,10 @@
              capabilites = capabilities,
              on_attach = on_attach,
          })
+         lsp_config.zls.setup({
+             capabilites = capabilities,
+             on_attach = on_attach,
+         })
          lsp_config.rust_analyzer.setup(with_config({
            settings = {
              ["rust-analyzer"] = {
@@ -613,6 +617,7 @@
       prettierd # JavaScript et al. formatter as daemon
       unstable.ruff # Python linter and formatter
       pyright # Python LSP
+      zls # Zig LSP
     ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
