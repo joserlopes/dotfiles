@@ -172,7 +172,7 @@
         		html = { "prettierd", "prettier" },
         		bash = { "beautysh" },
         		proto = { "buf" },
-        		python = { "black" },
+        		python = { "ruff" },
         		rust = { "rustfmt" },
         		yaml = { "yamlfix" },
         		toml = { "taplo" },
@@ -378,6 +378,14 @@
              on_attach = on_attach,
          })
          lsp_config.jdtls.setup({
+             capabilites = capabilities,
+             on_attach = on_attach,
+         })
+         lsp_config.ruff.setup({
+             capabilites = capabilities,
+             on_attach = on_attach,
+         })
+         lsp_config.pyright.setup({
              capabilites = capabilities,
              on_attach = on_attach,
          })
@@ -590,7 +598,6 @@
     ];
   personalPackages = with pkgs;
     lists.optionals personal [
-      python311Packages.jedi-language-server # Python LSP
       ccls # C/C++ LSP
       nodePackages.typescript-language-server # JS/TS LSP
       nodePackages.vscode-html-languageserver-bin # HTML LSP
@@ -599,8 +606,10 @@
       unstable.tinymist # Better Typst LSP ?
       gopls # Go LSP
       jdt-language-server # Java LSP
-      unstable.nodePackages.prettier
-      prettierd
+      unstable.nodePackages.prettier # JavaScript et al. formatter
+      prettierd # JavaScript et al. formatter as daemon
+      unstable.ruff # Python linter and formatter
+      pyright # Python LSP
     ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
