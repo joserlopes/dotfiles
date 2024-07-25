@@ -33,6 +33,16 @@ in {
       unstable.gleam
       erlang
       rebar3
+      # Python
+      (pkgs.python3.withPackages (
+        p:
+          with p; [
+            tox
+            virtualenv
+            ipython
+            jupyter
+          ]
+      ))
     ];
 
     # Golang
