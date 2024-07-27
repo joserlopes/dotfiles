@@ -22,41 +22,7 @@ in {
       texlab
       # timewarrior (time tracker)
       timewarrior
-      # Rust
-      rustup
-      # typst (markup-based typesetting system)
-      unstable.typst
-      unstable.typstyle
-      # Java VM
-      jdk
-      # Gleam
-      unstable.gleam
-      erlang
-      rebar3
-      # Python
-      (pkgs.python3.withPackages (
-        p:
-          with p; [
-            tox
-            virtualenv
-            ipython
-            jupyter
-          ]
-      ))
-      # Lua
-      lua
-      # Zig
-      unstable.zig
     ];
-
-    # Golang
-    programs.go.enable = true;
-
-    # Bun
-    programs.bun = {
-      enable = true;
-      package = pkgs.unstable.bun;
-    };
 
     programs.direnv = {
       enable = true;

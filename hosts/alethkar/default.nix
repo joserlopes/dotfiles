@@ -123,6 +123,7 @@
       zsh.enable = true;
     };
     personal.enable = true;
+    languages.enable = true;
     scripts.enable = true;
     xdg.enable = true;
     ist.enable = true;
