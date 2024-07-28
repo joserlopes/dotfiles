@@ -48,4 +48,7 @@
     # A very fast accurate code counter with complexity calculations and COCOMO estimates written in pure Go
     scc
   ];
+
+  # Simple TUI for git commands
+  hm.programs.lazygit.enable = true;
 }
