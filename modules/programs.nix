@@ -44,5 +44,8 @@
 
     # Static site generator
     zola
+
+    # A very fast accurate code counter with complexity calculations and COCOMO estimates written in pure Go
+    scc
   ];
 }
