@@ -55,6 +55,8 @@ in {
       aseprite
       # Tile map editor
       tiled
+      # Video editor
+      davinci-resolve
     ];
 
     # Video player
