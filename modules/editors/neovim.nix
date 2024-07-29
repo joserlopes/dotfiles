@@ -177,6 +177,7 @@
                   "ruff_format"
                 },
         		rust = { "rustfmt" },
+                go = { "gofmt" },
         		yaml = { "yamlfix" },
         		toml = { "taplo" },
                 typst = { "typstyle "},
@@ -608,22 +609,25 @@
         '';
       }
     ];
-  personalPackages = with pkgs;
+  LSPs = with pkgs.unstable;
     lists.optionals personal [
       ccls # C/C++ LSP
       nodePackages.typescript-language-server # JS/TS LSP
-      nodePackages.vscode-html-languageserver-bin # HTML LSP
+      # nodePackages.vscode-html-languageserver-bin # HTML LSP
       nil # Nix LSP
-      unstable.typst-lsp # Typst LSP
-      unstable.tinymist # Better Typst LSP ?
+      typst-lsp # Typst LSP
+      tinymist # Better Typst LSP ?
       gopls # Go LSP
       jdt-language-server # Java LSP
-      unstable.nodePackages.prettier # JavaScript et al. formatter
-      prettierd # JavaScript et al. formatter as daemon
-      unstable.ruff # Python linter and formatter
+      nodePackages.prettier # JavaScript et al. formatter
       pyright # Python LSP
       zls # Zig LSP
       lexical # Elixir LSP
+    ];
+  formatters = with pkgs.unstable;
+    lists.optionals personal [
+      prettierd # JavaScript et al. formatter as daemon
+      ruff # Python linter and formatter
     ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
@@ -809,6 +813,12 @@ in {
       vim.opt.shiftwidth = 2
     '';
 
-    home.packages = personalPackages;
+    home.packages = LSPs ++ formatters;
+
+    home.sessionVariables = {
+      EDITOR = "nvim";
+      MANPAGER = "nvim +Man!";
+    };
+    systemd.user.sessionVariables = {EDITOR = "nvim";};
   };
 }
