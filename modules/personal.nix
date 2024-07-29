@@ -22,6 +22,8 @@ in {
       texlab
       # timewarrior (time tracker)
       timewarrior
+      # iNotify
+      inotify-tools
     ];
 
     programs.direnv = {
