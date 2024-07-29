@@ -51,6 +51,8 @@ in {
           grep = "rg";
 
           rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles#alethkar";
+
+          gitlog = "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
         };
       };
       # eza (modern ls replacement)
@@ -68,7 +70,11 @@ in {
       };
 
       programs.atuin.enable = true;
+
       programs.skim.enable = true;
+
+      programs.yazi.enable = true;
+
       programs.bat = {
         enable = true;
         config = {
@@ -82,6 +88,7 @@ in {
           color_theme = "everforest-dark-medium";
         };
       };
+
       programs.fd.enable = true;
     };
 
