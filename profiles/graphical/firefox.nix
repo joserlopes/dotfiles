@@ -51,7 +51,7 @@
         "dom.private-attribution.submission.enabled" = false;
 
         # Change page scaling
-        "layout.css.devPixelsPerPx" = 1.1;
+        "layout.css.devPixelsPerPx" = 1.2;
 
         # Never remember passwords
         "signon.rememberSignons" = false;
