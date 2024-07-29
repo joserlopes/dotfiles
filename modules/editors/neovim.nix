@@ -180,7 +180,7 @@
                 go = { "gofmt" },
         		yaml = { "yamlfix" },
         		toml = { "taplo" },
-                typst = { "typstyle "},
+                typst = { "typstyle"},
         		css = { { "prettierd", "prettier" } },
         		scss = { { "prettierd", "prettier" } },
         	},
@@ -619,15 +619,16 @@
       tinymist # Better Typst LSP ?
       gopls # Go LSP
       jdt-language-server # Java LSP
-      nodePackages.prettier # JavaScript et al. formatter
       pyright # Python LSP
       zls # Zig LSP
       lexical # Elixir LSP
     ];
   formatters = with pkgs.unstable;
     lists.optionals personal [
+      nodePackages.prettier # JavaScript et al. formatter
       prettierd # JavaScript et al. formatter as daemon
       ruff # Python linter and formatter
+      stylua # Lua formatter
     ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
