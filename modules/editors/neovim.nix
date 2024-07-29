@@ -396,6 +396,11 @@
              capabilites = capabilities,
              on_attach = on_attach,
          })
+         lsp_config.lexical.setup({
+             cmd = { "/etc/profiles/per-user/jrl/bin/lexical" },
+             capabilites = capabilities,
+             on_attach = on_attach,
+         })
          lsp_config.rust_analyzer.setup(with_config({
            settings = {
              ["rust-analyzer"] = {
@@ -618,6 +623,7 @@
       unstable.ruff # Python linter and formatter
       pyright # Python LSP
       zls # Zig LSP
+      lexical # Elixir LSP
     ];
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
