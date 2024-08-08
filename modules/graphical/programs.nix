@@ -56,7 +56,7 @@ in {
       # Tile map editor
       tiled
       # Video editor
-      davinci-resolve
+      kdePackages.kdenlive
     ];
 
     # Video player
