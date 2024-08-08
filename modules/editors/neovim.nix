@@ -152,24 +152,27 @@
               		local conform = require("conform")
 
         conform.setup({
-        	timeout_ms = 1000,
-        	lsp_fallback = true,
+            format_on_save = {
+              timeout_ms = 500,
+              lsp_format = "fallback",
+            },
         	formatters_by_ft = {
         		lua = { "stylua" },
         		nix = { "alejandra" },
-        		svelte = { { "prettierd", "prettier" } },
-        		javascript = { { "prettierd", "prettier" } },
-        		typescript = { { "prettierd", "prettier" } },
-        		javascriptreact = { { "prettierd", "prettier" } },
-        		typescriptreact = { { "prettierd", "prettier" } },
-        		json = { { "prettierd", "prettier" } },
-        		graphql = { { "prettierd", "prettier" } },
+              -- deprecated[conform]: The nested {} syntax to run the first formatter has been replaced by the stop_after_first option (see :help conform.format).
+        		svelte = { "prettierd", "prettier", stop_after_first = true },
+        		javascript = { "prettierd", "prettier", stop_after_first = true },
+        		typescript = { "prettierd", "prettier", stop_after_first = true },
+        		javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+        		typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+        		json = { "prettierd", "prettier", stop_after_first = true },
+        		graphql = { "prettierd", "prettier", stop_after_first = true },
         		java = { "google-java-format" },
         		kotlin = { "ktlint" },
         		ruby = { "standardrb" },
-        		markdown = { { "prettierd", "prettier" } },
-        		erb = { "prettierd", "prettier" },
-        		html = { "prettierd", "prettier" },
+        		markdown = { "prettierd", "prettier", stop_after_first = true },
+        		erb = { "prettierd", "prettier", stop_after_first = true },
+        		html = { "prettierd", "prettier", stop_after_first = true },
         		bash = { "beautysh" },
         		proto = { "buf" },
         		python = {
@@ -181,27 +184,14 @@
         		yaml = { "yamlfix" },
         		toml = { "taplo" },
                 typst = { "typstyle"},
-        		css = { { "prettierd", "prettier" } },
-        		scss = { { "prettierd", "prettier" } },
+        		css = { "prettierd", "prettier", stop_after_first = true },
+        		scss = { "prettierd", "prettier", stop_after_first = true },
         	},
-        })
-
-        vim.api.nvim_create_autocmd("BufWritePre", {
-        	group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
-        	pattern = { "*" },
-        	desc = "Run conform formatting on a file on save",
-        	callback = function(args)
-        		conform.format({
-        			bufnr = args.buf,
-        			lsp_fallback = true,
-        			quiet = true,
-        		})
-        	end,
         })
 
         vim.keymap.set({ "n", "v" }, "<leader>l", function()
         	conform.format({
-        		lsp_fallback = true,
+        		lsp_format = "fallback",
         		quiet = true,
         	})
         end, { desc = "Format file or range (in visual mode)" })
@@ -402,6 +392,10 @@
              capabilites = capabilities,
              on_attach = on_attach,
          })
+         lsp_config.marksman.setup({
+             capabilites = capabilities,
+             on_attach = on_attach,
+         })
          lsp_config.rust_analyzer.setup(with_config({
            settings = {
              ["rust-analyzer"] = {
@@ -421,7 +415,7 @@
            },
          }))
 
-         lsp_config.html.setup(with_config({ cmd = { "html-languageserver", "--stdio" } }))
+        lsp_config.html.setup(with_config({ cmd = { "html-languageserver", "--stdio" } }))
 
         lsp_config.tinymist.setup(with_config({
           settings = {
@@ -622,6 +616,7 @@
       pyright # Python LSP
       zls # Zig LSP
       lexical # Elixir LSP
+      marksman # Markdown LSP
     ];
   formatters = with pkgs.unstable;
     lists.optionals personal [
