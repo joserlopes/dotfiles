@@ -27,6 +27,7 @@ in {
         options = {
           features = "decorations";
           line-numbers = true;
+          dark = true;
         };
       };
     };
