@@ -21,6 +21,8 @@
       '';
     }
 
+    eldritch
+
     {
       plugin = telescope-nvim;
       type = "lua";
@@ -625,6 +627,15 @@
       ruff # Python linter and formatter
       stylua # Lua formatter
     ];
+  eldritch = pkgs.vimUtils.buildVimPlugin {
+    name = "eldritch-theme";
+    src = pkgs.fetchFromGitHub {
+      owner = "eldritch-theme";
+      repo = "eldritch.nvim";
+      rev = "48788ef2f7be7e86b0a57ef87f1a96bc18e24b8b";
+      sha256 = "sha256-ShjgOkzE4h5zLsM9kSXePXgZossgwV2HW4Axq5y9cP4=";
+    };
+  };
 in {
   options.modules.editors.neovim.enable = mkEnableOption "neovim";
 
