@@ -52,9 +52,9 @@ in {
       # Recording and audio editing
       unstable.audacity
       # Animated sprite editor & pixel art tool
-      aseprite
+      # aseprite
       # Tile map editor
-      tiled
+      # tiled
       # Video editor
       kdePackages.kdenlive
     ];
