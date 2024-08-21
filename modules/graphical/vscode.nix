@@ -18,6 +18,10 @@ in {
       extensions = with pkgs.unstable.vscode-extensions; [
         golang.go
         eamodio.gitlens
+        ms-python.python
+        vscodevim.vim
+        jnoortheen.nix-ide
+        ziglang.vscode-zig
       ];
     };
   };
