@@ -611,8 +611,7 @@
       nodePackages.typescript-language-server # JS/TS LSP
       # nodePackages.vscode-html-languageserver-bin # HTML LSP
       nil # Nix LSP
-      typst-lsp # Typst LSP
-      tinymist # Better Typst LSP ?
+      tinymist # Better Typst LSP
       gopls # Go LSP
       jdt-language-server # Java LSP
       pyright # Python LSP
