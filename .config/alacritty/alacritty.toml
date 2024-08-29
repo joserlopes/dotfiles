@@ -25,7 +25,7 @@ family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-# family = "JetBrains Mono"
+family = "JetBrains Mono"
 # family = "FiraCode Nerd Font Mono"
 # family = "Hack Nerd Font"
 # family = "Iosevka Nerd Font"
@@ -33,7 +33,7 @@ style = "Italic"
 # family = "CommitMono Nerd Font"
 # family = "Monaspace Neon"
 # family = "Monaspace Argon"
-family = "0xProto"
+# family = "0xProto"
 style = "regular"
 
 [[keyboard.bindings]]

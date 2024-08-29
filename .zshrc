@@ -139,12 +139,15 @@ export PATH
 
 # <<< juliaup initialize <<<
 
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(atuin init zsh)"
-
 # bun completions
 [ -s "/home/joselopes/.bun/_bun" ] && source "/home/joselopes/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+# eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
