@@ -6,4 +6,6 @@
     # better fzf
     skim
   ];
+
+  programs.lazygit.enable = true;
 }
