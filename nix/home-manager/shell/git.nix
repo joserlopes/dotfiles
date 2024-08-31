@@ -1,7 +1,5 @@
 # Git configuration
-{...}: let
-  messageTemplateDir = "../../../misc";
-in {
+{...}: {
   programs.git = {
     enable = true;
     userName = "José Lopes";
@@ -10,7 +8,7 @@ in {
     extraConfig = {
       diff.tool = "vimdiff";
       init.defaultBranch = "main";
-      commit.template = "${messageTemplateDir}/gitmessage.txt";
+      commit.template = "~/dotfiles/misc/gitmessage.txt";
       commit.verbose = true;
     };
     delta = {
