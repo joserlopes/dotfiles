@@ -1,7 +1,0 @@
-[window]
-# startup_mode = "FullScreen"
-opacity = 0.80
-blur = true
-
-[font]
-size = 16

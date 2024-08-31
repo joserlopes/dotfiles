@@ -1,10 +1,15 @@
 {pkgs, ...}: {
   imports = [
+    ./scripts.nix
+    ./Urls.nix
     ./dev/languages.nix
     ./dev/tools.nix
     ./shell/tmux.nix
     ./wallpaper.nix
     ./firefox.nix
+    ./shell/starship.nix
+    ./shell/zsh.nix
+    ./shell/git.nix
   ];
 
   home.username = "jrl";
@@ -19,7 +24,21 @@
     noto-fonts-extra
     noto-fonts-emoji
     noto-fonts-cjk-sans
+
     firefox
+
+    obsidian
   ];
+
+  # Enable managing fonts through home-manager
+  fonts.fontconfig.enable = true;
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = _: true;
+    };
+  };
+
   programs.home-manager.enable = true;
 }
