@@ -9,10 +9,10 @@
 
       search = {
         force = true;
-        default = "Brave Search";
+        default = "Google";
         engines = {
-          "Brave Search" = {
-            urls = [{template = "https://search.brave.com/search?q={searchTerms}";}];
+          "Google" = {
+            urls = [{template = "https://google.com/search?q={searchTerms}";}];
           };
 
           "Nix Options" = {
