@@ -17,11 +17,11 @@ unfocused_hollow = true
 size = 16
 
 [font.bold]
-family = "JetBrains Mono"
+family = "0xProto Nerd Font"
 style = "Bold"
 
 [font.italic]
-family = "JetBrains Mono"
+family = "0xProto Nerd Font"
 style = "Italic"
 
 [font.normal]
@@ -33,7 +33,7 @@ style = "Italic"
 # family = "Monaspace Neon"
 # family = "Monaspace Argon"
 # family = "JetBrains Mono"
-family = "0xProto"
+family = "0xProto Nerd Font"
 style = "regular"
 
 [[keyboard.bindings]]
@@ -41,6 +41,6 @@ action = "ToggleFullScreen"
 key = "F11"
 
 [window]
-# startup_mode = "FullScreen"
+startup_mode = "Maximized"
 opacity = 0.80
 blur = true

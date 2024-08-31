@@ -1,11 +1,1 @@
-# Set the theme to "TwoDark"
---theme="gruvbox-dark"
-
-# Show line numbers, Git modifications and file header (but no grid)
---style="numbers,changes,header,grid"
-
-# Use italic text on the terminal (not supported on all terminals)
---italic-text=always
-
-# Use C++ syntax for Arduino .ino files
---map-syntax "*.ino:C++"
+/nix/store/7066g8g7vsbrwmwdyh6wwzkibyan94hb-home-manager-files/.config/bat/config
