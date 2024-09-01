@@ -34,6 +34,16 @@
             definedAliases = ["!mynix"];
             urls = [{template = "https://mynixos.com/search?q={searchTerms}";}];
           };
+
+          "Nix Packages - Options Search" = {
+            definedAliases = ["!nixpkgs"];
+            urls = [{template = "https://search.nixos.org/packages?channel=24.05&from=0&size=50&sort=relevance&type=packages&query={searchTerms}";}];
+          };
+
+          "Repology - Options Search" = {
+            definedAliases = ["!repo"];
+            urls = [{template = "https://repology.org/project/{searchTerms}/versions";}];
+          };
         };
       };
 
