@@ -7,6 +7,7 @@
     ./shell/tmux.nix
     ./wallpaper.nix
     ./firefox.nix
+    ./graphical/xournalpp.nix
     ./shell/starship.nix
     ./shell/zsh.nix
     ./shell/git.nix
