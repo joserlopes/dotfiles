@@ -84,7 +84,7 @@
     ];
   };
 in {
-  home.packages = [pkgs.xournalpp];
+  home.packages = [pkgs.unstable.xournalpp];
 
   xdg.configFile."xournalpp/colornames.ini" = {
     text = ''

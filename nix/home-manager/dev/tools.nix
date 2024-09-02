@@ -1,10 +1,7 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     # Nix formatter
     alejandra
-
-    # better fzf
-    skim
 
     # Formatters
     nodePackages.prettier # JavaScript et al. formatter

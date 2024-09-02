@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     neofetch
     # typst
-    typst
+    unstable.typst
     # Python
     (pkgs.python3.withPackages (
       p:
@@ -16,7 +16,7 @@
     # Lua
     lua
     # Zig
-    zig
+    unstable.zig
     # Elixir
     elixir
   ];
@@ -30,6 +30,6 @@
   # Bun
   programs.bun = {
     enable = true;
-    package = pkgs.bun;
+    package = pkgs.unstable.bun;
   };
 }

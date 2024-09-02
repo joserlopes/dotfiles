@@ -11,7 +11,7 @@
     terminal = "tmux-256color";
     prefix = "C-Space";
     mouse = true;
-    plugins = with pkgs.tmuxPlugins; [
+    plugins = with pkgs.unstable.tmuxPlugins; [
       sensible
       vim-tmux-navigator
       battery
