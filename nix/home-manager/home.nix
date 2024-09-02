@@ -35,12 +35,5 @@
   # Enable managing fonts through home-manager
   fonts.fontconfig.enable = true;
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-    };
-  };
-
   programs.home-manager.enable = true;
 }
