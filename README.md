@@ -1,3 +1,5 @@
-## Repository where I'll manage the dotfiles for my system.
+# Pop_OS! + Nix flakes + home-manager Configuration
 
-### Remember to use `gh` for git authentication on the CLI.
+All the packages and configurations being managed by nix are inside the `nix` folder.
+
+The rest of the applications, configured in the "normal" way, are inside the `.config` folder and can be symlinked to their respective locations using `stow`.
