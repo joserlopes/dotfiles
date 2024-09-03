@@ -25,7 +25,10 @@
   programs.go.enable = true;
 
   # Ocaml
-  programs.opam.enable = true;
+  programs.opam = {
+    enable = true;
+    package = pkgs.unstable.opam;
+  };
 
   # Bun
   programs.bun = {
