@@ -76,7 +76,6 @@ return {
 				},
 				staticcheck = true,
 			},
-			pyright = {},
 			rust_analyzer = {
 				["rust-analyzer"] = {
 					checkOnSave = {
@@ -125,6 +124,12 @@ return {
 
 		-- Gleam LSP
 		require("lspconfig").gleam.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+
+		-- Python LSP
+		require("lspconfig").pyright.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})

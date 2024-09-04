@@ -15,6 +15,8 @@
     taplo # TOML formatter
     typstyle # Typst formatter
     yamlfix # YAML formatter
+
+    pyright # python LSP
   ];
 
   programs.lazygit.enable = true;
