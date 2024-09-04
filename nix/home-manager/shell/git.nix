@@ -10,6 +10,7 @@
       init.defaultBranch = "main";
       commit.template = "~/dotfiles/misc/gitmessage.txt";
       commit.verbose = true;
+      push.autoSetupRemote = true;
     };
     delta = {
       options = {
