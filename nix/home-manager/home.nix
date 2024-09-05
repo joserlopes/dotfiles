@@ -26,6 +26,9 @@
     firefox
 
     obsidian
+
+    # Keyboard remaper
+    kanata
   ];
 
   programs.neovim = {
