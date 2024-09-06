@@ -43,6 +43,16 @@
             definedAliases = ["!repo"];
             urls = [{template = "https://repology.org/project/{searchTerms}/versions";}];
           };
+
+          "Rust docs - Options Search" = {
+            definedAliases = ["!rs-docs"];
+            urls = [{template = "https://docs.rs/{searchTerms}/latest/{searchTerms}/";}];
+          };
+
+          "Rust std library - Options Search" = {
+            definedAliases = ["!rs-std"];
+            urls = [{template = "https://doc.rust-lang.org/std/?search={searchTerms}";}];
+          };
         };
       };
 
