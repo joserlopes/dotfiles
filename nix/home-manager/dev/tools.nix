@@ -15,6 +15,7 @@
     taplo # TOML formatter
     typstyle # Typst formatter
     yamlfix # YAML formatter
+    ocamlPackages.ocamlformat # Ocaml formatter
 
     pyright # python LSP
   ];

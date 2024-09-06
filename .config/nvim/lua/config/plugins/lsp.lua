@@ -83,7 +83,6 @@ return {
 					},
 				},
 			},
-			tsserver = {},
 			html = { filetypes = { "html", "twig", "hbs" } },
 			ocamllsp = {},
 			-- This LSP requires a git repo to function properly

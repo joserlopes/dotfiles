@@ -32,6 +32,7 @@ return {
 					"ruff_format",
 				},
 				rust = { "rustfmt" },
+				ocaml = { "ocamlformat" },
 				go = { "gofmt" },
 				yaml = { "yamlfix" },
 				toml = { "taplo" },
