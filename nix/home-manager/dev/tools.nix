@@ -16,6 +16,7 @@
     typstyle # Typst formatter
     yamlfix # YAML formatter
     ocamlPackages.ocamlformat # Ocaml formatter
+    uncrustify # C, C++, C#, ObjectiveC, D, Java, Pawn and VALA formatter
 
     pyright # python LSP
   ];

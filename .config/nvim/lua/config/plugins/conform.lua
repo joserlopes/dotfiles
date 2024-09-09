@@ -32,6 +32,7 @@ return {
 					"ruff_format",
 				},
 				rust = { "rustfmt" },
+				c = { "uncrustify" },
 				ocaml = { "ocamlformat" },
 				go = { "gofmt" },
 				yaml = { "yamlfix" },
