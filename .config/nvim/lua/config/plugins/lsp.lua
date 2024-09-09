@@ -70,6 +70,7 @@ return {
 
 		local servers = {
 			clangd = {},
+			ts_ls = {},
 			gopls = {
 				analyses = {
 					unusedparams = true,
