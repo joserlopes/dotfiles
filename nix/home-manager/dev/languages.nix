@@ -11,6 +11,7 @@
           virtualenv
           ipython
           jupyter
+          python-sat
         ]
     ))
     # Lua
