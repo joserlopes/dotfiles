@@ -29,6 +29,9 @@
 
     # Keyboard remaper
     kanata
+
+    # Music player
+    amberol
   ];
 
   # programs.neovim = {
