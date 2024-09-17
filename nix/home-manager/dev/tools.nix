@@ -17,6 +17,7 @@
     yamlfix # YAML formatter
     ocamlPackages.ocamlformat # Ocaml formatter
     uncrustify # C, C++, C#, ObjectiveC, D, Java, Pawn and VALA formatter
+    elmPackages.elm-format # Eml formatter
 
     pyright # python LSP
   ];

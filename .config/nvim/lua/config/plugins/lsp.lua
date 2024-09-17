@@ -71,6 +71,7 @@ return {
 		local servers = {
 			clangd = {},
 			ts_ls = {},
+			elmls = {},
 			gopls = {
 				analyses = {
 					unusedparams = true,

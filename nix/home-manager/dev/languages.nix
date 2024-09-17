@@ -20,6 +20,12 @@
     unstable.zig
     # Elixir
     elixir
+
+    # Elm
+    elmPackages.elm
+
+    # Node
+    nodejs_22
   ];
 
   # Golang

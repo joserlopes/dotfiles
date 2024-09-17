@@ -34,6 +34,7 @@ return {
 				rust = { "rustfmt" },
 				c = { "uncrustify" },
 				ocaml = { "ocamlformat" },
+				elm = { "elm_format" },
 				go = { "gofmt" },
 				yaml = { "yamlfix" },
 				toml = { "taplo" },
