@@ -53,6 +53,11 @@
             definedAliases = ["!rs-std"];
             urls = [{template = "https://doc.rust-lang.org/std/?search={searchTerms}";}];
           };
+
+          "Priberam Dicionário da Lingua Portuguesa" = {
+            definedAliases = ["!prib"];
+            urls = [{template = "https://dicionario.priberam.org/{searchTerms}";}];
+          };
         };
       };
 
