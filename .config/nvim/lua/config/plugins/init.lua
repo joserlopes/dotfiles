@@ -9,6 +9,8 @@ return {
 
 	"xiyaowong/transparent.nvim",
 
+	"benknoble/vim-dafny",
+
 	{
 		-- Add indentation guides even on blank lines
 		"lukas-reineke/indent-blankline.nvim",
