@@ -6,9 +6,10 @@
   inherit (lib) escapeShellArg getAttr attrNames;
 
   Urls = {
-    CG = "https://fenix.tecnico.ulisboa.pt/disciplinas/CGra23/2023-2024/2-semestre";
-    Comp = "https://fenix.tecnico.ulisboa.pt/disciplinas/Com3/2023-2024/2-semestre";
-    PIC = "https://fenix.tecnico.ulisboa.pt/disciplinas/PLic23-2/2023-2024/2-semestre";
+    ES = "https://fenix.tecnico.ulisboa.pt/disciplinas/QS11/2024-2025/1-semestre";
+    ES-Project = "https://github.com/joserlopes/Software-Specification";
+    CCEIC = "https://fenix.tecnico.ulisboa.pt/disciplinas/CCEIC11/2024-2025/1-semestre";
+    ALC = "https://fenix.tecnico.ulisboa.pt/disciplinas/ALC11/2024-2025/1-semestre";
     GitHub = "https://github.com/joserlopes";
     dotfiles = "https://github.com/joserlopes/dotfiles";
   };
