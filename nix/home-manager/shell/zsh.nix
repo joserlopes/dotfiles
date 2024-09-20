@@ -43,7 +43,10 @@
     };
   };
   # eza (modern ls replacement)
-  programs.eza.enable = true;
+  programs.eza = {
+    enable = true;
+    enableZshIntegration = true;
+  };
   # zoxide (jump to directories)
   programs.zoxide = {
     enable = true;
