@@ -29,7 +29,10 @@
   ];
 
   # Golang
-  programs.go.enable = true;
+  programs.go = {
+    enable = true;
+    package = pkgs.unstable.go;
+  };
 
   # Ocaml
   programs.opam = {
