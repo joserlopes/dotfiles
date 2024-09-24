@@ -20,6 +20,8 @@
     elmPackages.elm-format # Eml formatter
 
     pyright # python LSP
+
+    dafny
   ];
 
   programs.lazygit.enable = true;

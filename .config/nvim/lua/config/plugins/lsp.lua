@@ -135,6 +135,13 @@ return {
 			capabilities = capabilities,
 		})
 
+		-- Dafny LSP
+		require("lspconfig").dafny.setup({
+			cmd = { "/home/jrl/.nix-profile/bin/dafny", "server" },
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		require("luasnip.loaders.from_vscode").lazy_load()
