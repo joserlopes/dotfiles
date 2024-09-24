@@ -52,7 +52,8 @@
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
 
-      source-file ~/dotfiles/nix/home-manager/shell/tmux-everforest-dark-medium.conf
+      # source-file ~/dotfiles/nix/home-manager/shell/tmux-everforest-dark-medium.conf
+      # source-file  ~/dotfiles/nix/home-manager/shell/tmux-black-metal-gorgoroth.conf
     '';
   };
 }
