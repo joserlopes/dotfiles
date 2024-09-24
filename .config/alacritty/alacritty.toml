@@ -1,6 +1,7 @@
 import = [
   # "~/.config/alacritty/catppuccin-frappe.toml"
   # "~/.config/alacritty/gruvbox-material-medium-dark.toml"
+  # "~/.config/alacritty/rose-pine.toml",
   "~/.config/alacritty/everforest-dark.toml",
 ]
 

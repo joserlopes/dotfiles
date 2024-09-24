@@ -168,13 +168,14 @@ return {
 					end
 				end, { "i", "s" }),
 			}),
-			sources = {
+			sources = cmp.config.sources({
 				{ name = "path" },
-				{ name = "nvim_lsp_signature_help" },
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "copilot" }, -- Copilot suggestions
-			},
+				{ name = "luasnip" }, -- For luasnip users.
+				{ name = "nvim_lsp_signature_help" }, -- function arg popups while typing
+			}, {
+				{ name = "buffer" },
+			}),
 			formatting = {
 				expandable_indicator = true,
 				format = lspkind.cmp_format({
