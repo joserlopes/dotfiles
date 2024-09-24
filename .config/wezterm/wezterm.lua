@@ -13,4 +13,11 @@ config.color_scheme = "Black Metal (Gorgoroth) (base16)"
 config.window_background_opacity = 1
 config.enable_tab_bar = false
 
+config.keys = {
+	{
+		key = "F11",
+		action = wezterm.action.ToggleFullScreen,
+	},
+}
+
 return config
