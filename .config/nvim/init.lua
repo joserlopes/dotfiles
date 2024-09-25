@@ -7,7 +7,7 @@ local utils = require("config.utils")
 -- theme
 -- vim.cmd("colorscheme vague")
 --vim.cmd("colorscheme base16-black-metal-gorgoroth")
-vim.cmd.colorscheme("roseprime")
+vim.cmd.colorscheme("kanagawa-dragon")
 if vim.g.colors_name == "vague" then
 	utils.color_overrides.vague_line_colors()
 	utils.color_overrides.vague_status_colors()

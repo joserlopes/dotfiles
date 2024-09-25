@@ -13,6 +13,7 @@ return {
 			--vim.cmd.colorscheme('base16-zenburn')
 			--vim.cmd.colorscheme('base16-rose-pine')
 			--vim.cmd.colorscheme("base16-ayu-mirage")
+			--vim.cmd.colorscheme("base16-ayu-mirage")
 		end,
 	},
 
@@ -66,8 +67,8 @@ return {
 
 	{
 		"cdmill/neomodern.nvim",
-		lazy = false,
-		priority = 1000,
+		-- lazy = false,
+		-- priority = 1000,
 		config = function()
 			require("neomodern").setup({})
 
@@ -103,14 +104,11 @@ return {
 
 	{
 		"rebelot/kanagawa.nvim",
-		-- priority = 1000,
-		-- config = function ()
-		--     -- require("kanagawa").setup({
-		--     --     transparent = true,
-		--     --     theme = "dragon",
-		--     -- })
-		--     vim.cmd.colorscheme("kanagawa-dragon")
-		-- end
+		priority = 1000,
+		config = function()
+			require("kanagawa").setup({})
+			-- vim.cmd.colorscheme("kanagawa-dragon")
+		end,
 	},
 
 	-- {
