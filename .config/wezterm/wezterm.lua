@@ -1,17 +1,12 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
-local mux = wezterm.mux
-
-wezterm.on("gui-startup", function(cmd)
-	local tab, pane, window = mux.spawn_window(cmd or {})
-	window:gui_window():maximize()
-end)
 
 config.font = wezterm.font("0xProto", { weight = "Regular" })
 config.font_size = 16
 config.color_scheme = "Black Metal (Gorgoroth) (base16)"
-config.window_background_opacity = 1
-config.enable_tab_bar = false
+config.window_background_opacity = 0.8
+config.hide_tab_bar_if_only_one_tab = true
+config.audible_bell = "Disabled"
 
 config.keys = {
 	{
@@ -19,5 +14,16 @@ config.keys = {
 		action = wezterm.action.ToggleFullScreen,
 	},
 }
+
+config.webgpu_preferred_adapter = {
+	backend = "Vulkan",
+	device = 9632,
+	device_type = "DiscreteGpu",
+	driver = "NVIDIA",
+	driver_info = "560.35.03",
+	name = "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+	vendor = 4318,
+}
+config.front_end = "WebGpu"
 
 return config
