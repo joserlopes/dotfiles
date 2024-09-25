@@ -1,8 +1,10 @@
 import = [
   # "~/.config/alacritty/catppuccin-frappe.toml"
-  # "~/.config/alacritty/gruvbox-material-medium-dark.toml"
+  # "~/.config/alacritty/gruvbox-material-medium-dark.toml",
   # "~/.config/alacritty/rose-pine.toml",
-  "~/.config/alacritty/everforest-dark.toml",
+  # "~/.config/alacritty/everforest-dark.toml",
+  # "~/.config/alacritty/black-metal-gorgoroth-256.toml",
+  "~/.config/alacritty/black-metal-gorgoroth.toml",
 ]
 
 [env]
