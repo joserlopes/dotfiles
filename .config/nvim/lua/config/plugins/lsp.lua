@@ -69,6 +69,7 @@ return {
 		require("mason-lspconfig").setup()
 
 		local servers = {
+			marksman = {},
 			clangd = {},
 			ts_ls = {},
 			elmls = {},
