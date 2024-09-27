@@ -12,6 +12,10 @@
   outputs = inputs @ {...}: let
     inherit (lib.my) mkOverlays mkPkgs;
 
+    extraSpecialArgs = {
+      scriptsDir = ../scripts;
+    };
+
     lib = inputs.nixpkgs.lib.extend (self: _super:
       import ./lib {
         inherit inputs pkgs;
@@ -26,7 +30,7 @@
   in {
     homeConfigurations = {
       jrl = inputs.home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        inherit pkgs extraSpecialArgs;
         modules = [
           ./home-manager/home.nix
         ];

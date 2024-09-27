@@ -1,7 +1,11 @@
 # Useful scripts
-{pkgs, ...}: {
+{
+  pkgs,
+  scriptsDir,
+  ...
+}: {
   home.packages = with pkgs; [
-    (writeShellScriptBin "tmux-sessionizer" (builtins.readFile ../../scripts/tmux-sessionizer))
-    (writeShellScriptBin "nvim-update" (builtins.readFile ../../scripts/neovim-update-nightly))
+    (writeShellScriptBin "tmux-sessionizer" (builtins.readFile "${scriptsDir}/tmux-sessionizer"))
+    (writeShellScriptBin "nvim-update" (builtins.readFile "${scriptsDir}/neovim-update-nightly"))
   ];
 }
