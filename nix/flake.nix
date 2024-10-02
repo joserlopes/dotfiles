@@ -14,6 +14,7 @@
 
     extraSpecialArgs = {
       scriptsDir = ../scripts;
+      configDir = ./config;
     };
 
     lib = inputs.nixpkgs.lib.extend (self: _super:

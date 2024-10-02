@@ -1,5 +1,5 @@
 # Git configuration
-{...}: {
+{configDir, ...}: {
   programs.git = {
     enable = true;
     userName = "José Lopes";
@@ -8,7 +8,7 @@
     extraConfig = {
       diff.tool = "vimdiff";
       init.defaultBranch = "main";
-      commit.template = "~/dotfiles/misc/gitmessage.txt";
+      commit.template = "${configDir}/gitmessage.txt";
       commit.verbose = true;
       push.autoSetupRemote = true;
     };
