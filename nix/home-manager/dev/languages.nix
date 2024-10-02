@@ -12,6 +12,7 @@
           ipython
           jupyter
           python-sat
+          pypblib
         ]
     ))
     # Lua
