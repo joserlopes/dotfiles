@@ -69,7 +69,8 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "everforest-dark-medium";
+      color_theme = "TTY";
+      theme_background = false;
     };
   };
 
