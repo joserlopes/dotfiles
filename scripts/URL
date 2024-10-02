@@ -1,16 +1,24 @@
 #!/usr/bin/env bash
 
-if [ x"$@" = x"CG" ]
+if [ x"$@" = x"ES" ]
 then
-    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/CGra23/2023-2024/2-semestre
+    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/QS11/2024-2025/1-semestre
     exit 0
-elif [ x"$@" = x"Comp" ]
+elif [ x"$@" = x"ALC" ]
 then
-    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/Com3/2023-2024/2-semestre
+    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/ALC11/2024-2025/1-semestre
     exit 0
-elif [ x"$@" = x"PIC" ]
+elif [ x"$@" = x"CCEIC-I" ]
 then
-    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/PLic23-2/2023-2024/2-semestre
+    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/CCEIC11/2024-2025/1-semestre
+    exit 0
+elif [ x"$@" = x"ES-Project" ]
+then
+    xdg-open https://github.com/joserlopes/Software-Specification
+    exit 0
+elif [ x"$@" = x"ALC-Project" ]
+then
+    xdg-open https://github.com/joserlopes/Algorithms-for-Computational-Logic
     exit 0
 elif [ x"$@" = x"GitHub" ]
 then
@@ -18,11 +26,13 @@ then
     exit 0
 elif [ x"$@" = x"dotfiles" ]
 then
-    xdg-open https://github.com/joserlopes/.dotfiles/tree/NixOS
+    xdg-open https://github.com/joserlopes/dotfiles
     exit 0
 fi
-echo "CG"
-echo "Comp"
-echo "PIC"
+echo "ES"
+echo "ALC"
+echo "CCEIC-I"
+echo "ES-Project"
+echo "ALC-Project"
 echo "GitHub"
 echo "dotfiles"
