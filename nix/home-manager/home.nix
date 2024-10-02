@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  configDir,
+  ...
+}: {
   imports = [
     ./scripts.nix
     ./Urls.nix
@@ -33,6 +37,17 @@
     # Music player
     amberol
   ];
+
+  programs.rofi = {
+    enable = true;
+    # package = pkgs.rofi-wayland;
+    terminal = "${pkgs.alacritty}/bin/alacritty";
+    theme = "${configDir}/theme.rasi";
+    extraConfig = {
+      combi-modi = "URL:URL,drun";
+      modi = "combi";
+    };
+  };
 
   # programs.neovim = {
   #   enable = true;
