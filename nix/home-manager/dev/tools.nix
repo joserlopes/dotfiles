@@ -22,6 +22,8 @@
     pyright # python LSP
 
     dafny
+
+    typos # Source code type checker
   ];
 
   programs.lazygit.enable = true;
