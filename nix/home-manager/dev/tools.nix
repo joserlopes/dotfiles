@@ -21,9 +21,11 @@
 
     pyright # python LSP
 
-    dafny
+    dafny # A programming language with built-in specification constructs
 
     typos # Source code type checker
+
+    alloy6 # Language & tool for relational models
   ];
 
   programs.lazygit.enable = true;
