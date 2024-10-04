@@ -5,7 +5,6 @@
   ...
 }: let
   inherit (builtins) catAttrs;
-  inherit (lib) mkEnableOption mkIf;
   configDir = "~/dotfiles/wallpapers";
   wallpapers = [
     {
@@ -39,30 +38,30 @@
     fi
   '';
 in {
-  # # Follow modules.graphical.enable
-  # systemd.user.services.set-wallpaper = {
-  #   Unit = {
-  #     Description = "Set desktop background using feh";
-  #     After = ["graphical-session-pre.target"];
-  #     PartOf = ["graphical-session.target"];
-  #   };
-  #
-  #   Service = {
-  #     Type = "oneshot";
-  #     ExecStart = "${wallpaperScript}";
-  #     IOSchedulingClass = "idle";
-  #   };
-  #
-  #   Install = {WantedBy = ["graphical-session.target"];};
-  # };
-  # systemd.user.timers.set-wallpaper = {
-  #   Unit = {Description = "Set desktop background using feh";};
-  #
-  #   Timer = {
-  #     OnCalendar = catAttrs "startTime" wallpapers;
-  #     Persistent = true;
-  #   };
-  #
-  #   Install = {WantedBy = ["timers.target"];};
-  # };
+  # Follow modules.graphical.enable
+  systemd.user.services.set-wallpaper = {
+    Unit = {
+      Description = "Set desktop background using feh";
+      After = ["graphical-session-pre.target"];
+      PartOf = ["graphical-session.target"];
+    };
+
+    Service = {
+      Type = "oneshot";
+      ExecStart = "${wallpaperScript}";
+      IOSchedulingClass = "idle";
+    };
+
+    Install = {WantedBy = ["graphical-session.target"];};
+  };
+  systemd.user.timers.set-wallpaper = {
+    Unit = {Description = "Set desktop background using feh";};
+
+    Timer = {
+      OnCalendar = catAttrs "startTime" wallpapers;
+      Persistent = true;
+    };
+
+    Install = {WantedBy = ["timers.target"];};
+  };
 }

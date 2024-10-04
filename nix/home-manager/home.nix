@@ -11,9 +11,10 @@
     ./shell/tmux.nix
     ./wallpaper.nix
     ./firefox.nix
+    ./graphical/fonts.nix
+    ./graphical/i3.nix
     ./graphical/xournalpp.nix
     ./graphical/zathura.nix
-    ./graphical/fonts.nix
     ./shell/starship.nix
     ./shell/zsh.nix
     ./shell/git.nix
