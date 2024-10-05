@@ -407,12 +407,12 @@ in {
   };
 
   # Enable redshift when X starts
-  services.redshift = {
-    enable = true;
-    provider = "manual";
-    latitude = 38.7436214;
-    longitude = -9.1952226;
-  };
+  # services.redshift = {
+  #   enable = true;
+  #   provider = "manual";
+  #   latitude = 38.7436214;
+  #   longitude = -9.1952226;
+  # };
 
   xresources.extraConfig = ''
     Xcursor.size: 16
