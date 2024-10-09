@@ -14,7 +14,7 @@ then
     exit 0
 elif [ x"$@" = x"ES-Project" ]
 then
-    xdg-open https://github.com/joserlopes/Software-Specification
+    xdg-open https://github.com/joserlopes/Software-Specification-Alloy
     exit 0
 elif [ x"$@" = x"ALC-Project" ]
 then
