@@ -9,10 +9,10 @@
     ./dev/languages.nix
     ./dev/tools.nix
     ./shell/tmux.nix
-    ./wallpaper.nix
+    # ./wallpaper.nix
     ./firefox.nix
     ./graphical/fonts.nix
-    ./graphical/i3.nix
+    # ./graphical/i3.nix
     ./graphical/xournalpp.nix
     ./graphical/zathura.nix
     ./shell/starship.nix
@@ -37,11 +37,17 @@
 
     # Music player
     amberol
+
+    # Bluetooth
+    blueman
+
+    arandr
+
+    variety
   ];
 
   programs.rofi = {
     enable = true;
-    # package = pkgs.rofi-wayland;
     terminal = "${pkgs.alacritty}/bin/alacritty";
     theme = "${configDir}/theme.rasi";
     extraConfig = {

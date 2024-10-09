@@ -22,7 +22,7 @@ in {
     config = rec {
       modifier = "Mod4";
       terminal = "alacritty";
-      # menu = "rofi -show combi -icon-theme Papirus -show-icons";
+      menu = "rofi -show combi -icon-theme Papirus -show-icons";
       window.titlebar = false;
       defaultWorkspace = "workspace number ${ws1}";
       fonts = {
@@ -124,7 +124,7 @@ in {
         "${modifier}+q" = "kill";
 
         # Launch rofi
-        "${modifier}+d" = "exec rofi -show combi -icon-theme Papirus -show-icons";
+        # "${modifier}+d" = "exec rofi -show combi -icon-theme Papirus -show-icons";
 
         # change focus
         "${modifier}+j" = "focus down";
@@ -388,7 +388,6 @@ in {
         savePath = "/tmp";
         savePathFixed = false;
         saveAsFileExtension = ".png";
-        # uiColor = "${lib.my.colors.lightblue}";
         startupLaunch = false;
         antialiasingPinZoom = true;
         uploadWithoutConfirmation = false;

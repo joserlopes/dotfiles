@@ -2,26 +2,26 @@
 {
   pkgs,
   lib,
+  configDir,
   ...
 }: let
   inherit (builtins) catAttrs;
-  configDir = "~/dotfiles/wallpapers";
   wallpapers = [
     {
       startTime = "00:00";
-      path = "${configDir}/wallpapers/midnight-wallpaper.jpg";
+      path = "${configDir}/midnight-wallpaper.jpg";
     }
     {
       startTime = "06:30";
-      path = "${configDir}/wallpapers/morning-wallpaper.jpg";
+      path = "${configDir}/morning-wallpaper.jpg";
     }
     {
       startTime = "14:00";
-      path = "${configDir}/wallpapers/noon-wallpaper.jpg";
+      path = "${configDir}/noon-wallpaper.jpg";
     }
     {
       startTime = "19:30";
-      path = "${configDir}/wallpapers/night-wallpaper.jpg";
+      path = "${configDir}/night-wallpaper.jpg";
     }
   ];
   wallpaperScript = pkgs.writers.writeBash "setbg" ''
@@ -38,7 +38,6 @@
     fi
   '';
 in {
-  # Follow modules.graphical.enable
   systemd.user.services.set-wallpaper = {
     Unit = {
       Description = "Set desktop background using feh";
