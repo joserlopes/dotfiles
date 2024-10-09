@@ -27,6 +27,9 @@
 
     # Node
     nodejs_22
+
+    # Java VM
+    jdk
   ];
 
   # Golang
