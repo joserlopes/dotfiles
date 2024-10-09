@@ -41,6 +41,10 @@
 
       gitlog = "git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
     };
+
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
   };
   # eza (modern ls replacement)
   programs.eza.enable = true;
@@ -78,5 +82,6 @@
 
   home.packages = with pkgs; [
     tree
+    glow # Render Markdown on the cli
   ];
 }
