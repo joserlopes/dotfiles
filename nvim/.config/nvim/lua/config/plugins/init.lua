@@ -11,6 +11,8 @@ return {
 
 	"benknoble/vim-dafny",
 
+	"runoshun/vim-alloy",
+
 	{
 		-- Add indentation guides even on blank lines
 		"lukas-reineke/indent-blankline.nvim",
