@@ -13,6 +13,7 @@
           jupyter
           python-sat
           pypblib
+          z3-solver
         ]
     ))
     # Lua
