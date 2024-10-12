@@ -26,6 +26,8 @@
     typos # Source code type checker
 
     alloy6 # Language & tool for relational models
+
+    tinymist # Better typst LSP
   ];
 
   programs.lazygit.enable = true;

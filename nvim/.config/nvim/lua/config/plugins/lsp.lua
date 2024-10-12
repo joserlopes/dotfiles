@@ -89,7 +89,7 @@ return {
 			html = { filetypes = { "html", "twig", "hbs" } },
 			ocamllsp = {},
 			-- This LSP requires a git repo to function properly
-			typst_lsp = {},
+			-- typst_lsp = {},
 
 			lua_ls = {
 				Lua = {
@@ -141,6 +141,16 @@ return {
 			cmd = { "/home/jrl/.nix-profile/bin/dafny", "server" },
 			on_attach = on_attach,
 			capabilities = capabilities,
+		})
+
+		-- Typst Lsp
+		require("lspconfig").tinymist.setup({
+			offset_encoding = "utf-8",
+			on_attach = on_attach,
+			capabilities = capabilities,
+			settings = {
+				exportPdf = "never",
+			},
 		})
 
 		local cmp = require("cmp")

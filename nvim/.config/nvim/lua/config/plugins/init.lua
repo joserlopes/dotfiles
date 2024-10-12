@@ -30,12 +30,12 @@ return {
 		ft = "typst",
 		lazy = false,
 		config = function()
-			require("lspconfig").typst_lsp.setup({
-				settings = {
-					exportPdf = "never", -- Choose onType, onSave or never.
-					-- serverPath = "" -- Normally, there is no need to uncomment it.
-				},
-			})
+			-- require("lspconfig").tinymist.setup({
+			-- 	settings = {
+			-- 		exportPdf = "never", -- Choose onType, onSave or never.
+			-- 		-- serverPath = "" -- Normally, there is no need to uncomment it.
+			-- 	},
+			-- })
 			vim.keymap.set("n", "<leader>tw", function()
 				vim.fn["typst#TypstWatch"]()
 			end, { desc = "[T]ypst [W]atch", silent = true })
@@ -44,8 +44,8 @@ return {
 
 	-- {
 	-- 	"chomosuke/typst-preview.nvim",
-	-- 	lazy = false, -- or ft = 'typst'
-	-- 	version = "0.3.*",
+	-- 	ft = "typst",
+	-- 	version = "1.*",
 	-- 	build = function()
 	-- 		require("typst-preview").update()
 	-- 	end,
