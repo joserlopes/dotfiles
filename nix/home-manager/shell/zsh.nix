@@ -80,6 +80,8 @@
 
   programs.fd.enable = true;
 
+  programs.fish.enable = true;
+
   home.packages = with pkgs; [
     tree
     glow # Render Markdown on the cli
