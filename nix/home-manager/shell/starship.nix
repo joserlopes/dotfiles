@@ -39,7 +39,7 @@
         style = "bold green";
         bash_indicator = "";
         zsh_indicator = "zsh";
-        fish_indicator = "";
+        fish_indicator = "🐟";
         powershell_indicator = "_";
         cmd_indicator = "";
         ion_indicator = "ino _";
