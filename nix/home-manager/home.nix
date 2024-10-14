@@ -12,6 +12,7 @@
     # ./wallpaper.nix
     ./firefox.nix
     ./graphical/fonts.nix
+    ./graphical/gtk.nix
     # ./graphical/i3.nix
     ./graphical/xournalpp.nix
     ./graphical/zathura.nix
@@ -44,22 +45,31 @@
     arandr
 
     variety
+
+    i3
+    i3status-rust
+    picom
+    dunst
   ];
 
-  programs.rofi = {
-    enable = true;
-    terminal = "${pkgs.alacritty}/bin/alacritty";
-    theme = "${configDir}/theme.rasi";
-    extraConfig = {
-      combi-modi = "URL:URL,drun";
-      modi = "combi";
-    };
-  };
+  # programs.rofi = {
+  #   enable = true;
+  #   terminal = "${pkgs.alacritty}/bin/alacritty";
+  #   theme = "${configDir}/theme.rasi";
+  #   extraConfig = {
+  #     combi-modi = "URL:URL,drun";
+  #     modi = "combi";
+  #   };
+  # };
 
   # programs.neovim = {
-  #   enable = true;
-  #   package = pkgs.unstable.neovim-unwrapped;
+  # enable = true;
+  # package = pkgs.unstable.neovim-unwrapped;
   # };
+
+  xresources.extraConfig = ''
+    Xcursor.size: 16
+  '';
 
   programs.home-manager.enable = true;
 }

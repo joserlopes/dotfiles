@@ -373,37 +373,37 @@ in {
     };
   };
 
-  services.picom = {
-    enable = true;
-    # backend = "glx";
-    # vSync = true;
-    # settings = {unredir-if-possible = false;};
-  };
+  # services.picom = {
+  #   enable = true;
+  #   # backend = "glx";
+  #   # vSync = true;
+  #   # settings = {unredir-if-possible = false;};
+  # };
 
-  services.flameshot = {
-    enable = true;
-    settings = {
-      General = {
-        disabledTrayIcon = true;
-        savePath = "/tmp";
-        savePathFixed = false;
-        saveAsFileExtension = ".png";
-        startupLaunch = false;
-        antialiasingPinZoom = true;
-        uploadWithoutConfirmation = false;
-        predefinedColorPaletteLarge = true;
-      };
-    };
-  };
+  # services.flameshot = {
+  #   enable = true;
+  #   settings = {
+  #     General = {
+  #       disabledTrayIcon = true;
+  #       savePath = "/tmp";
+  #       savePathFixed = false;
+  #       saveAsFileExtension = ".png";
+  #       startupLaunch = false;
+  #       antialiasingPinZoom = true;
+  #       uploadWithoutConfirmation = false;
+  #       predefinedColorPaletteLarge = true;
+  #     };
+  #   };
+  # };
 
   # Clipboard manager
   services.clipmenu.enable = true;
 
   # Notification daemon
-  services.dunst = {
-    enable = true;
-    configFile = configDir + "/dunstrc";
-  };
+  # services.dunst = {
+  #   enable = true;
+  #   configFile = configDir + "/dunstrc";
+  # };
 
   # Enable redshift when X starts
   # services.redshift = {

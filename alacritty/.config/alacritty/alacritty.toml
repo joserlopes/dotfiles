@@ -51,6 +51,6 @@ action = "ToggleFullScreen"
 key = "F11"
 
 [window]
-startup_mode = "Fullscreen"
+# startup_mode = "Fullscreen"
 opacity = 0.80
 blur = true
