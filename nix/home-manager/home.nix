@@ -50,7 +50,29 @@
     i3status-rust
     picom
     dunst
+    autorandr
+
+    pavucontrol
   ];
+
+  # Clipboard manager
+  services.clipmenu.enable = true;
+
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General = {
+        disabledTrayIcon = true;
+        savePath = "/tmp";
+        savePathFixed = false;
+        saveAsFileExtension = ".png";
+        startupLaunch = false;
+        antialiasingPinZoom = true;
+        uploadWithoutConfirmation = false;
+        predefinedColorPaletteLarge = true;
+      };
+    };
+  };
 
   # programs.rofi = {
   #   enable = true;
