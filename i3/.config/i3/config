@@ -66,12 +66,17 @@ bindsym $mod+b exec firefox
 # launch file explorer
 bindsym $mod+n exec nautilus
 
+# launch Xournalpp
+bindsym $mod+x exec xournalpp
+
 # kill focused window
 bindsym $mod+q kill
 
 # start rofi in drun mode
 bindsym $mod+d exec rofi -show combi -icon-theme "Papirus" -show-icons
-# bindsym $mod+d exec dmenu_run
+
+# apply autorandr
+bindsym $mod+p exec autorandr --change
 
 # change focus
 bindsym $mod+j focus down
@@ -130,7 +135,7 @@ set $ws1 "1: Browser"
 set $ws2 "2: Editor"
 set $ws3 "3: Notes"
 set $ws4 "4: Docs"
-set $ws5 "5: Statement"
+set $ws5 "5: Xournalpp"
 set $ws6 "6: Nemo"
 set $ws7 "7: Books"
 set $ws8 "8: Rhythmbox"
@@ -209,6 +214,7 @@ exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 # Print screen
 bindsym Print exec --no-startup-id flameshot gui
+bindsym $mod+Shift+p exec --no-startup-id flameshot gui
 
 # Move workspace to a different monitor
 bindsym $mod+m move workspace to output next
