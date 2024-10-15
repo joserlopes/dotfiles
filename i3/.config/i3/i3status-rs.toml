@@ -63,7 +63,7 @@ cmd = "blueman-manager"
 [[block]]
 block = "bluetooth"
 disconnected_format = ""
-format = " $icon $name $percentage "
+format = " $icon $name "
 mac = "28:06:DE:00:05:8A"
 
 [[block.click]]
