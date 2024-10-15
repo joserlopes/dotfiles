@@ -380,21 +380,21 @@ in {
   #   # settings = {unredir-if-possible = false;};
   # };
 
-  # services.flameshot = {
-  #   enable = true;
-  #   settings = {
-  #     General = {
-  #       disabledTrayIcon = true;
-  #       savePath = "/tmp";
-  #       savePathFixed = false;
-  #       saveAsFileExtension = ".png";
-  #       startupLaunch = false;
-  #       antialiasingPinZoom = true;
-  #       uploadWithoutConfirmation = false;
-  #       predefinedColorPaletteLarge = true;
-  #     };
-  #   };
-  # };
+  services.flameshot = {
+    enable = true;
+    settings = {
+      General = {
+        disabledTrayIcon = true;
+        savePath = "/tmp";
+        savePathFixed = false;
+        saveAsFileExtension = ".png";
+        startupLaunch = false;
+        antialiasingPinZoom = true;
+        uploadWithoutConfirmation = false;
+        predefinedColorPaletteLarge = true;
+      };
+    };
+  };
 
   # Clipboard manager
   services.clipmenu.enable = true;
