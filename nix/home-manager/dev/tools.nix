@@ -28,6 +28,8 @@
     alloy6 # Language & tool for relational models
 
     tinymist # Better typst LSP
+
+    gofumpt # Stricter go formatter
   ];
 
   programs.lazygit.enable = true;
