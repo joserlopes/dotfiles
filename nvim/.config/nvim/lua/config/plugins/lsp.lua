@@ -77,6 +77,7 @@ return {
 				analyses = {
 					unusedparams = true,
 				},
+				gofumpt = true,
 				staticcheck = true,
 			},
 			rust_analyzer = {
@@ -145,12 +146,9 @@ return {
 
 		-- Typst Lsp
 		require("lspconfig").tinymist.setup({
-			offset_encoding = "utf-8",
 			on_attach = on_attach,
 			capabilities = capabilities,
-			settings = {
-				exportPdf = "never",
-			},
+			formatterMode = "typstyle",
 		})
 
 		local cmp = require("cmp")
