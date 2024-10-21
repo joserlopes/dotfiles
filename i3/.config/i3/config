@@ -56,6 +56,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+# bindsym $mod+Return exec wezterm
 
 # launch obsidian
 bindsym $mod+o exec obsidian
@@ -201,6 +202,7 @@ mode "resize" {
 
 # startup applications
 exec --no-startup-id firefox
+# exec --no-startup-id wezterm
 exec --no-startup-id alacritty
 exec --no-startup-id dropbox
 

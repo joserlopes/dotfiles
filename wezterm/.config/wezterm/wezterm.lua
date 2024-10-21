@@ -24,6 +24,7 @@ config.webgpu_preferred_adapter = {
 	name = "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
 	vendor = 4318,
 }
+
 config.front_end = "WebGpu"
 
 return config

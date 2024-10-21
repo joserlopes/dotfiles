@@ -14,6 +14,7 @@
           python-sat
           pypblib
           z3-solver
+          playsound
         ]
     ))
     # Lua
