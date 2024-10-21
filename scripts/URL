@@ -18,11 +18,11 @@ then
     exit 0
 elif [ x"$@" = x"ALC-Project" ]
 then
-    xdg-open https://github.com/joserlopes/Algorithms-for-Computational-Logic
+    xdg-open https://github.com/joserlopes/Algorithms-for-Computational-Logic-Project1
     exit 0
 elif [ x"$@" = x"ALC-GitLab" ]
 then
-    xdg-open https://gitlab.rnl.tecnico.ulisboa.pt/alc24/project1/19
+    xdg-open https://gitlab.rnl.tecnico.ulisboa.pt/alc24/project2/19
     exit 0
 elif [ x"$@" = x"GitHub" ]
 then
