@@ -12,12 +12,8 @@
       commit.verbose = true;
       push.autoSetupRemote = true;
     };
-    delta = {
-      options = {
-        features = "decorations";
-        line-numbers = true;
-        dark = true;
-      };
+    difftastic = {
+      enable = true;
     };
   };
 
