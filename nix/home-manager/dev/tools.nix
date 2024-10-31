@@ -21,6 +21,8 @@
 
     pyright # python LSP
 
+    nixd # Better nix LSP
+
     dafny # A programming language with built-in specification constructs
 
     typos # Source code type checker
@@ -30,6 +32,8 @@
     tinymist # Better typst LSP
 
     gofumpt # Stricter go formatter
+
+    protobuf # proto compiler
   ];
 
   programs.lazygit.enable = true;

@@ -151,6 +151,31 @@ return {
 			formatterMode = "typstyle",
 		})
 
+		-- nix Lsp
+		require("lspconfig").nixd.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			cmd = { "nixd" },
+			settings = {
+				nixd = {
+					nixpkgs = {
+						expr = "import <nixpkgs> { }",
+					},
+					formatting = {
+						command = { "alejandra" }, -- or nixfmt or nixpkgs-fmt
+					},
+					-- options = {
+					--   nixos = {
+					--       expr = '(builtins.getFlake "/PATH/TO/FLAKE").nixosConfigurations.CONFIGNAME.options',
+					--   },
+					--   home_manager = {
+					--       expr = '(builtins.getFlake "/PATH/TO/FLAKE").homeConfigurations.CONFIGNAME.options',
+					--   },
+					-- },
+				},
+			},
+		})
+
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		require("luasnip.loaders.from_vscode").lazy_load()
