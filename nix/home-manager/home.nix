@@ -1,8 +1,4 @@
-{
-  pkgs,
-  configDir,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./scripts.nix
     ./Urls.nix
@@ -53,7 +49,17 @@
     autorandr
 
     pavucontrol
+
+    losslesscut-bin
   ];
+
+  # Enable the use of GUI apps installed through home-manager
+  targets.genericLinux.enable = true;
+  xdg.systemDirs.data = ["/home/jrl/.nix-profile/share/applications"];
+  xdg = {
+    enable = true;
+    mime.enable = true;
+  };
 
   # Clipboard manager
   services.clipmenu.enable = true;
