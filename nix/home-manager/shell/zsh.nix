@@ -61,7 +61,10 @@
 
   programs.skim.enable = true;
 
-  programs.yazi.enable = true;
+  programs.yazi = {
+    enable = true;
+    package = pkgs.yazi-unwrapped;
+  };
 
   programs.bat = {
     enable = true;
