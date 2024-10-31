@@ -25,15 +25,31 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff", "diagnostics" },
+				lualine_b = { "branch", "diff", "diagnostics", { "filename", path = 1 } },
 				lualine_c = {
-					{ "filename", path = 1 },
 					{
 						"lsp_progress",
 						spinner_symbols = { "🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘" },
 					},
 				},
-				lualine_x = { "encoding", "fileformat", "filetype", "fileicon" },
+				lualine_x = {
+					{
+						function()
+							return vim.wo.spell and "󰓆" or ""
+						end,
+						color = "DapLogPoint",
+					},
+					{
+						function()
+							return vim.g.disable_autoformat and "" or "󰉩"
+						end,
+						color = "DapBreakpointCondition",
+					},
+					"encoding",
+					"fileformat",
+					"filetype",
+					"fileicon",
+				},
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
