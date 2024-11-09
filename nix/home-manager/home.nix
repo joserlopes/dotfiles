@@ -51,6 +51,8 @@
     pavucontrol
 
     losslesscut-bin
+
+    fastfetch
   ];
 
   # Enable the use of GUI apps installed through home-manager
