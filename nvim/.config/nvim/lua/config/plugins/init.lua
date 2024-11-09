@@ -5,8 +5,6 @@ return {
 
 	"RRethy/vim-illuminate",
 
-	"folke/twilight.nvim",
-
 	"xiyaowong/transparent.nvim",
 
 	"benknoble/vim-dafny",
