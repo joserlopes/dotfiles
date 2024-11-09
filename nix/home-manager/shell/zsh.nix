@@ -85,6 +85,11 @@
 
   programs.fish.enable = true;
 
+  programs.carapace = {
+    enable = true;
+    package = pkgs.unstable.carapace;
+  };
+
   home.packages = with pkgs; [
     tree
     glow # Render Markdown on the cli
