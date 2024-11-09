@@ -37,4 +37,8 @@
   ];
 
   programs.lazygit.enable = true;
+
+  programs.zellij = {
+    enable = true;
+  };
 }
