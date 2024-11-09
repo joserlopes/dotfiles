@@ -6,6 +6,9 @@
     theme = {
       # package = pkgs.nordic;
       # name = "Nordic-darker";
+      # package = pkgs.kanagawa-gtk-theme;
+      # name = "Kanagawa-B";
+      # package = pkgs.gruvbox-dark-gtk;
       name = "Pop-dark";
     };
 
