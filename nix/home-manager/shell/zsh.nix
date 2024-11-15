@@ -45,6 +45,11 @@
     sessionVariables = {
       EDITOR = "nvim";
     };
+
+    initExtra = ''
+      export PATH="$HOME/.local/bin:$PATH"
+      bindkey -s ^f "tmux-sessionizer\n"
+    '';
   };
   # eza (modern ls replacement)
   programs.eza.enable = true;
