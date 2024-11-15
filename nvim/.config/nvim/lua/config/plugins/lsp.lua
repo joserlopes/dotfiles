@@ -214,8 +214,8 @@ return {
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- For luasnip users.
 				{ name = "nvim_lsp_signature_help" }, -- function arg popups while typing
-			}, {
 				{ name = "buffer" },
+				{ name = "crates" },
 			}),
 			formatting = {
 				expandable_indicator = true,
