@@ -1,1 +1,7 @@
 theme "kanagawa"
+keybinds {
+    normal {
+        bind "Alt o" { NewPane; }
+        bind "Alt i" { CloseFocus; };
+    }
+}
