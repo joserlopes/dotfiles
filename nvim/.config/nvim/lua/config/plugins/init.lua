@@ -12,6 +12,15 @@ return {
 	"runoshun/vim-alloy",
 
 	{
+		"nvzone/showkeys",
+		cmd = "ShowkeysToggle",
+		opts = {
+			maxkeys = 5,
+			position = "top-center",
+		},
+	},
+
+	{
 		-- Add indentation guides even on blank lines
 		"lukas-reineke/indent-blankline.nvim",
 		-- Enable `lukas-reineke/indent-blankline.nvim`

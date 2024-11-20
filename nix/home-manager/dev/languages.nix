@@ -15,6 +15,8 @@
           pypblib
           z3-solver
           playsound
+          requests
+          pwntools
         ]
     ))
     # Lua
