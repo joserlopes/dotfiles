@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ x"$@" = x"AS" ]
+if [ x"$@" = x"ASof" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/ASof11/2024-2025/1-semestre
     exit 0
@@ -25,7 +25,7 @@ then
     xdg-open https://github.com/joserlopes/dotfiles
     exit 0
 fi
-echo "AS"
+echo "ASof"
 echo "SSof"
 echo "SSof-GitLab"
 echo "Quizzes Tutor"
