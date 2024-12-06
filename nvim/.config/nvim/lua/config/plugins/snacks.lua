@@ -1,0 +1,55 @@
+return {
+	"folke/snacks.nvim",
+	priority = 1000,
+	lazy = false,
+	opts = {
+		bigfile = { enabled = true },
+		notifier = {
+			enabled = true,
+			timeout = 3000,
+		},
+		quickfile = { enabled = true },
+		statuscolumn = { enabled = true },
+		words = { enabled = true },
+		dashboard = { enabled = true },
+		toggle = { enabled = true },
+	},
+	keys = {
+		{
+			"<leader>gB",
+			function()
+				Snacks.gitbrowse()
+			end,
+			desc = "Git Browse",
+		},
+		{
+			"<leader>gb",
+			function()
+				Snacks.git.blame_line()
+			end,
+			desc = "Git Blame Line",
+		},
+		{
+			"<leader>gf",
+			function()
+				Snacks.lazygit.log_file()
+			end,
+			desc = "Lazygit Current File History",
+		},
+
+		{
+			"<leader>gl",
+			function()
+				Snacks.lazygit.log()
+			end,
+			desc = "Lazygit Log (cwd)",
+		},
+		{
+			"<leader>un",
+			function()
+				Snacks.notifier.hide()
+			end,
+			desc = "Dismiss All Notifications",
+		},
+	},
+}
