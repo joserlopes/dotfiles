@@ -6,7 +6,7 @@
     ./dev/tools.nix
     ./shell/tmux.nix
     # ./wallpaper.nix
-    ./firefox.nix
+    # ./firefox.nix
     ./graphical/fonts.nix
     ./graphical/gtk.nix
     # ./graphical/i3.nix
@@ -24,8 +24,6 @@
     neofetch
 
     feh
-
-    firefox
 
     obsidian
 
@@ -53,6 +51,10 @@
     losslesscut-bin
 
     fastfetch
+
+    rnote
+
+    hyperfine
   ];
 
   # Enable the use of GUI apps installed through home-manager
