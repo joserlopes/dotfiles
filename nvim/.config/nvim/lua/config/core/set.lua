@@ -28,9 +28,6 @@ vim.opt.incsearch = true
 -- Shows incremental commands on a split
 vim.opt.inccommand = "split"
 
--- NOTE: No longer needed since 0.10
--- vim.opt.termguicolors = true
-
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
