@@ -13,6 +13,8 @@ return {
 		words = { enabled = true },
 		dashboard = { enabled = true },
 		toggle = { enabled = true },
+		indent = { enabled = true, animate = { enabled = false } },
+		input = { enabled = true },
 	},
 	keys = {
 		{
