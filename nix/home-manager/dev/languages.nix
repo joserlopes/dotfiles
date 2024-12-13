@@ -7,6 +7,7 @@
     (pkgs.python3.withPackages (
       p:
         with p; [
+          esprima
           tox
           virtualenv
           ipython
@@ -30,7 +31,7 @@
     elmPackages.elm
 
     # Node
-    nodejs_22
+    nodejs_23
 
     # Java VM
     jdk
