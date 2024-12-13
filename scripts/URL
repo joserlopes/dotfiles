@@ -8,9 +8,17 @@ elif [ x"$@" = x"SSof" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/SSof11/2024-2025/1-semestre
     exit 0
-elif [ x"$@" = x"SSof-GitLab" ]
+elif [ x"$@" = x"SSof-Labs" ]
 then
-    xdg-open https://gitlab.rnl.tecnico.ulisboa.pt/ssof2425
+    xdg-open https://gitlab.rnl.tecnico.ulisboa.pt/ssof2425/labs
+    exit 0
+elif [ x"$@" = x"SSof-Project-Spec" ]
+then
+    xdg-open https://gitlab.rnl.tecnico.ulisboa.pt/ssof2425/project/specification
+    exit 0
+elif [ x"$@" = x"SSof-Project-Code" ]
+then
+    xdg-open https://gitlab.rnl.tecnico.ulisboa.pt/ssof2425/project/project-groups/Group03
     exit 0
 elif [ x"$@" = x"Quizzes Tutor" ]
 then
@@ -27,7 +35,9 @@ then
 fi
 echo "ASof"
 echo "SSof"
-echo "SSof-GitLab"
+echo "SSof-Labs"
+echo "SSof-Project-Spec"
+echo "SSof-Project-Code"
 echo "Quizzes Tutor"
 echo "GitHub"
 echo "dotfiles"
