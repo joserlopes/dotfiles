@@ -55,6 +55,8 @@
     rnote
 
     hyperfine
+
+    todoist-electron
   ];
 
   # Enable the use of GUI apps installed through home-manager
