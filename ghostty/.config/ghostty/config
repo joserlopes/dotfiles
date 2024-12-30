@@ -1,0 +1,5 @@
+font-family = 0xProto Nerd Font Mono
+theme = Kanagawa Dragon
+background-opacity = 0.8
+
+keybind = ctrl+shift+r=reload_config
