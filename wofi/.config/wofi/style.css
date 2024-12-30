@@ -1,40 +1,85 @@
-window {
-  background-color: #171717;
-}
-
 * {
-  font-family: "Fira Code";
+  font-family: "0xProto Nerd Font";
   color: #fff;
 }
 
-#scroll {
-  padding: 0.5rem;
+window {
+  margin: 0px;
+  border: 1px solid #e8dfc8;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#outer-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  border: 1px solid #e8dfc8;
+  border-radius: 15px;
+  padding-bottom: 5px;
+  background-color: #131315;
 }
 
 #input {
-  background-color: #262626;
+  padding: 4px;
+  padding-left: 20px;
+  border: 1px solid #4b483f;
+  color: #e8dfc8;
+  font-weight: bold;
+  background-color: #2e2e3e;
   outline: none;
-  box-shadow: none;
-  border: 0;
-  border-radius: 0;
-  font-size: 1rem;
-  padding: 0.5rem;
+  margin: 10px;
+  margin-bottom: 2px;
+}
+#input > * {
+  padding-right: 10px;
+}
+
+#input:focus {
+  background: #2e2e3e;
+  border: 1px solid #e8dfc8;
+  font-weight: bold;
+  font-style: italic;
+  outline: none;
 }
 
 #inner-box {
-  margin: 0.5rem;
-  font-size: 1rem;
+  border: 10px solid #131315;
+  color: #857f6f;
+  background-color: #131315;
+  border-radius: 15px;
 }
 
-#img {
-  margin: 10px 10px;
+#scroll {
+  margin-top: 5px;
+  border: none;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+
+#text {
+  margin-left: 15px;
+}
+
+#text:selected {
+  color: #e8dfc8;
+  border: none;
+  border-radius: 15px;
 }
 
 #entry {
-  border-radius: 0.5rem;
+  margin: 0px;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 #entry:selected {
-  background-color: #262626;
-  outline: none;
-}
+  background-color: #2e2e3e;
+  border-radius: 15px;
+  border: 1px solid #e8dfc8;
+  font-weight: bold;
+  font-style: italic;
+}/*# sourceMappingURL=style.css.map */
