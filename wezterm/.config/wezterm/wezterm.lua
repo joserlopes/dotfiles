@@ -2,8 +2,9 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- config.font = wezterm.font("0xProto", { weight = "Regular" })
+config.font = wezterm.font("0xProto")
 -- config.font = wezterm.font("JetBrains Mono NF", { weight = "Regular" })
-config.font = wezterm.font("JetBrains Mono NF")
+-- config.font = wezterm.font("JetBrains Mono NF")
 config.font_size = 16
 config.color_scheme = "Black Metal (Gorgoroth) (base16)"
 config.window_background_opacity = 0.8
