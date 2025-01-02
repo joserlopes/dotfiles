@@ -11,5 +11,7 @@ end
 test -r '/home/jrl/.opam/opam-init/init.fish' && source '/home/jrl/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
 
+fish_add_path -a ~/.local/bin
+
 zoxide init --cmd cd fish | source
 starship init fish | source
