@@ -34,6 +34,10 @@
     gofumpt # Stricter go formatter
 
     protobuf # proto compiler
+
+    # TODO: Maybe wait for it this to be integrated into home-manager?
+    # ghostty # Better terminal emulator
+    neovim-unwrapped
   ];
 
   programs.lazygit.enable = true;
