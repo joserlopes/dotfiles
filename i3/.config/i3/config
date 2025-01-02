@@ -245,7 +245,7 @@ bindsym $mod+Shift+q mode "$mode_system"
 bar {
     status_command i3status-rs ~/.config/i3/i3status-rs.toml
 
-    font pango:DejaVu Sans Mono, Font Awesome 6 Free 15px
+    font pango:0xProto Nerd Font Propo, DejaVu Sans Mono, Font Awesome 6 Free 15px
 
     tray_output primary
 
@@ -253,9 +253,9 @@ bar {
         separator #666666
         background #222222
         statusline #dddddd
-        focused_workspace #0088CC #9b8d7f #ffffff
+        focused_workspace #222222 #9b8d7f #1a1a22
         active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
+        inactive_workspace #333333 #333333 #777777
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
