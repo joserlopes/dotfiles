@@ -12,3 +12,4 @@ test -r '/home/jrl/.opam/opam-init/init.fish' && source '/home/jrl/.opam/opam-in
 # END opam configuration
 
 zoxide init --cmd cd fish | source
+starship init fish | source
