@@ -5,7 +5,9 @@ configuration {
   xoffset: 0;
   yoffset: 0;
 
-  font: "FiraCode Nerd Font Medium 15";
+  // font: "FiraCode Nerd Font Medium 15";
+  // font: "JetBrainsMono Nerd Font 15";
+  font: "0xProto Nerd Font 15";
 
   timeout {
     delay: 10;
@@ -155,4 +157,3 @@ textbox-prompt-colon {
     margin:           0px 0.3000em 0.0000em 0.0000em ;
     text-color:       inherit;
 }
-
