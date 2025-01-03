@@ -1,13 +1,3 @@
-import = [
-  # "~/.config/alacritty/catppuccin-frappe.toml",
-  # "~/.config/alacritty/gruvbox-material-medium-dark.toml",
-  # "~/.config/alacritty/rose-pine.toml",
-  # "~/.config/alacritty/everforest-dark.toml",
-  # "~/.config/alacritty/kanagawa-dragon.toml",
-  # "~/.config/alacritty/black-metal-gorgoroth.toml",
-  # "~/.config/alacritty/black-metal-venom.toml",
-  "~/.config/alacritty/black-metal-gorgoroth-256.toml",
-]
 
 [env]
 TERM = "xterm-256color"
@@ -54,3 +44,15 @@ key = "F11"
 startup_mode = "Fullscreen"
 opacity = 0.80
 blur = true
+
+[general]
+import = [
+  # "~/.config/alacritty/catppuccin-frappe.toml",
+  # "~/.config/alacritty/gruvbox-material-medium-dark.toml",
+  # "~/.config/alacritty/rose-pine.toml",
+  # "~/.config/alacritty/everforest-dark.toml",
+  "~/.config/alacritty/kanagawa-dragon.toml",
+  # "~/.config/alacritty/black-metal-gorgoroth.toml",
+  # "~/.config/alacritty/black-metal-venom.toml",
+  # "~/.config/alacritty/black-metal-gorgoroth-256.toml",
+]
