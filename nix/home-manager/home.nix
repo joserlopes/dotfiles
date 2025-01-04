@@ -12,8 +12,8 @@
     # ./graphical/i3.nix
     ./graphical/xournalpp.nix
     ./graphical/zathura.nix
-    ./shell/starship.nix
-    ./shell/zsh.nix
+    # ./shell/starship.nix
+    # ./shell/zsh.nix
     ./shell/git.nix
   ];
 

@@ -35,9 +35,6 @@
 
     # Java VM
     jdk
-
-    # Rust
-    rustup
   ];
 
   # Golang

@@ -13,7 +13,7 @@
     inherit (lib.my) mkOverlays mkPkgs;
 
     extraSpecialArgs = {
-      scriptsDir = ../scripts;
+      scriptsDir = ../scripts/.local/bin;
       configDir = ./config;
     };
 
