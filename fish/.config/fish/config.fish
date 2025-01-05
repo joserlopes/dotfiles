@@ -15,6 +15,7 @@ test -r '/home/jrl/.opam/opam-init/init.fish' && source '/home/jrl/.opam/opam-in
 fish_add_path -a ~/.local/bin
 
 bind \cf tmux-sessionizer
+set fish_greeting
 
 zoxide init --cmd cd fish | source
 starship init fish | source
