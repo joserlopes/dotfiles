@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- config.font = wezterm.font("0xProto", { weight = "Regular" })
-config.font = wezterm.font("0xProto")
+config.font = wezterm.font("0xProto Nerd Font Propo")
 -- config.font = wezterm.font("JetBrains Mono NF", { weight = "Regular" })
 -- config.font = wezterm.font("JetBrains Mono NF")
 config.font_size = 16
@@ -12,20 +12,20 @@ config.hide_tab_bar_if_only_one_tab = true
 config.audible_bell = "Disabled"
 
 config.keys = {
-	{
-		key = "F11",
-		action = wezterm.action.ToggleFullScreen,
-	},
+    {
+        key = "F11",
+        action = wezterm.action.ToggleFullScreen,
+    },
 }
 
 config.webgpu_preferred_adapter = {
-	backend = "Vulkan",
-	device = 9632,
-	device_type = "DiscreteGpu",
-	driver = "NVIDIA",
-	driver_info = "560.35.03",
-	name = "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
-	vendor = 4318,
+    backend = "Vulkan",
+    device = 9632,
+    device_type = "DiscreteGpu",
+    driver = "NVIDIA",
+    driver_info = "560.35.03",
+    name = "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    vendor = 4318,
 }
 
 config.front_end = "WebGpu"
