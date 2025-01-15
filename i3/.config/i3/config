@@ -12,8 +12,9 @@ exec --no-startup-id dex --autostart --environment i3
 # Network manager
 exec --no-startup-id nm-applet
 
-# Picom compositor
-exec_always --no-startup-id picom --no-fading-openclose
+# Picom compositor and wallpaper
+exec_always --no-startup-id picom --backend glx
+exec_always --no-startup-id feh --bg-fill dotfiles/wallpapers/mountains-7827829_1920.jpg
 
 # Adjust screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
@@ -67,7 +68,8 @@ bindsym $mod+o exec obsidian
 bindsym $mod+b exec firefox
 
 # launch file explorer
-bindsym $mod+n exec nautilus
+# bindsym $mod+n exec nautilus
+bindsym $mod+n exec nemo
 
 # launch Xournalpp
 bindsym $mod+x exec xournalpp
