@@ -70,9 +70,7 @@ return {
 
 		local servers = {
 			marksman = {},
-			clangd = {},
-			ts_ls = {},
-			elmls = {},
+			-- clangd = {},
 			gopls = {
 				analyses = {
 					unusedparams = true,
@@ -87,11 +85,8 @@ return {
 					},
 				},
 			},
-			html = { filetypes = { "html", "twig", "hbs" } },
-			ocamllsp = {},
-			-- This LSP requires a git repo to function properly
-			-- typst_lsp = {},
-
+			-- html = { filetypes = { "html", "twig", "hbs" } },
+			-- ocamllsp = {},
 			lua_ls = {
 				Lua = {
 					workspace = { checkThirdParty = false },

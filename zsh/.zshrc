@@ -41,8 +41,8 @@ alias python="python3"
 
 bindkey -s ^f "tmux-sessionizer\n"
 
-# eval "$(zoxide init --cmd cd zsh)"
-eval "$(zoxide init zsh)"
+# eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
@@ -51,3 +51,12 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/zig/
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/jrl/.opam/opam-init/init.zsh' ]] || source '/home/jrl/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
