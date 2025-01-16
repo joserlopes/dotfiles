@@ -30,7 +30,7 @@ alias ll="eza -la -T -L=1 --git --icons -color=always --group-directories-first"
 alias lt="eza -aT -L=1 --git --icons --color=always --group-directories-first"
 
 # Bat is just superior...
-# alias cat="bat"
+alias cat="bat"
 
 alias c="clear"
 
