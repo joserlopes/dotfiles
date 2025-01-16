@@ -1,3 +1,5 @@
+cursor-style = block
+shell-integration-features = no-cursor
 font-family = 0xProto Nerd Font Propo
 font-size = 15
 theme = Kanagawa Dragon
@@ -5,5 +7,7 @@ background-opacity = 0.8
 
 keybind = ctrl+shift+r=reload_config
 
-fullscreen = true
+# fullscreen = true
 window-decoration = false
+
+mouse-hide-while-typing = true
