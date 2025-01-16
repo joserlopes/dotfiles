@@ -7,7 +7,7 @@
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="JRL Toolbar"/>
   <property name="lastSavePath" value="/home/jrl/Técnico/SSof/Exam_Study"/>
-  <property name="lastOpenPath" value=""/>
+  <property name="lastOpenPath" value="/home/jrl/Técnico/SSof/Exam_Study"/>
   <property name="lastImagePath" value=""/>
   <property name="edgePanSpeed" value="20"/>
   <property name="edgePanMaxMult" value="5"/>
@@ -16,7 +16,7 @@
   <property name="displayDpi" value="72"/>
   <property name="mainWndWidth" value="956"/>
   <property name="mainWndHeight" value="1051"/>
-  <property name="maximized" value="false"/>
+  <property name="maximized" value="true"/>
   <property name="showToolbar" value="true"/>
   <property name="showSidebar" value="false"/>
   <property name="sidebarWidth" value="50"/>
@@ -218,6 +218,10 @@
     </data>
     <data name="Wayland Pointer">
       <attribute name="deviceClass" type="int" value="1"/>
+      <attribute name="deviceSource" type="int" value="0"/>
+    </data>
+    <data name="kanata">
+      <attribute name="deviceClass" type="int" value="5"/>
       <attribute name="deviceSource" type="int" value="0"/>
     </data>
   </data>

@@ -84,7 +84,7 @@ bindsym $mod+d exec rofi -show combi -icon-theme "Papirus" -show-icons
 bindsym $mod+p exec autorandr --change
 
 # apply autorandr
-bindsym $mod+Shift+w exec xsetwacom --set "Wacom One by Wacom M Pen stylus" MapToOutput HEAD-1
+bindsym $mod+Shift+w exec xsetwacom --set "Wacom One by Wacom M Pen stylus" MapToOutput HEAD-0
 
 # change focus
 bindsym $mod+j focus down
