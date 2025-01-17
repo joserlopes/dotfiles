@@ -70,6 +70,7 @@ return {
 
 		local servers = {
 			marksman = {},
+			ts_ls = {},
 			-- clangd = {},
 			gopls = {
 				analyses = {
