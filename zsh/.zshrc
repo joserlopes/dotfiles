@@ -60,3 +60,7 @@ export PATH=$PATH:~/zig/
 # This section can be safely removed at any time if needed.
 [[ ! -r '/home/jrl/.opam/opam-init/init.zsh' ]] || source '/home/jrl/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
