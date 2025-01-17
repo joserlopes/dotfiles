@@ -84,13 +84,13 @@ block = "backlight"
 format = " $icon $brightness"
 missing_format = ""
 
-[[block]]
-block = "hueshift"
-click_temp = 3500
-format = " $temperature "
-hue_shifter = "redshift"
-interval = 60
-step = 50
+# [[block]]
+# block = "hueshift"
+# click_temp = 3500
+# format = " $temperature "
+# hue_shifter = "redshift"
+# interval = 60
+# step = 50
 
 [[block]]
 block = "net"
