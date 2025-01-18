@@ -128,7 +128,12 @@ return {
 		})
 
 		-- Python LSP
-		require("lspconfig").pyright.setup({
+		-- require("lspconfig").pyright.setup({
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- })
+
+		require("lspconfig").ruff.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
 		})
