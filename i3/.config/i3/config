@@ -14,7 +14,7 @@ exec --no-startup-id nm-applet
 
 # Picom compositor and wallpaper
 exec_always --no-startup-id picom --backend glx
-exec_always --no-startup-id feh --bg-fill dotfiles/wallpapers/mountains-7827829_1920.jpg
+exec_always --no-startup-id feh --bg-fill ~/dotfiles/wallpapers/nice-one.jpg
 
 # Adjust screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
@@ -83,14 +83,17 @@ bindsym $mod+d exec rofi -show combi -icon-theme "Papirus" -show-icons
 # apply autorandr
 bindsym $mod+p exec autorandr --change
 
-# apply autorandr
+# wacom map to output (main laptop screen)
 bindsym $mod+Shift+w exec xsetwacom --set "Wacom One by Wacom M Pen stylus" MapToOutput HEAD-0
+
+# wacom map to output (external screen)
+bindsym Mod1+Shift+w exec xsetwacom --set "Wacom One by Wacom M Pen stylus" MapToOutput HEAD-1
 
 # change focus
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+ccedilla focus left
+bindsym $mod+h focus left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -102,7 +105,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-bindsym $mod+Shift+ccedilla move left
+bindsym $mod+Shift+h move left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -111,7 +114,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym Mod1+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
