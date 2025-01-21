@@ -213,7 +213,7 @@ mode "resize" {
 # startup applications
 exec --no-startup-id firefox
 # exec --no-startup-id wezterm
-exec --no-startup-id ghostty
+# exec --no-startup-id ghostty
 exec --no-startup-id dropbox
 
 ## Startup scripts
