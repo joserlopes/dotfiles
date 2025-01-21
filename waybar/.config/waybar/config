@@ -1,97 +1,104 @@
 {
-    "layer": "top",
-    "spacing": 0,
-    "height": 0,
-
-    "margin-top": 8,
-    "margin-right": 8,
-    "margin-bottom": 0,
-    "margin-left": 8,
-
-    "modules-left": [
-        "niri/workspaces"
-    ],
-
-    "modules-center": [
-        "clock"
-    ],
-
-    "modules-right": [
-        "tray",
-        "cpu_text",
-        "cpu",
-        "memory",
-        "battery",
-        "network",
-        "pulseaudio",
-        "custom/powermenu"
-    ],
-
-    "niri/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "tooltip": false
-    },
-
-    "tray": {
-        "spacing": 10,
-        "tooltip": false
-    },
-
-    "clock": {
-        "format": "{:%I:%M %p - %a, %d %b %Y}",
-        "tooltip": false
-    },
-
-    "cpu": {
-        "format": "cpu {usage}%",
-        "interval": 2,
-
-        "states": {
-            "critical": 90
-        }
-    },
-
-    "memory": {
-        "format": "mem {percentage}%",
-        "interval": 2,
-
-        "states": {
-            "critical": 80
-        }
-    },
-
-    "battery": {
-        "format": "bat {capacity}%",
-        "interval": 5,
-        "states": {
-            "warning": 20,
-            "critical": 10
-        },
-        "tooltip": false
-    },
-
-    "network": {
-        "format-wifi" : "wifi {bandwidthDownBits}",
-        "format-ethernet": "enth {bandwidthDownBits}",
-        "format-disconnected" : "no network",
-        "interval": 5,
-        "tooltip": false
-    },
-
-    "pulseaudio": {
-        "scroll-step": 5,
-        "max-volume": 150,
-        "format": "vol {volume}%",
-        "format-bluetooth": "vol {volume}%",
-        "nospacing": 1,
-        "on-click": "pavucontrol",
-        "tooltip": false
-    },
-
-    "custom/powermenu": {
-      "format": "  ",
-      "tooltip": false,
-      "on-click": "exec wlogout"
+  "layer": "top",
+  "position": "left", 
+  "height": 200,
+  "margin-left": 10,
+  "modules-center": ["niri/workspaces", "custom/spotify", "network", "custom/vpn", "pulseaudio", "pulseaudio#percentage", "battery","battery#percentage", "custom/calendar-icon", "clock", "clock#date", "custom/time-icon", "clock#time"],
+    // Modules configuration
+  "niri/workspaces": {
+	"format": "{icon}",
+    "on-click": "activate",
+    "sort-by-name": true,
+    "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": ""
+         }
+     },
+  "custom/spotify": {
+    "format": "",
+    "interval": 1,
+    "exec-if": "pgrep spotify",
+    "return-type": "json",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-scroll-up": "playerctl -p spotify previous",
+    "on-scroll-down": "playerctl -p spotify next",
+    "tooltip": true,
+    "escape": true,
+    "exec": "/home/loki/bin/spotify.sh"
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "",
+	"tooltip-format-wifi": "{essid}",
+	"tooltip-format-disconnected": "Disconnected"
+  },
+  "custom/vpn": {
+    "format": "{}",
+    "interval": 1,
+    "tooltip": false,
+    "exec": "/home/loki/bin/waybar-vpn.sh"
+  },
+  "pulseaudio": {
+	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+	"format": "{icon}",
+    "format-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
     }
+  },
+  "pulseaudio#percentage": {
+	"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+	"format": "{volume}"
+  },
+  "battery": {
+    "states": {
+        "warning": 30,
+        "critical": 15
+        },
+	"format": "{icon}",
+	"format-warning": "<span foreground='#98bb6c'>{icon}</span>",
+	"format-critical": "<span foreground='#e46876'>{icon}</span>",
+	"format-charging": "<span foreground='#98bb6c'></span>",
+	"format-plugged": "<span foreground='#98bb6c'></span>",
+	"format-full": "<span foreground='#98bb6c'></span>",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "battery#percentage": {
+	"format": "{capacity}",
+    "tooltip-format": "{time}"
+  },
+  "custom/calendar-icon": {
+    "format": "",
+    "tooltip": false
+  },
+  "clock": {
+	"format": "{:%a}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "clock#date": {
+	"format": "{:%d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "custom/time-icon": {
+    "format": "",
+    "tooltip": false
+  },
+  "clock#time": {
+	"format": "{:%H\n%M}"
+  }
 }
