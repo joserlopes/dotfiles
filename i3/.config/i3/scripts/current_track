@@ -14,6 +14,14 @@ then
     exit 1
 fi
 
+# Get the current playback status
+STATUS=$(playerctl status 2>/dev/null)
+
+if [ "$STATUS" != "Playing" ]; then
+    notify-send "Playback Paused" "No active playback."
+    exit 0
+fi
+
 # Get the current playing track, artist, album, album art URL, current position, and total length
 TRACK=$(playerctl metadata title 2>/dev/null)
 ARTIST=$(playerctl metadata artist 2>/dev/null)
