@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/env bash
 
 # You must place the following on crontab for the wallpaper to update automatically:
 # 0 0 * * * DISPLAY=:0 $HOME/.local/bin/utils/setbg
