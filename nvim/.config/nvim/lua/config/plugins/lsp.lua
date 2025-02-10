@@ -128,15 +128,24 @@ return {
 		})
 
 		-- Python LSP
-		-- require("lspconfig").pyright.setup({
+		require("lspconfig").pyright.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			settings = {
+				python = {
+					analysis = {
+						diagnosticSeverityOverrides = {
+							reportPossiblyUnboundVariable = "none",
+						},
+					},
+				},
+			},
+		})
+
+		-- require("lspconfig").ruff.setup({
 		-- 	on_attach = on_attach,
 		-- 	capabilities = capabilities,
 		-- })
-
-		require("lspconfig").ruff.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
 
 		-- Dafny LSP
 		require("lspconfig").dafny.setup({

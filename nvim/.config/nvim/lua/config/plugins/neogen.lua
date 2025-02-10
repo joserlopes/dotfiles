@@ -1,12 +1,25 @@
 return {
 	"danymat/neogen",
-	dependencies = "nvim-treesitter/nvim-treesitter",
-	config = function()
-		require("neogen").setup({})
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		"L3MON4D3/LuaSnip",
+	},
+	event = "BufReadPre",
 
-		local opts = { noremap = true, silent = true }
-		vim.api.nvim_set_keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
+	config = function()
+		require("neogen").setup({
+			enabled = true,
+			snippet_engine = "luasnip",
+		})
 	end,
-	-- Uncomment next line if you want to follow only stable versions
-	-- version = "*"
+
+	keys = {
+		{
+			"<leader>cg",
+			function()
+				require("neogen").generate({})
+			end,
+			desc = "Generate annotation comments",
+		},
+	},
 }
