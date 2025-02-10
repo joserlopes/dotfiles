@@ -11,16 +11,6 @@ unfocused_hollow = true
 [font]
 size = 16
 
-[font.bold]
-family = "0xProto Nerd Font"
-# family = "Iosevka Nerd Font"
-style = "Bold"
-
-[font.italic]
-family = "0xProto Nerd Font"
-# family = "Iosevka Nerd Font"
-style = "Italic"
-
 [font.normal]
 # family = "FiraCode Nerd Font Mono"
 # family = "Hack Nerd Font"
@@ -33,8 +23,19 @@ style = "Italic"
 # family = "MonaspiceNe Nerd Font Mono"
 # family = "ZedMono Nerd Font Mono"
 # family = "MesloLGL Nerd Font"
+# family = "IosevkaTerm Nerd Font Propo"
 family = "0xProto Nerd Font"
 style = "regular"
+
+[font.bold]
+family = "0xProto Nerd Font"
+# family = "IosevkaTerm Nerd Font Propo"
+style = "Bold"
+
+[font.italic]
+family = "0xProto Nerd Font"
+# family = "IosevkaTerm Nerd Font Propo"
+style = "Italic"
 
 [[keyboard.bindings]]
 action = "ToggleFullScreen"

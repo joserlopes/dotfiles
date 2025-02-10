@@ -1,6 +1,6 @@
 cursor-style = block
 shell-integration-features = no-cursor
-font-family = 0xProto Nerd Font Propo
+font-family = IosevkaTerm Nerd Font
 font-size = 15
 theme = Kanagawa Dragon
 background-opacity = 0.8
