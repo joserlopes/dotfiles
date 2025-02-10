@@ -41,6 +41,15 @@ alias python="python3"
 
 bindkey -s ^f "tmux-sessionizer\n"
 
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 # eval "$(zoxide init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
@@ -51,7 +60,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/zig/
-
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
