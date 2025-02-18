@@ -241,11 +241,10 @@ return {
 		})
 
 		vim.diagnostic.config({
-			-- update_in_insert = true,
 			float = {
 				focusable = false,
 				border = "rounded",
-				source = "always",
+				source = true,
 			},
 		})
 	end,

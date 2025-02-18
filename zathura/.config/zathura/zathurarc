@@ -4,4 +4,4 @@ set window-width 3000
 set highlight-transparency 1
 set default-bg rgba(0,0,0,0.7)
 set recolor-lightcolor rgba(0,0,0,0)
-set guioptions "none"
+# set guioptions "none"
