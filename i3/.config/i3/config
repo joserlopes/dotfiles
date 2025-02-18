@@ -233,6 +233,9 @@ bindsym $mod+Shift+p exec --no-startup-id flameshot gui
 # Show current track 
 bindsym Mod1+v exec --no-startup-id ~/.config/i3/scripts/current_track
 
+# Toggle keyboard layout between us and pt
+bindsym $mod+t exec --no-startup-id ~/.config/i3/scripts/toggle_layout
+
 # Move workspace to a different monitor
 bindsym $mod+m move workspace to output next
 
