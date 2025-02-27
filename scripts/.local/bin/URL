@@ -8,6 +8,10 @@ elif [ x"$@" = x"AAv-proj" ]
 then
     xdg-open https://github.com/joserlopes/AAv
     exit 0
+elif [ x"$@" = x"AAv-mooshak" ]
+then
+    xdg-open http://acp.tecnico.ulisboa.pt/~mooshak/
+    exit 0
 elif [ x"$@" = x"PAv" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/PAva36/2024-2025/2-semestre
@@ -27,6 +31,7 @@ then
 fi
 echo "AAv"
 echo "AAv-proj"
+echo "AAv-mooshak"
 echo "PAv"
 echo "CCEIC-II"
 echo "GitHub"

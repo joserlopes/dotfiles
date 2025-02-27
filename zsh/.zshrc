@@ -38,6 +38,7 @@ alias c="clear"
 alias grep="rg"
 
 alias python="python3"
+alias lisp="sbcl"
 
 bindkey -s ^f "tmux-sessionizer\n"
 
