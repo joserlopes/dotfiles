@@ -15,7 +15,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 
 		-- Adds LSP signature help while typing
-		"hrsh7th/cmp-nvim-lsp-signature-help",
+		-- "hrsh7th/cmp-nvim-lsp-signature-help",
 
 		-- Adds Path help while typing
 		"hrsh7th/cmp-path",
