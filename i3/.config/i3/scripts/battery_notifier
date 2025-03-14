@@ -1,0 +1,20 @@
+#!/bin/env bash
+
+THRESHOLD=20  # Battery warning threshold
+
+while true; do
+    # Get battery info using acpi
+    BATTERY_INFO=$(acpi -b)
+    BATTERY_LEVEL=$(echo "$BATTERY_INFO" | grep -oP '\d+%' | tr -d '%')
+    CHARGING_STATUS=$(echo "$BATTERY_INFO" | grep -o "Charging")
+    TIME_LEFT=$(echo "$BATTERY_INFO" | grep -oP '\d+:\d+:\d+' || echo "Unknown")
+
+    # Notify if battery is low and not charging
+    if [[ "$BATTERY_LEVEL" -le "$THRESHOLD" && -z "$CHARGING_STATUS" ]]; then
+        notify-send -u critical "Battery Low" "Battery at ${BATTERY_LEVEL}%. Approx ${TIME_LEFT} remaining!"
+        sleep 300  # Wait 5 minutes before next notification
+    else
+        sleep 60  # Check every 60 seconds
+    fi
+done
+

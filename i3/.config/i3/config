@@ -222,7 +222,9 @@ exec_always --no-startup-id ~/.config/i3/scripts/inverse-scroll
 # Tap to click touchpad script
 exec_always --no-startup-id ~/.config/i3/scripts/tap-to-click 
 # Track change detection script
-exec_always --no-startup-id ~/.config/i3/scripts/notify_track_change
+exec --no-startup-id ~/.config/i3/scripts/notify_track_change
+# Battery level warning
+exec --no-startup-id ~/.config/i3/scripts/battery_notifier
 # dunst notification daemon
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
