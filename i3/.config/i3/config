@@ -77,8 +77,10 @@ bindsym $mod+x exec xournalpp
 # kill focused window
 bindsym $mod+q kill
 
-# start rofi in drun mode
+# start rofi
 bindsym $mod+d exec rofi -show combi -icon-theme "Papirus" -show-icons
+# start rofi-calc
+bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
 
 # apply autorandr
 bindsym $mod+p exec autorandr --change
@@ -144,8 +146,8 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Browser"
 set $ws2 "2: Editor"
-set $ws3 "3: Notes"
-set $ws4 "4: Docs"
+set $ws3 "3: Docs"
+set $ws4 "4: Discord"
 set $ws5 "5: Xournalpp"
 set $ws6 "6: Nemo"
 set $ws7 "7: Books"
