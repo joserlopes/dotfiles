@@ -73,3 +73,12 @@ export PATH=$PATH:~/zig/
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
+
+# bun completions
+[ -s "/home/jrl/.bun/_bun" ] && source "/home/jrl/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+[ -f "/home/jrl/.ghcup/env" ] && . "/home/jrl/.ghcup/env" # ghcup-env
