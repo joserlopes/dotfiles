@@ -81,8 +81,14 @@ return {
 			},
 			rust_analyzer = {
 				["rust-analyzer"] = {
+					cargo = {
+						allFeatures = true,
+					},
 					checkOnSave = {
 						command = "clippy",
+					},
+					rustfmt = {
+						extraArgs = { "--config=wrap_comments=true" },
 					},
 				},
 			},
@@ -108,6 +114,7 @@ return {
 
 		mason_lspconfig.setup({
 			ensure_installed = vim.tbl_keys(servers),
+			automatic_installation = false,
 		})
 
 		mason_lspconfig.setup_handlers({
