@@ -33,11 +33,11 @@ then
     xdg-open https://github.com/joserlopes/dotfiles
     exit 0
 fi
-echo "AAv"
-echo "AAv-proj"
-echo "AAv-mooshak"
-echo "PAv"
-echo "PAv-proj"
-echo "CCEIC-II"
-echo "GitHub"
-echo "dotfiles"
+echo -e "AAv\x00icon\x1f/usr/share/icons/Papirus/24x24/actions/link.svg"
+echo -e "AAv-proj\x00icon\x1f/usr/share/icons/Papirus/24x24/actions/link.svg"
+echo -e "AAv-mooshak\x00icon\x1f/usr/share/icons/Papirus/24x24/actions/link.svg"
+echo -e "PAv\x00icon\x1f/usr/share/icons/Papirus/24x24/actions/link.svg"
+echo -e "PAv-proj\x00icon\x1f/usr/share/icons/Papirus/24x24/actions/link.svg"
+echo -e "CCEIC-II\x00icon\x1f/usr/share/icons/Papirus/24x24/actions/link.svg"
+echo -e "GitHub\x00icon\x1f/usr/share/icons/Papirus/24x24/actions/link.svg"
+echo -e "dotfiles\x00icon\x1f/usr/share/icons/Papirus/24x24/actions/link.svg"
