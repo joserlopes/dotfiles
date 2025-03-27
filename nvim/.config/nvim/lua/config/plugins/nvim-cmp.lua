@@ -1,6 +1,7 @@
 return {
 	-- Autocompletion
 	"hrsh7th/nvim-cmp",
+
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip",
@@ -13,9 +14,6 @@ return {
 
 		-- Adds LSP completion capabilities
 		"hrsh7th/cmp-nvim-lsp",
-
-		-- Adds LSP signature help while typing
-		-- "hrsh7th/cmp-nvim-lsp-signature-help",
 
 		-- Adds Path help while typing
 		"hrsh7th/cmp-path",

@@ -11,17 +11,16 @@ return {
 
 	"runoshun/vim-alloy",
 
-	-- tailwind-tools.lua
 	{
 		"luckasRanarison/tailwind-tools.nvim",
 		name = "tailwind-tools",
 		build = ":UpdateRemotePlugins",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
-			"nvim-telescope/telescope.nvim", -- optional
-			"neovim/nvim-lspconfig", -- optional
+			"nvim-telescope/telescope.nvim",
+			"neovim/nvim-lspconfig",
 		},
-		opts = {}, -- your configuration
+		opts = {},
 	},
 
 	{
@@ -31,6 +30,13 @@ return {
 			maxkeys = 5,
 			position = "top-center",
 		},
+	},
+
+	{
+		"nvzone/typr",
+		dependencies = "nvzone/volt",
+		opts = {},
+		cmd = { "Typr", "TyprStats" },
 	},
 
 	{
