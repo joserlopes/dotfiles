@@ -2,7 +2,7 @@
 block = "focused_window"
 
 [block.format]
-full = " $title.str(max_w:20) |"
+full = " $title.str(max_w:15) |"
 short = " $title.str(max_w:10) |"
 
 [[block]]
@@ -12,7 +12,7 @@ block = "disk_space"
 format = " $icon root: $available.eng(w:2) "
 info_type = "available"
 interval = 20
-path = "~/"
+path = "/"
 warning = 20.0
 
 [[block.click]]

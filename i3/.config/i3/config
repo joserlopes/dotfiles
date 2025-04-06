@@ -14,7 +14,7 @@ exec --no-startup-id nm-applet
 
 # Picom compositor and wallpaper
 exec_always --no-startup-id picom --backend glx
-exec_always --no-startup-id feh --bg-fill ~/dotfiles/wallpapers/Dark_Nature.png
+exec --no-startup-id feh --bg-fill ~/dotfiles/wallpapers/Courtside-Sunset.png
 
 # Adjust screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
@@ -57,8 +57,8 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec alacritty
-# bindsym $mod+Return exec ghostty
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
+# bindsym $mod+Return exec kitty
 # bindsym $mod+Return exec wezterm
 
 # launch obsidian
@@ -263,6 +263,8 @@ bindsym $mod+Shift+q mode "$mode_system"
 
 # Use i3status-rust has the main status bar
 bar {
+    position top
+
     status_command i3status-rs ~/.config/i3/i3status-rs.toml
 
     font pango:0xProto Nerd Font Propo, DejaVu Sans Mono, Font Awesome 6 Free 15px
