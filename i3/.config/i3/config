@@ -152,7 +152,7 @@ set $ws5 "5: Xournalpp"
 set $ws6 "6: Nemo"
 set $ws7 "7: Books"
 set $ws8 "8: Music"
-set $ws9 "9: KeePass"
+set $ws9 "9: Bitwarden"
 set $ws10 "10"
 
 # switch to workspace
@@ -213,7 +213,9 @@ mode "resize" {
 }
 
 # startup applications
-exec --no-startup-id firefox
+# Start Firefox and move it to workspace 1
+exec --no-startup-id i3-msg $ws1; exec firefox
+exec --no-startup-id i3-msg $ws6; exec nemo --no-desktop; $ws1
 # exec --no-startup-id wezterm
 # exec --no-startup-id ghostty
 exec --no-startup-id dropbox
