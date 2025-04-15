@@ -5,5 +5,14 @@ return {
 		"sindrets/diffview.nvim", -- optional - Diff integration
 	},
 	config = true,
-	keys = { { "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit", silent = true } },
+	keys = {
+		{
+			"<leader>gg",
+			function()
+				require("neogit").open()
+			end,
+			desc = "Neogit",
+			silent = true,
+		},
+	},
 }
