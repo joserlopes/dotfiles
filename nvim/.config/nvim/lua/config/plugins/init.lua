@@ -1,6 +1,4 @@
 return {
-	"onsails/lspkind.nvim",
-
 	"christoomey/vim-tmux-navigator",
 
 	"RRethy/vim-illuminate",

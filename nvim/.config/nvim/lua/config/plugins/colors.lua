@@ -116,7 +116,13 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("kanagawa-paper").setup({})
+			require("kanagawa-paper").setup({
+				styles = {
+					functions = { italic = true },
+					keyword = { italic = true },
+				},
+				colors = {},
+			})
 		end,
 	},
 
