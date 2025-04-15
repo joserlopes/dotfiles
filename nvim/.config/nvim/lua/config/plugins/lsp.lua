@@ -2,23 +2,14 @@ return {
 	-- LSP Configuration & Plugins
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		-- Automatically install LSPs to stdpath for neovim
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 
 		"arkav/lualine-lsp-progress",
-
-		-- Additional lua configuration, makes nvim stuff amazing!
-		"onsails/lspkind.nvim",
 	},
 
 	config = function()
-		local lspkind = require("lspkind")
-		-- [[ Configure LSP ]]
-		--  This function gets run when an LSP connects to a particular buffer.
 		local on_attach = function(client, bufnr)
-			-- In this case, we create a function that lets us more easily define mappings specific
-			-- for LSP related items. It sets the mode, buffer and description for us each time.
 			local nmap = function(keys, func, desc)
 				if desc then
 					desc = "LSP: " .. desc
@@ -107,7 +98,7 @@ return {
 
 		-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+		capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
 		-- Ensure the servers above are installed
 		local mason_lspconfig = require("mason-lspconfig")
@@ -190,59 +181,6 @@ return {
 					--   },
 					-- },
 				},
-			},
-		})
-
-		local cmp = require("cmp")
-		local luasnip = require("luasnip")
-		require("luasnip.loaders.from_vscode").lazy_load()
-		luasnip.config.setup({})
-
-		local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
-		cmp.setup({
-			snippet = {
-				expand = function(args)
-					luasnip.lsp_expand(args.body)
-				end,
-			},
-			mapping = cmp.mapping.preset.insert({
-				["<C-f>"] = cmp.mapping.select_next_item(cmp_select),
-				["<C-g>"] = cmp.mapping.select_prev_item(cmp_select),
-				["<C-d>"] = cmp.mapping.scroll_docs(-4),
-				["<C-n>"] = cmp.mapping.scroll_docs(4),
-				["<C-Space>"] = cmp.mapping.complete({}),
-				["<C-l>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = true,
-				}),
-				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif luasnip.locally_jumpable(-1) then
-						luasnip.jump(-1)
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-			}),
-			sources = cmp.config.sources({
-				{ name = "path" },
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" }, -- For luasnip users.
-				{ name = "buffer" },
-				{ name = "crates" },
-			}),
-			formatting = {
-				expandable_indicator = true,
-				format = lspkind.cmp_format({
-					mode = "symbol_text",
-					maxwidth = 50,
-					ellipsis_char = "...",
-					symbol_map = {
-						Copilot = "",
-					},
-				}),
 			},
 		})
 
