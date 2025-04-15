@@ -111,6 +111,15 @@ return {
 		end,
 	},
 
+	{
+		"thesimonho/kanagawa-paper.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("kanagawa-paper").setup({})
+		end,
+	},
+
 	-- {
 	--     "folke/tokyonight.nvim",
 	--     priority = 1000,
@@ -135,13 +144,11 @@ return {
 	--     end,
 	-- },
 
-	-- {
-	--     "rose-pine/neovim",
-	--     priority = 1000,
-	--     config = function ()
-	--         vim.cmd.colorscheme "rose-pine"
-	--     end,
-	-- },
+	{
+		"rose-pine/neovim",
+		priority = 1000,
+		config = function() end,
+	},
 
 	-- {
 	-- 	"sainnhe/everforest",
@@ -150,6 +157,14 @@ return {
 	-- 		vim.cmd.colorscheme("everforest")
 	-- 	end,
 	-- },
+
+	{
+		"neanias/everforest-nvim",
+		priority = 1000,
+		config = function()
+			-- vim.cmd.colorscheme("everforest")
+		end,
+	},
 
 	-- {
 	--     "sainnhe/sonokai",
