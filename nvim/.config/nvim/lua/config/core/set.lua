@@ -51,6 +51,9 @@ vim.o.mouse = "a"
 
 vim.o.breakindent = true
 
+-- Set all floating window borders as rounded
+vim.o.winborder = "rounded"
+
 -- In visual block doc is "infinite"
 vim.opt.virtualedit = "block"
 
