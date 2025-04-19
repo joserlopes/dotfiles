@@ -25,7 +25,7 @@ return {
 				java = { "google-java-format" },
 				kotlin = { "ktlint" },
 				ruby = { "standardrb" },
-				-- markdown = { "prettierd", "prettier", stop_after_first = true },
+				markdown = { "prettierd", "prettier", stop_after_first = true },
 				erb = { "prettierd", "prettier", stop_after_first = true },
 				html = { "prettierd", "prettier", stop_after_first = true },
 				bash = { "beautysh" },

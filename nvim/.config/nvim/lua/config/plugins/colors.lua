@@ -65,16 +65,17 @@ return {
 		end,
 	},
 
-	{
-		"cdmill/neomodern.nvim",
-		-- lazy = false,
-		-- priority = 1000,
-		config = function()
-			require("neomodern").setup({})
-
-			-- vim.cmd.colorscheme("roseprime")
-		end,
-	},
+	-- {
+	-- "cdmill/neomodern.nvim",
+	-- lazy = false,
+	-- priority = 1000,
+	-- config = function()
+	-- 	require("neomodern").setup({
+	-- 		-- optional configuration here
+	-- 	})
+	-- 	require("neomodern").load()
+	-- end,
+	-- },
 
 	-- {
 	-- 	"Shatur/neovim-ayu",
@@ -156,6 +157,10 @@ return {
 		config = function() end,
 	},
 
+	{
+		"rmehri01/onenord.nvim",
+	},
+
 	-- {
 	-- 	"sainnhe/everforest",
 	-- 	priority = 1000,
@@ -170,6 +175,15 @@ return {
 		config = function()
 			-- vim.cmd.colorscheme("everforest")
 		end,
+	},
+
+	{
+		"everviolet/nvim",
+	},
+
+	{
+		"fynnfluegge/monet.nvim",
+		name = "monet",
 	},
 
 	-- {
