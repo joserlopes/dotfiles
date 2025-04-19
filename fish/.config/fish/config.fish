@@ -13,6 +13,8 @@ test -r '/home/jrl/.opam/opam-init/init.fish' && source '/home/jrl/.opam/opam-in
 
 # Add ~/.local/bin to PATH
 fish_add_path -a ~/.local/bin
+# Add ~/zig to PATH
+fish_add_path -a ~/zig
 
 bind \cf tmux-sessionizer
 set fish_greeting
