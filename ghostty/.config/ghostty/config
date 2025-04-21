@@ -1,7 +1,10 @@
 cursor-style = block
 shell-integration-features = no-cursor
+
 font-family = IosevkaTerm Nerd Font
 font-size = 18
+freetype-load-flags = no-hinting,no-autohint
+
 theme = Kanagawa Dragon
 background-opacity = 0.8
 

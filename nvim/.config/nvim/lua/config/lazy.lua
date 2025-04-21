@@ -22,6 +22,9 @@ require("lazy").setup({ { import = "config.plugins" } }, {
 	change_detection = {
 		notify = false,
 	},
+	ui = {
+		border = vim.g.floating_window_border,
+	},
 })
 
 vim.keymap.set("n", "<leader>zz", "<cmd>:Lazy<cr>", { desc = "Manage Plugins" })
