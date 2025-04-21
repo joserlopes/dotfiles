@@ -37,16 +37,16 @@ return {
 		cmd = { "Typr", "TyprStats" },
 	},
 
-	{
-		"kaarmu/typst.vim",
-		ft = "typst",
-		lazy = false,
-		config = function()
-			vim.keymap.set("n", "<leader>tw", function()
-				vim.fn["typst#TypstWatch"]()
-			end, { desc = "[T]ypst [W]atch", silent = true })
-		end,
-	},
+	-- {
+	-- 	"kaarmu/typst.vim",
+	-- 	ft = "typst",
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		vim.keymap.set("n", "<leader>tw", function()
+	-- 			vim.fn["typst#TypstWatch"]()
+	-- 		end, { desc = "[T]ypst [W]atch", silent = true })
+	-- 	end,
+	-- },
 
 	-- {
 	-- 	"chomosuke/typst-preview.nvim",
