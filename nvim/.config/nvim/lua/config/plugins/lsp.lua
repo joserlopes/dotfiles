@@ -21,18 +21,12 @@ return {
 			nmap("<leader>vrn", vim.lsp.buf.rename, "[R]e[n]ame")
 			nmap("<leader>vca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-			-- nmap("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 			nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
 			nmap("<leader>vrf", vim.lsp.buf.references, "[G]oto [R]eferences")
-			-- nmap("<leader>vrf", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 			nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
-			-- nmap("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
 			nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-			-- nmap("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
 			nmap("<leader>ds", vim.lsp.buf.document_symbol, "[D]ocument [S]ymbols")
-			-- nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
 			nmap("<leader>ws", vim.lsp.buf.workspace_symbol, "[W]orkspace [S]ymbols")
-			-- nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
 			-- See `:help K` for why this keymap
 			vim.keymap.set("i", "<C-h>", function()
@@ -81,7 +75,7 @@ return {
 					cargo = {
 						features = "all",
 					},
-					checkOnSave = {
+					check = {
 						command = "clippy",
 					},
 					rustfmt = {
@@ -116,23 +110,25 @@ return {
 
 		mason_lspconfig.setup_handlers({
 			function(server_name)
-				require("lspconfig")[server_name].setup({
+				vim.lsp.config[server_name] = {
 					capabilities = capabilities,
 					on_attach = on_attach,
 					settings = servers[server_name],
 					filetypes = (servers[server_name] or {}).filetypes,
-				})
+				}
+				vim.lsp.enable(server_name)
 			end,
 		})
 
 		-- Gleam LSP
-		require("lspconfig").gleam.setup({
+		vim.lsp.config["gleam"] = {
 			on_attach = on_attach,
 			capabilities = capabilities,
-		})
+		}
+		vim.lsp.enable("gleam")
 
 		-- Python LSP
-		require("lspconfig").pyright.setup({
+		vim.lsp.config["pyright"] = {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
@@ -144,29 +140,29 @@ return {
 					},
 				},
 			},
-		})
-
-		-- require("lspconfig").ruff.setup({
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- })
+		}
+		vim.lsp.enable("pyright")
 
 		-- Dafny LSP
-		require("lspconfig").dafny.setup({
+		vim.lsp.config["dafny"] = {
 			cmd = { "/home/jrl/.nix-profile/bin/dafny", "server" },
 			on_attach = on_attach,
 			capabilities = capabilities,
-		})
+		}
+		vim.lsp.enable("dafny")
 
-		-- Typst Lsp
-		require("lspconfig").tinymist.setup({
+		vim.lsp.config["tinymist"] = {
 			on_attach = on_attach,
 			capabilities = capabilities,
-			formatterMode = "typstyle",
-		})
+			settings = {
+				formatterMode = "typstyle",
+				exportPdf = "onSave",
+			},
+		}
+		vim.lsp.enable("tinymist")
 
 		-- nix Lsp
-		require("lspconfig").nixd.setup({
+		vim.lsp.config["nixd"] = {
 			on_attach = on_attach,
 			capabilities = capabilities,
 			cmd = { "nixd" },
@@ -188,7 +184,8 @@ return {
 					-- },
 				},
 			},
-		})
+		}
+		vim.lsp.enable("nixd")
 
 		vim.diagnostic.config({
 			virtual_text = true,
