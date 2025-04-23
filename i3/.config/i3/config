@@ -64,8 +64,9 @@ bindsym $mod+Return exec ghostty
 # launch obsidian
 bindsym $mod+o exec obsidian
 
-# launch firefox
-bindsym $mod+b exec firefox
+# launch browser
+# bindsym $mod+b exec firefox
+bindsym $mod+b exec zen-browser
 
 # launch file explorer
 # bindsym $mod+n exec nautilus
@@ -213,8 +214,9 @@ mode "resize" {
 }
 
 # startup applications
-# Start Firefox and move it to workspace 1
-exec --no-startup-id i3-msg $ws1; exec firefox
+# Start the browser and move it to workspace 1
+# exec --no-startup-id i3-msg $ws1; exec zen-browser
+exec --no-startup-id i3-msg $ws1; exec zen-browser
 exec --no-startup-id i3-msg $ws6; exec nemo --no-desktop; $ws1
 # exec --no-startup-id wezterm
 # exec --no-startup-id ghostty
