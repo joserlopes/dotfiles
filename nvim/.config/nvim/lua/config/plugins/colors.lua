@@ -43,12 +43,22 @@ return {
 					functions = { italic = true },
 					keyword = { italic = true },
 				},
-				colors = {},
+				overrides = function()
+					return {
+						Comment = { bg = "#ffff00" },
+					}
+				end,
 			})
 		end,
 	},
 
 	{
 		"ramojus/mellifluous.nvim",
+	},
+
+	{
+		"dgox16/oldworld.nvim",
+		lazy = false,
+		priority = 1000,
 	},
 }

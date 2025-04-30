@@ -36,8 +36,6 @@ vim.opt.updatetime = 50
 
 -- show a column at 80 characters as a guide for long lines
 vim.opt.colorcolumn = "80"
---- except in Rust where the rule is 100 characters
-vim.api.nvim_create_autocmd("Filetype", { pattern = "rust", command = "set colorcolumn=100" })
 
 vim.opt.selection = "exclusive"
 
