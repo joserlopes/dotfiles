@@ -10,7 +10,7 @@ background-opacity = 0.8
 
 keybind = ctrl+shift+r=reload_config
 
-# fullscreen = true
+maximize = true
 window-decoration = server
 
 adjust-cell-width = -1

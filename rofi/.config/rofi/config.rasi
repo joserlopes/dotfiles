@@ -1,7 +1,7 @@
 configuration {
   combi-modi: "URL:~/.local/bin/URL,drun";
   location: 0;
-  modi: "combi";
+  modi: "combi,run";
   xoffset: 0;
   yoffset: 0;
 

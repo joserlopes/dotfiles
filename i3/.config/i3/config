@@ -79,7 +79,7 @@ bindsym $mod+x exec xournalpp
 bindsym $mod+q kill
 
 # start rofi
-bindsym $mod+d exec rofi -show combi -icon-theme "Papirus" -show-icons
+bindsym $mod+d exec rofi -show combi -modes combi -icon-theme "Papirus" -show-icons
 # start rofi-calc
 bindsym $mod+c exec rofi -show calc -modi calc -no-show-match -no-sort
 
@@ -214,12 +214,11 @@ mode "resize" {
 }
 
 # startup applications
-# Start the browser and move it to workspace 1
-# exec --no-startup-id i3-msg $ws1; exec zen-browser
-exec --no-startup-id i3-msg $ws1; exec zen-browser
-exec --no-startup-id i3-msg $ws6; exec nemo --no-desktop; $ws1
+# Start the browser 
+exec --no-startup-id zen-browser
 # exec --no-startup-id wezterm
 # exec --no-startup-id ghostty
+# Start Dropbox
 exec --no-startup-id dropbox
 
 ## Startup scripts
