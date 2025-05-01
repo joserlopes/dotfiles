@@ -6,5 +6,10 @@ require("todo_float").setup({
 	global_file = "~/Notes/todo.md",
 })
 
+require("notes_float").setup({
+	filename = "notes.md",
+	global_file = "~/Notes/notes.md",
+})
+
 -- vim.cmd.colorscheme("kanagawa-dragon")
 vim.cmd.colorscheme("kanagawa-paper-ink")
