@@ -4,6 +4,12 @@ return {
 	config = function()
 		local conform = require("conform")
 
+		-- Config typstyle to wrap text on column 80
+		conform.formatters.typstyle = {
+			command = "typstyle",
+			args = "--wrap-text",
+		}
+
 		conform.setup({
 			format_on_save = function(bufnr)
 				-- Disable with a global or buffer-local variable
