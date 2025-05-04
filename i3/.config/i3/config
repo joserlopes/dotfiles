@@ -65,8 +65,8 @@ bindsym $mod+Return exec ghostty
 bindsym $mod+o exec obsidian
 
 # launch browser
-# bindsym $mod+b exec firefox
-bindsym $mod+b exec zen-browser
+bindsym $mod+b exec firefox
+# bindsym $mod+b exec zen-browser
 
 # launch file explorer
 # bindsym $mod+n exec nautilus
@@ -215,7 +215,8 @@ mode "resize" {
 
 # startup applications
 # Start the browser 
-exec --no-startup-id zen-browser
+exec --no-startup-id firefox
+# exec --no-startup-id zen-browser
 # exec --no-startup-id wezterm
 # exec --no-startup-id ghostty
 # Start Dropbox
