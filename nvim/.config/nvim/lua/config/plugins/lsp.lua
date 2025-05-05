@@ -119,12 +119,26 @@ return {
 			end,
 		})
 
-		-- Gleam LSP
-		vim.lsp.config["gleam"] = {
+		-- Harper LSP
+		vim.lsp.config["harper_ls"] = {
 			on_attach = on_attach,
 			capabilities = capabilities,
+			settings = {
+				["harper-ls"] = {
+					linters = {
+						SentenceCapitalization = false,
+						SpellCheck = false,
+					},
+				},
+			},
 		}
-		vim.lsp.enable("gleam")
+
+		-- Gleam LSP
+		-- vim.lsp.config["gleam"] = {
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- }
+		-- vim.lsp.enable("gleam")
 
 		-- Python LSP
 		vim.lsp.config["pyright"] = {
@@ -143,12 +157,14 @@ return {
 		vim.lsp.enable("pyright")
 
 		-- Dafny LSP
-		vim.lsp.config["dafny"] = {
-			cmd = { "/home/jrl/.nix-profile/bin/dafny", "server" },
-			on_attach = on_attach,
-			capabilities = capabilities,
-		}
-		vim.lsp.enable("dafny")
+		-- vim.lsp.config["dafny"] = {
+		-- 	cmd = { "/home/jrl/.nix-profile/bin/dafny", "server" },
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- }
+		-- vim.lsp.enable("dafny")
+
+		-- Clinet
 
 		vim.lsp.config["tinymist"] = {
 			on_attach = on_attach,
@@ -159,32 +175,6 @@ return {
 			},
 		}
 		vim.lsp.enable("tinymist")
-
-		-- nix Lsp
-		vim.lsp.config["nixd"] = {
-			on_attach = on_attach,
-			capabilities = capabilities,
-			cmd = { "nixd" },
-			settings = {
-				nixd = {
-					nixpkgs = {
-						expr = "import <nixpkgs> { }",
-					},
-					formatting = {
-						command = { "alejandra" }, -- or nixfmt or nixpkgs-fmt
-					},
-					-- options = {
-					--   nixos = {
-					--       expr = '(builtins.getFlake "/PATH/TO/FLAKE").nixosConfigurations.CONFIGNAME.options',
-					--   },
-					--   home_manager = {
-					--       expr = '(builtins.getFlake "/PATH/TO/FLAKE").homeConfigurations.CONFIGNAME.options',
-					--   },
-					-- },
-				},
-			},
-		}
-		vim.lsp.enable("nixd")
 
 		vim.diagnostic.config({
 			virtual_text = true,
