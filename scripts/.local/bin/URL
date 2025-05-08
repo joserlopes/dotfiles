@@ -8,6 +8,10 @@ elif [ x"$@" = x"LP" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/LPro36/2024-2025/2-semestre
     exit 0
+elif [ x"$@" = x"LP-Project" ]
+then
+    xdg-open https://gitlab.rnl.tecnico.ulisboa.pt/ist1103938/lp-project
+    exit 0
 elif [ x"$@" = x"TVS" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/TVS36/2024-2025/2-semestre
@@ -24,6 +28,7 @@ fi
 
 echo -e "CMU\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "LP\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "LP-Project\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "TVS\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "GitHub\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "dotfiles\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
