@@ -25,6 +25,15 @@ return {
 	-- },
 
 	{
+		-- "sainnhe/everforest",
+		-- priority = 1000,
+		-- config = function()
+		-- 	vim.cmd([[let g:everforest_background = 'hard']])
+		-- vim.cmd.colorscheme("everforest")
+		-- end,
+	},
+
+	{
 		"rebelot/kanagawa.nvim",
 		priority = 1000,
 		config = function()
@@ -39,15 +48,11 @@ return {
 		priority = 1000,
 		config = function()
 			require("kanagawa-paper").setup({
+				-- transparent = true,
 				styles = {
 					functions = { italic = true },
 					keyword = { italic = true },
 				},
-				overrides = function()
-					return {
-						Comment = { bg = "#ffff00" },
-					}
-				end,
 			})
 		end,
 	},
@@ -58,6 +63,13 @@ return {
 
 	{
 		"dgox16/oldworld.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+
+	{
+		"bluz71/vim-moonfly-colors",
+		name = "moonfly",
 		lazy = false,
 		priority = 1000,
 	},

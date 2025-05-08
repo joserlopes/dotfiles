@@ -1,17 +1,19 @@
+# vim: ft=ghostty
 cursor-style = block
 shell-integration-features = no-cursor
 
 font-family = IosevkaTerm Nerd Font
 font-size = 18
+adjust-cell-width = -1
 freetype-load-flags = no-hinting,no-autohint
 
 theme = Kanagawa Dragon
-background-opacity = 0.8
+# theme = Everforest Dark - Hard
+# background-opacity = 0.8
 
 keybind = ctrl+shift+r=reload_config
 
 maximize = true
 window-decoration = server
 
-adjust-cell-width = -1
 mouse-hide-while-typing = true
