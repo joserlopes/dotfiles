@@ -10,7 +10,7 @@ vim.opt_local.formatoptions:append("w")
 vim.opt_local.formatoptions:append("j")
 
 -- Create an autocommand to update textwidth based on window width
-local augroup = vim.api.nvim_create_augroup("MarkdownDynamicTextWidth", { clear = true })
+local augroup = vim.api.nvim_create_augroup("TypstDynamicTextWidth", { clear = true })
 vim.api.nvim_create_autocmd({ "VimResized", "BufEnter", "WinEnter" }, {
 	group = augroup,
 	buffer = 0, -- Only for the current buffer
@@ -23,4 +23,4 @@ vim.api.nvim_create_autocmd({ "VimResized", "BufEnter", "WinEnter" }, {
 })
 
 -- Trigger the autocommand immediately to set initial textwidth
-vim.cmd("doautocmd MarkdownDynamicTextWidth BufEnter")
+vim.cmd("doautocmd TypstDynamicTextWidth BufEnter")

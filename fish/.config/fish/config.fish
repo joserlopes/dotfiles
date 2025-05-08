@@ -15,6 +15,8 @@ test -r '/home/jrl/.opam/opam-init/init.fish' && source '/home/jrl/.opam/opam-in
 fish_add_path -a ~/.local/bin
 # Add ~/zig to PATH
 fish_add_path -a ~/zig
+# Add intelij
+fish_add_path -a ~/Intelij/bin/
 
 bind \cf tmux-sessionizer
 set fish_greeting
