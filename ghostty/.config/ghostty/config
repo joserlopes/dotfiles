@@ -8,7 +8,11 @@ adjust-cell-width = -1
 freetype-load-flags = no-hinting,no-autohint
 
 theme = Kanagawa Dragon
+# This is just to comply with the color of the nvim theme
+background = #1f1f28
 # theme = Everforest Dark - Hard
+# This is just to comply with the color of the nvim theme
+# background = #272e33
 # background-opacity = 0.8
 
 keybind = ctrl+shift+r=reload_config
