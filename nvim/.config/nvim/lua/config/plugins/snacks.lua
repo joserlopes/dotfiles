@@ -9,13 +9,12 @@ return {
 			timeout = 3000,
 		},
 		quickfile = { enabled = true },
-		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		dashboard = { enabled = true },
 		toggle = { enabled = true },
 		indent = { enabled = true, animate = { enabled = false } },
 		input = { enabled = true },
-		lazygit = {},
+		lazygit = { enabled = true },
 	},
 	keys = {
 		{

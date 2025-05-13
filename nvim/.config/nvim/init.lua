@@ -13,3 +13,5 @@ require("notes_float").setup({
 
 -- vim.cmd.colorscheme("kanagawa-dragon")
 vim.cmd.colorscheme("kanagawa-paper-ink")
+-- vim.cmd([[let g:everforest_background = 'hard']])
+-- vim.cmd.colorscheme("everforest")

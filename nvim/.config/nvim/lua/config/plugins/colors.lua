@@ -25,15 +25,6 @@ return {
 	-- },
 
 	{
-		-- "sainnhe/everforest",
-		-- priority = 1000,
-		-- config = function()
-		-- 	vim.cmd([[let g:everforest_background = 'hard']])
-		-- vim.cmd.colorscheme("everforest")
-		-- end,
-	},
-
-	{
 		"rebelot/kanagawa.nvim",
 		priority = 1000,
 		config = function()
@@ -71,6 +62,11 @@ return {
 		"bluz71/vim-moonfly-colors",
 		name = "moonfly",
 		lazy = false,
+		priority = 1000,
+	},
+
+	{
+		"sainnhe/everforest",
 		priority = 1000,
 	},
 }
