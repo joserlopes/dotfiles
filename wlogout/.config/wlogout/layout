@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "hyprlock",
+    "action" : "swaylock -i ~/dotfiles/wallpapers/door.png",
     "text" : "Lock",
     "keybind" : "l"
 }
