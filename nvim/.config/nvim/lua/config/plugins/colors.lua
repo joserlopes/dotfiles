@@ -3,40 +3,13 @@ return {
 		"RRethy/base16-nvim",
 		-- lazy = false,
 		-- priority = 1000,
-		config = function()
-			-- vim.cmd.colorscheme("base16-everforest")
-			-- Different colorschemes
-			--vim.cmd.colorscheme("base16-gruvbox-material-dark-soft")
-			--vim.cmd.colorscheme("base16-kanagawa")
-			--vim.cmd.colorscheme('base16-nord')
-			--vim.cmd.colorscheme('base16-zenburn')
-			--vim.cmd.colorscheme('base16-rose-pine')
-			--vim.cmd.colorscheme("base16-ayu-mirage")
-			--vim.cmd.colorscheme("base16-ayu-mirage")
-		end,
-	},
-
-	-- {
-	--     "sainnhe/gruvbox-material",
-	--     priority = 1000,
-	--     config = function()
-	--         vim.cmd.colorscheme("gruvbox-material")
-	--     end,
-	-- },
-
-	{
-		"rebelot/kanagawa.nvim",
-		priority = 1000,
-		config = function()
-			require("kanagawa").setup({})
-			-- vim.cmd.colorscheme("kanagawa-dragon")
-		end,
+		config = function() end,
 	},
 
 	{
 		"thesimonho/kanagawa-paper.nvim",
-		lazy = false,
-		priority = 1000,
+		-- lazy = false,
+		-- priority = 1000,
 		config = function()
 			require("kanagawa-paper").setup({
 				-- transparent = true,
@@ -49,23 +22,6 @@ return {
 	},
 
 	{
-		"ramojus/mellifluous.nvim",
-	},
-
-	{
-		"dgox16/oldworld.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-
-	{
-		"bluz71/vim-moonfly-colors",
-		name = "moonfly",
-		lazy = false,
-		priority = 1000,
-	},
-
-	{
 		"neanias/everforest-nvim",
 		lazy = false,
 		priority = 1000,
@@ -73,6 +29,8 @@ return {
 			local everforest = require("everforest")
 			everforest.setup({
 				background = "hard",
+				-- This is for enabling transparent background
+				-- transparent_background_level = 2,
 				italics = true,
 			})
 		end,

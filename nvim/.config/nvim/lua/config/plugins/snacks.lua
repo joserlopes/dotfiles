@@ -15,6 +15,7 @@ return {
 		indent = { enabled = true, animate = { enabled = false } },
 		input = { enabled = true },
 		lazygit = { enabled = true },
+		picker = { enabled = true },
 	},
 	keys = {
 		{
