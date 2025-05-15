@@ -45,6 +45,9 @@ return {
 				auto_show_delay_ms = 0,
 			},
 			menu = {
+				draw = {
+					treesitter = { "lsp" },
+				},
 				scrollbar = false,
 			},
 		},

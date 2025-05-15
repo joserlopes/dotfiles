@@ -20,3 +20,86 @@ vim.api.nvim_create_user_command("TypstWatch", function()
 end, {})
 
 vim.keymap.set("n", "<leader>tw", "<CMD>TypstWatch<CR>", { desc = "Typst Watch" })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
+	callback = function(event)
+		local nmap = function(keys, func, desc)
+			if desc then
+				desc = "LSP: " .. desc
+			end
+
+			vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
+		end
+
+		nmap("<leader>vrn", vim.lsp.buf.rename, "[R]e[n]ame")
+		nmap("<leader>vca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+
+		nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+		nmap("<leader>vrf", vim.lsp.buf.references, "[G]oto [R]eferences")
+		nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+		nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
+		nmap("<leader>ds", vim.lsp.buf.document_symbol, "[D]ocument [S]ymbols")
+		nmap("<leader>ws", vim.lsp.buf.workspace_symbol, "[W]orkspace [S]ymbols")
+
+		-- See `:help K` for why this keymap
+		vim.keymap.set("i", "<C-h>", function()
+			vim.lsp.buf.signature_help()
+		end, { desc = "LSP: Signature Help" })
+
+		-- Lesser used LSP functionality
+		nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+		nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
+		nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
+		nmap("<leader>wl", function()
+			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+		end, "[W]orkspace [L]ist Folders")
+		nmap("<leader>vd", function()
+			vim.diagnostic.open_float()
+		end)
+
+		nmap("<leader>hl", function()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+		end, "Toggle [I]nlay [H]ints")
+
+		-- Create a command `:Format` local to the LSP buffer
+		vim.api.nvim_buf_create_user_command(event.buf, "Format", function(_)
+			vim.lsp.buf.format()
+		end, { desc = "Format current buffer with LSP" })
+
+		local function client_supports_method(client, method, bufnr)
+			if vim.fn.has("nvim-0.11") == 1 then
+				return client:supports_method(method, bufnr)
+			else
+				return client.supports_method(method, { bufnr = bufnr })
+			end
+		end
+
+		local client = vim.lsp.get_client_by_id(event.data.client_id)
+		if
+			client
+			and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
+		then
+			local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
+			vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+				buffer = event.buf,
+				group = highlight_augroup,
+				callback = vim.lsp.buf.document_highlight,
+			})
+
+			vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+				buffer = event.buf,
+				group = highlight_augroup,
+				callback = vim.lsp.buf.clear_references,
+			})
+
+			vim.api.nvim_create_autocmd("LspDetach", {
+				group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
+				callback = function(event2)
+					vim.lsp.buf.clear_references()
+					vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
+				end,
+			})
+		end
+	end,
+})

@@ -63,6 +63,9 @@ vim.o.completeopt = "menuone,noselect"
 -- Enable cursor line highlight
 vim.opt.cursorline = true
 
+-- Make it clear that we have a nerd font
+vim.g.have_nerd_font = true
+
 -- jump to last edit position on opening file
 vim.api.nvim_create_autocmd("BufReadPost", {
 	pattern = "*",

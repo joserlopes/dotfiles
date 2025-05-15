@@ -4,13 +4,10 @@ return {
 	dependencies = {
 		"mason-org/mason.nvim",
 		"mason-org/mason-lspconfig.nvim",
-
-		"arkav/lualine-lsp-progress",
+		{ "j-hui/fidget.nvim", opts = {} },
 	},
 
 	config = function()
-		local on_attach = require("nice_utils").on_attach
-
 		-- mason-lspconfig requires that these setup functions are called in this order
 		-- before setting up the servers.
 		require("mason").setup()
@@ -19,7 +16,6 @@ return {
 		local servers = {
 			marksman = {},
 			ts_ls = {},
-			-- clangd = {},
 			gopls = {
 				analyses = {
 					unusedparams = true,
@@ -40,8 +36,6 @@ return {
 					},
 				},
 			},
-			-- html = { filetypes = { "html", "twig", "hbs" } },
-			-- ocamllsp = {},
 			lua_ls = {
 				Lua = {
 					workspace = { checkThirdParty = false },
@@ -65,21 +59,8 @@ return {
 			automatic_enable = true,
 		})
 
-		-- mason_lspconfig.setup_handlers({
-		-- 	function(server_name)
-		-- 		vim.lsp.config[server_name] = {
-		-- 			capabilities = capabilities,
-		-- 			on_attach = on_attach,
-		-- 			settings = servers[server_name],
-		-- 			filetypes = (servers[server_name] or {}).filetypes,
-		-- 		}
-		-- 		vim.lsp.enable(server_name)
-		-- 	end,
-		-- })
-
 		-- Harper LSP
 		vim.lsp.config["harper_ls"] = {
-			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
 				["harper-ls"] = {
@@ -100,7 +81,6 @@ return {
 
 		-- Python LSP
 		vim.lsp.config["pyright"] = {
-			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
 				python = {
@@ -114,18 +94,7 @@ return {
 		}
 		vim.lsp.enable("pyright")
 
-		-- Dafny LSP
-		-- vim.lsp.config["dafny"] = {
-		-- 	cmd = { "/home/jrl/.nix-profile/bin/dafny", "server" },
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- }
-		-- vim.lsp.enable("dafny")
-
-		-- Clinet
-
 		vim.lsp.config["tinymist"] = {
-			on_attach = on_attach,
 			capabilities = capabilities,
 			settings = {
 				formatterMode = "typstyle",
@@ -141,6 +110,15 @@ return {
 				border = "rounded",
 				source = true,
 			},
+			underline = { severity = vim.diagnostic.severity.ERROR },
+			signs = vim.g.have_nerd_font and {
+				text = {
+					[vim.diagnostic.severity.ERROR] = "󰅚 ",
+					[vim.diagnostic.severity.WARN] = "󰀪 ",
+					[vim.diagnostic.severity.INFO] = "󰋽 ",
+					[vim.diagnostic.severity.HINT] = "󰌶 ",
+				},
+			} or {},
 		})
 	end,
 }

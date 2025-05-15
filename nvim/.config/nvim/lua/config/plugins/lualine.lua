@@ -26,12 +26,6 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics", { "filename", path = 1 } },
-				lualine_c = {
-					{
-						"lsp_progress",
-						spinner_symbols = { "🌑", "🌒", "🌓", "🌔", "🌕", "🌖", "🌗", "🌘" },
-					},
-				},
 				lualine_x = {
 					{
 						function()
