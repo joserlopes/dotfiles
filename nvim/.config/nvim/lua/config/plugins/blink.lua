@@ -31,8 +31,8 @@ return {
 			["<C-f>"] = { "select_next" },
 			["<C-g>"] = { "select_prev" },
 			["<C-l>"] = { "accept" },
-			["<C-n>"] = { "scroll_documentation_down", "fallback" },
-			["<C-p>"] = { "scroll_documentation_up", "fallback" },
+			-- ["<C-n>"] = { "scroll_documentation_down", "fallback" },
+			-- ["<C-p>"] = { "scroll_documentation_up", "fallback" },
 		},
 
 		appearance = {

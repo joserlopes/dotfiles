@@ -40,15 +40,12 @@ return {
 				Lua = {
 					workspace = { checkThirdParty = false },
 					telemetry = { enable = false },
-					diagnostics = {
-						globals = { "vim" },
-					},
+					-- diagnostics = {
+					-- 	globals = { "vim" },
+					-- },
 				},
 			},
 		}
-
-		-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-		local capabilities = require("blink.cmp").get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 		-- Ensure the servers above are installed
 		local mason_lspconfig = require("mason-lspconfig")
@@ -61,7 +58,6 @@ return {
 
 		-- Harper LSP
 		vim.lsp.config["harper_ls"] = {
-			capabilities = capabilities,
 			settings = {
 				["harper-ls"] = {
 					linters = {
@@ -75,13 +71,11 @@ return {
 		-- Gleam LSP
 		-- vim.lsp.config["gleam"] = {
 		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
 		-- }
 		-- vim.lsp.enable("gleam")
 
 		-- Python LSP
 		vim.lsp.config["pyright"] = {
-			capabilities = capabilities,
 			settings = {
 				python = {
 					analysis = {
@@ -95,7 +89,6 @@ return {
 		vim.lsp.enable("pyright")
 
 		vim.lsp.config["tinymist"] = {
-			capabilities = capabilities,
 			settings = {
 				formatterMode = "typstyle",
 				exportPdf = "onSave",
@@ -105,12 +98,14 @@ return {
 
 		vim.diagnostic.config({
 			virtual_text = true,
+			virtual_lines = false,
+			-- virtual_lines = true,
 			float = {
 				focusable = false,
 				border = "rounded",
 				source = true,
 			},
-			underline = { severity = vim.diagnostic.severity.ERROR },
+			-- underline = { severity = vim.diagnostic.severity.ERROR },
 			signs = vim.g.have_nerd_font and {
 				text = {
 					[vim.diagnostic.severity.ERROR] = "󰅚 ",
@@ -119,6 +114,7 @@ return {
 					[vim.diagnostic.severity.HINT] = "󰌶 ",
 				},
 			} or {},
+			severity_sort = true,
 		})
 	end,
 }

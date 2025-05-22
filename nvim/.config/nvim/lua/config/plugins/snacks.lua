@@ -6,7 +6,7 @@ return {
 		bigfile = { enabled = true },
 		notifier = {
 			enabled = true,
-			timeout = 3000,
+			timeout = 2000,
 		},
 		quickfile = { enabled = true },
 		words = { enabled = true },
@@ -14,6 +14,7 @@ return {
 		toggle = { enabled = true },
 		indent = { enabled = true, animate = { enabled = false } },
 		input = { enabled = true },
+		-- image = { enabled = true },
 		lazygit = { enabled = true },
 		picker = { enabled = true },
 	},

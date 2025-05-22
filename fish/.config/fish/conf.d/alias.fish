@@ -27,3 +27,5 @@ alias ct="cargo test"
 alias ccl="cargo clippy"
 
 alias gitlog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+alias zr="zig build run"

@@ -6,7 +6,7 @@
   <property name="pressureMultiplier" value="1"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="JRL Toolbar"/>
-  <property name="lastSavePath" value="/home/jrl/Técnico/LP/Project"/>
+  <property name="lastSavePath" value="/home/jrl/Técnico/LP/MAP_Study"/>
   <property name="lastOpenPath" value="/home/jrl/Técnico/LP/Project"/>
   <property name="lastImagePath" value=""/>
   <property name="edgePanSpeed" value="20"/>
