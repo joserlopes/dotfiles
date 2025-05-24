@@ -4,7 +4,10 @@ return {
 	dependencies = {
 		"mason-org/mason.nvim",
 		"mason-org/mason-lspconfig.nvim",
-		{ "j-hui/fidget.nvim", opts = {} },
+		{
+			"j-hui/fidget.nvim",
+			opts = {},
+		},
 	},
 
 	config = function()
@@ -16,14 +19,33 @@ return {
 		local servers = {
 			marksman = {},
 			ts_ls = {},
-			gopls = {
-				analyses = {
-					unusedparams = true,
-				},
-				gofumpt = true,
-				staticcheck = true,
+			gopls = {},
+			rust_analyzer = {},
+			lua_ls = {},
+		}
+
+		-- Ensure the servers above are installed
+		local mason_lspconfig = require("mason-lspconfig")
+
+		mason_lspconfig.setup({
+			ensure_installed = vim.tbl_keys(servers),
+			automatic_installation = false,
+			automatic_enable = true,
+		})
+
+		-- gopls
+		vim.lsp.config("gopls", {
+			analyses = {
+				unusedparams = true,
 			},
-			rust_analyzer = {
+			gofumpt = true,
+			staticcheck = true,
+		})
+		vim.lsp.enable("gopls")
+
+		-- rust_analyzer
+		vim.lsp.config("rust_analyzer", {
+			settings = {
 				["rust-analyzer"] = {
 					cargo = {
 						features = "all",
@@ -36,46 +58,48 @@ return {
 					},
 				},
 			},
-			lua_ls = {
+		})
+		vim.lsp.enable("rust_analyzer")
+
+		-- Lua LSP
+		vim.lsp.config("lua_ls", {
+			settings = {
 				Lua = {
-					workspace = { checkThirdParty = false },
-					telemetry = { enable = false },
-					-- diagnostics = {
-					-- 	globals = { "vim" },
-					-- },
+					workspace = {
+						checkThirdParty = false,
+						telemetry = { enable = false },
+						library = {
+							"${3rd}/love2d/library",
+						},
+					},
+					diagnostics = {
+						globals = { "vim" },
+					},
 				},
 			},
-		}
-
-		-- Ensure the servers above are installed
-		local mason_lspconfig = require("mason-lspconfig")
-
-		mason_lspconfig.setup({
-			ensure_installed = vim.tbl_keys(servers),
-			automatic_installation = false,
-			automatic_enable = true,
 		})
+		vim.lsp.enable("lua_ls")
 
 		-- Harper LSP
-		vim.lsp.config["harper_ls"] = {
+		vim.lsp.config("harper_ls", {
 			settings = {
 				["harper-ls"] = {
 					linters = {
 						SentenceCapitalization = false,
 						SpellCheck = false,
+						ToDoHyphen = false,
 					},
 				},
 			},
-		}
+		})
+		vim.lsp.enable("harper_ls")
 
 		-- Gleam LSP
-		-- vim.lsp.config["gleam"] = {
-		-- 	on_attach = on_attach,
-		-- }
-		-- vim.lsp.enable("gleam")
+		vim.lsp.config("gleam", {})
+		vim.lsp.enable("gleam")
 
 		-- Python LSP
-		vim.lsp.config["pyright"] = {
+		vim.lsp.config("pyright", {
 			settings = {
 				python = {
 					analysis = {
@@ -85,15 +109,16 @@ return {
 					},
 				},
 			},
-		}
+		})
 		vim.lsp.enable("pyright")
+		vim.lsp.enable("pyrefly")
 
-		vim.lsp.config["tinymist"] = {
+		vim.lsp.config("tinymist", {
 			settings = {
 				formatterMode = "typstyle",
 				exportPdf = "onSave",
 			},
-		}
+		})
 		vim.lsp.enable("tinymist")
 
 		vim.diagnostic.config({
