@@ -25,6 +25,14 @@ format = " $icon {$combo.str(max_w:20, rot_interval:0.5) $prev $play $next |} "
 format_alt = " $icon "
 seek_step_secs = 10
 
+[[block.click]]
+button = "left"
+cmd = "~/.config/i3/scripts/current_track"
+
+[[block.click]]
+button = "right"
+action = "toggle_format"
+
 [[block]]
 block = "sound"
 

@@ -65,7 +65,12 @@ return {
 		},
 
 		-- NOTE: Enable this once stabilized
-		-- signature = { enabled = true },
+		-- signature = {
+		-- 	enabled = true,
+		-- 	window = {
+		-- 		show_documentation = true,
+		-- 	},
+		-- },
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
