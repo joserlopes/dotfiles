@@ -1,5 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    atuin init fish | source
 end
 
 
@@ -23,3 +24,4 @@ set fish_greeting
 
 zoxide init --cmd cd fish | source
 starship init fish | source
+mise activate fish | source
