@@ -23,3 +23,7 @@
 ; 	gpgsign = true
 ; [tag]
 ; 	gpgSign = true
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
