@@ -12,7 +12,7 @@ return {
 		-- priority = 1000,
 		config = function()
 			require("kanagawa-paper").setup({
-				-- transparent = true,
+				transparent = true,
 				styles = {
 					functions = { italic = true },
 					keyword = { italic = true },
@@ -30,9 +30,19 @@ return {
 			everforest.setup({
 				background = "hard",
 				-- This is for enabling transparent background
-				-- transparent_background_level = 2,
+				transparent_background_level = 2,
 				italics = true,
 			})
 		end,
+	},
+
+	{
+		"f4z3r/gruvbox-material.nvim",
+		name = "gruvbox-material",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			contrast = "soft",
+		},
 	},
 }

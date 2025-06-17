@@ -13,7 +13,7 @@ freetype-load-flags = no-hinting,no-autohint
 theme = Everforest Dark - Hard
 # This is just to comply with the color of the nvim theme
 background = #272e33
-# background-opacity = 0.8
+background-opacity = 0.85
 
 keybind = ctrl+shift+r=reload_config
 

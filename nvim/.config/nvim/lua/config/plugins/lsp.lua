@@ -6,7 +6,13 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		{
 			"j-hui/fidget.nvim",
-			opts = {},
+			opts = {
+				notification = {
+					window = {
+						winblend = 0,
+					},
+				},
+			},
 		},
 	},
 
@@ -121,6 +127,8 @@ return {
 		})
 		vim.lsp.enable("tinymist")
 
+		vim.lsp.enable("ruby_lsp")
+
 		vim.diagnostic.config({
 			virtual_text = true,
 			virtual_lines = false,
@@ -130,7 +138,7 @@ return {
 				border = "rounded",
 				source = true,
 			},
-			-- underline = { severity = vim.diagnostic.severity.ERROR },
+			underline = { severity = vim.diagnostic.severity.ERROR },
 			signs = vim.g.have_nerd_font and {
 				text = {
 					[vim.diagnostic.severity.ERROR] = "󰅚 ",
