@@ -267,7 +267,7 @@ bar {
 
     status_command i3status-rs ~/.config/i3/i3status-rs.toml
 
-    font pango:0xProto Nerd Font Propo, DejaVu Sans Mono, Font Awesome 6 Free 15px
+    font pango:CaskaydiaMono Nerd Font Propo, DejaVu Sans Mono, Font Awesome 6 Free 15px
 
     tray_output primary
 

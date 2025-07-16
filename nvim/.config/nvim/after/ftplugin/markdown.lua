@@ -1,3 +1,5 @@
+vim.opt_local.shiftwidth = 2
+
 -- Enable word wrapping
 vim.opt_local.wrap = true
 

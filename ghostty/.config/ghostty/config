@@ -2,10 +2,12 @@
 cursor-style = block
 shell-integration-features = no-cursor
 
-font-family = IosevkaTerm Nerd Font
+# font-family = IosevkaTerm Nerd Font
+# font-family = JetBrainsMono NF
+font-family = CaskaydiaMono Nerd Font
 font-size = 18
 adjust-cell-width = -1
-freetype-load-flags = no-hinting,no-autohint
+# freetype-load-flags = no-hinting,no-autohint
 
 # theme = Kanagawa Dragon
 # This is just to comply with the color of the nvim theme

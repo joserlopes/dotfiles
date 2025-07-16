@@ -45,4 +45,8 @@ return {
 			contrast = "soft",
 		},
 	},
+
+	{
+		"savq/melange-nvim",
+	},
 }
