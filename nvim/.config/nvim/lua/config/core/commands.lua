@@ -62,6 +62,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 		end, "Toggle [I]nlay [H]ints")
 
+		-- NOTE: Enable this once stabilized
+		-- vim.lsp.document_color.enable(true, event.buf)
+
 		-- Create a command `:Format` local to the LSP buffer
 		vim.api.nvim_buf_create_user_command(event.buf, "Format", function(_)
 			vim.lsp.buf.format()

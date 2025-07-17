@@ -31,6 +31,7 @@
       "7": "7",
       "8": "8",
       "9": "9",
+      "10": "10",
       "active": "󱓻"
     },
     "persistent-workspaces": {
@@ -38,7 +39,12 @@
       "2": [],
       "3": [],
       "4": [],
-      "5": []
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": [],
     }
   },
   "clock": {
@@ -49,7 +55,7 @@
   "network": {
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
     "format" : "{icon}",
-    "format-wifi" : "{icon}",
+    "format-wifi" : "{icon} {essid}",
     "format-ethernet" : "󰀂",
     "format-disconnected" : "󰖪",
     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
@@ -84,7 +90,7 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
-    "format-connected": "",
+    "format-connected": " {device_alias} {device_battery_percentage}%",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "blueman-manager"
   },
