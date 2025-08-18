@@ -4,16 +4,6 @@ return {
 	dependencies = {
 		"mason-org/mason.nvim",
 		"mason-org/mason-lspconfig.nvim",
-		{
-			"j-hui/fidget.nvim",
-			opts = {
-				notification = {
-					window = {
-						winblend = 0,
-					},
-				},
-			},
-		},
 	},
 
 	config = function()
@@ -122,7 +112,7 @@ return {
 		vim.lsp.config("tinymist", {
 			settings = {
 				formatterMode = "typstyle",
-				exportPdf = "onSave",
+				exportPdf = "onType",
 			},
 		})
 		vim.lsp.enable("tinymist")

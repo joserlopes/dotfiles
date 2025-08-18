@@ -12,6 +12,7 @@ adjust-cell-width = -1
 # theme = Kanagawa Dragon
 # This is just to comply with the color of the nvim theme
 # background = #1f1f28
+# theme = osaka-jade
 theme = Everforest Dark - Hard
 # This is just to comply with the color of the nvim theme
 background = #272e33

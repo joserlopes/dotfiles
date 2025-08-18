@@ -22,9 +22,9 @@ then
     exit 0
 fi
 
-echo -e "CMU\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
-echo -e "LP\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
-echo -e "TVS\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+# echo -e "CMU\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+# echo -e "LP\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+# echo -e "TVS\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "GitHub\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "dotfiles\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 

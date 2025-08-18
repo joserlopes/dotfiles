@@ -14,7 +14,7 @@ exec --no-startup-id nm-applet
 
 # Picom compositor and wallpaper
 exec_always --no-startup-id picom --backend glx
-exec --no-startup-id feh --bg-fill ~/dotfiles/wallpapers/Paysage.png
+exec --no-startup-id feh --bg-fill ~/dotfiles/wallpapers/osaka-jade-bg.jpg
 
 # Adjust screen brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
