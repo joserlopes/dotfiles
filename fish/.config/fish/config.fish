@@ -20,6 +20,8 @@ fish_add_path -a ~/.local/bin
 fish_add_path -a ~/Intelij/bin/
 # Add flutter
 fish_add_path -a ~/flutter/bin/
+# Add go
+fish_add_path -a ~/go/bin/
 
 bind \cf tmux-sessionizer
 set fish_greeting

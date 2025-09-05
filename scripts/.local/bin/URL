@@ -1,16 +1,20 @@
 #!/usr/bin/env bash
 
-if [ x"$@" = x"CMU" ]
+if [ x"$@" = x"AGISIT" ]
 then
-    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/CMov236/2024-2025/2-semestre
+    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/AGI112/2025-2026/1-semestre
     exit 0
-elif [ x"$@" = x"LP" ]
+elif [ x"$@" = x"CRC" ]
 then
-    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/LPro36/2024-2025/2-semestre
+    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/ARC112/2025-2026/1-semestre
     exit 0
-elif [ x"$@" = x"TVS" ]
+elif [ x"$@" = x"LVM" ]
 then
-    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/TVS36/2024-2025/2-semestre
+    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/LVM112/2025-2026/1-semestre
+    exit 0
+elif [ x"$@" = x"PIC-2" ]
+then
+    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/PMEIC2112/2025-2026/1-semestre
     exit 0
 elif [ x"$@" = x"GitHub" ]
 then
@@ -22,9 +26,10 @@ then
     exit 0
 fi
 
-# echo -e "CMU\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
-# echo -e "LP\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
-# echo -e "TVS\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "AGISIT\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "CRC\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "LVM\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "PIC-2\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "GitHub\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "dotfiles\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 

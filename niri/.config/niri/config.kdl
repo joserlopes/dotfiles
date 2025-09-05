@@ -1,7 +1,7 @@
 spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
 spawn-at-startup "dropbox"
-spawn-at-startup "xwayland-satellite"
+spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/osaka-jade-bg.jpg -m fill"
 
 input {
     keyboard {
@@ -13,16 +13,13 @@ input {
     touchpad {
         tap
         natural-scroll
-        // dwt
-        // dwtp
-        // accel-speed 0.2
-        // accel-profile "flat"
     }
 
     mouse {
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
+    }
+
+    tablet {
+        map-to-output "eDP-1"
     }
 
     warp-mouse-to-focus
@@ -30,17 +27,10 @@ input {
     focus-follows-mouse
 }
 
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
-// The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
-// Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
     mode "1920x1080@144.001"
 
     scale 1
-    // transform "normal"
     position x=0 y=0
 }
 
@@ -53,7 +43,6 @@ output "HDMI-A-1" {
 }
 
 output "HDMI-0-0" {
-    // Uncomment this line to disable this output.
     mode "1920x1080@74.973"
 
     scale 1
@@ -63,7 +52,7 @@ output "HDMI-0-0" {
 
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 8
 
     center-focused-column "never"
 
@@ -131,10 +120,9 @@ animations {
     // slowdown 3.0
 }
 
-
 window-rule {
     open-maximized true
-    geometry-corner-radius 12
+    geometry-corner-radius 16
     clip-to-geometry true
 }
 
@@ -142,6 +130,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return { spawn "ghostty"; }
+    Mod+B { spawn "firefox"; }
+    Mod+X { spawn "xournalpp"; }
 
     Mod+D { spawn "rofi" "-show" "combi" "-modes" "combi" "-icon-theme" "Papirus" "-show-icons"; }
     Super+Alt+L { spawn "swaylock"; }
@@ -294,17 +284,14 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
+    Alt+Shift+p { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { quit; }
+    Mod+Shift+Q { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
-}
-
-environment {
-    DISPLAY ":0"
 }

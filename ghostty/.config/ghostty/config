@@ -21,6 +21,6 @@ background-opacity = 0.85
 keybind = ctrl+shift+r=reload_config
 
 maximize = true
-window-decoration = server
+window-decoration = none
 
 mouse-hide-while-typing = true
