@@ -3,26 +3,78 @@ anchor_to_edges = true
 height = 42
 icon_theme = "Papirus"
 
-[[end]]
+[[center]]
 type = "clock"
 format = "%d/%m/%Y %H:%M"
 
-[[end]]
-type = "workspaces"
-favorites = ["1", "2", "3"]
-
-# [end.name_map]
-# 1 = ""
-# 2 = ""
-# 3 = ""
-
-[[center]]
-type = "focused"
-show_icon = true
-show_title = true
-icon_size = 32
-truncate = "end"
+# [[center]]
+# type = "focused"
+# show_icon = true
+# show_title = true
+# icon_size = 32
+# truncate = "end"
 
 # start = []
 # center = []
 # end = []
+
+[[start]]
+type = "launcher"
+favorites = ["firefox", "discord", "steam"]
+show_names = false
+show_icons = true
+
+[[end]]
+type = "volume"
+format = "{icon} {percentage}%"
+max_volume = 100
+truncate = "middle"
+
+[end.icons]
+volume_high = "󰕾 "
+volume_medium = "󰖀 "
+volume_low = "󰕿 "
+muted = "󰝟 "
+
+[[end]]
+class = 'power-menu'
+tooltip = '''Up: {{30000:uptime -p | cut -d ' ' -f2-}}'''
+type = 'custom'
+
+[[end.bar]]
+label = ''
+name = 'power-btn'
+on_click = 'popup:toggle'
+type = 'button'
+
+[[end.popup]]
+orientation = 'vertical'
+type = 'box'
+
+[[end.popup.widgets]]
+label = 'Power menu'
+name = 'header'
+type = 'label'
+
+[[end.popup.widgets]]
+type = 'box'
+
+[[end.popup.widgets.widgets]]
+class = 'power-btn'
+label = '''<span font-size='40pt'></span>'''
+on_click = '!shutdown now'
+type = 'button'
+
+[[end.popup.widgets.widgets]]
+class = 'power-btn'
+label = '''<span font-size='40pt'></span>'''
+on_click = '!reboot'
+type = 'button'
+
+[[end.popup.widgets]]
+label = '''Uptime: {{30000:uptime -p | cut -d ' ' -f2-}}'''
+name = 'uptime'
+type = 'label'
+
+[[end]]
+type = "tray"
