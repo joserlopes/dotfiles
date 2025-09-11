@@ -15,3 +15,9 @@ require("notes_float").setup({
 -- vim.cmd.colorscheme("kanagawa-paper-ink")
 
 vim.cmd.colorscheme("everforest")
+
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function()
+		pcall(vim.treesitter.start)
+	end,
+})
