@@ -1,7 +1,8 @@
 spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
 spawn-at-startup "dropbox"
-spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/osaka-jade-bg.jpg -m fill"
+spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/osaka-jade-bg-3.jpg -m fill"
+spawn-sh-at-startup "~/.config/niri/scripts/notify-track-change.sh"
 
 input {
     keyboard {
@@ -16,6 +17,7 @@ input {
     }
 
     mouse {
+
     }
 
     tablet {
@@ -29,24 +31,20 @@ input {
 
 output "eDP-1" {
     mode "1920x1080@144.001"
-
     scale 1
     position x=0 y=0
 }
 
 output "HDMI-A-1" {
     mode "1920x1080@74.973"
-
     scale 1
-
     position x=1920 y=1060
 }
 
 output "HDMI-0-0" {
+    off
     mode "1920x1080@74.973"
-
     scale 1
-
     position x=1920 y=1060
 }
 
@@ -130,8 +128,10 @@ binds {
     Mod+X { spawn "xournalpp"; }
     Mod+N { spawn "nemo"; }
 
-    Mod+D { spawn "rofi" "-show" "combi" "-modes" "combi" "-icon-theme" "Papirus" "-show-icons"; }
-    Super+Alt+L { spawn "swaylock"; }
+    Mod+D { spawn-sh "rofi -show combi -modes combi -icon-theme Papirus -show-icons"; }
+    Mod+C { spawn-sh "rofi -show calc -modi calc -no-show-match -no-sort"; }
+    Mod+Alt+L { spawn-sh "swaylock -i ~/dotfiles/wallpapers/door.png"; }
+    Alt+V { spawn-sh "~/.config/niri/scripts/current_track.sh"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
@@ -180,6 +180,7 @@ binds {
     Mod+Ctrl+End  { move-column-to-last; }
 
     Mod+E { focus-monitor-previous; }
+    Mod+Shift+E { move-column-to-monitor-previous; }
 
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
@@ -250,7 +251,7 @@ binds {
     Mod+R { switch-preset-column-width; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
-    Mod+C { center-column; }
+    // Mod+C { center-column; }
 
     // Finer width adjustments.
     // This command can also:
@@ -276,14 +277,15 @@ binds {
     // Mod+Shift+Space { switch-layout "prev"; }
 
     Print { screenshot; }
-    Alt+Shift+p { screenshot; }
+    Mod+Shift+p { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
-    // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+Q { quit; }
+    Mod+O { toggle-overview; }
+
+    Mod+Shift+Q { spawn "~/.config/niri/scripts/rofi-power-menu.sh"; }
 
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P { power-off-monitors; }
+    Alt+Shift+P { power-off-monitors; }
 }
