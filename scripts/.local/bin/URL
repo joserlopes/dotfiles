@@ -4,6 +4,18 @@ if [ x"$@" = x"AGISIT" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/AGI112/2025-2026/1-semestre
     exit 0
+elif [ x"$@" = x"AGISIT-Proj" ]
+then
+    xdg-open https://gitlab.rnl.tecnico.ulisboa.pt/agisit/agisit25-g13
+    exit 0
+elif [ x"$@" = x"AGISIT-GitLab" ]
+then
+    xdg-open https://gitlab.rnl.tecnico.ulisboa.pt/agisit/agisit25
+    exit 0
+elif [ x"$@" = x"AGISIT-Moodle" ]
+then
+    xdg-open https://moodle.dei.tecnico.ulisboa.pt/course/view.php?id=6726
+    exit 0
 elif [ x"$@" = x"CRC" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/ARC112/2025-2026/1-semestre
@@ -27,6 +39,9 @@ then
 fi
 
 echo -e "AGISIT\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "AGISIT-Proj\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "AGISIT-GitLab\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "AGISIT-Moodle\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "CRC\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "LVM\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "PIC-2\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
