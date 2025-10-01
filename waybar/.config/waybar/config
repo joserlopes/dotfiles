@@ -13,6 +13,7 @@
   ],
   "modules-right": [
     "bluetooth",
+    "backlight",
     "network",
     "pulseaudio",
     "battery",
@@ -112,6 +113,23 @@
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "blueman-manager"
   },
+  "backlight": {
+    "format": "{percent}% {icon} ",
+    "format-icons": ["", ""],
+    "min-brightness": 10.0,
+  },
+ //  "pulseaudio#input": {
+ //    "format-source": " {volume}%",
+ //    "format-source-muted": " off",
+ //    "format": "{format_source}",
+ //    "scroll-step": 1,
+ //    "smooth-scrolling-threshold": 1,
+ //    "max-volume": 100,
+ //    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+ //    "on-click-middle": "pavucontrol",
+ //    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+ //    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+ //  },
   "pulseaudio": {
     "format": " {volume}%",
     "format-muted": "󰝟",

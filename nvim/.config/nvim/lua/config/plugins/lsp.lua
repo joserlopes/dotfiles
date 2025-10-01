@@ -76,23 +76,25 @@ return {
 		})
 		vim.lsp.enable("lua_ls")
 
+		vim.lsp.enable("superhtml")
+
 		-- Harper LSP
-		vim.lsp.config("harper_ls", {
-			settings = {
-				["harper-ls"] = {
-					linters = {
-						SentenceCapitalization = false,
-						SpellCheck = false,
-						ToDoHyphen = false,
-					},
-				},
-			},
-		})
-		vim.lsp.enable("harper_ls")
+		-- vim.lsp.config("harper_ls", {
+		-- 	settings = {
+		-- 		["harper-ls"] = {
+		-- 			linters = {
+		-- 				SentenceCapitalization = false,
+		-- 				SpellCheck = false,
+		-- 				ToDoHyphen = false,
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
+		-- vim.lsp.enable("harper_ls")
 
 		-- Gleam LSP
-		vim.lsp.config("gleam", {})
-		vim.lsp.enable("gleam")
+		-- vim.lsp.config("gleam", {})
+		-- vim.lsp.enable("gleam")
 
 		-- Python LSP
 		vim.lsp.config("pyright", {
@@ -107,7 +109,7 @@ return {
 			},
 		})
 		vim.lsp.enable("pyright")
-		vim.lsp.enable("pyrefly")
+		-- vim.lsp.enable("pyrefly")
 
 		vim.lsp.config("tinymist", {
 			settings = {
@@ -117,6 +119,25 @@ return {
 		})
 		vim.lsp.enable("tinymist")
 		vim.lsp.enable("ruby_lsp")
+
+		-- OCaml LSP
+		vim.lsp.config("ocamllsp", {
+			settings = {
+				filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
+				root_markers = { "*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace" },
+			},
+		})
+		vim.lsp.enable("ocamllsp")
+
+		-- Zig LSP
+		vim.lsp.config("zls", {
+			settings = {
+				zls = {
+					semantic_tokens = "partial",
+				},
+			},
+		})
+		vim.lsp.enable("zls")
 
 		vim.diagnostic.config({
 			virtual_text = true,

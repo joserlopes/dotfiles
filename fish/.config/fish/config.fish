@@ -25,6 +25,9 @@ fish_add_path -a ~/go/bin/
 
 bind \cf tmux-sessionizer
 set fish_greeting
+set -U fish_color_autosuggestion '#777777'
+set -gx EDITOR nvim
+set -gx VISUAL nvim
 
 zoxide init --cmd cd fish | source
 starship init fish | source

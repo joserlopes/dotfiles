@@ -1,3 +1,6 @@
+[general]
+import = ["~/.config/alacritty/everforest-dark.toml"]
+
 [env]
 TERM = "xterm-256color"
 
@@ -8,54 +11,18 @@ hide_when_typing = true
 unfocused_hollow = true
 
 [font]
-size = 12
+size = 18
 normal = { family = "CaskaydiaMono Nerd Font", style = "Regular" }
 bold = { family = "CaskaydiaMono Nerd Font", style = "Bold" }
 italic = { family = "CaskaydiaMono Nerd Font", style = "Italic" }
-
-# [font.normal]
-# family = "FiraCode Nerd Font Mono"
-# family = "Hack Nerd Font"
-# family = "Iosevka Nerd Font"
-# family = "3270 Nerd Font Mono"
-# family = "CommitMono Nerd Font"
-# family = "Monaspace Neon"
-# family = "Monaspace Argon"
-# family = "JetBrainsMonoNL Nerd Font"
-# family = "MonaspiceNe Nerd Font Mono"
-# family = "ZedMono Nerd Font Mono"
-# family = "MesloLGL Nerd Font"
-# family = "IosevkaTerm Nerd Font Propo"
-# family = "0xProto Nerd Font"
-# style = "regular"
-
-# [font.bold]
-# family = "0xProto Nerd Font"
-# family = "IosevkaTerm Nerd Font Propo"
-# style = "Bold"
-
-# [font.italic]
-# family = "0xProto Nerd Font"
-# family = "IosevkaTerm Nerd Font Propo"
-# style = "Italic"
 
 [[keyboard.bindings]]
 action = "ToggleFullScreen"
 key = "F11"
 
 [window]
-# startup_mode = "Fullscreen"
-opacity = 0.80
-
-[general]
-import = [
-  # "~/.config/alacritty/catppuccin-frappe.toml",
-  # "~/.config/alacritty/gruvbox-material-medium-dark.toml",
-  # "~/.config/alacritty/rose-pine.toml",
-  # "~/.config/alacritty/everforest-dark.toml",
-  "~/.config/alacritty/osaka-jade.toml",
-  # "~/.config/alacritty/kanagawa-dragon.toml",
-  # "~/.config/alacritty/black-metal-gorgoroth.toml",
-  # "~/.config/alacritty/black-metal-venom.toml",
-  # "~/.config/alacritty/black-metal-gorgoroth-256.toml",
-]
+padding.x = 14
+padding.y = 14
+opacity = 0.85
+decorations = "None"
+startup_mode = "Maximized"

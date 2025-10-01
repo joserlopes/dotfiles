@@ -17,14 +17,13 @@ input {
     }
 
     mouse {
-
     }
 
     tablet {
         map-to-output "eDP-1"
     }
 
-    warp-mouse-to-focus
+    // warp-mouse-to-focus
 
     focus-follows-mouse
 }
@@ -33,6 +32,8 @@ output "eDP-1" {
     mode "1920x1080@144.001"
     scale 1
     position x=0 y=0
+
+    variable-refresh-rate
 }
 
 output "HDMI-A-1" {
@@ -95,6 +96,11 @@ layout {
     }
 }
 
+cursor {
+    hide-when-typing
+    hide-after-inactive-ms 3500
+}
+
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
@@ -115,7 +121,7 @@ animations {
 }
 
 window-rule {
-    // open-maximized true
+    open-maximized true
     geometry-corner-radius 16
     clip-to-geometry true
 }
@@ -123,7 +129,8 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return { spawn "ghostty"; }
+    // Mod+Return { spawn "ghostty"; }
+    Mod+Return { spawn "alacritty"; }
     Mod+B { spawn "firefox"; }
     Mod+X { spawn "xournalpp"; }
     Mod+N { spawn "nemo"; }
