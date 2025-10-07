@@ -20,9 +20,17 @@ elif [ x"$@" = x"CRC" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/ARC112/2025-2026/1-semestre
     exit 0
+elif [ x"$@" = x"CRC-Proj" ]
+then
+    xdg-open https://github.com/joserlopes/CRC
+    exit 0
 elif [ x"$@" = x"LVM" ]
 then
     xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/LVM112/2025-2026/1-semestre
+    exit 0
+elif [ x"$@" = x"LVM-Proj" ]
+then
+    xdg-open https://github.com/joserlopes/LVM_Project1
     exit 0
 elif [ x"$@" = x"PIC-2" ]
 then
@@ -43,7 +51,9 @@ echo -e "AGISIT-Proj\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "AGISIT-GitLab\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "AGISIT-Moodle\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "CRC\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "CRC-Proj\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "LVM\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "LVM-Proj\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "PIC-2\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "GitHub\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "dotfiles\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
