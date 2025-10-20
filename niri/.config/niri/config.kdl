@@ -1,7 +1,8 @@
 spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
 spawn-at-startup "dropbox"
-spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/osaka-jade-bg-3.jpg -m fill"
+// spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/osaka-jade-bg-3.jpg -m fill"
+spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/1329164.png -m fill"
 spawn-sh-at-startup "~/.config/niri/scripts/notify-track-change.sh"
 
 input {
@@ -32,8 +33,6 @@ output "eDP-1" {
     mode "1920x1080@144.001"
     scale 1
     position x=0 y=0
-
-    variable-refresh-rate
 }
 
 output "HDMI-A-1" {
@@ -42,12 +41,12 @@ output "HDMI-A-1" {
     position x=1920 y=1060
 }
 
-output "HDMI-0-0" {
-    off
-    mode "1920x1080@74.973"
-    scale 1
-    position x=1920 y=1060
-}
+// output "HDMI-0-0" {
+//     off
+//     mode "1920x1080@74.973"
+//     scale 1
+//     position x=1920 y=1060
+// }
 
 layout {
     // Set gaps around windows in logical pixels.
@@ -114,7 +113,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    // off
+    off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
