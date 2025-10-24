@@ -12,14 +12,6 @@ return {
 				},
 			},
 		},
-		{
-			"L3MON4D3/LuaSnip",
-			dependencies = { "rafamadriz/friendly-snippets" },
-			version = "v2.*",
-			config = function()
-				require("luasnip.loaders.from_vscode").lazy_load()
-			end,
-		},
 	},
 
 	version = "1.*",
@@ -65,12 +57,12 @@ return {
 		},
 
 		-- NOTE: Enable this once stabilized
-		-- signature = {
-		-- 	enabled = true,
-		-- 	window = {
-		-- 		show_documentation = true,
-		-- 	},
-		-- },
+		signature = {
+			enabled = true,
+			window = {
+				show_documentation = true,
+			},
+		},
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
