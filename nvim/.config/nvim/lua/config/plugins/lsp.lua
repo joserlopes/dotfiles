@@ -13,7 +13,6 @@ return {
 		require("mason-lspconfig").setup()
 
 		local servers = {
-			marksman = {},
 			ts_ls = {},
 			gopls = {},
 			rust_analyzer = {},
@@ -46,8 +45,16 @@ return {
 					cargo = {
 						features = "all",
 					},
+					checkOnSave = {
+						enable = true,
+					},
 					check = {
 						command = "clippy",
+					},
+					imports = {
+						group = {
+							enable = false,
+						},
 					},
 					rustfmt = {
 						extraArgs = { "--config=wrap_comments=true" },
