@@ -29,4 +29,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/jrl/\x2elocal/bin\x1e/home/jrl/zig\x1e/home/jrl/T\u00e9cnico/CMU/android\x2dstudio/bin\x1e/home/jrl/Intelij/bin\x1e/home/jrl/flutter/bin\x1e/home/jrl/go/bin
+SETUVAR fish_user_paths:/home/jrl/\x2elocal/bin\x1e/home/jrl/zig\x1e/home/jrl/T\u00e9cnico/CMU/android\x2dstudio/bin\x1e/home/jrl/Intelij/bin\x1e/home/jrl/flutter/bin\x1e/home/jrl/go/bin\x1e/home/jrl/T\u00e9cnico/LVM/SpinRCP3\x2e1\x2e1\x1e/usr/bin

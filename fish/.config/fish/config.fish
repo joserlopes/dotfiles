@@ -22,6 +22,8 @@ fish_add_path -a ~/Intelij/bin/
 fish_add_path -a ~/flutter/bin/
 # Add go
 fish_add_path -a ~/go/bin/
+# Add spinRCP
+fish_add_path -a ~/Técnico/LVM/SpinRCP3.1.1/
 
 bind \cf tmux-sessionizer
 set fish_greeting
