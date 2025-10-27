@@ -25,7 +25,16 @@ fish_add_path -a ~/go/bin/
 # Add spinRCP
 fish_add_path -a ~/Técnico/LVM/SpinRCP3.1.1/
 
-bind \cf tmux-sessionizer
+function fish_user_key_bindings
+    bind \cf tmux-sessionizer
+    bind \cq beginning-of-buffer
+    bind \co backward-word
+    bind \cp forward-word
+    if functions -q fzf_key_bindings
+		fzf_key_bindings
+	end
+end
+
 set fish_greeting
 set -U fish_color_autosuggestion '#777777'
 set -gx EDITOR nvim
