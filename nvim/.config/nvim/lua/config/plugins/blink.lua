@@ -56,7 +56,6 @@ return {
 			},
 		},
 
-		-- NOTE: Enable this once stabilized
 		signature = {
 			enabled = true,
 			window = {
