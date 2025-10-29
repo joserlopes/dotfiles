@@ -11,12 +11,12 @@ return {
 		quickfile = { enabled = true },
 		words = { enabled = true },
 		dashboard = { enabled = true },
-		toggle = { enabled = true },
 		indent = { enabled = true, animate = { enabled = false } },
 		input = { enabled = true },
 		-- image = { enabled = true },
 		lazygit = { enabled = true },
 		picker = { enabled = true },
+		zen = { enabled = true },
 	},
 	keys = {
 		{

@@ -15,7 +15,7 @@ test -r '/home/jrl/.opam/opam-init/init.fish' && source '/home/jrl/.opam/opam-in
 # Add ~/.local/bin to PATH
 fish_add_path -a ~/.local/bin
 # Add ~/zig to PATH
-fish_add_path -a ~/zig
+# fish_add_path -a ~/zig
 # Add intelij
 fish_add_path -a ~/Intelij/bin/
 # Add flutter
