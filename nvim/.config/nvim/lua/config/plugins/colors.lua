@@ -33,10 +33,11 @@ return {
 				transparent_background_level = 1,
 				italics = true,
 
-				-- on_highlights = function(hl, palette)
-				-- 	hl.TSComment = { fg = palette.orange, italic = true } -- Muted gray; add `italic = true` if desired
-				-- 	hl.TSAnnotation = { fg = palette.green, italic = true }
-				-- end,
+				on_highlights = function(hl, palette)
+					hl["@comment.documentation.rust"] = { fg = palette.aqua, italic = true }
+					hl["@lsp.type.comment.rust"] = { fg = palette.aqua, italic = true }
+					hl.TSComment = { fg = "#928374", italic = true }
+				end,
 			})
 		end,
 	},
