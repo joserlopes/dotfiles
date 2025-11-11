@@ -7,6 +7,10 @@ font pango:monospace 15px
 for_window [class="^.*"] border pixel 2
 for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
 
+input type:keyboard {
+    xkb_layout pt,us
+}
+
 exec --no-startup-id dex --autostart --environment i3
 
 # Always lock the screen manually
@@ -56,7 +60,7 @@ floating_modifier $mod
 
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+# tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -74,7 +78,7 @@ bindsym $mod+n exec nemo
 bindsym $mod+q kill
 
 # start rofi
-bindsym $mod+d exec --no-startup-id rofi -font "hack 15" -show drun -icon-theme "Papirus" -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show combi -modes combi -icon-theme Papirus -show-icons
 
 # change focus
 bindsym $mod+j focus down

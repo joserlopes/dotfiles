@@ -9,7 +9,7 @@ return {
 			timeout = 2000,
 		},
 		quickfile = { enabled = true },
-		words = { enabled = true },
+		-- words = { enabled = true },
 		dashboard = { enabled = true },
 		indent = { enabled = true, animate = { enabled = false } },
 		input = { enabled = true },

@@ -1,24 +1,30 @@
 return {
 	{
-		"RRethy/base16-nvim",
-		-- lazy = false,
-		-- priority = 1000,
-		config = function() end,
-	},
-
-	{
-		"thesimonho/kanagawa-paper.nvim",
-		-- lazy = false,
-		-- priority = 1000,
-		config = function()
-			require("kanagawa-paper").setup({
-				transparent = true,
-				styles = {
-					functions = { italic = true },
-					keyword = { italic = true },
-				},
-			})
-		end,
+		-- "wincent/base16-nvim",
+		-- lazy = false, -- load at start
+		-- priority = 1000, -- load first
+		-- config = function()
+		-- 	vim.cmd.colorscheme("gruvbox-dark-hard")
+		-- 	vim.o.background = "dark"
+		-- 	vim.cmd([[hi Normal ctermbg=NONE]])
+		-- 	-- Less visible window separator
+		-- 	vim.api.nvim_set_hl(0, "WinSeparator", { fg = 1250067 })
+		-- 	-- Make comments more prominent -- they are important.
+		-- 	local bools = vim.api.nvim_get_hl(0, { name = "Boolean" })
+		-- 	vim.api.nvim_set_hl(0, "Comment", bools)
+		-- 	-- Make it clearly visible which argument we're at.
+		-- 	local marked = vim.api.nvim_get_hl(0, { name = "PMenu" })
+		-- 	vim.api.nvim_set_hl(
+		-- 		0,
+		-- 		"LspSignatureActiveParameter",
+		-- 		{ fg = marked.fg, bg = marked.bg, ctermfg = marked.ctermfg, ctermbg = marked.ctermbg, bold = true }
+		-- 	)
+		-- 	-- XXX
+		-- 	-- Would be nice to customize the highlighting of warnings and the like to make
+		-- 	-- them less glaring. But alas
+		-- 	-- https://github.com/nvim-lua/lsp_extensions.nvim/issues/21
+		-- 	-- call Base16hi("CocHintSign", g:base16_gui03, "", g:base16_cterm03, "", "", "")
+		-- end,
 	},
 
 	{
@@ -43,44 +49,17 @@ return {
 	},
 
 	{
-		"f4z3r/gruvbox-material.nvim",
-		name = "gruvbox-material",
-		lazy = false,
-		priority = 1000,
-		opts = {
-			contrast = "soft",
-		},
-	},
-
-	{
-		"ribru17/bamboo.nvim",
-		lazy = false,
-		priority = 1000,
+		"vague-theme/vague.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other plugins
 		config = function()
-			require("bamboo").setup({})
-			require("bamboo").load()
+			require("vague").setup({
+				on_highlights = function(hl)
+					hl["@comment.documentation.rust"] = { fg = "#35a77c", italic = true }
+					hl["@lsp.type.comment.rust"] = { fg = "#35a77c", italic = true }
+					hl.Comment = { fg = "#928374", italic = true }
+				end,
+			})
 		end,
-	},
-	{
-		"everviolet/nvim",
-		name = "evergarden",
-		priority = 1000, -- Colorscheme plugin is loaded first before any other plugins
-		opts = {
-			theme = {
-				variant = "fall", -- 'winter'|'fall'|'spring'|'summer'
-				-- accent = "green",
-			},
-			editor = {
-				transparent_background = true,
-				-- sign = { color = "none" },
-				-- float = {
-				-- 	color = "mantle",
-				-- 	solid_border = false,
-				-- },
-				-- completion = {
-				-- 	color = "surface0",
-				-- },
-			},
-		},
 	},
 }

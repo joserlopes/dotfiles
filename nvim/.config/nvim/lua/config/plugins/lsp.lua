@@ -13,8 +13,8 @@ return {
 		require("mason-lspconfig").setup()
 
 		local servers = {
-			ts_ls = {},
-			gopls = {},
+			-- ts_ls = {},
+			-- gopls = {},
 			rust_analyzer = {},
 			lua_ls = {},
 		}
@@ -100,8 +100,8 @@ return {
 		-- vim.lsp.enable("harper_ls")
 
 		-- Gleam LSP
-		-- vim.lsp.config("gleam", {})
-		-- vim.lsp.enable("gleam")
+		vim.lsp.config("gleam", {})
+		vim.lsp.enable("gleam")
 
 		-- Python LSP
 		vim.lsp.config("pyright", {
@@ -125,6 +125,7 @@ return {
 			},
 		})
 		vim.lsp.enable("tinymist")
+
 		vim.lsp.enable("ruby_lsp")
 
 		-- OCaml LSP
@@ -148,6 +149,7 @@ return {
 
 		vim.diagnostic.config({
 			virtual_text = true,
+			-- virtual_text = false,
 			virtual_lines = false,
 			-- virtual_lines = true,
 			float = {
@@ -155,7 +157,7 @@ return {
 				border = "rounded",
 				source = true,
 			},
-			underline = { severity = vim.diagnostic.severity.ERROR },
+			-- underline = { severity = vim.diagnostic.severity.ERROR },
 			signs = vim.g.have_nerd_font and {
 				text = {
 					[vim.diagnostic.severity.ERROR] = "󰅚 ",

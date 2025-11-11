@@ -1,6 +1,7 @@
 spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
 spawn-at-startup "dropbox"
+
 // spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/osaka-jade-bg-3.jpg -m fill"
 spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/1329164.png -m fill"
 spawn-sh-at-startup "~/.config/niri/scripts/notify-track-change.sh"
@@ -40,6 +41,12 @@ output "HDMI-A-1" {
     scale 1
     position x=1920 y=1060
 }
+
+// output "HDMI-A-1" {
+//     mode "1920x1080@60.000"
+//     scale 1
+//     position x=1920 y=1060
+// }
 
 // output "HDMI-0-0" {
 //     off
@@ -126,7 +133,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Mod+Return { spawn "ghostty"; }
-    Mod+Return { spawn "alacritty"; }
+    // Mod+Return { spawn "alacritty"; }
+    Mod+Return { spawn "kitty"; }
     Mod+B { spawn "firefox"; }
     Mod+X { spawn "xournalpp"; }
     Mod+N { spawn "nemo"; }
