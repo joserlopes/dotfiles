@@ -20,7 +20,7 @@ format = "%d/%m/%Y %H:%M"
 
 [[start]]
 type = "launcher"
-favorites = ["firefox", "discord", "steam"]
+favorites = ["firefox", "discord"]
 show_names = false
 show_icons = true
 

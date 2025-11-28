@@ -1,10 +1,12 @@
-# vim: ft=ghostty
+# vim: ft=config
 cursor-style = block
 shell-integration-features = no-cursor
 
 # font-family = IosevkaTerm Nerd Font
 # font-family = JetBrainsMono NF
-font-family = CaskaydiaMono Nerd Font
+# font-family = CaskaydiaMono Nerd Font
+# font-family = Noto Sans Mono
+font-family = MonaspiceKr NF
 font-size = 18
 adjust-cell-width = -1
 # freetype-load-flags = no-hinting,no-autohint
@@ -13,14 +15,18 @@ adjust-cell-width = -1
 # This is just to comply with the color of the nvim theme
 # background = #1f1f28
 # theme = osaka-jade
-theme = Everforest Dark Hard
+# theme = Everforest Dark Hard
+theme = Vague
 # This is just to comply with the color of the nvim theme
-background = #181616
+# background = #181616
 # background-opacity = 0.85
 
 keybind = ctrl+shift+r=reload_config
 
 maximize = true
 window-decoration = none
+
+window-padding-x = 14
+window-padding-y = 14
 
 mouse-hide-while-typing = true
