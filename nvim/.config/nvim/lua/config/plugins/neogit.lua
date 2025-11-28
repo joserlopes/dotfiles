@@ -1,18 +1,12 @@
 return {
 	"NeogitOrg/neogit",
+	lazy = true,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"sindrets/diffview.nvim",
 	},
-	config = true,
+	cmd = "Neogit",
 	keys = {
-		{
-			"<leader>gg",
-			function()
-				require("neogit").open()
-			end,
-			desc = "Neogit",
-			silent = true,
-		},
+		{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Neogit" },
 	},
 }
