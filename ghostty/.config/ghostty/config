@@ -15,16 +15,17 @@ adjust-cell-width = -1
 # This is just to comply with the color of the nvim theme
 # background = #1f1f28
 # theme = osaka-jade
-# theme = Everforest Dark Hard
-theme = Vague
+theme = Everforest Dark Hard
+# theme = Vague
 # This is just to comply with the color of the nvim theme
-# background = #181616
+background = #181616
 # background-opacity = 0.85
 
 keybind = ctrl+shift+r=reload_config
 
-maximize = true
-window-decoration = none
+# maximize = true
+# fullscreen = true
+# window-decoration = none
 
 window-padding-x = 14
 window-padding-y = 14

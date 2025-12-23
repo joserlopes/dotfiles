@@ -116,6 +116,7 @@ return {
 			},
 		})
 		vim.lsp.enable("pyright")
+		-- vim.lsp.enable("ty")
 		-- vim.lsp.enable("pyrefly")
 
 		vim.lsp.config("tinymist", {

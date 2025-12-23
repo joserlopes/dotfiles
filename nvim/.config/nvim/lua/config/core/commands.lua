@@ -21,6 +21,8 @@ end, {})
 
 vim.keymap.set("n", "<leader>tw", "<CMD>TypstWatch<CR>", { desc = "Typst Watch" })
 
+local group = vim.api.nvim_create_augroup("LspCodeLensRefresh", { clear = true })
+
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 	callback = function(event)
@@ -69,5 +71,29 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.api.nvim_buf_create_user_command(event.buf, "Format", function(_)
 			vim.lsp.buf.format()
 		end, { desc = "Format current buffer with LSP" })
+
+		-- local client = vim.lsp.get_client_by_id(event.data.client_id)
+		--
+		-- if client and client.server_capabilities.codeLensProvider then
+		-- 	-- 1. Refresh on buffer entry/focus
+		-- 	-- This ensures lenses appear when you open or switch to a buffer
+		-- 	vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold" }, {
+		-- 		buffer = event.buf,
+		-- 		group = group,
+		-- 		callback = function()
+		-- 			vim.lsp.codelens.refresh()
+		-- 		end,
+		-- 	})
+		--
+		-- 	-- 2. Optional: Refresh after a command execution (like saving the file)
+		-- 	-- This can be useful if your server generates lenses only after a save.
+		-- 	vim.api.nvim_create_autocmd("BufWritePost", {
+		-- 		buffer = event.buf,
+		-- 		group = group,
+		-- 		callback = function()
+		-- 			vim.lsp.codelens.refresh()
+		-- 		end,
+		-- 	})
+		-- end
 	end,
 })

@@ -5,7 +5,8 @@ spawn-at-startup "nm-applet"
 spawn-at-startup "dropbox"
 
 // spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/osaka-jade-bg-3.jpg -m fill"
-spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/1329164.png -m fill"
+// spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/wallpaper.png -m fill"
+spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/dune.jpg -m fill"
 spawn-sh-at-startup "~/.config/niri/scripts/notify-track-change.sh"
 
 input {
@@ -136,7 +137,8 @@ binds {
 
     // Mod+Return { spawn "ghostty"; }
     // Mod+Return { spawn "kitty"; }
-    Mod+Return { spawn "alacritty"; }
+    // Mod+Return { spawn "alacritty"; }
+    Mod+Return { spawn-sh "GTK_IM_MODULE=simple ghostty"; }
     Mod+B { spawn "firefox"; }
     Mod+X { spawn "xournalpp"; }
     Mod+N { spawn "nemo"; }

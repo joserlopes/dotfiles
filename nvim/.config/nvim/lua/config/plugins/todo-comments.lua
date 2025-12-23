@@ -10,6 +10,14 @@ return {
 		vim.keymap.set("n", "[t", function()
 			require("todo-comments").jump_prev()
 		end, { desc = "Previous todo comment" }),
+
+		-- SAFETY:
+		keywords = {
+			SAFETY = { icon = "🔒", color = "safety" },
+		},
+
+		colors = {
+			safety = { "#FFB347" },
+		},
 	},
-	config = true,
 }

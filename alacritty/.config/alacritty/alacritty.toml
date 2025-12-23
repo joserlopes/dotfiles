@@ -1,7 +1,8 @@
 [general]
 import = [
-  "~/.config/alacritty/vague.toml",
-  # "~/.config/alacritty/everforest-dark.toml",
+  # "~/.config/alacritty/vague.toml",
+  # "~/.config/alacritty/compline.toml",
+  "~/.config/alacritty/everforest-dark.toml",
   # "~/.config/alacritty/kanagawa-dragon.toml",
 ]
 
@@ -39,4 +40,4 @@ padding.x = 14
 padding.y = 14
 # opacity = 0.85
 decorations = "None"
-startup_mode = "Maximized"
+# startup_mode = "FullScreen"

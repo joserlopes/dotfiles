@@ -11,8 +11,8 @@ require("notes_float").setup({
 	global_file = "~/Notes/notes.md",
 })
 
--- vim.cmd.colorscheme("everforest")
-vim.cmd("colorscheme vague")
+vim.cmd.colorscheme("everforest")
+-- vim.cmd("colorscheme vague")
 
 vim.api.nvim_create_autocmd("FileType", {
 	callback = function()

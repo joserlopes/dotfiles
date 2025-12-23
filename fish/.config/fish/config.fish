@@ -43,3 +43,5 @@ set -gx VISUAL nvim
 zoxide init --cmd cd fish | source
 starship init fish | source
 mise activate fish | source
+
+fish_add_path /home/jrl/.spicetify
