@@ -39,6 +39,12 @@ output "eDP-1" {
     position x=0 y=0
 }
 
+output "PNP(AOC) Q27G2SG4 XFXN9HA011827" {
+    mode "2560x1440@143.912"
+    scale 1
+    position x=1920 y=1060
+}
+
 output "HDMI-A-1" {
     mode "1920x1080@74.973"
     scale 1

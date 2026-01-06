@@ -45,3 +45,6 @@ starship init fish | source
 mise activate fish | source
 
 fish_add_path /home/jrl/.spicetify
+
+# Amp CLI
+export PATH="/home/jrl/.amp/bin:$PATH"
