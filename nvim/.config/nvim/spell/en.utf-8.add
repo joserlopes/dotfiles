@@ -134,3 +134,6 @@ runtimes
 hardcoded
 TypeScript
 accessor
+subtyping
+QuickCheck
+Timely.js

@@ -4,6 +4,10 @@ if [ x"$@" = x"PIC2-Writing" ]
 then
     xdg-open https://typst.app/project/pWVxtipSYKLrdRw78l3O99
     exit 0
+elif [ x"$@" = x"PIC2-Delivery" ]
+then
+    xdg-open https://dms.dei.tecnico.ulisboa.pt/
+    exit 0
 elif [ x"$@" = x"Thesis" ]
 then
     xdg-open https://github.com/joserlopes/Thesis
@@ -35,6 +39,7 @@ then
 fi
 
 echo -e "PIC2-Writing\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "PIC2-Delivery\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "Thesis\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "CRC\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "LVM\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
