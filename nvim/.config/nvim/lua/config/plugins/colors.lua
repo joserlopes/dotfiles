@@ -40,4 +40,22 @@ return {
 			})
 		end,
 	},
+
+	{
+		"thesimonho/kanagawa-paper.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("kanagawa-paper").setup({
+				overrides = function(colors)
+					return {
+						["@comment.documentation.rust"] = { fg = colors.palette.waveAqua2, italic = true },
+						rustCommentLineDoc = { link = "@comment.documentation.rust" },
+						rustCommentBlockDoc = { link = "@comment.documentation.rust" },
+						Comment = { fg = colors.palette.autumnGreen, italic = true },
+					}
+				end,
+			})
+		end,
+	},
 }
