@@ -3,6 +3,11 @@ vim.opt.guicursor = ""
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Something to do with netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Relative line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -16,19 +21,17 @@ vim.opt.smartindent = true
 -- Better search
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 vim.opt.wrap = false
 
+-- Undo files and whatnot
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
--- Shows incremental commands on a split
-vim.opt.inccommand = "split"
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
@@ -67,17 +70,3 @@ vim.opt.cursorline = true
 
 -- Make it clear that we have a nerd font
 vim.g.have_nerd_font = true
-
--- jump to last edit position on opening file
-vim.api.nvim_create_autocmd("BufReadPost", {
-	pattern = "*",
-	callback = function(ev)
-		if vim.fn.line("'\"") > 1 and vim.fn.line("'\"") <= vim.fn.line("$") then
-			-- except for in git commit messages
-			-- https://stackoverflow.com/questions/31449496/vim-ignore-specifc-file-in-autocommand
-			if not vim.fn.expand("%:p"):find(".git", 1, true) then
-				vim.cmd('exe "normal! g\'\\""')
-			end
-		end
-	end,
-})

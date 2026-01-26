@@ -117,19 +117,6 @@ return {
 		})
 		vim.lsp.enable("pyright")
 
-		vim.lsp.config("basedpyright", {
-			settings = {
-				python = {
-					analysis = {
-						diagnosticSeverityOverrides = {
-							reportPossiblyUnboundVariable = "none",
-						},
-					},
-				},
-			},
-		})
-		vim.lsp.enable("basedpyright")
-
 		vim.lsp.config("tinymist", {
 			settings = {
 				formatterMode = "typstyle",

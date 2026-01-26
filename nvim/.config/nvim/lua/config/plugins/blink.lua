@@ -6,8 +6,6 @@ return {
 			ft = "lua", -- only load on lua files
 			opts = {
 				library = {
-					-- See the configuration section for more details
-					-- Load luvit types when the `vim.uv` word is found
 					{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 				},
 			},
@@ -23,8 +21,6 @@ return {
 			["<C-f>"] = { "select_next" },
 			["<C-g>"] = { "select_prev" },
 			["<C-l>"] = { "accept" },
-			-- ["<C-n>"] = { "scroll_documentation_down", "fallback" },
-			-- ["<C-p>"] = { "scroll_documentation_up", "fallback" },
 		},
 
 		appearance = {
