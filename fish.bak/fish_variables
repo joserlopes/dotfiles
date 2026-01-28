@@ -1,0 +1,5 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:4300
+SETUVAR fish_color_autosuggestion:\x23777777
+SETUVAR fish_user_paths:/home/jrl/\x2espicetify\x1e/home/jrl/\x2elocal/bin\x1e/home/jrl/Intelij/bin\x1e/home/jrl/go/bin\x1e/home/jrl/T\u00e9cnico/LVM/SpinRCP3\x2e1\x2e1

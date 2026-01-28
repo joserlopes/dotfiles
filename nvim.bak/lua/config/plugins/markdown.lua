@@ -1,0 +1,21 @@
+return {
+	"MeanderingProgrammer/render-markdown.nvim",
+	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+	opts = {},
+	-- "OXY2DEV/markview.nvim",
+	-- lazy = false,
+	-- opts = {
+	-- 	typst = {
+	-- 		enable = false,
+	-- 	},
+	-- 	latex = {
+	-- 		enable = false,
+	-- 	},
+	-- 	yaml = {
+	-- 		enable = false,
+	-- 	},
+	-- 	html = {
+	-- 		enable = false,
+	-- 	},
+	-- },
+}

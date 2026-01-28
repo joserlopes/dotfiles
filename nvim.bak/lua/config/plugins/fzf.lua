@@ -4,7 +4,6 @@ return {
 	config = function()
 		local fzf = require("fzf-lua")
 		fzf.setup({
-			fzf_bin = "sk",
 			fzf_colors = true,
 			winopts = {
 				split = "belowright 10new",
