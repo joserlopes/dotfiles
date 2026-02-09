@@ -26,9 +26,12 @@ size = 18
 # normal = { family = "Noto Sans Mono", style = "Regular" }
 # bold = { family = "Noto Sans Mono", style = "Bold" }
 # italic = { family = "Noto Sans Mono", style = "Italic" }
-normal = { family = "MonaspiceKr NF", style = "Regular" }
-bold = { family = "MonaspiceKr NF", style = "Bold" }
-italic = { family = "MonaspiceKr NF", style = "Italic" }
+# normal = { family = "MonaspiceKr NF", style = "Regular" }
+# bold = { family = "MonaspiceKr NF", style = "Bold" }
+# italic = { family = "MonaspiceKr NF", style = "Italic" }
+normal = { family = "Maple Mono NF", style = "Regular" }
+bold = { family = "Maple Mono NF", style = "Bold" }
+italic = { family = "Maple Mono NF", style = "Italic" }
 offset = { x = -1 }
 
 [[keyboard.bindings]]
@@ -39,5 +42,5 @@ key = "F11"
 padding.x = 14
 padding.y = 14
 # opacity = 0.85
-decorations = "None"
+# decorations = "None"
 # startup_mode = "FullScreen"
