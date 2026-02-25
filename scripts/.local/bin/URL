@@ -1,28 +1,8 @@
 #!/usr/bin/env bash
 
-if [ x"$@" = x"PIC2-Writing" ]
-then
-    xdg-open https://typst.app/project/pWVxtipSYKLrdRw78l3O99
-    exit 0
-elif [ x"$@" = x"PIC2-Delivery" ]
-then
-    xdg-open https://dms.dei.tecnico.ulisboa.pt/
-    exit 0
-elif [ x"$@" = x"Thesis" ]
+if [ x"$@" = x"Thesis" ]
 then
     xdg-open https://github.com/joserlopes/Thesis
-    exit 0
-elif [ x"$@" = x"CRC" ]
-then
-    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/ARC112/2025-2026/1-semestre
-    exit 0
-elif [ x"$@" = x"LVM" ]
-then
-    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/LVM112/2025-2026/1-semestre
-    exit 0
-elif [ x"$@" = x"LVM-Proj" ]
-then
-    xdg-open https://github.com/joserlopes/LVM_Project2
     exit 0
 elif [ x"$@" = x"PIC-2" ]
 then
@@ -38,12 +18,7 @@ then
     exit 0
 fi
 
-echo -e "PIC2-Writing\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
-echo -e "PIC2-Delivery\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "Thesis\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
-echo -e "CRC\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
-echo -e "LVM\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
-echo -e "LVM-Proj\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "PIC-2\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "GitHub\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "dotfiles\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
