@@ -104,7 +104,19 @@ return {
 		vim.lsp.enable("gleam")
 
 		-- Python LSP
-		vim.lsp.config("pyright", {
+		-- vim.lsp.config("pyright", {
+		-- 	settings = {
+		-- 		python = {
+		-- 			analysis = {
+		-- 				diagnosticSeverityOverrides = {
+		-- 					reportPossiblyUnboundVariable = "none",
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
+		-- vim.lsp.enable("pyright")
+		vim.lsp.config("basedpyright", {
 			settings = {
 				python = {
 					analysis = {
@@ -115,13 +127,46 @@ return {
 				},
 			},
 		})
-		vim.lsp.enable("pyright")
+		vim.lsp.enable("basedpyright")
 
 		vim.lsp.config("tinymist", {
 			settings = {
 				formatterMode = "typstyle",
 				exportPdf = "onType",
 			},
+			on_attach = function(client, bufnr)
+				-- If the file name is main.typ, auto-pin it as the main file
+				local file_path = vim.api.nvim_buf_get_name(bufnr)
+				if file_path:match("main%.typ$") then
+					client:exec_cmd({
+						title = "pin",
+						command = "tinymist.pinMain",
+						arguments = { file_path },
+					}, { bufnr = bufnr })
+				end
+
+				vim.keymap.set("n", "<leader>tp", function()
+					client:exec_cmd({
+
+						title = "pin",
+
+						command = "tinymist.pinMain",
+
+						arguments = { vim.api.nvim_buf_get_name(0) },
+					}, { bufnr = bufnr })
+				end, { desc = "[T]inymist [P]in", noremap = true })
+
+				vim.keymap.set("n", "<leader>tu", function()
+					client:exec_cmd({
+
+						title = "unpin",
+
+						command = "tinymist.pinMain",
+
+						arguments = { vim.v.null },
+					}, { bufnr = bufnr })
+				end, { desc = "[T]inymist [U]npin", noremap = true })
+			end,
 		})
 		vim.lsp.enable("tinymist")
 
@@ -129,10 +174,21 @@ return {
 
 		-- OCaml LSP
 		vim.lsp.config("ocamllsp", {
-			settings = {
-				filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
-				root_markers = { "*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace" },
+			cmd = { "ocamllsp" },
+			filetypes = {
+				"ocaml",
+				"ocaml.interface",
+				"ocaml.menhir",
+				"ocaml.ocamllex",
+				"dune",
+				"reason",
 			},
+			root_markers = {
+				{ "dune-project", "dune-workspace" },
+				{ "*.opam", "esy.json", "package.json" },
+				".git",
+			},
+			settings = {},
 		})
 		vim.lsp.enable("ocamllsp")
 
