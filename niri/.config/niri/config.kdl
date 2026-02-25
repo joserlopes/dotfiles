@@ -45,6 +45,12 @@ output "PNP(AOC) Q27G2SG4 XFXN9HA011827" {
     position x=1920 y=1060
 }
 
+output "PNP(AOC) 27B2 0x0000DF45" {
+    mode "1920x1080@60.000"
+    scale 1
+    position x=1920 y=1060
+}
+
 output "HDMI-A-1" {
     mode "1920x1080@74.973"
     scale 1
@@ -66,7 +72,7 @@ output "HDMI-A-1" {
 
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 8
+    gaps 0
 
     center-focused-column "never"
 
@@ -126,7 +132,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
     // Uncomment to turn off all animations.
-    // off
+    off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
@@ -134,11 +140,12 @@ animations {
 
 window-rule {
     open-maximized true
-    geometry-corner-radius 16
+    // geometry-corner-radius 16
     clip-to-geometry true
 }
 
 binds {
+    Mod+P repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Mod+Return { spawn "ghostty"; }
