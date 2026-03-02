@@ -1,0 +1,8 @@
+X-Mailer: aerc {{version}}
+
+---------- Forwarded message ----------
+From: *{{.OriginalFrom | names | join ", "}}* <{{(index .OriginalFrom 0).Address}}>
+Date: {{dateFormat .OriginalDate "Mon, Jan 2, 2006 at 3:04 PM"}}
+Subject: {{.SubjectBase}}
+
+{{.OriginalText}}
