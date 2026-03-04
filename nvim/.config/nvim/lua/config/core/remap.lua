@@ -42,6 +42,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>e", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("v", "<leader>r", [[y:%s/<C-r>"//gI<Left><Left><Left>]])
 
 -- avoid typing W instead of w to save the file
 vim.cmd("cabbrev W w")
