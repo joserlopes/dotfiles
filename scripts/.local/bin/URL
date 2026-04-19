@@ -4,9 +4,9 @@ if [ x"$@" = x"Thesis" ]
 then
     xdg-open https://github.com/joserlopes/Thesis
     exit 0
-elif [ x"$@" = x"PIC-2" ]
+elif [ x"$@" = x"Type-Inference" ]
 then
-    xdg-open https://fenix.tecnico.ulisboa.pt/disciplinas/PMEIC2112/2025-2026/1-semestre
+    xdg-open https://github.com/huiyu-mcse/Type-Inference
     exit 0
 elif [ x"$@" = x"GitHub" ]
 then
@@ -19,7 +19,7 @@ then
 fi
 
 echo -e "Thesis\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
-echo -e "PIC-2\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
+echo -e "Type-Inference\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "GitHub\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 echo -e "dotfiles\x00icon\x1f/usr/share/icons/Papirus/22x22/actions/link.svg"
 

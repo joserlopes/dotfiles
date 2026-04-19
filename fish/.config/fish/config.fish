@@ -23,6 +23,8 @@ set -gx PATH $HOME/.local/bin $PATH
 set -gx PATH $HOME/go/bin $PATH
 # Add juliaup 
 set -gx PATH $HOME/.juliaup/bin $PATH
+# Add zig
+set -gx PATH $HOME/zig $PATH
 
 zoxide init --cmd cd fish | source
 starship init fish | source
@@ -34,3 +36,6 @@ set -gx VISUAL nvim
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/jrl/.ghcup/bin $PATH # ghcup-env
 
 eval (opam env --switch=default)
+
+# opencode
+fish_add_path /home/jrl/.opencode/bin

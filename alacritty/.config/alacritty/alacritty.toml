@@ -1,7 +1,6 @@
 [general]
 import = [
   # "~/.config/alacritty/vague.toml",
-  # "~/.config/alacritty/compline.toml",
   "~/.config/alacritty/everforest-dark.toml",
   # "~/.config/alacritty/kanagawa.toml",
 ]

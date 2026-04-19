@@ -51,11 +51,11 @@ output "PNP(AOC) 27B2 0x0000DF45" {
     position x=1920 y=1060
 }
 
-output "HDMI-A-1" {
-    mode "1920x1080@74.973"
-    scale 1
-    position x=1920 y=1060
-}
+// output "HDMI-A-1" {
+//     mode "1920x1080@74.973"
+//     scale 1
+//     position x=1920 y=1060
+// }
 
 // output "HDMI-A-1" {
 //     mode "1920x1080@60.000"
@@ -150,8 +150,8 @@ binds {
 
     // Mod+Return { spawn "ghostty"; }
     // Mod+Return { spawn "kitty"; }
-    // Mod+Return { spawn "alacritty"; }
-    Mod+Return { spawn-sh "GTK_IM_MODULE=simple ghostty"; }
+    Mod+Return { spawn "alacritty"; }
+    // Mod+Return { spawn-sh "GTK_IM_MODULE=simple ghostty"; }
     Mod+B { spawn "firefox"; }
     Mod+X { spawn "xournalpp"; }
     Mod+N { spawn "nemo"; }
