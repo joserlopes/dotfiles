@@ -15,6 +15,7 @@ return {
 				on_highlights = function(hl, palette)
 					hl["@comment.documentation.rust"] = { fg = palette.aqua, italic = true }
 					hl["@lsp.type.comment.rust"] = { fg = palette.aqua, italic = true }
+					hl["@comment.documentation.zig"] = { fg = palette.aqua, italic = true }
 					hl.TSComment = { fg = "#928374", italic = true }
 				end,
 			})
