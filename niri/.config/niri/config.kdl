@@ -25,7 +25,8 @@ input {
     }
 
     tablet {
-        map-to-output "eDP-1"
+        // map-to-output "eDP-1"
+        map-to-output "HDMI-A-1"
     }
 
     // warp-mouse-to-focus
@@ -148,9 +149,9 @@ binds {
     Mod+P repeat=false { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)"; }
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    // Mod+Return { spawn "ghostty"; }
+    Mod+Return { spawn-sh "GTK_IM_MODULE=simple ghostty"; }
     // Mod+Return { spawn "kitty"; }
-    Mod+Return { spawn "alacritty"; }
+    // Mod+Return { spawn "alacritty"; }
     // Mod+Return { spawn-sh "GTK_IM_MODULE=simple ghostty"; }
     Mod+B { spawn "firefox"; }
     Mod+X { spawn "xournalpp"; }

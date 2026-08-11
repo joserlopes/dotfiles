@@ -24,7 +24,7 @@ set -gx PATH $HOME/go/bin $PATH
 # Add juliaup 
 set -gx PATH $HOME/.juliaup/bin $PATH
 # Add zig
-set -gx PATH $HOME/zig $PATH
+# set -gx PATH $HOME/zig $PATH
 
 zoxide init --cmd cd fish | source
 starship init fish | source
@@ -39,3 +39,6 @@ eval (opam env --switch=default)
 
 # opencode
 fish_add_path /home/jrl/.opencode/bin
+
+# Pi
+fish_add_path "$HOME/.local/bin"
