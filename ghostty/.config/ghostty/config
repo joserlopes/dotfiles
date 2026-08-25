@@ -20,7 +20,7 @@ theme = Everforest Dark Hard
 # theme = Vague
 # This is just to comply with the color of the nvim theme
 # background = #181616
-# background-opacity = 0.85
+background-opacity = 0.80
 
 keybind = ctrl+shift+r=reload_config
 
