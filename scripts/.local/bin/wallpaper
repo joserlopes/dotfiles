@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+dir="$HOME/dotfiles/wallpapers"
+hour=$((10#$(date +%H)))
+mode="fill"
+
+case $((hour / 6)) in
+  0) img="0-night.png" ;;
+  1) img="1-morning.jpg" ;;
+  2) img="2-Saint_Joseph.png"; mode="center" ;;
+  3) img="3-evening.jpg" ;;
+esac
+
+exec swaybg -i "$dir/$img" -m "$mode"

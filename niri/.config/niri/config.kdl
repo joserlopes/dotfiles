@@ -17,9 +17,8 @@ spawn-at-startup "waybar"
 spawn-at-startup "nm-applet"
 spawn-at-startup "dropbox"
 spawn-at-startup "firefox"
-spawn-at-startup "ghostty" "--initial-command=tmux"
+spawn-sh-at-startup "GTK_IM_MODULE=simple ghostty --initial-command=tmux"
 spawn-at-startup "slack"
-
 
 window-rule {
     match at-startup=true app-id=r#"^firefox$"#
@@ -39,11 +38,13 @@ window-rule {
     open-focused false
 }
 
+// NOTE: For wallpapers, there is a systemd service that currently controls them
 
 // spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/osaka-jade-bg-3.jpg -m fill"
 // spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/wallpaper.png -m fill"
 // spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/dune.jpg -m fill"
-spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/saint_joseph.png -m center"
+// spawn-sh-at-startup "swaybg -i ~/dotfiles/wallpapers/saint_joseph.png -m center"
+
 spawn-sh-at-startup "~/.config/niri/scripts/notify-track-change.sh"
 
 input {
