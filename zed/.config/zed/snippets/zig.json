@@ -1,0 +1,6 @@
+{
+  "Anonymous struct literal": {
+    "prefix": "..",
+    "body": ".{ $1 }"
+  }
+}

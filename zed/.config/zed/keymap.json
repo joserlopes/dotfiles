@@ -1,0 +1,305 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+//
+// Most of these mirror nvim/.config/nvim (remap.lua, commands.lua and plugins).
+// `workspace::SendKeystrokes` falls through to the next-highest binding when it
+// sends its own key, so "n" -> "n z z" is not recursive.
+[
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-`": "terminal_panel::Toggle"
+    }
+  },
+  // ctrl-; outside the terminal: open the terminal dock (starting a terminal if
+  // none exists) or focus it if it is already visible. Editor is listed
+  // because Zed binds ctrl-; there by default (toggle line numbers).
+  //
+  // ctrl-: (ctrl-shift-; on US, ctrl-shift-. on PT) only moves focus between
+  // the editor and the terminal and leaves the dock open. It replaces Zed's
+  // default ctrl-: in the editor (toggle inlay hints, which is on <leader>hl).
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-;": "terminal_panel::ToggleFocus",
+      "ctrl-:": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-;": "terminal_panel::ToggleFocus",
+      "ctrl-:": "terminal_panel::ToggleFocus"
+    }
+  },
+  // ctrl-; inside the terminal: hide the dock and go back to the editor. The
+  // shell keeps running.
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-;": "terminal_panel::Toggle",
+      "ctrl-:": "terminal_panel::ToggleFocus"
+    }
+  },
+
+  // Jump between the agent panel and the editor. The Editor binding is needed
+  // because Zed binds ctrl-' there by default (toggle diff hunks, which is on
+  // <leader>hp) and in the agent's message box (cycle thinking effort, still
+  // on ctrl-alt-').
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-'": "agent::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-'": "agent::ToggleFocus"
+    }
+  },
+
+  // ctrl-w closes the current tab (editor or terminal). Zed's vim keymap uses
+  // ctrl-w as a prefix for window commands, which would make a plain ctrl-w
+  // wait for a second key, so those are unbound here.
+  {
+    "context": "VimControl && !menu || !Editor && !Terminal",
+    "unbind": {
+      "ctrl-w left": "workspace::ActivatePaneLeft",
+      "ctrl-w right": "workspace::ActivatePaneRight",
+      "ctrl-w up": "workspace::ActivatePaneUp",
+      "ctrl-w down": "workspace::ActivatePaneDown",
+      "ctrl-w ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-w ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-w ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-w ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w j": "workspace::ActivatePaneDown",
+      "ctrl-w shift-left": "workspace::SwapPaneLeft",
+      "ctrl-w shift-right": "workspace::SwapPaneRight",
+      "ctrl-w shift-up": "workspace::SwapPaneUp",
+      "ctrl-w shift-down": "workspace::SwapPaneDown",
+      "ctrl-w x": "workspace::SwapPaneAdjacent",
+      "ctrl-w ctrl-x": "workspace::SwapPaneAdjacent",
+      "ctrl-w shift-h": "workspace::MovePaneLeft",
+      "ctrl-w shift-l": "workspace::MovePaneRight",
+      "ctrl-w shift-k": "workspace::MovePaneUp",
+      "ctrl-w shift-j": "workspace::MovePaneDown",
+      "ctrl-w >": "vim::ResizePaneRight",
+      "ctrl-w <": "vim::ResizePaneLeft",
+      "ctrl-w -": "vim::ResizePaneDown",
+      "ctrl-w +": "vim::ResizePaneUp",
+      "ctrl-w _": "vim::MaximizePane",
+      "ctrl-w =": "vim::ResetPaneSizes",
+      "ctrl-w g t": "pane::ActivateNextItem",
+      "ctrl-w ctrl-g t": "pane::ActivateNextItem",
+      "ctrl-w g shift-t": "pane::ActivatePreviousItem",
+      "ctrl-w ctrl-g shift-t": "pane::ActivatePreviousItem",
+      "ctrl-w w": "workspace::ActivateNextPane",
+      "ctrl-w ctrl-w": "workspace::ActivateNextPane",
+      "ctrl-w p": "workspace::ActivatePreviousPane",
+      "ctrl-w ctrl-p": "workspace::ActivatePreviousPane",
+      "ctrl-w shift-w": "workspace::ActivatePreviousPane",
+      "ctrl-w ctrl-shift-w": "workspace::ActivatePreviousPane",
+      "ctrl-w ctrl-v": "pane::SplitVertical",
+      "ctrl-w v": "pane::SplitVertical",
+      "ctrl-w shift-s": "pane::SplitHorizontal",
+      "ctrl-w ctrl-s": "pane::SplitHorizontal",
+      "ctrl-w s": "pane::SplitHorizontal",
+      "ctrl-w ctrl-c": "pane::CloseActiveItem",
+      "ctrl-w c": "pane::CloseActiveItem",
+      "ctrl-w ctrl-q": "pane::CloseActiveItem",
+      "ctrl-w q": "pane::CloseActiveItem",
+      "ctrl-w ctrl-a": "pane::CloseAllItems",
+      "ctrl-w a": "pane::CloseAllItems",
+      "ctrl-w ctrl-o": "workspace::CloseInactiveTabsAndPanes",
+      "ctrl-w o": "workspace::CloseInactiveTabsAndPanes",
+      "ctrl-w ctrl-n": "workspace::NewFileSplitHorizontal",
+      "ctrl-w n": "workspace::NewFileSplitHorizontal"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-w": ["pane::CloseActiveItem", { "close_pinned": false }]
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-w": ["pane::CloseActiveItem", { "close_pinned": false }]
+    }
+  },
+
+  // Normal, visual and operator-pending (`map ""` in Neovim)
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Better home and end keys
+      "shift-h": "vim::FirstNonWhitespace",
+      "shift-l": "vim::EndOfLine",
+
+      // Toggle the left dock (vim's default is page up; ctrl-u/ctrl-d cover that)
+      "ctrl-b": "workspace::ToggleLeftDock",
+
+      // Cycle through open tabs
+      "ctrl-h": "pane::ActivatePreviousItem",
+      "ctrl-l": "pane::ActivateNextItem",
+
+      // vim-tmux-navigator
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp"
+    }
+  },
+
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      // Keep the cursor centered
+      "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+      "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+      "n": ["workspace::SendKeystrokes", "n z z"],
+      "shift-n": ["workspace::SendKeystrokes", "shift-n z z"],
+      // Join lines without moving the cursor (mzJ`z)
+      "shift-j": ["workspace::SendKeystrokes", "m z shift-j ` z"],
+
+      // Copy to system clipboard
+      "space y": ["workspace::SendKeystrokes", "\" + y"],
+      "space shift-y": ["workspace::SendKeystrokes", "\" + shift-y"],
+
+      // ct_ / dt_
+      "space m": ["workspace::SendKeystrokes", "c t _"],
+      "space shift-m": ["workspace::SendKeystrokes", "d t _"],
+
+      // :%s/\<word\>//gI -> multi-cursor on every occurrence of the word
+      "space shift-s": ["workspace::SendKeystrokes", "g a c"],
+
+      // Oil
+      "space p v": "pane::RevealInProjectPanel",
+
+      // fzf-lua
+      "space p f": "file_finder::Toggle",
+      "space p s": "pane::DeploySearch",
+      "space p r": "editor::FindAllReferences",
+      "space p d": "editor::GoToDefinition",
+
+      // LspAttach
+      "space v r n": "editor::Rename",
+      "space v c a": "editor::ToggleCodeActions",
+      "space v r f": "editor::FindAllReferences",
+      "space v d": "diagnostics::Deploy",
+      "g shift-i": "editor::GoToImplementation",
+      "g shift-d": "editor::GoToDeclaration",
+      "space shift-d": "editor::GoToTypeDefinition",
+      "space w a": "workspace::AddFolderToProject",
+      "space d s": "outline::Toggle",
+      "space w s": "project_symbols::Toggle",
+      "space h l": "editor::ToggleInlayHints",
+
+      // conform
+      "space l": "editor::Format",
+
+      // trouble
+      "space x x": "diagnostics::Deploy",
+      "space x shift-x": "diagnostics::DeployCurrentFile",
+      "space c s": "outline_panel::ToggleFocus",
+
+      // gitsigns / snacks / neogit
+      "space h p": "editor::ToggleSelectedDiffHunks",
+      "space g b": "editor::BlameHover",
+      "space g shift-b": "editor::OpenPermalinkToLine",
+      "space g g": "git_panel::ToggleFocus",
+
+      // grapple -> pinned tabs (pinned tabs always sit first in the pane)
+      "space a": "pane::TogglePinTab",
+      "ctrl-e": "tab_switcher::Toggle",
+      "ctrl-s": ["pane::ActivateItem", 0],
+      "ctrl-n": ["pane::ActivateItem", 1],
+      "ctrl-q": ["pane::ActivateItem", 2],
+      "ctrl-y": ["pane::ActivateItem", 3],
+
+      // chmod +x %
+      "space e": ["task::Spawn", { "task_name": "chmod +x current file" }]
+    }
+  },
+
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      // Move selected lines
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+      // Keep the selection after indenting
+      "<": ["workspace::SendKeystrokes", "< g v"],
+      ">": ["workspace::SendKeystrokes", "> g v"],
+      // Paste without overriding the register
+      "p": ["vim::Paste", { "preserve_clipboard": true }],
+      // Copy to system clipboard
+      "space y": ["workspace::SendKeystrokes", "\" + y"],
+      // y:%s/<C-r>"//gI -> multi-cursor on every occurrence of the selection
+      "space r": ["workspace::SendKeystrokes", "g a c"],
+      "space l": "editor::Format"
+    }
+  },
+
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "ctrl-c": "vim::NormalBefore",
+      "ctrl-h": "editor::ShowSignatureHelp"
+    }
+  },
+
+  // blink.cmp
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "ctrl-f": "editor::ContextMenuNext",
+      "ctrl-g": "editor::ContextMenuPrevious",
+      "ctrl-l": "editor::ConfirmCompletion",
+      "ctrl-y": "editor::ConfirmCompletion"
+    }
+  },
+
+  // LuaSnip
+  {
+    "context": "Editor && in_snippet",
+    "bindings": {
+      "alt-k": "editor::NextSnippetTabstop",
+      "alt-j": "editor::PreviousSnippetTabstop"
+    }
+  },
+
+  // after/ftplugin and commands.lua
+  {
+    "context": "Editor && vim_mode == normal && extension == py",
+    "bindings": {
+      "space shift-r": ["task::Spawn", { "task_name": "python3 current file" }]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && extension == html",
+    "bindings": {
+      "space o f": ["task::Spawn", { "task_name": "open current file" }]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && extension == js",
+    "bindings": {
+      "space o f": ["task::Spawn", { "task_name": "open current file" }]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && extension == typ",
+    "bindings": {
+      "space t w": ["task::Spawn", { "task_name": "typst watch" }]
+    }
+  }
+]

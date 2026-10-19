@@ -1,0 +1,198 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    "cli_default_open_behavior": "new_window",
+    "agent_servers": {
+        "claude-acp": {
+            "default_config_options": {
+                "mode": "default",
+                "model": "opus",
+                "fast": true,
+            },
+            "type": "registry",
+        },
+    },
+    "disable_ai": false,
+    "outline_panel": {
+        "dock": "left",
+    },
+    "collaboration_panel": {
+        "dock": "left",
+    },
+    "git_panel": {
+        "dock": "left",
+    },
+    "terminal": {
+        "font_size": 19.0,
+    },
+    "show_signature_help_after_edits": true,
+    "auto_signature_help": true,
+    "diagnostics": {
+        "inline": {
+            "enabled": true,
+        },
+    },
+    "session": {
+        "trust_all_worktrees": true,
+    },
+    "vim_mode": true,
+    "base_keymap": "VSCode",
+    "buffer_font_fallbacks": ["Maple Mono NF"],
+    "buffer_font_family": "Maple Mono NF",
+    "icon_theme": "Zed (Default)",
+    "ui_font_size": 19.0,
+    "buffer_font_size": 19.0,
+
+    // Panel placement
+    "project_panel": { "dock": "left" },
+    "agent": { "dock": "right" },
+
+    // colors.lua: everforest, background = "hard"
+    "theme": {
+        "mode": "dark",
+        "light": "One Light",
+        "dark": "Everforest Dark Hard (regular)",
+    },
+    // colors.lua: italic comments, aqua doc comments
+    "theme_overrides": {
+        "Everforest Dark Hard (regular)": {
+            "syntax": {
+                "comment": { "color": "#928374", "font_style": "italic" },
+                "comment.doc": { "color": "#83c092", "font_style": "italic" },
+                // Some extensions (e.g. Zig) use this name instead; Zed only
+                // matches whole dot-separated prefixes, so "doc" doesn't cover it
+                "comment.documentation": { "color": "#83c092", "font_style": "italic" },
+            },
+        },
+    },
+    "auto_install_extensions": {
+        "everforest": true,
+        "lua": true,
+        "zig": true,
+        "gleam": true,
+        "typst": true,
+        "ocaml": true,
+        "ruby": true,
+        "toml": true,
+        "nix": true,
+    },
+
+    // set.lua
+    "relative_line_numbers": "enabled", // nu + relativenumber
+    "tab_size": 4, // tabstop/shiftwidth = 4
+    "hard_tabs": false, // expandtab
+    "soft_wrap": "none", // nowrap
+    "vertical_scroll_margin": 8, // scrolloff = 8
+    "show_wrap_guides": true,
+    "wrap_guides": [80], // colorcolumn = 80
+    "current_line_highlight": "all", // cursorline
+    "use_smartcase_search": true, // ignorecase + smartcase
+    "inlay_hints": { "enabled": false }, // toggled with <leader>hl
+
+    "vim": {
+        // Plain y/p use Vim's registers; <leader>y goes to the system clipboard
+        "use_system_clipboard": "never",
+        // commands.lua: vim.hl.on_yank timeout = 40
+        "highlight_on_yank_duration": 40,
+    },
+
+    // conform.lua: format_on_save
+    "format_on_save": "on",
+
+    // after/ftplugin/*.lua
+    "languages": {
+        "C": { "tab_size": 2 },
+        "Gleam": { "tab_size": 2 },
+        "Java": { "tab_size": 2 },
+        "JavaScript": { "tab_size": 2 },
+        "TypeScript": { "tab_size": 2 },
+        "TSX": { "tab_size": 2 },
+        "Ruby": {
+            "tab_size": 2,
+            "language_servers": ["ruby-lsp", "!solargraph", "..."],
+        },
+        "Rust": { "wrap_guides": [100] },
+        "Markdown": {
+            "tab_size": 2,
+            "soft_wrap": "editor_width",
+            "format_on_save": "on", // conform: prettier
+        },
+        "Typst": { "soft_wrap": "editor_width" },
+        "Lua": {
+            // conform: stylua
+            "formatter": {
+                "external": {
+                    "command": "stylua",
+                    "arguments": [
+                        "--respect-ignores",
+                        "--stdin-filepath",
+                        "{buffer_path}",
+                        "-",
+                    ],
+                },
+            },
+        },
+        // lsp.lua uses pyright rather than basedpyright
+        "Python": {
+            "language_servers": ["pyright", "ruff", "!basedpyright", "..."],
+        },
+    },
+
+    // lsp.lua
+    "lsp": {
+        // jdtls 1.62 needs Java 25+ to run; the system default is 21. This only
+        // affects the JVM running jdtls, not the JDK your projects compile with.
+        "jdtls": {
+            "settings": {
+                "java_home": "/usr/lib/jvm/java-27-openjdk",
+            },
+        },
+        "rust-analyzer": {
+            "initialization_options": {
+                "cargo": { "features": "all" },
+                "checkOnSave": true,
+                "check": { "command": "clippy" },
+                "imports": { "group": { "enable": false } },
+                "rustfmt": { "extraArgs": ["--config=wrap_comments=true"] },
+            },
+        },
+        "lua-language-server": {
+            "settings": {
+                "Lua": {
+                    "workspace": {
+                        "checkThirdParty": false,
+                        "library": ["${3rd}/love2d/library"],
+                    },
+                    "telemetry": { "enable": false },
+                    "diagnostics": { "globals": ["vim"] },
+                },
+            },
+        },
+        "pyright": {
+            "settings": {
+                "python.analysis": {
+                    "diagnosticSeverityOverrides": {
+                        "reportPossiblyUnboundVariable": "none",
+                    },
+                },
+            },
+        },
+        "tinymist": {
+            "settings": {
+                "formatterMode": "typstyle",
+                "exportPdf": "onType",
+            },
+        },
+        "zls": {
+            "settings": {
+                "zls": { "semantic_tokens": "partial" },
+            },
+        },
+    },
+}

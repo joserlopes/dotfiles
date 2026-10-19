@@ -1,0 +1,30 @@
+// Tasks backing the Neovim-style keybindings in keymap.json
+[
+  {
+    "label": "chmod +x current file",
+    "command": "chmod",
+    "args": ["+x", "$ZED_FILE"],
+    "reveal": "never",
+    "hide": "on_success"
+  },
+  {
+    "label": "python3 current file",
+    "command": "python3",
+    "args": ["$ZED_FILE"],
+    "save": "current"
+  },
+  {
+    "label": "open current file",
+    "command": "xdg-open",
+    "args": ["$ZED_FILE"],
+    "reveal": "never",
+    "hide": "always"
+  },
+  {
+    // The PDF is kept up to date by tinymist's exportPdf = "onType"
+    "label": "typst watch",
+    "command": "zathura",
+    "args": ["$ZED_DIRNAME/$ZED_STEM.pdf"],
+    "reveal": "never"
+  }
+]
