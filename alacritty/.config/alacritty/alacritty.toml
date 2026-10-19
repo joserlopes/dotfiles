@@ -40,6 +40,6 @@ key = "F11"
 [window]
 padding.x = 14
 padding.y = 14
-# opacity = 0.85
+opacity = 0.85
 # decorations = "None"
 # startup_mode = "FullScreen"

@@ -18,7 +18,7 @@ end
 # fish_add_path -a ~/.juliaup/bin
 
 # Add ~/.local/bin to PATH
-set -gx PATH $HOME/.local/bin $PATH
+fish_add_path "$HOME/.local/bin"
 # Add go
 set -gx PATH $HOME/go/bin $PATH
 # Add juliaup 
@@ -36,9 +36,3 @@ set -gx VISUAL nvim
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/jrl/.ghcup/bin $PATH # ghcup-env
 
 eval (opam env --switch=default)
-
-# opencode
-fish_add_path /home/jrl/.opencode/bin
-
-# Pi
-fish_add_path "$HOME/.local/bin"
