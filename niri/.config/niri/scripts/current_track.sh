@@ -49,10 +49,14 @@ else
 fi
 
 # Check if a track is currently being played
-if [ -z "$TRACK" ] || [ -z "$ARTIST" ]; then
+if [ -z "$TRACK" ]; then
     notify-send "No track is currently being played."
     exit 0
 fi
+
+# Untagged files (e.g. ripped videos) have no artist/album
+ARTIST=${ARTIST:-"Unknown Artist"}
+ALBUM=${ALBUM:-"Unknown Album"}
 
 # Download the album art if available
 if [ -n "$ALBUM_ART_URL" ]; then
